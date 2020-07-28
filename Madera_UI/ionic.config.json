@@ -1,7 +1,0 @@
-{
-  "name": "Madera_UI",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
