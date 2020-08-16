@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
+﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
   <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/app-routing.module.ts">
     <Files>
       <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="1" Column="1" />
