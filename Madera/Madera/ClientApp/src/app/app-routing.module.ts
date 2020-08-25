@@ -47,6 +47,18 @@ const routes: Routes = [
     path: 'footer',
     loadChildren: () => import('./pages/footer/footer.module').then( m => m.FooterPageModule)
   },
+  {
+    path: 'header-menu',
+    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+  },
+  {
+    path: 'header-menu',
+    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+  },
+  {
+    path: 'header-menu',
+    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+  },
 ];
 
 @NgModule({
