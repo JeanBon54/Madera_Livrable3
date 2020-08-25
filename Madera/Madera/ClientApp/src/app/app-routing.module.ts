@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'gestion-modelisation',
     loadChildren: () => import('./pages/gestion-modelisation/gestion-modelisation.module').then( m => m.GestionModelisationPageModule)
   },
+  {
+    path: 'header',
+    loadChildren: () => import('./pages/header/header.module').then( m => m.HeaderPageModule)
+  },
+  {
+    path: 'footer',
+    loadChildren: () => import('./pages/footer/footer.module').then( m => m.FooterPageModule)
+  },
 ];
 
 @NgModule({
