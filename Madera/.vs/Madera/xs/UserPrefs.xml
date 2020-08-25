@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/app-routing.module.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/footer/footer.page.html">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="13" Column="5" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="17" Column="14" IsPinned="True" />
+      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.html" Line="3" Column="14" />
+      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.scss" Line="6" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="6" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.scss" Line="1" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,11 +15,13 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="home" expanded="True" />
                     <Node name="pages" expanded="True">
                       <Node name="connexion" expanded="True" />
+                      <Node name="footer" expanded="True">
+                        <Node name="footer.page.html" selected="True" />
+                      </Node>
+                      <Node name="header" expanded="True" />
                     </Node>
-                    <Node name="app-routing.module.ts" selected="True" />
                   </Node>
                 </Node>
               </Node>
