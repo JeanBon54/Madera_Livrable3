@@ -38,7 +38,7 @@ const routes: Routes = [
   {
     path: 'gestion-modelisation',
     loadChildren: () => import('./pages/gestion-modelisation/gestion-modelisation.module').then( m => m.GestionModelisationPageModule)
-  },
+  }
 ];
 
 @NgModule({
