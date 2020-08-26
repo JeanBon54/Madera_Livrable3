@@ -1,44 +1,63 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Menu_Principal</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Menu_Principal</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-
-
-<ion-grid>
-    <ion-row>
+<ion-grid style="display: flex; flex-direction: column; align-items: center">
+    <ion-row size="12">
         <ion-col>
-            <img style="margin-left: 25%" height="225" width="280" src="assets/image/logo-madera.png">
+            <img height="225" width="280" src="assets/image/logo-madera.png">
         </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-recherche_projet.png"></ion-img>
-            <ion-label>Recherche projet</ion-label>
+        <ion-col size="4">
+            <ion-img class="img" (click)="goTo(1)" src="assets/image/menu-recherche_projet.png"></ion-img>
         </ion-col>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-nouveau_projet.png"></ion-img>
+        <ion-col size="4">
+            <ion-img class="img" (click)="goTo(2)" src="assets/image/menu-nouveau_projet.png"></ion-img>
+        </ion-col>
+        <ion-col size="4">
+            <ion-img class="img" (click)="goTo(3)" src="assets/image/menu-recherche_devis.png"></ion-img>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="label ion-text-left ion-text-nowrap" size="4">
+            <ion-label color="dark">Recherche projet</ion-label>
+        </ion-col>
+        <ion-col class="label ion-text-nowrap" size="4">
             <ion-label>Nouveau projet</ion-label>
         </ion-col>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-recherche_devis.png"></ion-img>
+        <ion-col class="label ion-text-right ion-text-nowrap" size="4">
             <ion-label>Recherche devis</ion-label>
         </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-recherche_client.png"></ion-img>
-            <ion-label>Recherche client</ion-label>
+        <ion-col size="4">
+            <ion-img class="img" (click)="goTo(4)" src="assets/image/menu-recherche_client.png"></ion-img>
         </ion-col>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-nouveau_client.png"></ion-img>
+        <ion-col size="4">
+            <ion-img class="img" (click)="goTo(5)" src="assets/image/menu-nouveau_client.png"></ion-img>
+        </ion-col>
+        <ion-col size="4"> 
+            <ion-img class="img" (click)="goTo(6)" src="assets/image/menu-parametre.png"></ion-img>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="labelno ion-text-left ion-text-nowrap" size="4">
+            <ion-label color="dark">Recherche client</ion-label>
+        </ion-col>
+        <ion-col class="label ion-text-nowrap" size="4">
             <ion-label>Nouveau client</ion-label>
         </ion-col>
-        <ion-col style="padding: 20px" size="4">
-            <ion-img height="130" width="140" src="assets/image/menu-parametre.png"></ion-img>
+        <ion-col class="label ion-text-right ion-text-nowrap" size="4">
             <ion-label>Paramétrage</ion-label>
         </ion-col>
     </ion-row>
 </ion-grid>
+<ion-row style="display: flex; flex-direction: column; align-items: center">
+    <ion-col class="button" size="5">
+        <ion-button color="danger" expand="block" (click)="logOut()">Déconnexion</ion-button>
+    </ion-col>
+</ion-row>
 

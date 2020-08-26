@@ -1,11 +1,21 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/footer/footer.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Program.cs">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="17" Column="14" IsPinned="True" />
-      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.html" Line="3" Column="14" />
-      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.scss" Line="6" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="6" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.scss" Line="1" Column="13" />
+      <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.module.ts" />
+      <File FileName="Madera/ClientApp/angular.json" />
+      <File FileName="Madera/ClientApp/ionic.config.json" />
+      <File FileName="Madera/ClientApp/karma.conf.js" />
+      <File FileName="Madera/ClientApp/package.json" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.spec.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/gestion-projet/gestion-projet.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/gestion-projet/gestion-projet.page.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/gestion-projet/gestion-projet.page.ts" />
+      <File FileName="Madera/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,15 +26,14 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
-                      <Node name="connexion" expanded="True" />
-                      <Node name="footer" expanded="True">
-                        <Node name="footer.page.html" selected="True" />
-                      </Node>
-                      <Node name="header" expanded="True" />
+                      <Node name="gestion-projet" expanded="True" />
+                      <Node name="menu-principal" expanded="True" />
                     </Node>
                   </Node>
+                  <Node name="assets" expanded="True" />
                 </Node>
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -37,5 +46,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
