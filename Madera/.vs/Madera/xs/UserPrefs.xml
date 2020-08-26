@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/footer/footer.page.scss">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="1" Column="20" IsPinned="True" />
-      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.html" Line="5" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/header/header.page.scss" Line="11" Column="2" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="7" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.scss" Line="20" Column="2" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="3" Column="5" />
+      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.html" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,10 +15,12 @@
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
                       <Node name="connexion" expanded="True" />
-                      <Node name="footer" expanded="True">
-                        <Node name="footer.page.scss" selected="True" />
+                      <Node name="menu-admin" expanded="True">
+                        <Node name="menu-admin.page.ts" expanded="True" />
                       </Node>
-                      <Node name="header-menu" expanded="True" />
+                      <Node name="menu-principal" expanded="True">
+                        <Node name="menu-principal.page.html" selected="True" />
+                      </Node>
                     </Node>
                   </Node>
                 </Node>
@@ -28,6 +28,9 @@
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
