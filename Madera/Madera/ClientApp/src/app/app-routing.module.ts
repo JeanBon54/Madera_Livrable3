@@ -48,6 +48,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/footer/footer.module').then( m => m.FooterPageModule)
   },
   {
+    path: 'header-menu',
+    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+  },
     path: 'recherche-projet',
     loadChildren: () => import('./pages/recherche-projet/recherche-projet.module').then( m => m.RechercheProjetPageModule)
   },

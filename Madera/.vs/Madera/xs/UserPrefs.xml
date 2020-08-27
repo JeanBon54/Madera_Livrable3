@@ -1,6 +1,9 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/connexion/connexion.page.html">
     <Files>
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="8" Column="15" />
+      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.ts" />
       <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" Line="63" Column="11" />
       <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="3" Column="23" />
       <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.ts" Line="14" Column="1" />
@@ -26,6 +29,10 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
+                      <Node name="connexion" expanded="True">
+                        <Node name="connexion.page.html" selected="True" />
+                      </Node>
+                      <Node name="header-menu" expanded="True" />
                       <Node name="recherche-projet" expanded="True">
                         <Node name="recherche-projet.module.ts" selected="True" />
                       </Node>
