@@ -4,6 +4,21 @@
       <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="8" Column="15" />
       <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.html" />
       <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" Line="63" Column="11" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="3" Column="23" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.ts" Line="14" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="7" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="19" Column="55" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="7" Column="3" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.scss" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.ts" Line="20" Column="15" />
+      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="10" Column="12" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.html" Line="9" Column="65" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.ts" Line="2" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.module.ts" Line="17" Column="20" />
+      <File FileName="Madera/ClientApp/package.json" Line="29" Column="32" />
+      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="16" Column="84" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.scss" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,8 +33,12 @@
                         <Node name="connexion.page.html" selected="True" />
                       </Node>
                       <Node name="header-menu" expanded="True" />
+                      <Node name="recherche-projet" expanded="True">
+                        <Node name="recherche-projet.module.ts" selected="True" />
+                      </Node>
                     </Node>
                   </Node>
+                  <Node name="assets" expanded="True" />
                 </Node>
               </Node>
             </Node>
@@ -34,5 +53,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

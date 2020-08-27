@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { MenuPrincipalPageRoutingModule } from './menu-principal-routing.module';
 
 import { MenuPrincipalPage } from './menu-principal.page';
+import { HeaderPage } from '../header/header.page';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { MenuPrincipalPage } from './menu-principal.page';
     IonicModule,
     MenuPrincipalPageRoutingModule
   ],
-  declarations: [MenuPrincipalPage]
+  declarations: [MenuPrincipalPage, HeaderPage, FooterPage]
 })
 export class MenuPrincipalPageModule {}

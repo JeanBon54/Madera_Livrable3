@@ -51,13 +51,28 @@ const routes: Routes = [
     path: 'header-menu',
     loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
   },
-  {
-    path: 'header-menu',
-    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+    path: 'recherche-projet',
+    loadChildren: () => import('./pages/recherche-projet/recherche-projet.module').then( m => m.RechercheProjetPageModule)
   },
   {
-    path: 'header-menu',
-    loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
+    path: 'nouveau-projet',
+    loadChildren: () => import('./pages/nouveau-projet/nouveau-projet.module').then( m => m.NouveauProjetPageModule)
+  },
+  {
+    path: 'recherche-devis',
+    loadChildren: () => import('./pages/recherche-devis/recherche-devis.module').then( m => m.RechercheDevisPageModule)
+  },
+  {
+    path: 'recherche-client',
+    loadChildren: () => import('./pages/recherche-client/recherche-client.module').then( m => m.RechercheClientPageModule)
+  },
+  {
+    path: 'nouveau-client',
+    loadChildren: () => import('./pages/nouveau-client/nouveau-client.module').then( m => m.NouveauClientPageModule)
+  },
+  {
+    path: 'parametrage',
+    loadChildren: () => import('./pages/parametrage/parametrage.module').then( m => m.ParametragePageModule)
   },
 ];
 
