@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderMenuPage } from '../header-menu/header-menu.page';
+
 
 @Component({
   selector: 'app-connexion',

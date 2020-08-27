@@ -51,6 +51,7 @@ const routes: Routes = [
     path: 'header-menu',
     loadChildren: () => import('./pages/header-menu/header-menu.module').then( m => m.HeaderMenuPageModule)
   },
+  {
     path: 'recherche-projet',
     loadChildren: () => import('./pages/recherche-projet/recherche-projet.module').then( m => m.RechercheProjetPageModule)
   },
@@ -73,7 +74,7 @@ const routes: Routes = [
   {
     path: 'parametrage',
     loadChildren: () => import('./pages/parametrage/parametrage.module').then( m => m.ParametragePageModule)
-  },
+  }
 ];
 
 @NgModule({

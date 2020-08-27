@@ -1,3 +1,20 @@
 .mat-elevation-z8 {
   width: 100%;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 0px 3px 3px 3px;
+  padding: 2px;
+}
+
+mat-cell {
+    color:gray;
+}
+
+mat-header-row, mat-row, mat-footer-row {
+  display: flex;
+  border-width: 0;
+  border-bottom-width: 0px;
+  border-style: solid;
+  align-items: center;
+  box-sizing: border-box;
 }
