@@ -5,8 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheProjetPageRoutingModule } from './recherche-projet-routing.module';
-
 import { RechercheProjetPage } from './recherche-projet.page';
+
+
 
 @NgModule({
   imports: [
