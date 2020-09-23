@@ -1,26 +1,31 @@
-﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Madera">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/connexion/connexion-routing.module.ts">
+﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.module.ts">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" Line="69" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" Line="36" Column="23" />
-      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.ts" Line="14" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="3" Column="10" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="9" Column="20" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="7" Column="3" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.scss" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.ts" Line="9" Column="44" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="53" Column="5" />
-      <File FileName="Madera/ClientApp/package.json" Line="29" Column="32" />
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="24" Column="28" />
-      <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.component.html" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.module.ts" Line="23" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.html" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.scss" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.spec.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion-routing.module.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.html" Line="70" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/footer/footer.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="4" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" />
+      <File FileName="Madera/ClientApp/package.json" />
+      <File FileName="Madera/ClientApp/src/app/app.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/app.component.ts" />
+      <File FileName="Madera/ClientApp/src/app/app.component.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu-principal/menu-principal.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/header-menu/header-menu.page.html" />
+      <File FileName="Madera/ClientApp/src/app/app.component.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.spec.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion-routing.module.ts" />
+      <File FileName="Madera/Program.cs" Line="17" Column="10" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.html" Line="11" Column="13" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.scss" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.ts" Line="30" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet-routing.module.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.module.ts" Line="5" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,11 +36,9 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
-                      <Node name="connexion" expanded="True">
-                        <Node name="connexion.page.ts" expanded="True" />
-                        <Node name="connexion-routing.module.ts" selected="True" />
+                      <Node name="recherche-projet" expanded="True">
+                        <Node name="recherche-projet.module.ts" selected="True" />
                       </Node>
-                      <Node name="header-menu" expanded="True" />
                     </Node>
                   </Node>
                   <Node name="assets" expanded="True" />
