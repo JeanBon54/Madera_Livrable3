@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Startup.cs">
     <Files>
       <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="16" Column="30" />
       <File FileName="Madera/ClientApp/src/app/app.component.ts" />
@@ -16,13 +16,12 @@
       <File FileName="Madera/ClientApp/src/app/components/footer/footer.component.html" />
       <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal-routing.module.ts" />
       <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts" />
-      <File FileName="Madera/Startup.cs" Line="28" Column="56" />
-      <File FileName="Madera/ClientApp/angular.json" Line="24" Column="32" />
+      <File FileName="Madera/Startup.cs" Line="43" Column="14" />
+      <File FileName="Madera/ClientApp/angular.json" Line="17" Column="31" />
       <File FileName="Madera/appsettings.json" Line="1" Column="1" />
       <File FileName="Madera/appsettings.Development.json" Line="1" Column="1" />
       <File FileName="Madera/Program.cs" Line="1" Column="1" />
-      <File FileName="Madera/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
-      <File FileName="Madera/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Madera/Properties/launchSettings.json" Line="23" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,9 +31,8 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True" />
               </Node>
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
