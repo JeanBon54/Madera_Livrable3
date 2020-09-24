@@ -1,26 +1,21 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.module.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/components/header/header.component.html" Line="1" Column="26" />
-      <File FileName="Madera/ClientApp/src/app/components/header/header.component.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/components/footer/footer.component.html" Line="37" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="13" Column="57" />
+      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="16" Column="30" />
       <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="1" Column="3" />
       <File FileName="Madera/ClientApp/src/app/app.component.html" Line="1" Column="10" />
       <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="39" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="2" Column="14" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="1" Column="1" />
       <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/components/footer/footer.component.scss" Line="63" Column="1" />
       <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="8" Column="50" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.module.ts" Line="17" Column="51" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.html" Line="1" Column="14" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/components/header/header.component.spec.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.spec.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="21" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.module.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.html" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.html" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.ts" Line="2" Column="16" />
+      <File FileName="Madera/ClientApp/src/app/components/footer/footer.component.html" Line="22" Column="67" />
       <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/components/header-simple/header-simple.component.html" Line="2" Column="23" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.scss" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts" Line="3" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,13 +26,14 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="components" expanded="True">
-                      <Node name="header-simple" expanded="True" />
+                      <Node name="footer" expanded="True" />
+                      <Node name="header" expanded="True" />
                     </Node>
                     <Node name="pages" expanded="True">
                       <Node name="connexion" expanded="True" />
                       <Node name="menu" expanded="True">
                         <Node name="menu-principal" expanded="True">
-                          <Node name="menu-principal.module.ts" selected="True" />
+                          <Node name="menu-principal.page.ts" selected="True" />
                         </Node>
                       </Node>
                     </Node>
@@ -51,7 +47,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
