@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { RechercheProjetPage } from './recherche-projet.page';
 
-import { HeaderMenuPageRoutingModule } from './header-menu-routing.module';
 
-import { HeaderMenuPage } from './header-menu.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderMenuPageRoutingModule
   ],
-  declarations: [HeaderMenuPage]
+   
+      
+  declarations: [RechercheProjetPage]
 })
-export class HeaderMenuPageModule {}
+export class RechercheProjetPageModule {}

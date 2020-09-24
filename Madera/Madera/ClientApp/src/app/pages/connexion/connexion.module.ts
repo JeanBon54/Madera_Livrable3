@@ -6,9 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ConnexionPageRoutingModule } from './connexion-routing.module';
 import { ConnexionPage } from './connexion.page';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
+import { HeaderComponent } from '../../components/header/header.component';
+
 
 @NgModule({
   imports: [
@@ -17,6 +16,6 @@ import { FooterPage } from '../footer/footer.page';
     IonicModule,
     ConnexionPageRoutingModule
   ],
-  declarations: [ConnexionPage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [ConnexionPage,HeaderComponent]
 })
 export class ConnexionPageModule {}

@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { MenuPrincipalPageRoutingModule } from './menu-principal-routing.module';
-
 import { MenuPrincipalPage } from './menu-principal.page';
-import { HeaderPage } from '../header/header.page';
-import { FooterPage } from '../footer/footer.page';
+import { HeaderComponent } from '../../../components/header/header.component';
+
 
 @NgModule({
   imports: [
@@ -17,6 +14,6 @@ import { FooterPage } from '../footer/footer.page';
     IonicModule,
     MenuPrincipalPageRoutingModule
   ],
-  declarations: [MenuPrincipalPage, HeaderPage, FooterPage]
+  declarations: [MenuPrincipalPage,HeaderComponent]
 })
 export class MenuPrincipalPageModule {}
