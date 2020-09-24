@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { MenuPrincipalPageRoutingModule } from './menu-principal-routing.module';
 import { MenuPrincipalPage } from './menu-principal.page';
-import { HeaderComponent } from '../../../components/header/header.component';
 
 
 @NgModule({
@@ -14,6 +13,6 @@ import { HeaderComponent } from '../../../components/header/header.component';
     IonicModule,
     MenuPrincipalPageRoutingModule
   ],
-  declarations: [MenuPrincipalPage,HeaderComponent]
+  declarations: [MenuPrincipalPage]
 })
 export class MenuPrincipalPageModule {}
