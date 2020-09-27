@@ -1,3 +1,42 @@
+// HAUT DE LA PAGE
+ion-datetime{
+
+  padding-top: 10px;
+
+}
+
+ion-card{
+  border: 3px solid #bbb;
+  padding-bottom: 5px;
+}
+
+ion-card-header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ion-card-content{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.container-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 7px;
+}
+
+
+// CENTRE DE LA PAGE
 .mat-elevation-z8 {
   width: 100%;
   border-style: solid;

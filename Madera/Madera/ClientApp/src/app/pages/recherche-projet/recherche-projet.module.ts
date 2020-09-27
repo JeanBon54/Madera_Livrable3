@@ -11,7 +11,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { RechercheProjetPageRoutingModule } from './recherche-projet-routing.module';
 import { RechercheProjetPage } from './recherche-projet.page';
-
+import { HeaderPage } from '../header/header.page';
+import { HeaderMenuPage } from '../header-menu/header-menu.page';
+import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -24,6 +26,6 @@ import { RechercheProjetPage } from './recherche-projet.page';
   ],
    
       
-  declarations: [RechercheProjetPage]
+  declarations: [RechercheProjetPage, HeaderPage, FooterPage, HeaderMenuPage]
 })
 export class RechercheProjetPageModule {}

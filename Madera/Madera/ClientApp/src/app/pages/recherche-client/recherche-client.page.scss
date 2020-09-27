@@ -1,19 +1,9 @@
-.ion-datetime{
-
-    padding-top: 10px;
-
-  }
-
-.ion-card-header{
-
-    padding-bottom: 5px;
-
-
-  }
 
 hr.solid {
     border-top: 3px solid #bbb;
     width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .container-image {
@@ -28,6 +18,17 @@ ion-button {
   width: 180px;
   }
 
+  ion-card{
+    border: 3px solid #bbb;
+    padding-bottom: 5px;
+  }
+  
   ion-card-header{
-    padding-bottom: 3px;
-    }
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  ion-card-content{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
