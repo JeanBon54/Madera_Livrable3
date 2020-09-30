@@ -1,0 +1,52 @@
+<!--<ion-header>-->
+<!--<app-header></app-header>-->
+<app-header-menu></app-header-menu>
+<!--</ion-header>-->
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+         <h2>Création d'un commcial</h2>   
+        </ion-card-header>
+        <hr class="solid">
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-input placeholder="Nom"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                      <ion-input placeholder="Prénom"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                      <ion-item>
+                        <ion-label>Date de naissance</ion-label>
+                        <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
+                      </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="lastRow">
+                  <ion-col>
+                    <ion-input placeholder="Numéro de téléphone"></ion-input>
+                  </ion-col>
+                  <ion-col>
+                    <ion-input placeholder="Adresse mail"></ion-input>
+                  </ion-col>
+
+                </ion-row>
+
+                <ion-row>
+
+                <ion-col>
+                  <ion-input placeholder="Remarques"></ion-input>
+                </ion-col>
+                </ion-row>
+
+              </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+    <!--<ion-footer>-->
+      <app-footer></app-footer>
+      <!--</ion-footer>-->

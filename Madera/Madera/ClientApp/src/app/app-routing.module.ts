@@ -74,7 +74,31 @@ const routes: Routes = [
   {
     path: 'parametrage',
     loadChildren: () => import('./pages/parametrage/parametrage.module').then( m => m.ParametragePageModule)
+  },  {
+    path: 'recherche-module',
+    loadChildren: () => import('./pages/recherche-module/recherche-module.module').then( m => m.RechercheModulePageModule)
+  },
+  {
+    path: 'recherche-gamme',
+    loadChildren: () => import('./pages/recherche-gamme/recherche-gamme.module').then( m => m.RechercheGammePageModule)
+  },
+  {
+    path: 'recherche-famille-composant',
+    loadChildren: () => import('./pages/recherche-famille-composant/recherche-famille-composant.module').then( m => m.RechercheFamilleComposantPageModule)
+  },
+  {
+    path: 'recherche-composant',
+    loadChildren: () => import('./pages/recherche-composant/recherche-composant.module').then( m => m.RechercheComposantPageModule)
+  },
+  {
+    path: 'recherche-commercial',
+    loadChildren: () => import('./pages/recherche-commercial/recherche-commercial.module').then( m => m.RechercheCommercialPageModule)
+  },
+  {
+    path: 'nouveau-commercial',
+    loadChildren: () => import('./pages/nouveau-commercial/nouveau-commercial.module').then( m => m.NouveauCommercialPageModule)
   }
+
 ];
 
 @NgModule({
