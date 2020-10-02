@@ -20,6 +20,26 @@ ion-card-content{
   padding-bottom: 5px;
 }
 
+mat-cell {
+  color:gray;
+}
+
+mat-header-row, mat-row, mat-footer-row {
+display: flex;
+border-width: 0;
+border-bottom-width: 0px;
+border-style: solid;
+align-items: center;
+box-sizing: border-box;
+}
+
+h3 {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
 hr.solid {
   border-top: 3px solid #bbb;
   width: 90%;
@@ -45,15 +65,11 @@ hr.solid {
   padding: 2px;
 }
 
-mat-cell {
-    color:gray;
+.Ref {
+  margin-top: 5px;
 }
 
-mat-header-row, mat-row, mat-footer-row {
-  display: flex;
-  border-width: 0;
-  border-bottom-width: 0px;
-  border-style: solid;
-  align-items: center;
-  box-sizing: border-box;
+.client{
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

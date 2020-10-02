@@ -97,6 +97,14 @@ const routes: Routes = [
   {
     path: 'nouveau-commercial',
     loadChildren: () => import('./pages/nouveau-commercial/nouveau-commercial.module').then( m => m.NouveauCommercialPageModule)
+  },
+  {
+    path: 'nouveau-composant',
+    loadChildren: () => import('./pages/nouveau-composant/nouveau-composant.module').then( m => m.NouveauComposantPageModule)
+  },
+  {
+    path: 'nouveau-module',
+    loadChildren: () => import('./pages/nouveau-module/nouveau-module.module').then( m => m.NouveauModulePageModule)
   }
 
 ];
