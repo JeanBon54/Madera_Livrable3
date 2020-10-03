@@ -1,12 +1,6 @@
 // HAUT DE LA PAGE
-ion-datetime{
-
-  padding-top: 10px;
-
-}
-
 ion-card{
-  border: 3px solid #bbb;
+  border: 2px solid #bbb;
   padding-bottom: 5px;
 }
 
@@ -19,6 +13,17 @@ ion-card-content{
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+ion-item{
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+ion-input {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 
 mat-cell {
   color:gray;
@@ -39,9 +44,13 @@ h3 {
   font-size: 20px;
 }
 
+.dateItem{
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
 
 hr.solid {
-  border-top: 3px solid #bbb;
+  border-top: 2px solid #bbb;
   width: 90%;
   margin-top: 5px;
   margin-bottom: 5px;

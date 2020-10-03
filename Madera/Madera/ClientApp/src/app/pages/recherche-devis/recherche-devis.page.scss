@@ -6,7 +6,7 @@ ion-datetime{
 }
 
 ion-card{
-  border: 3px solid #707070;
+  border: 2px solid #bbb;
   padding-bottom: 5px;
 }
 
@@ -21,11 +21,11 @@ ion-card-content{
 }
 
 hr.solid {
-    border-top: 3px solid #707070;
-    width: 90%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
+  border-top: 2px solid #bbb;
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 .container-image {
     display: flex;
@@ -35,3 +35,8 @@ hr.solid {
     padding-top: 7px;
   }
 
+  h3 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+  }

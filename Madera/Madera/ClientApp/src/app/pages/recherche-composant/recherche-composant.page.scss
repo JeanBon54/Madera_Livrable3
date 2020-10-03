@@ -1,6 +1,6 @@
 
 hr.solid {
-    border-top: 3px solid #bbb;
+    border-top: 2px solid #bbb;
     width: 90%;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -19,7 +19,7 @@ ion-button {
   }
 
   ion-card{
-    border: 3px solid #bbb;
+    border: 2px solid #bbb;
     padding-bottom: 5px;
   }
   
@@ -31,4 +31,10 @@ ion-button {
   ion-card-content{
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+
+  h3 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 20px;
   }

@@ -13,10 +13,14 @@
             <ion-grid>
                 <ion-row>
                     <ion-col>
-                        <ion-input class="Ref" placeholder="Référence"></ion-input>
-                        <ion-input class="client" placeholder="Client"></ion-input>
+                        <mat-form-field>
+                            <!-- <mat-label></mat-label> -->
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Référence" #input>
+                        </mat-form-field>
+                        <ion-input placeholder="Client"></ion-input>
                       </ion-col>
                   <ion-col>
+                    <div class="droite">
                     <ion-item > 
                         <ion-label>Etat</ion-label>
                         <ion-select placeholder="Sélection">
@@ -24,16 +28,17 @@
                           <ion-select-option value="m">Male</ion-select-option>
                         </ion-select>
                       </ion-item>
-                      <ion-item >
-                        <ion-label>Date de création</ion-label>
-                        <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
-                      </ion-item>
+                      <div class="dateItem">
+                        <ion-item >
+                            <ion-label>Date de création</ion-label>
+                            <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
+                          </ion-item>
+                      </div>
 
+                    </div>
 
                   </ion-col>
-        
                 </ion-row>
-
               </ion-grid>
             <div class="container-image">
                 <div class="enregistrer">
@@ -47,11 +52,7 @@
                 <ion-grid style="display: flex; flex-direction: column; align-items: center">
                     <ion-col size="11">
             
-                        <mat-form-field>
-                            <mat-label>Filter</mat-label>
-                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-                        </mat-form-field>
-            
+
                         <div class="mat-elevation-z8">
                             <table mat-table [dataSource]="dataSource" matSort>
             
