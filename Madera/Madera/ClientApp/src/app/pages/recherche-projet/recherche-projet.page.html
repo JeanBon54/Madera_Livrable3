@@ -12,15 +12,13 @@
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                    <ion-col>
+                    <ion-col>    
                         <mat-form-field>
-                            <!-- <mat-label></mat-label> -->
                             <input matInput (keyup)="applyFilter($event)" placeholder="Référence" #input>
                         </mat-form-field>
-                        <ion-input placeholder="Client"></ion-input>
+                        <ion-input class="client" placeholder="Client"></ion-input>
                       </ion-col>
                   <ion-col>
-                    <div class="droite">
                     <ion-item > 
                         <ion-label>Etat</ion-label>
                         <ion-select placeholder="Sélection">
@@ -28,17 +26,16 @@
                           <ion-select-option value="m">Male</ion-select-option>
                         </ion-select>
                       </ion-item>
-                      <div class="dateItem">
-                        <ion-item >
-                            <ion-label>Date de création</ion-label>
-                            <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
-                          </ion-item>
-                      </div>
+                      <ion-item >
+                        <ion-label>Date de création</ion-label>
+                        <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
+                      </ion-item>
 
-                    </div>
 
                   </ion-col>
+        
                 </ion-row>
+
               </ion-grid>
             <div class="container-image">
                 <div class="enregistrer">
@@ -50,9 +47,7 @@
     <ion-card>
             <ion-card-content>
                 <ion-grid style="display: flex; flex-direction: column; align-items: center">
-                    <ion-col size="11">
-            
-
+                    <ion-col size="11">     
                         <div class="mat-elevation-z8">
                             <table mat-table [dataSource]="dataSource" matSort>
             
