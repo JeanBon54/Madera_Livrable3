@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>nouveau-projet</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header>-->
+<!--<app-header></app-header>-->
+<app-header-menu></app-header-menu>
+<!--</ion-header>-->
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+         <h3>Création d'un projet</h3>   
+        </ion-card-header>
+        <hr class="solid">
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-input placeholder="Client"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                      <ion-input placeholder="Nom du projet"></ion-input>
+                    </ion-col>
+                  </ion-row>
+              </ion-grid>
 
+        </ion-card-content>
+    </ion-card>
 </ion-content>
+    <!--<ion-footer>-->
+      <app-footer></app-footer>
+      <!--</ion-footer>-->
