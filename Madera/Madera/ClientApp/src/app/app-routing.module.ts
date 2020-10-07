@@ -105,6 +105,14 @@ const routes: Routes = [
   {
     path: 'nouveau-module',
     loadChildren: () => import('./pages/nouveau-module/nouveau-module.module').then( m => m.NouveauModulePageModule)
+  },
+  {
+    path: 'nouvelle-gamme',
+    loadChildren: () => import('./pages/nouvelle-gamme/nouvelle-gamme.module').then( m => m.NouvelleGammePageModule)
+  },
+  {
+    path: 'nouvelle-famille-composant',
+    loadChildren: () => import('./pages/nouvelle-famille-composant/nouvelle-famille-composant.module').then( m => m.NouvelleFamilleComposantPageModule)
   }
 
 ];

@@ -4,19 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { NouveauModulePageRoutingModule } from './nouveau-module-routing.module';
+import { NouvelleFamilleComposantPageRoutingModule } from './nouvelle-famille-composant-routing.module';
+
+import { NouvelleFamilleComposantPage } from './nouvelle-famille-composant.page';
 import { HeaderPage } from '../header/header.page';
 import { HeaderMenuPage } from '../header-menu/header-menu.page';
 import { FooterPage } from '../footer/footer.page';
-import { NouveauModulePage } from './nouveau-module.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NouveauModulePageRoutingModule
+    NouvelleFamilleComposantPageRoutingModule
   ],
-  declarations: [NouveauModulePage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [NouvelleFamilleComposantPage, HeaderPage, FooterPage, HeaderMenuPage]
 })
-export class NouveauModulePageModule {}
+export class NouvelleFamilleComposantPageModule {}
