@@ -1,39 +1,20 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/recherche-client/recherche-client.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/AppDbContext.cs">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/recherche-client/recherche-client.page.html" Line="14" Column="21" />
-      <File FileName="Madera/ClientApp/src/app/pages/recherche-client/recherche-client.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/recherche-client/recherche-client-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="14" Column="21" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.spec.ts" Line="1" Column="1" />
+      <File FileName="Madera/Startup.cs" Line="1" Column="1" />
+      <File FileName="Madera/Models/AppDbContext.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="connexion" expanded="True">
-                        <Node name="connexion.page.ts" expanded="True" />
-                      </Node>
-                      <Node name="recherche-client" expanded="True">
-                        <Node name="recherche-client.page.spec.ts" selected="True" />
-                      </Node>
-                      <Node name="recherche-projet" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
+              <Node name="Models" expanded="True">
+                <Node name="AppDbContext.cs" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
