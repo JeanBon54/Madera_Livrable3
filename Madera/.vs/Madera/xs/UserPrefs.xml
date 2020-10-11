@@ -1,17 +1,27 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/AppDbContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Commercial.cs">
     <Files>
-      <File FileName="Madera/Startup.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/AppDbContext.cs" Line="12" Column="1" />
+      <File FileName="Madera/Startup.cs" Line="33" Column="13" />
+      <File FileName="Madera/Models/AppDbContext.cs" />
+      <File FileName="Madera/appsettings.json" />
+      <File FileName="Madera/Models/Commercial.cs" Line="22" Column="6" />
+      <File FileName="Madera/Views/All.cshtml" />
+      <File FileName="Madera/Controllers/commercialController.cs" Line="36" Column="1" />
+      <File FileName="Madera/DefaultContext.cs" />
+      <File FileName="Madera/Views/Index.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="AppDbContext.cs" selected="True" />
+                <Node name="Commercial.cs" selected="True" />
               </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -21,8 +31,12 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="35" column="1" />
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="34" column="1" />
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="36" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

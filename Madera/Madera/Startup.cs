@@ -23,7 +23,17 @@ namespace Madera
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")));
+            string connectionString =
+            this.Configuration.GetConnectionString("DefaultContext");
+
+            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")));
+
+            services.AddDbContext<DefaultContext>(
+            options => options.UseSqlServer(connectionString),
+            ServiceLifetime.Scoped);
+
+
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -48,12 +58,17 @@ namespace Madera
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+
+
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
             }
 
             app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
