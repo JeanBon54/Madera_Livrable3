@@ -16,6 +16,7 @@ namespace Madera
 
 
         public DbSet<Commercial> Commercial { get; set; }
+        public DbSet<Client> Client { get; set; }
 
         //public DbSet<Utilisateur> Utilisateurs { }
 
