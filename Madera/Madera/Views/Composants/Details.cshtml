@@ -1,0 +1,42 @@
+﻿@model Madera.Models.Composant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Composant</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LIBELLE_COMPOSANT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LIBELLE_COMPOSANT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NATURE_COMPOSANT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NATURE_COMPOSANT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CARACT_COMPOSANT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CARACT_COMPOSANT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UNITE_USAGE_COMPOSANT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UNITE_USAGE_COMPOSANT)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID_COMPOSANT">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
