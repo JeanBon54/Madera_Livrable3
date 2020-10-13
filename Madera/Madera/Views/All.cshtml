@@ -22,3 +22,9 @@
 {
     <h2> @projet.Libelle  @projet.Nom</h2>
 }
+
+
+@foreach (var composant in Model)
+{
+    <h2> @composant.Libelle  @composant.Nature</h2>
+}
