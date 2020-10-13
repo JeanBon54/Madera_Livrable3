@@ -17,3 +17,8 @@
 {
     <h2> @client.Prenom  @client.Nom</h2>
 }
+
+@foreach (var projet in Model)
+{
+    <h2> @projet.Libelle  @projet.Nom</h2>
+}

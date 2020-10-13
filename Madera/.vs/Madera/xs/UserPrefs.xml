@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/commercialController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/projetController.cs">
     <Files>
-      <File FileName="Madera/Models/Commercial.cs" Line="9" Column="1" />
-      <File FileName="Madera/Controllers/commercialController.cs" Line="38" Column="1" />
-      <File FileName="Madera/Controllers/ClientController.cs" Line="35" Column="1" />
-      <File FileName="Madera/DefaultContext.cs" Line="25" Column="1" />
-      <File FileName="Madera/Models/Client.cs" Line="24" Column="1" />
+      <File FileName="Madera/Models/Commercial.cs" Line="13" Column="1" />
+      <File FileName="Madera/Controllers/commercialController.cs" Line="41" Column="1" />
+      <File FileName="Madera/Controllers/ClientController.cs" />
+      <File FileName="Madera/DefaultContext.cs" />
+      <File FileName="Madera/Models/Client.cs" Line="9" Column="1" />
       <File FileName="Madera/Views/All.cshtml" Line="19" Column="2" />
+      <File FileName="Madera/Program.cs" Line="1" Column="1" />
+      <File FileName="Madera/Models/Projet.cs" Line="18" Column="1" />
+      <File FileName="Madera/Controllers/projetController.cs" Line="6" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +18,7 @@
             <Node name="Madera" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True">
-                <Node name="commercialController.cs" selected="True" />
+                <Node name="projetController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
