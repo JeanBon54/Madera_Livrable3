@@ -5,12 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Madera;
 using Madera.Models;
+using System.Collections;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Madera.Controllers
 {
-    public class commercialController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class commercialController : ControllerBase
     {
 
         private readonly DefaultContext _context = null;
@@ -20,21 +23,17 @@ namespace Madera.Controllers
             this._context = context;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        [HttpGet]
+        public IEnumerable GetList()
         {
-            return View();
-        }
+            //this.ViewBag.Titre = "Liste des utilisateus";
+            List<Composant> composantListe = new List<Composant>();
 
-        public IActionResult All()
-        {
-            this.ViewBag.Titre = "Liste des utilisateus";
-            List<Commercial> commerciauxListe = new List<Commercial>();
+            var query = from COMPOSANT in _context.Composant
+                        select COMPOSANT;
+            //return View(query.ToList());
 
-            var query = from COMMERCIAL in _context.Commercial
-                        select COMMERCIAL;
-            return View(query.ToList());
-
+            return query.ToList();
         }
     }
 }

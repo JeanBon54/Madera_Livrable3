@@ -5,11 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Madera;
 using Madera.Models;
+using System.Collections;
 
 namespace Madera.Controllers
 {
-    public class composantController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class composantController : ControllerBase
     {
+
         private readonly DefaultContext _context = null;
 
         public composantController(DefaultContext context)
@@ -17,21 +21,17 @@ namespace Madera.Controllers
             this._context = context;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        [HttpGet]
+        public IEnumerable GetList()
         {
-            return View();
-        }
-
-        public IActionResult All()
-        {
-            this.ViewBag.Titre = "Liste des utilisateus";
+            //this.ViewBag.Titre = "Liste des utilisateus";
             List<Composant> composantListe = new List<Composant>();
 
             var query = from COMPOSANT in _context.Composant
                         select COMPOSANT;
-            return View(query.ToList());
+            //return View(query.ToList());
 
+            return query.ToList();
         }
     }
 }

@@ -15,6 +15,6 @@ namespace Madera.Models
         public String LIBELLE_COMPOSANT { get; set; }
         public String NATURE_COMPOSANT { get; set; }
         public String CARACT_COMPOSANT { get; set; }
-        public String UNITE_USAGE_COMPOSANT { get; set; }
+        public int UNITE_USAGE_COMPOSANT { get; set; }
     }
 }
