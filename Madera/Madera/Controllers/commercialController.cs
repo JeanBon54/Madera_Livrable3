@@ -27,10 +27,10 @@ namespace Madera.Controllers
         public IEnumerable GetList()
         {
             //this.ViewBag.Titre = "Liste des utilisateus";
-            List<Composant> composantListe = new List<Composant>();
+            List<Commercial> commercialListe = new List<Commercial>();
 
-            var query = from COMPOSANT in _context.Composant
-                        select COMPOSANT;
+            var query = from COMMERCIAL in _context.Commercial
+                        select COMMERCIAL;
             //return View(query.ToList());
 
             return query.ToList();
