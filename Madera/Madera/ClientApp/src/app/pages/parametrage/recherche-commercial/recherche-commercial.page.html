@@ -29,13 +29,15 @@
 
         </ion-card-content>
     </ion-card>
-    <ion-card *ngFor="let commercial of commercials">
+    <ion-card *ngFor="let commercial of commerciaux">
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
             <ion-card-content>
 
-            
+                <ion-item>
+                    <ion-label center text-center>{{commercial.commercial.NOM_COMMERCIAL}}</ion-label>
+                  </ion-item>
             </ion-card-content>
     </ion-card>
 </ion-content>

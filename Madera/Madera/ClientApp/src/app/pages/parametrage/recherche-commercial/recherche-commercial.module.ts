@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { HttpClientModule }    from '@angular/common/http';  
+
+
 import { RechercheCommercialPageRoutingModule } from './recherche-commercial-routing.module';
 
 import { RechercheCommercialPage } from './recherche-commercial.page';
@@ -13,6 +16,7 @@ import { RechercheCommercialPage } from './recherche-commercial.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,
     RechercheCommercialPageRoutingModule
   ],
   declarations: [RechercheCommercialPage]

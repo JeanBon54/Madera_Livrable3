@@ -3,35 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Madera;
 using Madera.Models;
+using System.Collections;
+using Microsoft.Extensions.Logging;
 
 namespace Madera.Controllers
 {
-    public class ClientController:Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class ClientController:ControllerBase
     {
-         private readonly DefaultContext _context = null;
+        private readonly DefaultContext _context = null;
+        private readonly ILogger<ClientController> _logger;
 
-        public ClientController(DefaultContext context)
+        public ClientController(ILogger<ClientController> logger)
         {
-            this._context = context;
+            _logger = logger;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        [HttpGet]
+        public IEnumerable GetList()
         {
-            return View();
-        }
+            using (DefaultContext db = new DefaultContext())
+            {
 
-        public IActionResult All()
-        {
-            this.ViewBag.Titre = "Liste des utilisateus";
-            List<Client> clientListe = new List<Client>();
+                var query = from Client in db.Set<Client>()
+                            select new
+                            {
+                                ClientId = Client.ID_CLIENT,
+                                ClientNom = Client.NOM_CLIENT,
+                                ClientPrenom = Client.PRENOM_CLIENT,
+                                ClientAdresse = Client.ADRESSE_CLIENT,
+                                ClientVille = Client.VILLE_CLIENT
+                            };
 
-            var query = from CLIENT in _context.Client
-                        select CLIENT;
-            return View(query.ToList());
 
+                return query.ToList();
+            }
         }
     }
 }
