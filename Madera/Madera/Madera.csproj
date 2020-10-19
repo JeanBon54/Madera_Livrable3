@@ -28,6 +28,19 @@
     <Content Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\pages\parametrage\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-commercial\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-composant\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-famille-composant\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-gamme\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-module\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-commercial\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-composant\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-module\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-famille-composant\" />
+    <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-gamme\" />
+  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
