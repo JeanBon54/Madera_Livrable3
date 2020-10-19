@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { RechercheClientPageRoutingModule } from './recherche-client-routing.module';
 
 import { RechercheClientPage } from './recherche-client.page';
+import { HeaderPage } from '../header/header.page';
+import { HeaderMenuPage } from '../header-menu/header-menu.page';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { RechercheClientPage } from './recherche-client.page';
     IonicModule,
     RechercheClientPageRoutingModule
   ],
-  declarations: [RechercheClientPage]
+  declarations: [RechercheClientPage, HeaderPage, FooterPage, HeaderMenuPage]
 })
 export class RechercheClientPageModule {}

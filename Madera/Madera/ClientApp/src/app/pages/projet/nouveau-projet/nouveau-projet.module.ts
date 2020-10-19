@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { NouveauProjetPageRoutingModule } from './nouveau-projet-routing.module';
-
+import { HeaderPage } from '../header/header.page';
+import { HeaderMenuPage } from '../header-menu/header-menu.page';
+import { FooterPage } from '../footer/footer.page';
 import { NouveauProjetPage } from './nouveau-projet.page';
 
 @NgModule({
@@ -15,6 +17,6 @@ import { NouveauProjetPage } from './nouveau-projet.page';
     IonicModule,
     NouveauProjetPageRoutingModule
   ],
-  declarations: [NouveauProjetPage]
+  declarations: [NouveauProjetPage, HeaderPage, FooterPage, HeaderMenuPage]
 })
 export class NouveauProjetPageModule {}

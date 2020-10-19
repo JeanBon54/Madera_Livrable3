@@ -1,9 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recherche-devis</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header>-->
+<!--<app-header></app-header>-->
+<app-header-menu></app-header-menu>
+<!--</ion-header>-->
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+         <h3>Rechercher devis</h3>   
+        </ion-card-header>
+        <hr class="solid">
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-input placeholder="Référence"></ion-input>
+                        <ion-input placeholder="Client"></ion-input>
+                      </ion-col>
+                  <ion-col>
+                    <ion-item > 
+                        <ion-label>Etat</ion-label>
+                        <ion-select placeholder="Sélection">
+                          <ion-select-option value="f">Female</ion-select-option>
+                          <ion-select-option value="m">Male</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label>Date de création</ion-label>
+                        <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
+                      </ion-item>
 
+
+                  </ion-col>
+        
+                </ion-row>
+
+              </ion-grid>
+            <div class="container-image">
+                <div class="enregistrer">
+                    <ion-button color="success">Rechercher</ion-button>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <h2>Resultat</h2>   
+           </ion-card-header>
+            <ion-card-content>
+            </ion-card-content>
+    </ion-card>
 </ion-content>
+
+<!--<ion-footer>-->
+<app-footer></app-footer>
+<!--</ion-footer>-->
