@@ -1,16 +1,8 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.spec.ts">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/app.component.ts" />
-      <File FileName="Madera/ClientApp/src/app/app.component.html" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="3" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.component.scss" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.scss" />
-      <File FileName="Madera/ClientApp/src/app/pages/recherche-projet/recherche-projet.page.html" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.spec.ts" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,14 +13,29 @@
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
-                      <Node name="projet" expanded="True">
-                        <Node name="recherche-projet" expanded="True" />
+                      <Node name="client" expanded="True">
+                        <Node name="recherche-client" expanded="True">
+                          <Node name="recherche-client.page.ts" expanded="True">
+                            <Node name="recherche-client.page.spec.ts" selected="True" />
+                          </Node>
+                        </Node>
                       </Node>
-                      <Node name="recherche-projet" selected="True" />
+                      <Node name="devis" expanded="True">
+                        <Node name="recherche-devis" expanded="True" />
+                      </Node>
+                      <Node name="menu" expanded="True">
+                        <Node name="menu-principal" expanded="True" />
+                      </Node>
+                      <Node name="parametrage" expanded="True">
+                        <Node name="nouveau-module" expanded="True" />
+                        <Node name="nouvelle-famille-composant" expanded="True" />
+                        <Node name="recherche-commercial" expanded="True" />
+                      </Node>
                     </Node>
                   </Node>
                 </Node>
               </Node>
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>

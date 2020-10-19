@@ -5,9 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheFamilleComposantPageRoutingModule } from './recherche-famille-composant-routing.module';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
+
 import { RechercheFamilleComposantPage } from './recherche-famille-composant.page';
 
 @NgModule({
@@ -17,6 +15,6 @@ import { RechercheFamilleComposantPage } from './recherche-famille-composant.pag
     IonicModule,
     RechercheFamilleComposantPageRoutingModule
   ],
-  declarations: [RechercheFamilleComposantPage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [RechercheFamilleComposantPage]
 })
 export class RechercheFamilleComposantPageModule {}

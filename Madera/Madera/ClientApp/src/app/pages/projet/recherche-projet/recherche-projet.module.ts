@@ -4,9 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { RechercheProjetPage } from './recherche-projet.page';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -17,6 +14,6 @@ import { FooterPage } from '../footer/footer.page';
   ],
    
       
-  declarations: [RechercheProjetPage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [RechercheProjetPage]
 })
 export class RechercheProjetPageModule {}

@@ -7,9 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NouvelleFamilleComposantPageRoutingModule } from './nouvelle-famille-composant-routing.module';
 
 import { NouvelleFamilleComposantPage } from './nouvelle-famille-composant.page';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
+
 
 @NgModule({
   imports: [
@@ -18,6 +16,6 @@ import { FooterPage } from '../footer/footer.page';
     IonicModule,
     NouvelleFamilleComposantPageRoutingModule
   ],
-  declarations: [NouvelleFamilleComposantPage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [NouvelleFamilleComposantPage]
 })
 export class NouvelleFamilleComposantPageModule {}

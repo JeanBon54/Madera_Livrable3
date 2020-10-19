@@ -5,9 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheComposantPageRoutingModule } from './recherche-composant-routing.module';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
+
 import { RechercheComposantPage } from './recherche-composant.page';
 
 @NgModule({
@@ -17,6 +15,6 @@ import { RechercheComposantPage } from './recherche-composant.page';
     IonicModule,
     RechercheComposantPageRoutingModule
   ],
-  declarations: [RechercheComposantPage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [RechercheComposantPage]
 })
 export class RechercheComposantPageModule {}

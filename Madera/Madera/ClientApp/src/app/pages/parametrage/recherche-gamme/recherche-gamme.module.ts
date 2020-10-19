@@ -5,9 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheGammePageRoutingModule } from './recherche-gamme-routing.module';
-import { HeaderPage } from '../header/header.page';
-import { HeaderMenuPage } from '../header-menu/header-menu.page';
-import { FooterPage } from '../footer/footer.page';
+
 import { RechercheGammePage } from './recherche-gamme.page';
 
 @NgModule({
@@ -17,6 +15,6 @@ import { RechercheGammePage } from './recherche-gamme.page';
     IonicModule,
     RechercheGammePageRoutingModule
   ],
-  declarations: [RechercheGammePage, HeaderPage, FooterPage, HeaderMenuPage]
+  declarations: [RechercheGammePage]
 })
 export class RechercheGammePageModule {}
