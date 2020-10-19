@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Madera;
 using Madera.Models;
 using System.Collections;
+using Microsoft.Extensions.Logging;
 
 namespace Madera.Controllers
 {
@@ -13,25 +14,32 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class composantController : ControllerBase
     {
+        private readonly ILogger<composantController> _logger;
 
-        private readonly DefaultContext _context = null;
-
-        public composantController(DefaultContext context)
+        public composantController(ILogger<composantController> logger)
         {
-            this._context = context;
+            _logger = logger;
         }
 
         [HttpGet]
         public IEnumerable GetList()
         {
-            //this.ViewBag.Titre = "Liste des utilisateus";
-            List<Composant> composantListe = new List<Composant>();
+            using (DefaultContext db = new DefaultContext())
+            {
 
-            var query = from COMPOSANT in _context.Composant
-                        select COMPOSANT;
-            //return View(query.ToList());
+                var query = from Composant in db.Set<Composant>()
+                            select new
+                            {
+                                ComposantId = Composant.ID_COMPOSANT,
+                                ComposantLibelle = Composant.LIBELLE_COMPOSANT,
+                                ComposantNature = Composant.NATURE_COMPOSANT,
+                                ComposantCaract = Composant.CARACT_COMPOSANT,
+                                ComposantUnite = Composant.UNITE_USAGE_COMPOSANT
+                            };
 
-            return query.ToList();
+
+                return query.ToList();
+            }
         }
     }
 }
