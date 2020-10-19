@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Madera;
 using Madera.Models;
 using System.Collections;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,25 +16,32 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class commercialController : ControllerBase
     {
+        private readonly ILogger<commercialController> _logger;
 
-        private readonly DefaultContext _context = null;
-
-        public commercialController (DefaultContext context)
+        public commercialController(ILogger<commercialController> logger)
         {
-            this._context = context;
+            _logger = logger;
         }
 
         [HttpGet]
         public IEnumerable GetList()
         {
-            //this.ViewBag.Titre = "Liste des utilisateus";
-            List<Commercial> commercialListe = new List<Commercial>();
+            using (DefaultContext db = new DefaultContext())
+            {
 
-            var query = from COMMERCIAL in _context.Commercial
-                        select COMMERCIAL;
-            //return View(query.ToList());
+                var query = from Commercial in db.Set<Commercial>()
+                            select new
+                            {
+                                CommercialId = Commercial.ID_COMMERCIAL,
+                                CommercialNom = Commercial.NOM_COMMERCIAL,
+                                CommercialPrenom = Commercial.PRENOM_COMMERCIAL,
+                                CommercialEmail = Commercial.EMAIL_COMMERCIAL,
+                                CommercialMDP = Commercial.MDP_COMMERCIAL
+                            };
 
-            return query.ToList();
+
+                return query.ToList();
+            }
         }
     }
 }

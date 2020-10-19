@@ -13,8 +13,8 @@ export class RechercheCommercialPage implements OnInit {
   public commerciaux: Commercial[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<any>(baseUrl + 'Commercial').subscribe(result => {
-      this.vehicules = result;
+    http.get<any>(baseUrl + 'commercial').subscribe(result => {
+      this.commerciaux = result;
     }, error => console.error(error));
   }
 

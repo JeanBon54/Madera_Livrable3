@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { HttpClientModule }    from '@angular/common/http';  
+
+
 import { RechercheCommercialPageRoutingModule } from './recherche-commercial-routing.module';
 import { HeaderPage } from '../header/header.page';
 import { HeaderMenuPage } from '../header-menu/header-menu.page';
@@ -15,6 +18,7 @@ import { RechercheCommercialPage } from './recherche-commercial.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,
     RechercheCommercialPageRoutingModule
   ],
   declarations: [RechercheCommercialPage, HeaderPage, FooterPage, HeaderMenuPage]

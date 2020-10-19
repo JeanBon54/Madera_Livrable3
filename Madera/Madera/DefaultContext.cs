@@ -6,12 +6,23 @@ namespace Madera
 {
     public class DefaultContext : DbContext
     {
-        public DefaultContext(DbContextOptions options) : base(options)
+
+        public DefaultContext()
         {
         }
 
-        protected DefaultContext()
+        public DefaultContext(DbContextOptions<DefaultContext> options)
+            : base(options)
         {
+        }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=kaktux.com;Database=master;User Id=sa;Password=Password7757");
+            }
         }
 
 
@@ -19,7 +30,6 @@ namespace Madera
         public DbSet<Client> Client { get; set; }
         public DbSet<Projet> Projet { get; set; }
         public DbSet<Composant> Composant { get; set; }
-        //public DbSet<Utilisateur> Utilisateurs { }
 
     }
 }
