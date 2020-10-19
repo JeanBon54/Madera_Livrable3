@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { MenuPrincipalPageRoutingModule } from './menu-principal-routing.module';
+import { MenuPrincipalPage } from './menu-principal.page';
 
-import { HeaderMenuPageRoutingModule } from './header-menu-routing.module';
-
-import { HeaderMenuPage } from './header-menu.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderMenuPageRoutingModule
+    MenuPrincipalPageRoutingModule
   ],
-  declarations: [HeaderMenuPage]
+  declarations: [MenuPrincipalPage]
 })
-export class HeaderMenuPageModule {}
+export class MenuPrincipalPageModule {}
