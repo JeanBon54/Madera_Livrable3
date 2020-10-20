@@ -39,7 +39,6 @@ namespace Madera.Controllers
                                 CommercialMDP = Commercial.MDP_COMMERCIAL
                             };
 
-
                 return query.ToList();
             }
         }
