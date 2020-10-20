@@ -1,34 +1,43 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/familleComposant.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet.page.ts">
     <Files>
-      <File FileName="Madera/Views/Composants/Index.cshtml" Line="1" Column="44" />
-      <File FileName="Madera/appsettings.json" />
-      <File FileName="Madera/Startup.cs" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" />
-      <File FileName="Madera/Controllers/commercialController.cs" Line="18" Column="6" />
-      <File FileName="Madera/Controllers/ClientController.cs" Line="45" Column="1" />
-      <File FileName="Madera/Models/Client.cs" Line="17" Column="69" />
-      <File FileName="Madera/DefaultContext.cs" />
-      <File FileName="Madera/Controllers/composantController.cs" Line="45" Column="2" />
-      <File FileName="Madera/Models/Composant.cs" Line="12" Column="1" />
-      <File FileName="Madera/Madera.csproj" Line="1" Column="1" />
-      <File FileName="Madera/Models/Devis.cs" Line="23" Column="1" />
-      <File FileName="Madera/Models/AppDbContext.cs" Line="1" Column="1" />
-      <File FileName="Madera/Controllers/devisController.cs" Line="10" Column="1" />
-      <File FileName="Madera/Models/Commercial.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/Module.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/Gamme.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/familleComposant.cs" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/client/nouveau-client/nouveau-client.page.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.scss" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="7" Column="71" />
+      <File FileName="Madera/ClientApp/src/app/pages/devis/gestion-devis/gestion-devis.page.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/devis/recherche-devis/recherche-devis.page.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/plan/gestion-modelisation/gestion-modelisation.page.ts" Line="6" Column="82" />
+      <File FileName="Madera/ClientApp/src/app/pages/plan/gestion-plan/gestion-plan.page.ts" Line="16" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/projet/nouveau-projet/nouveau-projet.page.spec.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/projet/nouveau-projet/nouveau-projet.page.ts" Line="6" Column="76" />
+      <File FileName="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet.page.ts" Line="6" Column="76" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="familleComposant.cs" selected="True" />
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="pages" expanded="True">
+                      <Node name="parametrage" expanded="True" />
+                      <Node name="plan" expanded="True">
+                        <Node name="gestion-modelisation" expanded="True" />
+                        <Node name="gestion-plan" expanded="True" />
+                      </Node>
+                      <Node name="projet" expanded="True">
+                        <Node name="gestion-projet" expanded="True">
+                          <Node name="gestion-projet.page.ts" selected="True" />
+                        </Node>
+                        <Node name="nouveau-projet" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
               </Node>
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
