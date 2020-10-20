@@ -14,7 +14,7 @@ export class ServiceService {
   }    
   getData(){  
        
-    return this.http.get('/api/Commercial');  //https://localhost:44352/ webapi host url  
+    return this.http.get('/Commercial');  //https://localhost:44352/ webapi host url  
   }  
   
 }

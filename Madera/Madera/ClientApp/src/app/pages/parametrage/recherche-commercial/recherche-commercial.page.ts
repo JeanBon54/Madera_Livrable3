@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ServiceService } from 'src/app/service.service';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ServiceService } from './../../../service.service'; 
 
 @Component({
   selector: 'app-recherche-commercial',
@@ -10,17 +11,20 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RechercheCommercialPage implements OnInit {
 
-  public commerciaux: Commercial[];
+  public commercial = [];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<any>(baseUrl + 'commercial').subscribe(result => {
-      this.commerciaux = result;
-    }, error => console.error(error));
+  constructor(private ServiceService: ServiceService) { }  
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
   }
-
-  ngOnInit() {
-  }
-
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.commercial = data;
+    })
+  }  
 
 
 }
