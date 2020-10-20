@@ -1,29 +1,26 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Madera.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/components/header/header.component.ts">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.ts" Line="11" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.spec.ts" />
-      <File FileName="Madera/Controllers/ClientController.cs" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.scss" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.html" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial-routing.module.ts" />
-      <File FileName="Madera/Madera.csproj" Line="39" Column="51" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.html" Line="19" Column="19" />
+      <File FileName="Madera/ClientApp/src/app/app.component.html" Line="33" Column="19" />
+      <File FileName="Madera/ClientApp/src/global.scss" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/index.html" Line="1" Column="2" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.scss" Line="49" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="127" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/components/header/header.component.spec.ts" Line="1" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/components/header-simple/header-simple.component.ts" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Madera" expanded="True" selected="True">
+          <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="parametrage" expanded="True">
-                        <Node name="nouveau-commercial" expanded="True" />
-                      </Node>
-                    </Node>
+                    <Node name="components" expanded="True" />
+                    <Node name="pages" expanded="True" />
                   </Node>
                 </Node>
               </Node>
