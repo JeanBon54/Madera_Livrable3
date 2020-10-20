@@ -14,6 +14,6 @@ export class ComposantWebServiceService {
   }
   getData() {
 
-    return this.http.get('/api/Composant');  //https://localhost:44352/ webapi host url  
+    return this.http.get('/Composant');  //https://localhost:44352/ webapi host url  
   }  
 }

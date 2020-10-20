@@ -26,12 +26,6 @@ export class RechercheCommercialPage implements OnInit {
     })
   }  
 
-
-
-
-
-
-
 }
 interface Commercial {
   ID_COMMERCIAL: number;

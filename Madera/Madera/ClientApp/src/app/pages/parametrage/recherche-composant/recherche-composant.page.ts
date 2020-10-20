@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ComposantWebServiceService } from './../../../WebServices/composant-web-service.service'; 
 @Component({
   selector: 'app-recherche-composant',
   templateUrl: './recherche-composant.page.html',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheComposantPage implements OnInit {
 
-  constructor() { }
+  public composant = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: ComposantWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
   }
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.composant = data;
+    })
+  }
+
+
+
 
 }
