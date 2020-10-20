@@ -20,7 +20,7 @@ const NAMES: string[] = [
 @Component({
   selector: 'app-recherche-projet',
   templateUrl: './recherche-projet.page.html',
-  styleUrls: ['./recherche-projet.page.scss','src/app/app.component.scss'],
+  styleUrls: ['./recherche-projet.page.scss','./../../../app.component.scss'],
 })
 
 

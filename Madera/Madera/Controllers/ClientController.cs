@@ -13,7 +13,6 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class ClientController:ControllerBase
     {
-        private readonly DefaultContext _context = null;
         private readonly ILogger<ClientController> _logger;
 
         public ClientController(ILogger<ClientController> logger)
