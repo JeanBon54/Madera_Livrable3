@@ -29,7 +29,11 @@ namespace Madera
         public DbSet<Commercial> Commercial { get; set; }
         public DbSet<Client> Client { get; set; }
         public DbSet<Projet> Projet { get; set; }
+        public DbSet<Devis> Devis { get; set; }
         public DbSet<Composant> Composant { get; set; }
+        public DbSet<Module> Module { get; set; }
+        public DbSet<Gamme> Gamme { get; set; }
+        public DbSet<familleComposant> famille_Composant { get; set; }
 
     }
 }

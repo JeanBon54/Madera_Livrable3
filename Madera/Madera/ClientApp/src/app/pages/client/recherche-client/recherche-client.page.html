@@ -28,6 +28,34 @@
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>Nom</ion-col>
+                    <ion-col>Prenom</ion-col>
+                    <ion-col>Date-création</ion-col>
+                    <ion-col>Date-modification</ion-col>
+                    <ion-col>Commercial</ion-col>
+                    <ion-col>Actif</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let cli of client">
+                    <ion-col>
+                        <ion-label center text-center>{{cli.clientNom}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{cli.clientPrenom}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{cli.clientDateCrea}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{cli.clientDateModif}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{cli.clientNom}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
     </ion-card>
+

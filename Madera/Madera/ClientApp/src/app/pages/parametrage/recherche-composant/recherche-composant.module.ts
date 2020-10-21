@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheComposantPageRoutingModule } from './recherche-composant-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
+import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service'; 
 import { RechercheComposantPage } from './recherche-composant.page';
 
 @NgModule({
@@ -13,8 +15,10 @@ import { RechercheComposantPage } from './recherche-composant.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,
     RechercheComposantPageRoutingModule
   ],
-  declarations: [RechercheComposantPage]
+  declarations: [RechercheComposantPage],
+  providers: [ComposantWebServiceService]
 })
 export class RechercheComposantPageModule {}

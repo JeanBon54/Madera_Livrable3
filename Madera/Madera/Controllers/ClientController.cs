@@ -33,7 +33,9 @@ namespace Madera.Controllers
                                 ClientNom = Client.NOM_CLIENT,
                                 ClientPrenom = Client.PRENOM_CLIENT,
                                 ClientAdresse = Client.ADRESSE_CLIENT,
-                                ClientVille = Client.VILLE_CLIENT
+                                ClientVille = Client.VILLE_CLIENT,
+                                ClientDateCrea = Client.DATE_CREATION_CLIENT,
+                                ClientDateModif = Client.DATE_MODIFICATION_CLIENT,
                             };
 
 

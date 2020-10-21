@@ -41,6 +41,25 @@
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>Nom</ion-col>
+                    <ion-col>Prenom</ion-col>
+                    <ion-col> Mail</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let dev of devis">
+                    <ion-col>
+                        <ion-label center text-center>{{dev.devisLibelle}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{dev.devisEtat}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{dev.devisPrixTTC}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
     </ion-card>
+

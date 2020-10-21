@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service';  
 @Component({
   selector: 'app-recherche-composant',
   templateUrl: './recherche-composant.page.html',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheComposantPage implements OnInit {
 
-  constructor() { }
+  public composant = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: ComposantWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
   }
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.composant = data;
+    })
+  }
+
+
+
 
 }

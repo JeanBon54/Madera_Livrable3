@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FamilleComposantWebServiceService } from './../../../webServices/famille-composant-web-service.service'; 
 
 @Component({
   selector: 'app-recherche-famille-composant',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheFamilleComposantPage implements OnInit {
 
-  constructor() { }
+  public familleComposant = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: FamilleComposantWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
+  }
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.familleComposant = data;
+    })
   }
 
 }

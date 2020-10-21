@@ -28,6 +28,20 @@
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>Nature</ion-col>
+                    <ion-col>Caractéristiques</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let fam of familleComposant">
+                    <ion-col>
+                        <ion-label center text-center>{{fam.familleComposantId}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{fam.familleComposantLibelle}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
     </ion-card>

@@ -24,14 +24,32 @@
 
         </ion-card-content>
     </ion-card>
-    <ion-card *ngFor="let commercial of commerciaux">
+    <ion-card>
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
+        <ion-card-content>
+            <ion-grid >
+                <ion-row>
+                    <ion-col>Nom</ion-col>
+                    <ion-col>Prenom</ion-col>
+                    <ion-col> Mail</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let com of commercial">
+                    <ion-col>
+                        <ion-label center text-center>{{com.commercialId}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{com.commercialNom}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{com.commercialEmail}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-                <ion-item>
-                    <ion-label center text-center>{{commercial.commercial.NOM_COMMERCIAL}}</ion-label>
-                  </ion-item>
-            </ion-card-content>
+
+
+
+        </ion-card-content>
     </ion-card>

@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { RechercheModulePageRoutingModule } from './recherche-module-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ModuleWebServiceService } from './../../../webServices/module-web-service.service';  
 import { RechercheModulePage } from './recherche-module.page';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RechercheModulePage } from './recherche-module.page';
     IonicModule,
     RechercheModulePageRoutingModule
   ],
-  declarations: [RechercheModulePage]
+  declarations: [RechercheModulePage],
+  providers: [ModuleWebServiceService]
 })
 export class RechercheModulePageModule {}
