@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { HttpClientModule }    from '@angular/common/http';  
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import {ServiceService} from './service.service';
 
 import { MatPaginator } from '@angular/material/paginator';
@@ -19,7 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule],
   providers: [
     StatusBar,
     ServiceService,

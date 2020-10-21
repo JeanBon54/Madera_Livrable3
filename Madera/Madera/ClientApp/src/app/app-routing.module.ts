@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ConnexionPage } from './pages/connexion/connexion.page';
 import { MenuPrincipalPage } from './pages/menu/menu-principal/menu-principal.page';
 import { RechercheProjetPage } from './pages/projet/recherche-projet/recherche-projet.page';
+import { NouveauProjetPage } from './pages/projet/nouveau-projet/nouveau-projet.page';
 
 const routerConfig: Routes = [
   {
@@ -20,6 +21,10 @@ const routerConfig: Routes = [
   {
     path: 'recherche-projet',
     component: RechercheProjetPage
+  },
+  {
+    path: 'nouveau-projet',
+    component: NouveauProjetPage
   },
   {
     path: 'recherche-devis',
