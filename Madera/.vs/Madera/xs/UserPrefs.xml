@@ -1,33 +1,9 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/parametrage/recherche-commercial/recherche-commercial.page.html">
-    <Files>
-      <File FileName="Madera/Controllers/commercialController.cs" Line="42" Column="39" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-commercial/recherche-commercial.page.html" Line="55" Column="15" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-commercial/recherche-commercial.page.ts" />
-      <File FileName="Madera/Models/Commercial.cs" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Madera" expanded="True">
-            <Node name="Madera" expanded="True">
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="parametrage" expanded="True">
-                        <Node name="recherche-commercial" expanded="True" />
-                      </Node>
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="commercialController.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="Madera" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -42,9 +18,7 @@
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Views/Composants/Index.cshtml" relfile="Madera/Views/Composants/Index.cshtml" line="31" column="1" />
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.html" relfile="Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.html" line="32" column="1" />
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.ts" relfile="Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.ts" line="13" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ClientController.cs" relfile="Madera/Controllers/ClientController.cs" line="40" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/composantController.cs" relfile="Madera/Controllers/composantController.cs" line="41" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ClientController.cs" relfile="Madera/Controllers/ClientController.cs" line="41" column="1" />
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/familleComposantController.cs" relfile="Madera/Controllers/familleComposantController.cs" line="40" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

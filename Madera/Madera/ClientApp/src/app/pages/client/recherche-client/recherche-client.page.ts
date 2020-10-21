@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
 
 @Component({
   selector: 'app-recherche-client',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheClientPage implements OnInit {
 
-  constructor() { }
+  public client = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: ClientWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
   }
-
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.client = data;
+    })
+  }
 }

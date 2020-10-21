@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { DevisWebServiceService } from './../../../webServices/devis-web-service.service'; 
+
 import { RechercheDevisPageRoutingModule } from './recherche-devis-routing.module';
 
 import { RechercheDevisPage } from './recherche-devis.page';
@@ -15,6 +19,7 @@ import { RechercheDevisPage } from './recherche-devis.page';
     IonicModule,
     RechercheDevisPageRoutingModule
   ],
-  declarations: [RechercheDevisPage]
+  declarations: [RechercheDevisPage],
+  providers: [DevisWebServiceService]
 })
 export class RechercheDevisPageModule {}

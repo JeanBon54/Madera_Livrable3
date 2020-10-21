@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HttpClientModule }    from '@angular/common/http';  
 
-import { ServiceService } from './../../../service.service'; 
+import { CommercialWebServiceService } from './../../../webServices/commercial-web-service.service'; 
 
 import { RechercheCommercialPageRoutingModule } from './recherche-commercial-routing.module';
 
@@ -21,6 +21,6 @@ import { RechercheCommercialPage } from './recherche-commercial.page';
     RechercheCommercialPageRoutingModule
   ],
   declarations: [RechercheCommercialPage],
-  providers: [ServiceService]
+  providers: [CommercialWebServiceService]
 })
 export class RechercheCommercialPageModule {}

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ServiceService } from './../../../service.service'; 
+import { CommercialWebServiceService } from './../../../webServices/commercial-web-service.service';  
 
 @Component({
   selector: 'app-recherche-commercial',
@@ -13,7 +13,7 @@ export class RechercheCommercialPage implements OnInit {
 
   public commercial = [];
 
-  constructor(private ServiceService: ServiceService) { }  
+  constructor(private ServiceService: CommercialWebServiceService) { }  
   data: any;
 
   ngOnInit(): void {

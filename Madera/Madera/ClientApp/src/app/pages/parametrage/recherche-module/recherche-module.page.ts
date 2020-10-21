@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+import { ModuleWebServiceService } from './../../../webServices/module-web-service.service';  
 @Component({
   selector: 'app-recherche-module',
   templateUrl: './recherche-module.page.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheModulePage implements OnInit {
 
-  constructor() { }
+  public module = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: ModuleWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
   }
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.module = data;
+    })
+  }
+
 
 }

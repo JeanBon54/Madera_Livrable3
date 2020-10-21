@@ -6,6 +6,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { RechercheClientPageRoutingModule } from './recherche-client-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
+
 import { RechercheClientPage } from './recherche-client.page';
 
 
@@ -14,8 +18,10 @@ import { RechercheClientPage } from './recherche-client.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,
     RechercheClientPageRoutingModule
   ],
-  declarations: [RechercheClientPage]
+  declarations: [RechercheClientPage],
+  providers: [ClientWebServiceService]
 })
 export class RechercheClientPageModule {}

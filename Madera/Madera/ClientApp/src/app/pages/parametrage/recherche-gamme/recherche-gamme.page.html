@@ -1,7 +1,4 @@
-<!--<ion-header>-->
-<!--<app-header></app-header>-->
-<app-header-menu></app-header-menu>
-<!--</ion-header>-->
+
 
 <ion-content>
     <ion-card>
@@ -33,11 +30,22 @@
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>Nature</ion-col>
+                    <ion-col>Caractéristiques</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let gam of gamme">
+                    <ion-col>
+                        <ion-label center text-center>{{gam.gammeLibelle}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{gam.gammeType}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
     </ion-card>
 </ion-content>
 
-<!--<ion-footer>-->
-<app-footer></app-footer>
-<!--</ion-footer>-->

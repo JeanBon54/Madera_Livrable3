@@ -34,7 +34,7 @@ namespace Madera.Controllers
                                 ComposantLibelle = Composant.LIBELLE_COMPOSANT,
                                 ComposantNature = Composant.NATURE_COMPOSANT,
                                 ComposantCaract = Composant.CARACT_COMPOSANT,
-                                ComposantUnite = Composant.UNITE_USAGE_COMPOSANT
+                                //ComposantUnite = Composant.UNITE_USAGE_COMPOSANT
                             };
 
 

@@ -33,8 +33,22 @@
         <ion-card-header>
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>Nature</ion-col>
+                    <ion-col>Caractéristiques</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let mod of module">
+                    <ion-col>
+                        <ion-label center text-center>{{mod.moduleLibelle}}</ion-label>
+                    </ion-col>
+                    <ion-col>
+                        <ion-label center text-center>{{mod.gammeType}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
     </ion-card>
 </ion-content>
 

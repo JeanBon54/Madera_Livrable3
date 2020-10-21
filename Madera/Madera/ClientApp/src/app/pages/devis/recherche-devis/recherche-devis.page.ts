@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { DevisWebServiceService } from './../../../webServices/devis-web-service.service'; 
+
 @Component({
   selector: 'app-recherche-devis',
   templateUrl: './recherche-devis.page.html',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheDevisPage implements OnInit {
 
-  constructor() { }
+  public devis = [];
 
-  ngOnInit() {
+  constructor(private ServiceService: DevisWebServiceService) { }
+  data: any;
+
+  ngOnInit(): void {
+    this.getdata();
+
+  }
+  getdata() {
+    this.ServiceService.getData().subscribe((data: any[]) => {
+      this.devis = data;
+    })
   }
 
 }
