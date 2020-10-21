@@ -9,7 +9,7 @@ const routerConfig: Routes = [
   {
     path: '',
     component: MenuPrincipalPage
-  },
+  },  
   {
     path: 'menu-principal',
     component: MenuPrincipalPage

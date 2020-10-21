@@ -6,8 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { ConnexionPageRoutingModule } from './connexion-routing.module';
 import { ConnexionPage } from './connexion.page';
-import { HeaderComponent } from '../../components/header/header.component';
-
 
 @NgModule({
   imports: [
@@ -16,6 +14,6 @@ import { HeaderComponent } from '../../components/header/header.component';
     IonicModule,
     ConnexionPageRoutingModule
   ],
-  declarations: [ConnexionPage,HeaderComponent]
+  declarations: [ConnexionPage]
 })
 export class ConnexionPageModule {}
