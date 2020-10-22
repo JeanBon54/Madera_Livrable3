@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/devis/recherche-devis/recherche-devis.page.html">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/pages/devis/recherche-devis/recherche-devis.page.html" Line="24" Column="110" />
-      <File FileName="Madera/ClientApp/src/app/pages/client/recherche-client/recherche-client.page.html" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" Line="26" Column="110" />
+      <File FileName="Madera/ClientApp/src/app/pages/devis/recherche-devis/recherche-devis.page.html" Line="66" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="158" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,15 +12,8 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="devis" expanded="True" />
-                      <Node name="parametrage" expanded="True" />
-                      <Node name="projet" expanded="True">
-                        <Node name="recherche-projet" expanded="True">
-                          <Node name="recherche-projet.page.html" selected="True" />
-                        </Node>
-                      </Node>
-                    </Node>
+                    <Node name="pages" expanded="True" />
+                    <Node name="app.component.scss" selected="True" />
                   </Node>
                 </Node>
               </Node>

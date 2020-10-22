@@ -1,14 +1,21 @@
 // HAUT DE LA PAGE
   ion-datetime{
-
     padding-top: 10px;
   }
   
+  ion-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   ion-card{
     border: 3px solid #bbb;
     padding-bottom: 5px;
   }
   
+
   ion-card-header{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -109,6 +116,19 @@
   width: 76px;
 }
 
+.nouveau-module {
+  width: 206px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+
+.retour-btn{
+  width: 206px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
 .recherche-devis {
   height: 70px;
   width: 76px;
@@ -146,16 +166,27 @@ ion-toolbar {
 // Footer
 .footer {
   background-color: #4E71BE;
-  //text-align: center;
+  text-align: center;
   border-radius: 25px 25px 0px 0px;
   height: 40px;
   //height: 60px; //si le footer a des btn
   padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-p {
+.footer p {
   color: white;
 }
+
+
+.footer-btn {
+  height: 60px;
+  text-align: center;
+    padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
 
 .footer-md::before {
   background-image: none;
