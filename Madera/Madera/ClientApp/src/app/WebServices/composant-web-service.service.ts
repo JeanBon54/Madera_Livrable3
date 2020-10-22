@@ -13,7 +13,9 @@ export class ComposantWebServiceService {
     })
   }
   getData() {
-
     return this.http.get('/Composant');  
-  }  
+  }
+  postData(formData) {
+    return this.http.post('/Composant', formData);
+  } 
 }

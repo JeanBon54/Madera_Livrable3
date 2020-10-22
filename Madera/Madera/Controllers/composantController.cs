@@ -14,32 +14,19 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class composantController : ControllerBase
     {
-        private readonly ILogger<composantController> _logger;
 
-        public composantController(ILogger<composantController> logger)
+        readonly DefaultContext compoDetails;
+        public composantController(DefaultContext composantContext)
         {
-            _logger = logger;
+            compoDetails = composantContext;
         }
 
         [HttpGet]
-        public IEnumerable GetList()
+        public IEnumerable<Composant> Get()
         {
-            using (DefaultContext db = new DefaultContext())
-            {
-
-                var query = from Composant in db.Set<Composant>()
-                            select new
-                            {
-                                ComposantId = Composant.ID_COMPOSANT,
-                                ComposantLibelle = Composant.LIBELLE_COMPOSANT,
-                                ComposantNature = Composant.NATURE_COMPOSANT,
-                                ComposantCaract = Composant.CARACT_COMPOSANT,
-                                //ComposantUnite = Composant.UNITE_USAGE_COMPOSANT
-                            };
-
-
-                return query.ToList();
-            }
+            var data = compoDetails.Composant.ToList();
+            return data;
         }
+
     }
 }
