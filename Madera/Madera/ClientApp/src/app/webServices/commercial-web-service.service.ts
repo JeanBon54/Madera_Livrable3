@@ -16,5 +16,8 @@ export class CommercialWebServiceService {
 
     return this.http.get('/Commercial');  
   }  
+  postData(formData) {
+    return this.http.post('/Commercial', formData);
+  } 
 
 }

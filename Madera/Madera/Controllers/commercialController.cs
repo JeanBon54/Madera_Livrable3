@@ -16,31 +16,27 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class commercialController : ControllerBase
     {
-        private readonly ILogger<commercialController> _logger;
 
-        public commercialController(ILogger<commercialController> logger)
+        readonly DefaultContext commerDetails;
+        public commercialController(DefaultContext commerContext)
         {
-            _logger = logger;
+            commerDetails = commerContext;
         }
 
         [HttpGet]
-        public IEnumerable GetList()
+        public IEnumerable<Composant> Get()
         {
-            using (DefaultContext db = new DefaultContext())
-            {
-
-                var query = from Commercial in db.Set<Commercial>()
-                            select new
-                            {
-                                CommercialId = Commercial.ID_COMMERCIAL,
-                                CommercialNom = Commercial.NOM_COMMERCIAL,
-                                CommercialPrenom = Commercial.PRENOM_COMMERCIAL,
-                                CommercialEmail = Commercial.EMAIL_COMMERCIAL,
-                                CommercialMDP = Commercial.MDP_COMMERCIAL
-                            };
-
-                return query.ToList();
-            }
+            var data = commerDetails.Composant.ToList();
+            return data;
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Composant obj)
+        {
+            var data = commerDetails.Composant.Add(obj);
+            commerDetails.SaveChanges();
+            return Ok();
+        }
+
     }
 }
