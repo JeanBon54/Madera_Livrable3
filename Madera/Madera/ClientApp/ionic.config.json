@@ -1,7 +1,8 @@
 {
   "name": "Madera",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

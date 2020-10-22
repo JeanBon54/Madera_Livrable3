@@ -1,44 +1,44 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/gammeController.cs">
     <Files>
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="20" Column="30" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="12" Column="7" />
-      <File FileName="Madera/ClientApp/src/app/app.component.html" Line="33" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/nouveau-projet/nouveau-projet.page.html" Line="7" Column="27" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" Line="7" Column="22" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.html" Line="64" Column="14" />
-      <File FileName="Madera/ClientApp/src/app/app.component.ts" Line="3" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts" Line="11" Column="15" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.html" Line="71" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.scss" Line="23" Column="20" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.scss" Line="36" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.ts" Line="42" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="162" Column="2" />
-      <File FileName="Madera/ClientApp/src/app/service.service.ts" Line="19" Column="3" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" Line="16" Column="5" />
+      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="32" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/app.component.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/projet/nouveau-projet/nouveau-projet.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.html" />
+      <File FileName="Madera/ClientApp/src/app/app.component.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.html" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.scss" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.page.ts" />
+      <File FileName="Madera/ClientApp/src/app/app.component.scss" />
+      <File FileName="Madera/ClientApp/src/app/service.service.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/menu/parametrage/parametrage.module.ts" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.module.ts" />
+      <File FileName="Madera/Models/Commercial.cs" />
+      <File FileName="Madera/ClientApp/tsconfig.json" />
+      <File FileName="Madera/ClientApp/tsconfig.app.json" Line="11" Column="15" />
+      <File FileName="Madera/Controllers/gammeController.cs" Line="38" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Madera" expanded="True" selected="True">
+          <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True" />
                 </Node>
+                <Node name="tsconfig.json" expanded="True">
+                  <Node name="tsconfig.app.json" selected="True" />
+                </Node>
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
           </Node>
-=======
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Madera" expanded="True" selected="True" />
->>>>>>> modules-génériques
         </State>
       </Pad>
     </Pads>
@@ -46,19 +46,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-<<<<<<< HEAD
     <BreakpointStore />
-=======
-    <BreakpointStore>
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Models/Commercial.cs" relfile="Madera/Models/Commercial.cs" line="11" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/projetController.cs" relfile="Madera/Controllers/projetController.cs" line="32" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Views/Composants/Index.cshtml" relfile="Madera/Views/Composants/Index.cshtml" line="7" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Views/Composants/Index.cshtml" relfile="Madera/Views/Composants/Index.cshtml" line="31" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.html" relfile="Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.html" line="32" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.ts" relfile="Madera/ClientApp/src/app/pages/recherche-commercial/recherche-commercial.page.ts" line="13" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/familleComposantController.cs" relfile="Madera/Controllers/familleComposantController.cs" line="40" column="1" />
-    </BreakpointStore>
->>>>>>> modules-génériques
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
