@@ -30,7 +30,7 @@
     "angular-material-pagination": "^1.0.2",
     "angular-paginator": "^6.0.0",
     "materialize-css": "^1.0.0",
-    "rxjs": "~6.5.1",
+    "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
