@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,6 +31,7 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime DateArchivage { get; set; }
-        
+
+        public ICollection<Projet> Projets { get; set; }
     }
 }

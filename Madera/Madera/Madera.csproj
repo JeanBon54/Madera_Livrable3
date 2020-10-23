@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\devisController.cs" />
+    <Compile Remove="Models\Plan.cs" />
+    <Compile Remove="Models\Slot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="obj\Debug\netcoreapp3.1\Razor\Views\All.cshtml.g.cs" />

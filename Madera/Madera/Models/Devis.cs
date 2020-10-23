@@ -10,8 +10,8 @@ namespace Madera.Models
         [Key]
         public int ID { get; set; }
         public int PlanID { get; set; }
-        public String LibelleDevis { get; set; }
-        public String EtatDevis { get; set; }
+        public string LibelleDevis { get; set; }
+        public string EtatDevis { get; set; }
         public DateTime DateDebutDevis { get; set; }
         public decimal PrixTotalHtDevis { get; set; }
         public decimal PrixTotalTtcDevis { get; set; }

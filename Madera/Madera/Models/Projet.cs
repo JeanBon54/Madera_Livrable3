@@ -25,5 +25,8 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
+        public Client client;
+        public Commercial commercial;
+
     }
 }
