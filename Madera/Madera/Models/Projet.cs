@@ -8,10 +8,18 @@ namespace Madera.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int ID_PROJET { get; set; }
-        public int ID_COMMERCIAL { get; set; }
-        public int ID_CLIENT { get; set; }
-        public String LIBELLE_PROJET { get; set; }
-        public String NOM_PROJET { get; set; }
+        public int ID { get; set; }
+        public int CommercialID { get; set; }
+        public int ClientID { get; set; }
+        public string LibelleProjet { get; set; }
+        public string LibelleNom { get; set; }
+        public string LibelleRemarque { get; set; }
+        public DateTime DateDebutProjet { get; set; }
+        public int IdUtilisateurCreation { get; set; }
+        public DateTime DateCreation { get; set; }
+        public int IdUtilisateurModification { get; set; }
+        public DateTime DateModification { get; set; }
+        public DateTime? DateArchivage { get; set; }
+
     }
 }
