@@ -1,101 +1,22 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/webServices/composant-web-service.service.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Data/DataRepository.cs">
     <Files>
-      <File FileName="Madera/Models/Commercial.cs" Line="13" Column="1" />
-      <File FileName="Madera/Controllers/commercialController.cs" Line="52" Column="1" />
-      <File FileName="Madera/DefaultContext.cs" Line="26" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.ts" Line="12" Column="3" />
-      <File FileName="Madera/Models/AppDbContext.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/Client.cs" Line="25" Column="1" />
-      <File FileName="Madera/Controllers/ClientController.cs" Line="33" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/client/nouveau-client/nouveau-client.page.ts" Line="15" Column="28" />
-      <File FileName="Madera/ClientApp/src/app/webServices/composant-web-service.service.ts" Line="22" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Program.cs">
-    <Files>
-      <File FileName="Madera/Models/Projet.cs" Line="20" Column="45" />
-      <File FileName="Madera/Controllers/projetController.cs" Line="35" Column="30" />
-      <File FileName="Madera/Data/IDataRepository.cs" Line="14" Column="1" />
-      <File FileName="Madera/Data/DataRepository.cs" Line="5" Column="32" />
-      <File FileName="Madera/ClientApp/angular.json" Line="70" Column="32" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.ts" Line="16" Column="4" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" Line="59" Column="38" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.ts" Line="29" Column="3" />
-      <File FileName="Madera/ClientApp/src/app/webServices/projet-webservice.service.ts" Line="26" Column="65" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.module.ts" Line="14" Column="17" />
-      <File FileName="Madera/ClientApp/tsconfig.json" Line="24" Column="2" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.html" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-composant/nouveau-composant.page.ts" Line="10" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" Line="23" Column="26" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.scss" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/webServices/projet-webservice.service.spec.ts" Line="1" Column="1" />
-      <File FileName="Madera/Startup.cs" Line="94" Column="14" />
-      <File FileName="Madera/Properties/launchSettings.json" Line="20" Column="29" />
-      <File FileName="Madera/Models/AppDbContext.cs" Line="1" Column="1" />
-      <File FileName="Madera/appsettings.json" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/environments/environment.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-module/nouveau-module.page.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/webServices/commercial-web-service.service.spec.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/webServices/commercial-web-service.service.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/webServices/gamme-web-service.service.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouvelle-gamme/nouvelle-gamme.page.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-gamme/recherche-gamme.page.ts" Line="22" Column="1" />
-      <File FileName="Madera/Models/Client.cs" Line="1" Column="1" />
+      <File FileName="Madera/Controllers/commercialController.cs" Line="32" Column="18" />
+      <File FileName="Madera/Controllers/projetController.cs" Line="14" Column="1" />
       <File FileName="Madera/Controllers/ClientController.cs" Line="1" Column="1" />
-      <File FileName="Madera/Controllers/moduleController.cs" Line="1" Column="1" />
-      <File FileName="Madera/Program.cs" Line="16" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/models/Projet.ts" Line="11" Column="14" NotebookId="1" />
->>>>>>> gestion-projet
+      <File FileName="Madera/Data/IDataRepository.cs" Line="1" Column="1" />
+      <File FileName="Madera/Data/DataRepository.cs" Line="24" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
-<<<<<<< HEAD
-              <Node name="bin" expanded="True" />
-=======
-              <Node name="Dependencies" expanded="True" />
->>>>>>> gestion-projet
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-<<<<<<< HEAD
-                      <Node name="client" expanded="True">
-                        <Node name="nouveau-client" expanded="True" />
-                      </Node>
-                      <Node name="parametrage" expanded="True">
-                        <Node name="nouveau-commercial" expanded="True" />
-=======
-                      <Node name="parametrage" expanded="True" />
-                      <Node name="projet" expanded="True">
-                        <Node name="recherche-projet" expanded="True" />
->>>>>>> gestion-projet
-                      </Node>
-                    </Node>
-                    <Node name="webServices" expanded="True">
-                      <Node name="composant-web-service.service.ts" selected="True" />
-                    </Node>
-                  </Node>
-                  <Node name="environments" expanded="True" />
-                </Node>
-              </Node>
-<<<<<<< HEAD
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-=======
-              <Node name="Controllers" expanded="True">
-                <Node name="projetController.cs" selected="True" />
+              <Node name="Data" expanded="True">
+                <Node name="DataRepository.cs" selected="True" />
               </Node>
-              <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Views" expanded="True" />
->>>>>>> gestion-projet
             </Node>
           </Node>
         </State>
@@ -105,11 +26,8 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/maximemasetto/Desktop/Projet perso/Git/Madera_Livrable3/Madera/Madera/Controllers/devisController.cs" relfile="Madera/Controllers/devisController.cs" line="42" column="1" />
-      <Breakpoint file="/Users/maximemasetto/Desktop/Projet perso/Git/Madera_Livrable3/Madera/Madera/Controllers/projetController.cs" relfile="Madera/Controllers/projetController.cs" line="32" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
 </Properties>

@@ -1,5 +1,4 @@
-<form [formGroup]="CommerForm" (ngSubmit)="this[EventValue]()">
-  <ion-card>
+<ion-card>
     <ion-card-header>
       <h3>Création d'un commercial</h3>
     </ion-card-header>
@@ -8,16 +7,16 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Nom" formControlName="noM_COMMERCIAL"></ion-input>
+            <ion-input placeholder="Nom"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Prénom" formControlName="prenoM_COMMERCIAL"></ion-input>
+            <ion-input placeholder="Prénom" ></ion-input>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label>Date de naissance</ion-label>
-              <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" display-timezone="utc" formControlName="datE_CREATION_COMMERCIAL"></ion-datetime>
-              <ion-input type="hidden" formControlName="noM_COMMERCIAL"></ion-input>
+              <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" display-timezone="utc" ></ion-datetime>
+              <ion-input type="hidden"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -26,14 +25,14 @@
             <ion-input placeholder="Numéro de téléphone"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Adresse mail" formControlName="emaiL_COMMERCIAL"></ion-input>
+            <ion-input placeholder="Adresse mail" ></ion-input>
           </ion-col>
 
         </ion-row>
 
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Remarques" formControlName="remarquE_COMMERCIAL"></ion-input>
+            <ion-input placeholder="Remarques" ></ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -44,12 +43,11 @@
     <div class="footer footer-btn">
       <div class="container-image">
         <div class="retour-btn">
-          <ion-button size="block" color="danger" [routerLink]="['/recherche-commercial']">Annuler</ion-button>
+          <ion-button size="block" color="danger"[routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
         </div>
         <div class="nouveau-btn">
-          <ion-button type="submit" expand="block" color="success">{{EventValue}}Enregistrer</ion-button>
+          <ion-button type="submit" expand="block" color="success">Enregistrer</ion-button>
         </div>
       </div>
     </div>
   </ion-footer>
-</form>

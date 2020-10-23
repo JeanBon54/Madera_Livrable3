@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CommercialWebServiceService } from './../../../webServices/commercial-web-service.service';  
+import { CommercialWebService } from './../../../webServices/commercial-web-service.service';  
+import { Observable } from 'rxjs';
+import { Commercial } from 'src/app/models/Commercial';
 
 @Component({
   selector: 'app-recherche-commercial',
@@ -11,31 +12,17 @@ import { CommercialWebServiceService } from './../../../webServices/commercial-w
 })
 export class RechercheCommercialPage implements OnInit {
 
-  public commercial = [];
+  commercial$: Observable<Commercial[]>;
 
-  constructor(private ServiceService: CommercialWebServiceService) { }  
-  data: any;
-  CommerForm: FormGroup;
-  submitted = false;
-  EventValue: any = "Save";  
+  constructor(private commercialService: CommercialWebService) {
+  }
 
+  ngOnInit() {
+    this.loadCommercial();
+  }
 
-  ngOnInit(): void {
-    this.getdata();
-
-    this.CommerForm = new FormGroup({
-      ID_COMMERCIAL: new FormControl(null),
-      NOM_COMMERCIAL: new FormControl("", [Validators.required]),
-      PRENOM_COMMERCIAL: new FormControl("", [Validators.required]),
-      EMAIL_COMMERCIAL: new FormControl("", [Validators.required]),
-      DATE_CREATION_COMMERCIAL: new FormControl("", [Validators.required]),
-      REMARQUE_COMMERCIAL: new FormControl("", [Validators.required])
-    })
-  } 
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.commercial = data;
-    })
+  loadCommercial() {
+    this.commercial$ = this.commercialService.getCommercial();
   }
 }
 

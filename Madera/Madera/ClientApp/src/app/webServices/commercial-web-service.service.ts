@@ -8,7 +8,7 @@ import { Commercial } from '../models/Commercial';
 @Injectable({
   providedIn: 'root'
 })
-export class CommercialWebServiceService {
+export class CommercialWebService {
 
 
   myAppUrl: string;
@@ -19,5 +19,41 @@ export class CommercialWebServiceService {
     })
   };
 
+  constructor(private http: HttpClient) {
+    this.myAppUrl = environment.appUrl;
+    this.myApiUrl = 'api/Commercial/';
+  }
+
+  // GET POUR PRENDRE LES INFOS
+  getCommercial(): Observable<Commercial[]> {
+    return this.http.get<Commercial[]>(this.myAppUrl + this.myApiUrl)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+  // POST  --> AJOUT
+  saveCommercial(blogPost): Observable<Commercial> {
+    return this.http.post<Commercial>(this.myAppUrl + this.myApiUrl, JSON.stringify(blogPost), this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+// GESTION DES ERREURS
+  errorHandler(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
 
 }

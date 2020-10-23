@@ -13,23 +13,9 @@ import { Projet } from 'src/app/models/Projet';
 
 export class RechercheProjetPage implements OnInit {
 
-  projets$: Observable<Projet[]>;
-  data: any;
+  constructor() { }
 
-  constructor(private pService: ProjetService) {
-
-  }
-
-  ngOnInit(): void {
-    this.getProjets();
-
-  }
-
-
-  getProjets() {
-    this.pService.GetProjets().subscribe((data: Projet[]) => {
-      this.projets$ = data;
-    })
+  ngOnInit() {
   }
 
 }

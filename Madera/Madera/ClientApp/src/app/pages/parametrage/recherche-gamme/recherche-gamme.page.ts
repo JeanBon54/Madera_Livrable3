@@ -10,19 +10,9 @@ import { GammeWebServiceService } from './../../../webServices/gamme-web-service
 })
 export class RechercheGammePage implements OnInit {
 
-  public gamme = [];
+  constructor() { }
 
-  constructor(private ServiceService: GammeWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
-  }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.gamme = data;
-    })
+  ngOnInit() {
   }
 
 }

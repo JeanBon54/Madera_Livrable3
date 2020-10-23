@@ -11,19 +11,9 @@ import { DevisWebServiceService } from './../../../webServices/devis-web-service
 })
 export class RechercheDevisPage implements OnInit {
 
-  public devis = [];
+  constructor() { }
 
-  constructor(private ServiceService: DevisWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
-  }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.devis = data;
-    })
+  ngOnInit() {
   }
 
 }

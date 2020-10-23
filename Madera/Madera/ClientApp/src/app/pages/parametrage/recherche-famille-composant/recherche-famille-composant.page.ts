@@ -10,19 +10,9 @@ import { FamilleComposantWebServiceService } from './../../../webServices/famill
 })
 export class RechercheFamilleComposantPage implements OnInit {
 
-  public familleComposant = [];
+  constructor() { }
 
-  constructor(private ServiceService: FamilleComposantWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
-  }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.familleComposant = data;
-    })
+  ngOnInit() {
   }
 
 }
