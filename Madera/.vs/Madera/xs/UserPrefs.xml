@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Data/DataRepository.cs">
     <Files>
       <File FileName="Madera/Controllers/commercialController.cs" Line="32" Column="18" />
-      <File FileName="Madera/Controllers/projetController.cs" Line="14" Column="1" />
-      <File FileName="Madera/Controllers/ClientController.cs" Line="1" Column="1" />
-      <File FileName="Madera/Data/IDataRepository.cs" Line="1" Column="1" />
+      <File FileName="Madera/Controllers/projetController.cs" />
+      <File FileName="Madera/Controllers/ClientController.cs" />
+      <File FileName="Madera/Data/IDataRepository.cs" />
       <File FileName="Madera/Data/DataRepository.cs" Line="24" Column="1" />
     </Files>
     <Pads>
