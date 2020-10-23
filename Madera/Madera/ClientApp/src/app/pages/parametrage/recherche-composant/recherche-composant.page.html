@@ -17,11 +17,9 @@
                                 </div>
                             </div>
                         </ion-col>
-
                     </ion-row>
-
                 </ion-grid>
-            </form>
+        </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-header>
@@ -36,28 +34,29 @@
             </ion-row>
             <ion-row *ngFor="let compo of composant">
               <ion-col>
-                <ion-label center text-center>{{compo.composantLibelle}}</ion-label>
+                <ion-label center text-center>{{compo.libellE_COMPOSANT}}</ion-label>
               </ion-col>
               <ion-col>
-                <ion-label center text-center>{{compo.composantNature}}</ion-label>
+                <ion-label center text-center>{{compo.naturE_COMPOSANT}}</ion-label>
               </ion-col>
               <ion-col>
-                <ion-label center text-center>{{compo.composantCaract}}</ion-label>
+                <ion-label center text-center>{{compo.caracT_COMPOSANT}}</ion-label>
               </ion-col>
             </ion-row>
           </ion-grid>
         </ion-card-content>
     </ion-card>
+
     <ion-footer>
       <div class="footer footer-btn" >
           <div class="container-image">
 
               <div class="retour-btn">
-                  <ion-button size="block" color="danger">Retour</ion-button>
+                  <ion-button size="block" color="danger" [routerLink]="['/menu-principal']">Retour</ion-button>
               </div>
 
               <div class="nouveau-btn">
-                  <ion-button expand="block" color="secondary">Nouveau composant</ion-button>
+                  <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-composant']">Nouveau composant</ion-button>
               </div>
           </div>
       </div>

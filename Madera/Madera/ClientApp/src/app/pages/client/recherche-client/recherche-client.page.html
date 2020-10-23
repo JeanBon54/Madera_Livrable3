@@ -40,19 +40,19 @@
                 </ion-row>
                 <ion-row *ngFor="let cli of client">
                     <ion-col>
-                        <ion-label center text-center>{{cli.clientNom}}</ion-label>
+                      <ion-label center text-center>{{cli.noM_CLIENT}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{cli.clientPrenom}}</ion-label>
+                      <ion-label center text-center>{{cli.prenoM_CLIENT}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{cli.clientDateCrea}}</ion-label>
+                      <ion-label center text-center>{{cli.datE_CREATION_CLIENT}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{cli.clientDateModif}}</ion-label>
+                      <ion-label center text-center>{{cli.datE_MODIFICATION_CLIENT}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{cli.clientNom}}</ion-label>
+                      <ion-label center text-center>{{cli.noM_CLIENT}}</ion-label>
                     </ion-col>
                 </ion-row>
             </ion-grid>
@@ -61,7 +61,7 @@
     <ion-footer>
         <div class="footer footer-btn" >
             <div class="container-image">
-                <ion-button size="default" color="secondary">Nouveau client</ion-button>
+                <ion-button size="default" color="secondary" [routerLink]="['/nouveau-client']">Nouveau client</ion-button>
             </div>
         
         </div>

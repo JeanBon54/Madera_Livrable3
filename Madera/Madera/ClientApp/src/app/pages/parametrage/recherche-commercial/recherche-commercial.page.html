@@ -37,13 +37,13 @@
                 </ion-row>
                 <ion-row *ngFor="let com of commercial">
                     <ion-col>
-                        <ion-label center text-center>{{com.commercialId}}</ion-label>
+                      <ion-label center text-center>{{com.noM_COMMERCIAL}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{com.commercialNom}}</ion-label>
+                      <ion-label center text-center>{{com.prenoM_COMMERCIAL}}</ion-label>
                     </ion-col>
                     <ion-col>
-                        <ion-label center text-center>{{com.commercialEmail}}</ion-label>
+                      <ion-label center text-center>{{com.emaiL_COMMERCIAL}}</ion-label>  
                     </ion-col>
                 </ion-row>
             </ion-grid>
@@ -55,11 +55,11 @@
             <div class="container-image">
 
                 <div class="retour-btn">
-                    <ion-button size="block" color="danger">Retour</ion-button>
+                    <ion-button size="block" color="danger" [routerLink]="['/menu-principal']">Retour</ion-button>
                 </div>
 
                 <div class="nouveau-btn">
-                    <ion-button expand="block" color="secondary">Nouveau commercial</ion-button>
+                    <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']">Nouveau commercial</ion-button>
                 </div>
             </div>
         </div>

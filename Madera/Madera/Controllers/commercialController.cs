@@ -24,16 +24,16 @@ namespace Madera.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Composant> Get()
+        public IEnumerable<Commercial> Get()
         {
-            var data = commerDetails.Composant.ToList();
+            var data = commerDetails.Commercial.ToList();
             return data;
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Composant obj)
+        public IActionResult Post([FromBody] Commercial obj)
         {
-            var data = commerDetails.Composant.Add(obj);
+            var data = commerDetails.Commercial.Add(obj);
             commerDetails.SaveChanges();
             return Ok();
         }

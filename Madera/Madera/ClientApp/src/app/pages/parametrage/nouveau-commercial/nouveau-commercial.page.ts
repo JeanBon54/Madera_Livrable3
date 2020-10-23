@@ -1,5 +1,4 @@
 import { Component, Inject ,OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl,Validators } from '@angular/forms';   
 import { CommercialWebServiceService } from './../../../webServices/commercial-web-service.service';  
 
@@ -21,13 +20,12 @@ export class NouveauCommercialPage implements OnInit {
   ngOnInit(): void {
     this.getdata();
 
-    this.CommerForm = new FormGroup({  
-    ID_COMMERCIAL: new FormControl(null),
-    NOM_COMMERCIAL: new FormControl("", [Validators.required]),
-    PRENOM_COMMERCIAL: new FormControl("", [Validators.required]),
-    EMAIL_COMMERCIAL: new FormControl("", [Validators.required]),
-    DATE_CREATION_COMMERCIAL : new FormControl("", [Validators.required]),
-    REMARQUE_COMMERCIAL : new FormControl("", [Validators.required])
+    this.CommerForm = new FormGroup({
+      noM_COMMERCIAL: new FormControl("", [Validators.required]),
+      prenoM_COMMERCIAL: new FormControl("", [Validators.required]),
+      datE_CREATION_COMMERCIAL: new FormControl("", [Validators.required]),
+      emaiL_COMMERCIAL: new FormControl("", [Validators.required]),
+      remarquE_COMMERCIAL: new FormControl("", [Validators.required]),
     })   
   } 
 
@@ -45,10 +43,17 @@ export class NouveauCommercialPage implements OnInit {
     }
     this.ServiceService.postData(this.CommerForm.value).subscribe((data: any[]) => {
       this.data = data;
-      // this.resetFrom();
+      this.resetFrom();
 
     })
   }
+
+  resetFrom() {
+    this.getdata();
+    this.CommerForm.reset();
+    this.EventValue = "Save";
+    this.submitted = false;
+  }  
 
 
 }

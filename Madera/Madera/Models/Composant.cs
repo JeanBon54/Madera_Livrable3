@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Madera.Models
 {
+    [Table("COMPOSANT")]
     public class Composant
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

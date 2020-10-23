@@ -15,23 +15,28 @@ export class RechercheCommercialPage implements OnInit {
 
   constructor(private ServiceService: CommercialWebServiceService) { }  
   data: any;
+  CommerForm: FormGroup;
+  submitted = false;
+  EventValue: any = "Save";  
+
 
   ngOnInit(): void {
     this.getdata();
 
-  }
+    this.CommerForm = new FormGroup({
+      ID_COMMERCIAL: new FormControl(null),
+      NOM_COMMERCIAL: new FormControl("", [Validators.required]),
+      PRENOM_COMMERCIAL: new FormControl("", [Validators.required]),
+      EMAIL_COMMERCIAL: new FormControl("", [Validators.required]),
+      DATE_CREATION_COMMERCIAL: new FormControl("", [Validators.required]),
+      REMARQUE_COMMERCIAL: new FormControl("", [Validators.required])
+    })
+  } 
   getdata() {
     this.ServiceService.getData().subscribe((data: any[]) => {
       this.commercial = data;
     })
-  }  
-
+  }
 }
-interface Commercial {
-  ID_COMMERCIAL: number;
-  NOM_COMMERCIAL: string;
-  PRENOM_COMMERCIAL: string;
-  EMAIL_COMMERCIAL: string;
-  MDP_COMMERCIAL: string;
 
-}
+
