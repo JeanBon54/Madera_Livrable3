@@ -9,9 +9,13 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
+        [Required]
         public int CommercialID { get; set; }
+        [Required]
         public int ClientID { get; set; }
+        [Required]
         public string LibelleProjet { get; set; }
+        [Required]
         public string LibelleNom { get; set; }
         public string LibelleRemarque { get; set; }
         public DateTime DateDebutProjet { get; set; }
