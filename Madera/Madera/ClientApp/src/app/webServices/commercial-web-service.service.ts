@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Commercial } from '../models/Commercial';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommercialWebServiceService {
 
-  constructor(private http: HttpClient) { }
+
+  myAppUrl: string;
+  myApiUrl: string;
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json; charset=utf-8'
     })
-  }
-  getData() {
+  };
 
-    return this.http.get('/Commercial');  
-  }  
-  postData(formData) {
-    return this.http.post('/Commercial', formData);
-  } 
 
 }

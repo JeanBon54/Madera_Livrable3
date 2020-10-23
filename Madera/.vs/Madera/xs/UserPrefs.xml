@@ -1,21 +1,36 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/webServices/composant-web-service.service.ts">
+    <Files>
+      <File FileName="Madera/Models/Commercial.cs" Line="13" Column="1" />
+      <File FileName="Madera/Controllers/commercialController.cs" Line="52" Column="1" />
+      <File FileName="Madera/DefaultContext.cs" Line="26" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.ts" Line="12" Column="3" />
+      <File FileName="Madera/Models/AppDbContext.cs" Line="1" Column="1" />
+      <File FileName="Madera/Models/Client.cs" Line="25" Column="1" />
+      <File FileName="Madera/Controllers/ClientController.cs" Line="33" Column="1" />
+      <File FileName="Madera/ClientApp/src/app/pages/client/nouveau-client/nouveau-client.page.ts" Line="15" Column="28" />
+      <File FileName="Madera/ClientApp/src/app/webServices/composant-web-service.service.ts" Line="22" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
+              <Node name="bin" expanded="True" />
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="pages" expanded="True">
+                      <Node name="client" expanded="True">
+                        <Node name="nouveau-client" expanded="True" />
+                      </Node>
                       <Node name="parametrage" expanded="True">
                         <Node name="nouveau-commercial" expanded="True" />
-                        <Node name="recherche-composant" expanded="True" />
                       </Node>
                     </Node>
-                    <Node name="webServices" expanded="True" />
-                    <Node name="app.component.html" selected="True" />
+                    <Node name="webServices" expanded="True">
+                      <Node name="composant-web-service.service.ts" selected="True" />
+                    </Node>
                   </Node>
                 </Node>
               </Node>

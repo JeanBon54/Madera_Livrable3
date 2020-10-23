@@ -19,11 +19,13 @@ namespace Madera.Controllers
             cliDetails = cliContext;
         }
 
-        [HttpGet]
-        public IEnumerable<Client> Get()
+        [HttpPost]
+        public IActionResult Post([FromBody] Client obj)
         {
-            var data = cliDetails.Client.ToList();
-            return data;
+            cliDetails.Client.Add(obj);
+            cliDetails.SaveChanges();
+            int? id = obj.ID_CLIENT; // Yes it's here
+            return Ok();
         }
 
     }

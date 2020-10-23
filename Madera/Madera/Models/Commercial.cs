@@ -9,7 +9,7 @@ namespace Madera.Models
     {
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
        [Key]
-        public int ID_COMMERCIAL { get; set; }
+        public int? ID_COMMERCIAL { get; set; }
         public String NOM_COMMERCIAL { get; set; }
         public String PRENOM_COMMERCIAL { get; set; }
         public String EMAIL_COMMERCIAL { get; set; }

@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ComposantWebServiceService {
 
-  constructor(private http: HttpClient) { }
+  myAppUrl: string;
+  myApiUrl: string;
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json; charset=utf-8'
     })
-  }
-  getData() {
-    return this.http.get('/Composant');  
-  }
-  postData(formData) {
-    return this.http.post('/Composant', formData);
-  } 
+  };
+
+
+
+
 }
