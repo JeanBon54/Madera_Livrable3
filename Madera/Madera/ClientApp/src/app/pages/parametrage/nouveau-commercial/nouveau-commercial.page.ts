@@ -35,8 +35,6 @@ export class NouveauCommercialPage implements OnInit {
     })
   }
 
-  Save() {
-    this.submitted = true;
 
     if (this.CommerForm.invalid) {
       return;

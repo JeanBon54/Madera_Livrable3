@@ -9,7 +9,7 @@ const routerConfig: Routes = [
   {
     path: '',
     component: MenuPrincipalPage
-  },  
+  },
   {
     path: 'menu-principal',
     component: MenuPrincipalPage
@@ -41,7 +41,8 @@ const routerConfig: Routes = [
   {
     path: 'parametrage',
     loadChildren: () => import('./pages/menu/parametrage/parametrage.module').then( m => m.ParametragePageModule)
-  },  {
+  },
+  {
     path: 'recherche-module',
     loadChildren: () => import('./pages/parametrage/recherche-module/recherche-module.module').then( m => m.RechercheModulePageModule)
   },

@@ -205,7 +205,12 @@ ion-toolbar {
 
 // Placement
 
-w-fill {
+.flex-right {
+    display: flex;
+    justify-content:flex-end;
+}
+
+.w-fill {
   width: -webkit-fill-available!important;
 }
 
