@@ -1,3 +1,4 @@
+using Madera.Data;
 using Madera.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,11 +29,20 @@ namespace Madera
 
             //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        );
+            });
+
             services.AddDbContext<DefaultContext>(
             options => options.UseSqlServer(connectionString),
             ServiceLifetime.Scoped);
 
-
+            services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
             services.AddControllersWithViews();
 
@@ -57,8 +67,10 @@ namespace Madera
                 app.UseHsts();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
 
 

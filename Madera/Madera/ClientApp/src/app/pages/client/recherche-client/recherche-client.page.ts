@@ -10,18 +10,8 @@ import { ClientWebServiceService } from './../../../webServices/client-web-servi
 })
 export class RechercheClientPage implements OnInit {
 
-  public client = [];
+  constructor() { }
 
-  constructor(private ServiceService: ClientWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
-  }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.client = data;
-    })
+  ngOnInit() {
   }
 }

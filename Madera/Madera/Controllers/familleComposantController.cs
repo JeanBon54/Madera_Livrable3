@@ -14,31 +14,17 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class familleComposantController
     {
-        private readonly ILogger<familleComposantController> _logger;
-
-        public familleComposantController(ILogger<familleComposantController> logger)
+        readonly DefaultContext familleCompoDetails;
+        public familleComposantController(DefaultContext familleCompoContext)
         {
-            _logger = logger;
+            familleCompoDetails = familleCompoContext;
         }
 
         [HttpGet]
-        public IEnumerable GetList()
+        public IEnumerable<familleComposant> Get()
         {
-            using (DefaultContext db = new DefaultContext())
-            {
-
-                var query = from familleCompo in db.Set<familleComposant>()
-                            select new
-                            {
-                                familleComposantId = familleCompo.ID_FAMILLE_COMPOSANT,
-                                familleComposantLibelle = familleCompo.LIBELLE_FAMILLE_COMPOSANT,
-                                familleComposantIdCompo = familleCompo.ID_COMPOSANT
-                                
-
-                            };
-
-                return query.ToList();
-            }
+            var data = familleCompoDetails.famille_Composant.ToList();
+            return data;
         }
     }
 }

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CommercialWebServiceService } from './commercial-web-service.service';
+import { CommercialWebService } from './commercial-web-service.service';
 
-describe('CommercialWebServiceService', () => {
-  let service: CommercialWebServiceService;
+describe('CommercialWebService', () => {
+  let service: CommercialWebService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CommercialWebServiceService);
+    service = TestBed.inject(CommercialWebService);
   });
 
   it('should be created', () => {

@@ -9,20 +9,9 @@ import { ModuleWebServiceService } from './../../../webServices/module-web-servi
 })
 export class RechercheModulePage implements OnInit {
 
-  public module = [];
+  constructor() { }
 
-  constructor(private ServiceService: ModuleWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
+  ngOnInit() {
   }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.module = data;
-    })
-  }
-
 
 }

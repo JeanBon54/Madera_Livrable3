@@ -28,5 +28,13 @@ namespace Madera.Controllers
             return data;
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody] Composant obj)
+        {
+            var data = compoDetails.Composant.Add(obj);
+            compoDetails.SaveChanges();
+            return Ok();
+        }
+
     }
 }

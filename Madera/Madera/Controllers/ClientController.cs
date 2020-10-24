@@ -13,34 +13,20 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class ClientController:ControllerBase
     {
-        private readonly ILogger<ClientController> _logger;
-
-        public ClientController(ILogger<ClientController> logger)
+        readonly DefaultContext cliDetails;
+        public ClientController(DefaultContext cliContext)
         {
-            _logger = logger;
+            cliDetails = cliContext;
         }
 
-        [HttpGet]
-        public IEnumerable GetList()
+        [HttpPost]
+        public IActionResult Post([FromBody] Client obj)
         {
-            using (DefaultContext db = new DefaultContext())
-            {
-
-                var query = from Client in db.Set<Client>()
-                            select new
-                            {
-                                ClientId = Client.ID_CLIENT,
-                                ClientNom = Client.NOM_CLIENT,
-                                ClientPrenom = Client.PRENOM_CLIENT,
-                                ClientAdresse = Client.ADRESSE_CLIENT,
-                                ClientVille = Client.VILLE_CLIENT,
-                                ClientDateCrea = Client.DATE_CREATION_CLIENT,
-                                ClientDateModif = Client.DATE_MODIFICATION_CLIENT,
-                            };
-
-
-                return query.ToList();
-            }
+            cliDetails.Client.Add(obj);
+            cliDetails.SaveChanges();
+            int? id = obj.ID_CLIENT; // Yes it's here
+            return Ok();
         }
+
     }
 }

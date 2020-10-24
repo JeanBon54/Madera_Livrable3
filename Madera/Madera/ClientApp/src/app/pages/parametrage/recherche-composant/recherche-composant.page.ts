@@ -9,21 +9,10 @@ import { ComposantWebServiceService } from './../../../webServices/composant-web
 })
 export class RechercheComposantPage implements OnInit {
 
-  public composant = [];
+  constructor() { }
 
-  constructor(private ServiceService: ComposantWebServiceService) { }
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
+  ngOnInit() {
   }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.composant = data;
-    })
-  }
-
 
 
 

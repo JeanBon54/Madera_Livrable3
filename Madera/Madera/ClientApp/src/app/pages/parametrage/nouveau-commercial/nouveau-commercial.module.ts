@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 
 import { IonicModule } from '@ionic/angular';
 
 import { HttpClientModule } from '@angular/common/http';
-
-import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service'; 
+import { CommercialWebService } from './../../../webServices/commercial-web-service.service';  
 
 import { NouveauCommercialPageRoutingModule } from './nouveau-commercial-routing.module';
 import { NouveauCommercialPage } from './nouveau-commercial.page';
@@ -16,10 +15,11 @@ import { NouveauCommercialPage } from './nouveau-commercial.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NouveauCommercialPageRoutingModule
   ],
   declarations: [NouveauCommercialPage],
-  providers: [ComposantWebServiceService]
+  providers: [CommercialWebService]
 })
 export class NouveauCommercialPageModule {}

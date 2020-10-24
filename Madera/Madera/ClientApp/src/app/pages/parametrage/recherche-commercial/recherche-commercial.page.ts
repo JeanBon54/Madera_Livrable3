@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CommercialWebServiceService } from './../../../webServices/commercial-web-service.service';  
+import { CommercialWebService } from './../../../webServices/commercial-web-service.service';  
+import { Observable } from 'rxjs';
+import { Commercial } from 'src/app/models/Commercial';
 
 @Component({
   selector: 'app-recherche-commercial',
@@ -11,27 +12,18 @@ import { CommercialWebServiceService } from './../../../webServices/commercial-w
 })
 export class RechercheCommercialPage implements OnInit {
 
-  public commercial = [];
+  commercial$: Observable<Commercial[]>;
 
-  constructor(private ServiceService: CommercialWebServiceService) { }  
-  data: any;
-
-  ngOnInit(): void {
-    this.getdata();
-
+  constructor(private commercialService: CommercialWebService) {
   }
-  getdata() {
-    this.ServiceService.getData().subscribe((data: any[]) => {
-      this.commercial = data;
-    })
-  }  
 
-}
-interface Commercial {
-  ID_COMMERCIAL: number;
-  NOM_COMMERCIAL: string;
-  PRENOM_COMMERCIAL: string;
-  EMAIL_COMMERCIAL: string;
-  MDP_COMMERCIAL: string;
+  ngOnInit() {
+    this.loadCommercial();
+  }
 
+  loadCommercial() {
+    this.commercial$ = this.commercialService.getCommercial();
+  }
 }
+
+

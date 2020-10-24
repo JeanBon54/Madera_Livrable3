@@ -10,7 +10,6 @@ const routerConfig: Routes = [
     path: '',
     component: MenuPrincipalPage
   },
-  { path: '**', redirectTo: '/' },
   {
     path: 'menu-principal',
     component: MenuPrincipalPage

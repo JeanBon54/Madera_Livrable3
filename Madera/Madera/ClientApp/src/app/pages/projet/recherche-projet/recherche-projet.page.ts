@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProjetWebService } from './../../../webServices/projet-webservice.service';
+import { Component, OnInit } from '@angular/core';
+import { ProjetService } from 'src/app/webServices/projet-webservice.service';
 import { Observable } from 'rxjs';
-import { Projet } from '../models/Projet';
+import { Projet } from 'src/app/models/Projet';
 
 
 @Component({
@@ -13,20 +13,11 @@ import { Projet } from '../models/Projet';
 
 export class RechercheProjetPage implements OnInit {
 
-  projets: Observable<Projet[]>;
+  constructor() { }
 
-  constructor(private projetService: ProjetWebServiceService) { 
-  data: any;
-
+  ngOnInit() {
   }
 
-  ngOnInit(): void {
-    this.getProjets();
-
-  }
-  getProjets() {
-    this.projets = this.ProjetWebService.getProjets();
-  }
 }
 
 

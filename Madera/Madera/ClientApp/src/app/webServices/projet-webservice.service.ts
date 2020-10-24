@@ -19,10 +19,10 @@ export class ProjetService {
   };
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.appUrl;
-    this.myApiUrl = 'api/Projets/';
+    this.myApiUrl = '/api/Projets/';
   }
 
-  getProjets(): Observable<Projet[]> {
+  GetProjets(): Observable<Projet[]> {
     return this.http.get<Projet[]>(this.myAppUrl + this.myApiUrl)
       .pipe(
         retry(1),
