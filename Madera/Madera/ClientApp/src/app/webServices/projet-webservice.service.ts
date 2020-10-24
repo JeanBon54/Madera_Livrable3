@@ -8,7 +8,8 @@ import { Projet } from '../models/Projet';
 @Injectable({
   providedIn: 'root'
 })
-export class ProjetService {
+export class ProjetWebService {
+
 
   myAppUrl: string;
   myApiUrl: string;
@@ -17,12 +18,14 @@ export class ProjetService {
       'Content-Type': 'application/json; charset=utf-8'
     })
   };
+
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.appUrl;
-    this.myApiUrl = '/api/Projets/';
+    this.myApiUrl = 'api/Projets/';
   }
 
-  GetProjets(): Observable<Projet[]> {
+  // GET POUR PRENDRE LES INFOS
+  getProjets(): Observable<Projet[]> {
     return this.http.get<Projet[]>(this.myAppUrl + this.myApiUrl)
       .pipe(
         retry(1),
@@ -30,38 +33,16 @@ export class ProjetService {
       );
   }
 
-  getProjet(postId: number): Observable<Projet> {
-    return this.http.get<Projet>(this.myAppUrl + this.myApiUrl + postId)
+  // POST  --> AJOUT
+  saveProjet(projet): Observable<Projet> {
+    return this.http.post<Projet>(this.myAppUrl + this.myApiUrl, JSON.stringify(projet), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
       );
   }
 
-  saveProjet(Projet): Observable<Projet> {
-    return this.http.post<Projet>(this.myAppUrl + this.myApiUrl, JSON.stringify(Projet), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
-  updateProjet(postId: number, Projet): Observable<Projet> {
-    return this.http.put<Projet>(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(Projet), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
-  deleteProjet(postId: number): Observable<Projet> {
-    return this.http.delete<Projet>(this.myAppUrl + this.myApiUrl + postId)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
-  }
-
+  // GESTION DES ERREURS
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -74,4 +55,5 @@ export class ProjetService {
     console.log(errorMessage);
     return throwError(errorMessage);
   }
+
 }

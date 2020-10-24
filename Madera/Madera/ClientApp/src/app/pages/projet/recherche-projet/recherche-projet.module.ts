@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { RechercheProjetPage } from './recherche-projet.page';
-import { ProjetService } from 'src/app/webServices/projet-webservice.service';
+import { ProjetWebService } from 'src/app/webServices/projet-webservice.service';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -18,7 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
   ],
    
-  providers: [ProjetService],
+  providers: [ProjetWebService],
   declarations: [RechercheProjetPage]
 })
 export class RechercheProjetPageModule {}

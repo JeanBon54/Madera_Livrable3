@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ProjetService } from 'src/app/webServices/projet-webservice.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Observable } from 'rxjs';
 import { Projet } from 'src/app/models/Projet';
 
@@ -13,9 +15,19 @@ import { Projet } from 'src/app/models/Projet';
 
 export class RechercheProjetPage implements OnInit {
 
-  constructor() { }
+  projets$: Observable<Projet[]>;
+
+  constructor(private pService: ProjetWebService) {
+  }
 
   ngOnInit() {
+    this.loadProjets();
+  }
+
+   loadProjets() {
+     this.projets$ = this.pService.getProjets();
+     console.log("dzzdz");
+     console.log(this.projets$);
   }
 
 }

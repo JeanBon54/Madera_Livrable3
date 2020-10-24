@@ -26,7 +26,7 @@
 
             </ion-grid>
                 <div class="flex-right">
-                    <ion-button color="success">Rechercher</ion-button>
+                    <ion-button onclick="this.loadProjets()" color="success">Rechercher</ion-button>
                 </div>
         </ion-card-content>
     </ion-card>
@@ -40,7 +40,7 @@
                     <ion-col>Date de modification</ion-col>
                     <ion-col></ion-col>
                 </ion-row>
-                <ion-row *ngFor="let projet of (projets$ )">
+                <ion-row *ngFor="let projet of projets$">
                     <ion-col>
                         <ion-label center text-center>{{projet.LibelleProjet}}</ion-label>
                     </ion-col>
