@@ -14,12 +14,12 @@ namespace Madera.Controllers
         [Produces("application/json")]
         [Route("api/[controller]")]
         [ApiController]
-        public class ProjetsController : Controller
+        public class ProjetController : Controller
         {
             private readonly DefaultContext _context;
             private readonly IDataRepository<Projet> _repo;
 
-            public ProjetsController(DefaultContext context, IDataRepository<Projet> repo)
+            public ProjetController(DefaultContext context, IDataRepository<Projet> repo)
             {
                 _context = context;
                 _repo = repo;
@@ -27,7 +27,7 @@ namespace Madera.Controllers
 
             // GET: api/Projets
             [HttpGet]
-            public IEnumerable<Projet> GetProjets()
+            public IEnumerable<Projet> GetProjet()
             {
                 return _context.Projet.OrderByDescending(p => p.ID);
             }

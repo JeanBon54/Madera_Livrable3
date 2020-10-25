@@ -34,8 +34,8 @@ export class CommercialWebService {
   }
 
   // POST  --> AJOUT
-  saveCommercial(blogPost): Observable<Commercial> {
-    return this.http.post<Commercial>(this.myAppUrl + this.myApiUrl, JSON.stringify(blogPost), this.httpOptions)
+  saveCommercial(comercial): Observable<Commercial> {
+    return this.http.post<Commercial>(this.myAppUrl + this.myApiUrl, JSON.stringify(comercial), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.errorHandler)

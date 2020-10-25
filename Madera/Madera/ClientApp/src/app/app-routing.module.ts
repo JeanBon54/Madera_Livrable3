@@ -20,11 +20,11 @@ const routerConfig: Routes = [
   },
   {
     path: 'recherche-projet',
-    component: RechercheProjetPage
+    loadChildren: () => import('./pages/projet/recherche-projet/recherche-projet.module').then( m => m.RechercheProjetPageModule)
   },
   {
     path: 'nouveau-projet',
-    component: NouveauProjetPage
+    loadChildren: () => import('./pages/projet/nouveau-projet/nouveau-projet.module').then( m => m.NouveauProjetPageModule)
   },
   {
     path: 'recherche-devis',

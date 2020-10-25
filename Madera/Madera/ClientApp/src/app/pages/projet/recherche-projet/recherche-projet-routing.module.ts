@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RechercheProjetPage } from './recherche-projet.page';
 
-
-const routes: Routes = [
-
+const routes: Routes  = [
+  {
+    path: '',
+    component: RechercheProjetPage
+  }
 ];
 
 @NgModule({

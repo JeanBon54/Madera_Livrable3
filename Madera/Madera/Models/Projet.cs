@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Madera.Models
 {
+    [Table("PROJET")]
     public class Projet
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

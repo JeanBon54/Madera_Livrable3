@@ -21,28 +21,28 @@ export class ProjetWebService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.appUrl;
-    this.myApiUrl = 'api/Projets/';
+    this.myApiUrl = 'api/Projet/';
   }
 
   // GET POUR PRENDRE LES INFOS
-  getProjets(): Observable<Projet[]> {
+  getProjet(): Observable<Projet[]> {
     return this.http.get<Projet[]>(this.myAppUrl + this.myApiUrl)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
   }
 
   // POST  --> AJOUT
   saveProjet(projet): Observable<Projet> {
     return this.http.post<Projet>(this.myAppUrl + this.myApiUrl, JSON.stringify(projet), this.httpOptions)
-      .pipe(
-        retry(1),
-        catchError(this.errorHandler)
-      );
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
   }
 
-  // GESTION DES ERREURS
+// GESTION DES ERREURS
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
