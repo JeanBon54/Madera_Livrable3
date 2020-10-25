@@ -24,8 +24,8 @@ export class ProjetWebService {
     this.myApiUrl = 'api/Projet/';
   }
 
-  // GET POUR PRENDRE LES INFOS
-  getProjet(): Observable<Projet[]> {
+
+  getProjets(): Observable<Projet[]> {
     return this.http.get<Projet[]>(this.myAppUrl + this.myApiUrl)
     .pipe(
       retry(1),
@@ -33,7 +33,15 @@ export class ProjetWebService {
     );
   }
 
-  // POST  --> AJOUT
+  getProjet(projetId: number): Observable<Projet> {
+    return this.http.get<Projet>(this.myAppUrl + this.myApiUrl + projetId)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+
   saveProjet(projet): Observable<Projet> {
     return this.http.post<Projet>(this.myAppUrl + this.myApiUrl, JSON.stringify(projet), this.httpOptions)
     .pipe(
@@ -42,7 +50,7 @@ export class ProjetWebService {
     );
   }
 
-// GESTION DES ERREURS
+
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

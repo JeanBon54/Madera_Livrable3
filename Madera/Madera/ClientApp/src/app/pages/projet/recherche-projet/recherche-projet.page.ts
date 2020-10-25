@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
@@ -14,7 +15,7 @@ import { Projet } from 'src/app/models/Projet';
 
 export class RechercheProjetPage implements OnInit {
 
-  projet$: Observable<Projet[]>;
+  projets$: Observable<Projet[]>;
 
   constructor(private projetService: ProjetWebService) {
   }
@@ -24,7 +25,7 @@ export class RechercheProjetPage implements OnInit {
   }
 
   loadProjet() {
-    this.projet$ = this.projetService.getProjet();
+    this.projets$ = this.projetService.getProjets();
   }
 
 }

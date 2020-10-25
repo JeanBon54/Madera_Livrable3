@@ -51,7 +51,7 @@ namespace Madera.Controllers
                 return Ok(projet);
             }
 
-            // PUT: api/BlogPosts/5
+            // PUT: api/Projets/5
             [HttpPut("{id}")]
             public async Task<IActionResult> PutProjet([FromRoute] int id, [FromBody] Projet projet)
             {

@@ -1,20 +1,32 @@
 
-    <ion-card>
-        <ion-card-header>
-         <h3>Création d'un projet</h3>   
-        </ion-card-header>
-        <hr class="solid">
-        <ion-card-content>
-            <ion-grid>
-                <ion-row>
-                    <ion-col>
-                        <ion-input placeholder="Client"></ion-input>
-                    </ion-col>
-                    <ion-col>
-                      <ion-input placeholder="Nom du projet"></ion-input>
-                    </ion-col>
-                  </ion-row>
-              </ion-grid>
+<ion-card>
+    <ion-card-header>
+        <h3>Création d'un projet</h3>
+    </ion-card-header>
+    <hr class="solid">
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-input placeholder="Client"></ion-input>
+                </ion-col>
+                <ion-col>
+                    <ion-input placeholder="Nom du projet"></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
-        </ion-card-content>
-    </ion-card>
+    </ion-card-content>
+</ion-card>
+<ion-footer>
+    <div class="footer footer-btn">
+        <div class="container-image">
+            <div class="retour-btn">
+                <ion-button size="block" color="danger" [routerLink]="['/recherche-projet']" routerDirection="back">Retour</ion-button>
+            </div>
+            <div class="nouveau-btn">
+                <ion-button type="submit" expand="block" color="success">Enregistrer</ion-button>
+            </div>
+        </div>
+    </div>
+</ion-footer>

@@ -32,32 +32,32 @@
     </ion-card>
     <ion-card>
         <ion-card-content>
-            <ion-card-header *ngIf="(projet$ | async)?.length>0">
+            <ion-card-header *ngIf="(projets$ | async)?.length>0">
                 <h2>Resultat</h2>   
             </ion-card-header>
             <ion-grid>
                 <ion-row>
-                    <ion-col>Référence</ion-col>
-                    <ion-col>Client</ion-col>
-                    <ion-col>Début du projet</ion-col>
-                    <ion-col>Date de modification</ion-col>
-                    <ion-col></ion-col>
+                    <ion-col size="2">Référence</ion-col>
+                    <ion-col size="3">Client</ion-col>
+                    <ion-col size="3">Début du projet</ion-col>
+                    <ion-col size="3">Date de modification</ion-col>
+                    <ion-col size="1"></ion-col>
                 </ion-row>
-                <ion-row  *ngFor="let pro of (projet$ | async)">
-                    <ion-col>
-                        <ion-label center text-center>{{pro.libelleNom}}</ion-label>
+                <ion-row  *ngFor="let projet of (projets$ | async)">
+                    <ion-col size="2">
+                        <ion-label center text-center>{{projet.libelleProjet}}</ion-label>
                     </ion-col>
-                    <ion-col>
-                        <ion-label center text-center>{{pro.libelleNom}}</ion-label>
+                    <ion-col size="3">
+                        <ion-label center text-center>{{projet.clientID}}</ion-label>
                     </ion-col>
-                    <ion-col>
-                        <ion-label center text-center>{{pro.libelleNom}}</ion-label>
+                    <ion-col size="3">
+                        <ion-label center text-center>{{projet.dateDebutProjet | date:'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
-                    <ion-col>
-                        <ion-label center text-center>{{pro.libelleNom}}</ion-label>
+                    <ion-col size="3">
+                        <ion-label center text-center>{{projet.dateModification | date:'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
-                    <ion-col>
-                        <ion-button [routerLink]="['/gestion-projet/', projet.ID]">
+                    <ion-col size="1">
+                        <ion-button [routerLink]="['/gestion-projet/', projet.id]">
                             <ion-icon size="small" slot="end" name="eye"></ion-icon>
                         </ion-button>
                     </ion-col>
@@ -69,7 +69,7 @@
         <div class="footer footer-btn">
             <div class="container-image">
                 <div class="nouveau-btn">
-                    <ion-button onclick="log()" expand="block" color="secondary">Nouveau projet</ion-button>
+                    <ion-button expand="block" color="secondary"[routerLink]="['/nouveau-projet']" routerDirection="forward">Nouveau projet</ion-button>
                 </div>
             </div>
         </div>

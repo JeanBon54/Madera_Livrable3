@@ -4,6 +4,7 @@ import { ConnexionPage } from './pages/connexion/connexion.page';
 import { MenuPrincipalPage } from './pages/menu/menu-principal/menu-principal.page';
 import { RechercheProjetPage } from './pages/projet/recherche-projet/recherche-projet.page';
 import { NouveauProjetPage } from './pages/projet/nouveau-projet/nouveau-projet.page';
+import { GestionProjetPage } from './pages/projet/gestion-projet/gestion-projet.page'
 
 const routerConfig: Routes = [
   {
@@ -21,6 +22,10 @@ const routerConfig: Routes = [
   {
     path: 'recherche-projet',
     loadChildren: () => import('./pages/projet/recherche-projet/recherche-projet.module').then( m => m.RechercheProjetPageModule)
+  },
+  {
+    path: 'gestion-projet/:id',
+    loadChildren: () => import('./pages/projet/gestion-projet/gestion-projet.module').then(m => m.GestionProjetPageModule)
   },
   {
     path: 'nouveau-projet',
