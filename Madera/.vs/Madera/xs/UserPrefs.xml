@@ -1,87 +1,16 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.module.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/commercialController.cs">
     <Files>
-      <File FileName="Madera/Models/Projet.cs" Line="16" Column="22" />
-      <File FileName="Madera/Controllers/projetController.cs" Line="105" Column="36" />
-      <File FileName="Madera/ClientApp/angular.json" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" Line="72" Column="96" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.ts" Line="28" Column="50" />
-      <File FileName="Madera/ClientApp/src/app/webServices/projet-webservice.service.ts" Line="37" Column="74" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/tsconfig.json" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.page.html" Line="42" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-composant/nouveau-composant.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/app.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.scss" />
-      <File FileName="Madera/ClientApp/src/app/webServices/projet-webservice.service.spec.ts" />
-      <File FileName="Madera/Startup.cs" />
-      <File FileName="Madera/Properties/launchSettings.json" />
-      <File FileName="Madera/Models/AppDbContext.cs" />
-      <File FileName="Madera/appsettings.json" />
-      <File FileName="Madera/ClientApp/src/environments/environment.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-module/nouveau-module.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial-routing.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/webServices/commercial-web-service.service.spec.ts" />
-      <File FileName="Madera/ClientApp/src/app/webServices/commercial-web-service.service.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/webServices/gamme-web-service.service.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouvelle-gamme/nouvelle-gamme.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-gamme/recherche-gamme.page.ts" />
-      <File FileName="Madera/Models/Client.cs" />
-      <File FileName="Madera/Controllers/ClientController.cs" />
-      <File FileName="Madera/Program.cs" />
-      <File FileName="Madera/ClientApp/src/app/pages/client/nouveau-client/nouveau-client.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/client/nouveau-client/nouveau-client.page.html" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-commercial/recherche-commercial.page.ts" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-composant/recherche-composant.module.ts" />
-      <File FileName="Madera/ClientApp/src/app/app-routing.module.ts" Line="30" Column="4" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-gamme/recherche-gamme-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet.page.ts" Line="28" Column="57" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet.module.ts" Line="17" Column="21" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet-routing.module.ts" Line="2" Column="56" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/gestion-projet/gestion-projet.page.html" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-commercial/recherche-commercial.page.html" Line="62" Column="131" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/recherche-gamme/recherche-gamme.page.html" Line="58" Column="66" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/nouveau-projet/nouveau-projet.page.html" Line="25" Column="80" />
-      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="14" Column="14" />
-      <File FileName="Madera/ClientApp/src/app/pages/parametrage/nouveau-commercial/nouveau-commercial.module.ts" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/models/Projet.ts" Line="12" Column="19" NotebookId="1" />
+      <File FileName="Madera/Controllers/commercialController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="client" expanded="True">
-                        <Node name="nouveau-client" expanded="True" />
-                      </Node>
-                      <Node name="parametrage" expanded="True">
-                        <Node name="nouveau-commercial" expanded="True">
-                          <Node name="nouveau-commercial.module.ts" selected="True" />
-                        </Node>
-                        <Node name="recherche-commercial" expanded="True" />
-                      </Node>
-                      <Node name="projet" expanded="True">
-                        <Node name="gestion-projet" expanded="True" />
-                        <Node name="nouveau-projet" expanded="True" />
-                        <Node name="recherche-projet" expanded="True" />
-                      </Node>
-                    </Node>
-                    <Node name="webServices" expanded="True" />
-                  </Node>
-                  <Node name="environments" expanded="True" />
-                </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="commercialController.cs" selected="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -92,10 +21,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/maximemasetto/Desktop/Projet perso/Git/Madera_Livrable3/Madera/Madera/Controllers/devisController.cs" relfile="Madera/Controllers/devisController.cs" line="42" column="1" />
-      <Breakpoint file="/Users/maximemasetto/Desktop/Projet perso/Git/Madera_Livrable3/Madera/Madera/ClientApp/src/app/models/Projet.ts" relfile="Madera/ClientApp/src/app/models/Projet.ts" line="14" column="1" />
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="99" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
 </Properties>
