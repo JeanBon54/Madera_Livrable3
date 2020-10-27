@@ -1,32 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Projet } from '../models/Projet';
+import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProjetWebService {
+export class ProjetWebService extends ApiService {
 
-
-  myAppUrl: string;
-  myApiUrl: string;
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8'
-    })
-  };
+  projectUrl = environment.appUrl + 'api/Projet/';
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = environment.appUrl;
-    this.myApiUrl = 'api/Projet/';
+    super(http);
   }
 
 
   getProjets(): Observable<Projet[]> {
-    return this.http.get<Projet[]>(this.myAppUrl + this.myApiUrl)
+    return this.get<Projet[]>(this.projectUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
@@ -34,8 +27,9 @@ export class ProjetWebService {
   }
 
   getProjet(projetId: number): Observable<Projet> {
-    return this.http.get<Projet>(this.myAppUrl + this.myApiUrl + projetId)
+    return this.get<Projet>(this.projectUrl, [{key: 'id', value: projetId.toString()}] )
       .pipe(
+        tap(resp => console.log(resp)),
         retry(1),
         catchError(this.errorHandler)
       );
@@ -43,7 +37,7 @@ export class ProjetWebService {
 
 
   saveProjet(projet): Observable<Projet> {
-    return this.http.post<Projet>(this.myAppUrl + this.myApiUrl, JSON.stringify(projet), this.httpOptions)
+    return this.post<Projet>(this.projectUrl, JSON.stringify(projet))
     .pipe(
       retry(1),
       catchError(this.errorHandler)

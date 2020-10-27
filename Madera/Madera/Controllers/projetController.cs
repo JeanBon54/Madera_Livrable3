@@ -29,7 +29,7 @@ namespace Madera.Controllers
             [HttpGet]
             public IEnumerable<Projet> GetProjet()
             {
-                return _context.Projet.OrderByDescending(p => p.ID);
+                return _context.Projet.OrderByDescending(p => p.ID).AsEnumerable();
             }
 
             // GET: api/Projets/5
@@ -41,7 +41,7 @@ namespace Madera.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var projet = await _context.Projet.FindAsync(id);
+                var projet = await _context.Projet.Where(p => p.ID == id).FirstOrDefaultAsync();
 
                 if (projet == null)
                 {
@@ -111,7 +111,7 @@ namespace Madera.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var projet = await _context.Projet.FindAsync(id);
+                var projet = await _context.Projet.Where(p => p.ID == id).FirstOrDefaultAsync();
                 if (projet == null)
                 {
                     return NotFound();

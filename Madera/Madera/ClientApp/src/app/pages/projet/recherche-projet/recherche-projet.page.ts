@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -17,7 +17,8 @@ export class RechercheProjetPage implements OnInit {
 
   projets$: Observable<Projet[]>;
 
-  constructor(private projetService: ProjetWebService) {
+  constructor(private projetService: ProjetWebService,
+              private cd: ChangeDetectorRef) {
   }
 
   ngOnInit() {

@@ -33,7 +33,7 @@
     <ion-card>
         <ion-card-content>
             <ion-card-header *ngIf="(projets$ | async)?.length>0">
-                <h2>Resultat</h2>   
+                <h2>Resultat</h2>
             </ion-card-header>
             <ion-grid>
                 <ion-row>
@@ -45,19 +45,19 @@
                 </ion-row>
                 <ion-row  *ngFor="let projet of (projets$ | async)">
                     <ion-col size="2">
-                        <ion-label center text-center>{{projet.libelleProjet}}</ion-label>
+                        <ion-label center text-center>{{projet.LibelleProjet}}</ion-label>
                     </ion-col>
                     <ion-col size="3">
-                        <ion-label center text-center>{{projet.clientID}}</ion-label>
+                        <ion-label center text-center>{{projet.ClientID}}</ion-label>
                     </ion-col>
                     <ion-col size="3">
-                        <ion-label center text-center>{{projet.dateDebutProjet | date:'dd/MM/yyyy'}}</ion-label>
+                        <ion-label center text-center>{{projet.DateDebutProjet | date:'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
                     <ion-col size="3">
-                        <ion-label center text-center>{{projet.dateModification | date:'dd/MM/yyyy'}}</ion-label>
+                        <ion-label center text-center>{{projet.DateModification | date:'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
                     <ion-col size="1">
-                        <ion-button [routerLink]="['/gestion-projet/', projet.id]">
+                        <ion-button [routerLink]="['/gestion-projet/', projet.ID]">
                             <ion-icon size="small" slot="end" name="eye"></ion-icon>
                         </ion-button>
                     </ion-col>

@@ -15,7 +15,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private router: Router
+    protected router: Router
   ) {
     this.initializeApp();
   }
@@ -27,32 +27,8 @@ export class AppComponent {
     });
   }
 
-  goTo(numMenu) {
-
-    switch (numMenu) {
-      case 1:
-        this.router.navigate(['/recherche-projet'])
-        break;
-      case 2:
-        this.router.navigate(['/nouveau-projet'])
-        break;
-      case 3:
-        this.router.navigate(['/recherche-devis'])
-        break;
-      case 4:
-        this.router.navigate(['/menu-principal'])
-        break;
-      case 5:
-        this.router.navigate(['/recherche-client'])
-        break;
-      case 6:
-        this.router.navigate(['/nouveau-client'])
-        break;
-      case 7:
-        this.router.navigate(['/parametrage'])
-        break;
-    }
-
-
+  goTo(menuName: string) {
+    this.router.navigateByUrl(menuName);
   }
-} 
+
+}
