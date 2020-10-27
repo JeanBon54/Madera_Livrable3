@@ -33,6 +33,16 @@ export class CommercialWebService {
     );
   }
 
+
+  getCommercialID(postId: number): Observable<Commercial> {
+    return this.http.get<Commercial>(this.myAppUrl + this.myApiUrl + postId)
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+}
+
+
   // POST  --> AJOUT
   saveCommercial(comercial): Observable<Commercial> {
     return this.http.post<Commercial>(this.myAppUrl + this.myApiUrl, JSON.stringify(comercial), this.httpOptions)

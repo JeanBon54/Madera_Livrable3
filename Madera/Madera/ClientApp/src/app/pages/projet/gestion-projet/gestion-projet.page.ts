@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
-import { Projet } from '../../../models/Projet';
+import { Observable } from 'rxjs';
+import { Projet } from 'src/app/models/Projet';
 
 @Component({
   selector: 'app-gestion-projet',
