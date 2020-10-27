@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheDevisPage implements OnInit {
 
+  devis: [] = [];
+
   constructor() { }
 
   ngOnInit() {
