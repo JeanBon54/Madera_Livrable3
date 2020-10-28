@@ -25,6 +25,6 @@ namespace Madera.Models
         public DateTime DateArchivage { get; set; }
 
         public Gamme gamme;
-        public ;
+        
     }
 }

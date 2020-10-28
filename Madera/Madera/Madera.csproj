@@ -45,8 +45,13 @@
     <Folder Include="ClientApp\src\app\models\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Controllers\devisController.cs" />
+    <Compile Remove="Data\CoupePrincipale.cs" />
+    <Compile Remove="Data\DbInitializer.cs" />
+    <Compile Remove="Models\CoupePrincipale.cs" />
+    <Compile Remove="Models\Couverture.cs" />
+    <Compile Remove="Models\Modele.cs" />
     <Compile Remove="Models\Plan.cs" />
+    <Compile Remove="Models\Plancher.cs" />
     <Compile Remove="Models\Slot.cs" />
   </ItemGroup>
   <ItemGroup>

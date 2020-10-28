@@ -44,6 +44,10 @@ namespace Madera
 
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
+            //injection de AppDbContext
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
 
             // In production, the Angular files will be served from this directory
