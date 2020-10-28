@@ -13,8 +13,8 @@ namespace Madera.Controllers
     [Route("[controller]")]
     public class ClientController:ControllerBase
     {
-        readonly DefaultContext cliDetails;
-        public ClientController(DefaultContext cliContext)
+        readonly AppDbContext cliDetails;
+        public ClientController(AppDbContext cliContext)
         {
             cliDetails = cliContext;
         }
@@ -22,7 +22,7 @@ namespace Madera.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Client client)
         {
-            cliDetails.Client.Add(client);
+            cliDetails.Clients.Add(client);
             cliDetails.SaveChanges();
             int? id = client.ID; // Yes it's here
             return Ok();

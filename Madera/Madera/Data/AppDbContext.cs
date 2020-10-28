@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Madera.Models
 {
     public class AppDbContext:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext>options)
-            :base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration)
+            :base(options)   
         {
-
+            Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Commercial> Commercials { get; set; }
@@ -43,5 +47,12 @@ namespace Madera.Models
             modelBuilder.Entity<Devis>().ToTable("Devis");
             modelBuilder.Entity<Slot>().ToTable("Slot");
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            Debug.WriteLine("Readed");
+            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultContext"));
+        }
+
     }
 }

@@ -10,9 +10,9 @@ namespace Madera.Data
 {
     public class DataRepository<T> : IDataRepository<T> where T : class
     {
-        private readonly DefaultContext _context;
+        private readonly AppDbContext _context;
 
-        public DataRepository(DefaultContext context)
+        public DataRepository(AppDbContext context)
         {
             _context = context;
         }

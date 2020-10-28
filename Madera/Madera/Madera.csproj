@@ -30,6 +30,13 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Include="**/*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201028180550_premierDeployement.cs" />
+    <Compile Remove="Migrations\20201028180550_premierDeployement.Designer.cs" />
+    <Compile Remove="Migrations\20201028183523_deuxiemeMigration.cs" />
+    <Compile Remove="Migrations\20201028183523_deuxiemeMigration.Designer.cs" />
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientApp\src\app\pages\parametrage\" />
     <Folder Include="ClientApp\src\app\pages\parametrage\recherche-commercial\" />

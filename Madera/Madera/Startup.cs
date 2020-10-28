@@ -24,10 +24,6 @@ namespace Madera
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString =
-            this.Configuration.GetConnectionString("DefaultContext");
-
-            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")));
 
             services.AddCors(options =>
             {
@@ -38,15 +34,15 @@ namespace Madera
                         );
             });
 
-            services.AddDbContext<DefaultContext>(
-            options => options.UseSqlServer(connectionString),
-            ServiceLifetime.Scoped);
+            //injection de AppDbContext
+            services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")), ServiceLifetime.Scoped
+
+            );
 
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
-            //injection de AppDbContext
-            services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddControllersWithViews();
 
