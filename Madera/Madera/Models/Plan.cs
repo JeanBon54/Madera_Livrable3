@@ -23,15 +23,10 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime DateArchivage { get; set; }
-        public int IdUtilisateurCreation { get; set; }
-        public DateTime DateCreation { get; set; }
-        public int IdUtilisateurModification { get; set; }
-        public DateTime DateModification { get; set; }
-        public DateTime DateArchivage { get; set; }
 
         //Classe associée 
         public Plancher plancher;
         public Couverture couverture;
-        public CoupePrincipales coupePrincipales;
+        public CoupePrincipale coupePrincipales;
     }
 }

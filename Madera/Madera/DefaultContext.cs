@@ -33,7 +33,7 @@ namespace Madera
         public DbSet<Composant> Composant { get; set; }
         public DbSet<Module> Module { get; set; }
         public DbSet<Gamme> Gamme { get; set; }
-        public DbSet<familleComposant> famille_Composant { get; set; }
+        public DbSet<FamilleComposant> famille_Composant { get; set; }
 
     }
 }

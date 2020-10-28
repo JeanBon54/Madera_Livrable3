@@ -24,6 +24,6 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime DateArchivage { get; set; }
 
-        public familleComposant familleComposant;
+        public FamilleComposant familleComposant;
     }
 }

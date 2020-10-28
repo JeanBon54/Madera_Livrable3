@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Madera.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Madera.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(SchoolContext context)
+        public static void Initialize(AppDbContext context)
         {
             context.Database.EnsureCreated();
 
@@ -19,7 +20,12 @@ namespace Madera.Data
 
             var commercials = new Commercial[]
             {
-                new Commercial{ NomCommercial="Giroud",PrenomCommercial="Gabriel",EmailCommercial="g.gabriel@madera.fr",MdpCommercial="toto"},
+                new Commercial{ 
+                    NomCommercial="Giroud",
+                    PrenomCommercial="Gabriel",
+                    EmailCommerce="g.gabriel@madera.fr",
+                    MdpCommercial="toto"
+                },
             };
             foreach (Commercial c in commercials)
             {

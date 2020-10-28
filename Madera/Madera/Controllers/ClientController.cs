@@ -20,11 +20,11 @@ namespace Madera.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Client obj)
+        public IActionResult Post([FromBody] Client client)
         {
-            cliDetails.Client.Add(obj);
+            cliDetails.Client.Add(client);
             cliDetails.SaveChanges();
-            int? id = obj.ID_CLIENT; // Yes it's here
+            int? id = client.ID; // Yes it's here
             return Ok();
         }
 
