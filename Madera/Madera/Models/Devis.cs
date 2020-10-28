@@ -9,15 +9,19 @@ namespace Madera.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int ID_DEVIS { get; set; }
-        public String LIBELLE_DEVIS { get; set; }
-        public String ETAT_DEVIS { get; set; }
-        public DateTime DATE_DEBUT_DEVIS { get; set; }
-        public decimal PRIX_TOTAL_TTC_DEVIS { get; set; }
-        public decimal MARGE_COMMERCIAL_DEVIS { get; set; }
-        public DateTime DATE_ARCHIVAGE_DEVIS { get; set; }
-        public DateTime DATE_MODIFICATION_DEVIS { get; set; }
-        //public String UTILISATEUR_CREATION { get; set; }
-        //public String UTILISATEUR_MODIFICATION { get; set; }
+        public int ID { get; set; }
+        public int PlanID { get; set; }
+        public string LibelleDevis { get; set; }
+        public string EtatDevis { get; set; }
+        public DateTime DateDebutDevis { get; set; }
+        public decimal PrixTotalHtDevis { get; set; }
+        public decimal PrixTotalTtcDevis { get; set; }
+        public decimal MargeCommercialDevis { get; set; }
+        public decimal MargeEntrepriseDevis { get; set; }
+        public int IdUtilisateurCreation { get; set; }
+        public DateTime DateCreation { get; set; }
+        public int IdUtilisateurModification { get; set; }
+        public DateTime DateModification { get; set; }
+        public DateTime DateArchivage { get; set; }
     }
 }

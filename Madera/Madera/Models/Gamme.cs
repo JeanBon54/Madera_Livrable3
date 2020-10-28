@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,9 +9,12 @@ namespace Madera.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int ID_GAMME { get; set; }
-        public String LIBELLE_GAMME { get; set; }
-        public String TYPE_GAMME { get; set; }
-        public decimal QUALITE_HUISSERIE_GAMME { get; set; }
+        public int ID { get; set; }
+        public string LibelleGamme { get; set; }
+        public string TypeGamme { get; set; }
+        public string TypeIsolantGamme { get; set; }
+        public decimal QualiteHuisserieGamme { get; set; }
+
+        public ICollection<Module> Modules;
     }
 }
