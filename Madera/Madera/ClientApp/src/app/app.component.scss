@@ -14,7 +14,10 @@
     border: 1px solid #bbb;
     padding-bottom: 5px;
   }
-  
+
+  ion-item {
+    padding-bottom: 10px;
+  }
 
   ion-card-header{
     padding-top: 5px;
@@ -44,6 +47,8 @@
     margin-top: 10px;
     font-size: 20px;
   }
+
+
   
   
   hr.solid {
@@ -122,6 +127,11 @@
   margin-bottom: 5px;
 }
 
+.test-btn {
+  width: 206px;
+  height: 40px;
+  margin-bottom: 5px;
+}
 
 .retour-btn{
   width: 206px;
@@ -182,7 +192,7 @@ ion-toolbar {
 .footer-btn {
   height: 60px;
   text-align: center;
-    padding-top: 0px;
+  padding-top: 0px;
   padding-bottom: 0px;
 }
 

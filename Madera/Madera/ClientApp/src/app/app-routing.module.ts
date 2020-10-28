@@ -36,6 +36,10 @@ const routerConfig: Routes = [
     loadChildren: () => import('./pages/devis/recherche-devis/recherche-devis.module').then( m => m.RechercheDevisPageModule)
   },
   {
+    path: 'gestion-devis/:id',
+    loadChildren: () => import('./pages/devis/gestion-devis/gestion-devis.module').then(m => m.GestionDevisPageModule)
+  },
+  {
     path: 'recherche-client',
     loadChildren: () => import('./pages/client/recherche-client/recherche-client.module').then( m => m.RechercheClientPageModule)
   },
