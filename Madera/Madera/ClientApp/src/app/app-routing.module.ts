@@ -28,6 +28,10 @@ const routerConfig: Routes = [
     loadChildren: () => import('./pages/projet/gestion-projet/gestion-projet.module').then(m => m.GestionProjetPageModule)
   },
   {
+    path: 'gestion-plan/:id',
+    loadChildren: () => import('./pages/plan/gestion-plan/gestion-plan.module').then(m => m.GestionPlanPageModule)
+  },
+  {
     path: 'nouveau-projet',
     loadChildren: () => import('./pages/projet/nouveau-projet/nouveau-projet.module').then( m => m.NouveauProjetPageModule)
   },

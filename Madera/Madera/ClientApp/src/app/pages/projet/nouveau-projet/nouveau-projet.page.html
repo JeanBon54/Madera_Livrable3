@@ -1,32 +1,116 @@
-
-<ion-card>
-    <ion-card-header>
-        <h3>Création d'un projet</h3>
-    </ion-card-header>
-    <hr class="solid">
-    <ion-card-content>
+<ion-col size="12">
+    <ion-card>
+      <ion-card-header>
+        <h3>
+          <ion-label>Création plan :</ion-label>
+        </h3>
+      </ion-card-header>
+      <hr class="solid">
+      <ion-card-content>
         <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <ion-input placeholder="Client"></ion-input>
-                </ion-col>
-                <ion-col>
-                    <ion-input placeholder="Nom du projet"></ion-input>
-                </ion-col>
-            </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Clent :</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Adresse du projet :</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Complément :</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Ville :</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label>CP :</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
         </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+        <ion-card-header>
+          <h3>
+            <ion-label>Caractéristiques du plan</ion-label>
+          </h3>
+        </ion-card-header>
+        <hr class="solid">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Coupe de principe</ion-label>
+                        <ion-select placeholder="Selection">
+                          <ion-select-option value="f">Female</ion-select-option>
+                          <ion-select-option value="m">Male</ion-select-option>
+                        </ion-select>
+                    </ion-item>
 
-    </ion-card-content>
-</ion-card>
-<ion-footer>
-    <div class="footer footer-btn">
+                    <ion-item>
+                        <ion-label>Taille en mètre</ion-label>
+                        <ion-select placeholder="Selection">
+                          <ion-select-option value="f">150x150</ion-select-option>
+                          <ion-select-option value="m">90x90</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Type de couverture</ion-label>
+                        <ion-select placeholder="Selection">
+                          <ion-select-option value="f">richesse</ion-select-option>
+                          <ion-select-option value="m">pauvre</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Type de plancher</ion-label>
+                        <ion-select placeholder="Selection">
+                          <ion-select-option value="f">Bois</ion-select-option>
+                          <ion-select-option value="m">Super bois</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Gamme</ion-label>
+                        <ion-select placeholder="Selection">
+                          <ion-select-option value="f">Pauvre</ion-select-option>
+                          <ion-select-option value="m">Riche</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+              </ion-col>
+              <ion-col>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-item>
+            <ion-textarea placeholder="Remarque :"></ion-textarea>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+  
+    <ion-footer>
+      <div class="footer footer-btn">
         <div class="container-image">
-            <div class="retour-btn">
-                <ion-button size="block" color="danger" [routerLink]="['/recherche-projet']" routerDirection="back">Retour</ion-button>
-            </div>
-            <div class="nouveau-btn">
-                <ion-button type="submit" expand="block" color="success">Enregistrer</ion-button>
-            </div>
+  
+          <div class="retour-btn">
+            <ion-button size="block" color="danger" [routerLink]="['/menu-principal']" routerDirection="forward">Annuler</ion-button>
+          </div>
+  
+          <div class="nouveau-btn">
+            <ion-button expand="block" color="success" [routerLink]="['/nouveau-commercial']" routerDirection="forward">Enregistrer</ion-button>
+          </div>
         </div>
-    </div>
-</ion-footer>
+      </div>
+    </ion-footer>
+  </ion-col>
+  
+  
