@@ -13,6 +13,7 @@ namespace Madera.Models
         public string LibelleGamme { get; set; }
         public string TypeGamme { get; set; }
         public string TypeIsolantGamme { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
         public decimal QualiteHuisserieGamme { get; set; }
 
         public ICollection<Module> Modules;

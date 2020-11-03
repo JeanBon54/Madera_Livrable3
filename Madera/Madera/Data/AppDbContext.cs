@@ -51,7 +51,7 @@ namespace Madera.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             Debug.WriteLine("Readed");
-            optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultContext"));
+            optionsBuilder.UseSqlServer("Server=kaktux.com;Database=Madera;User Id=sa;Password=Password7757;");
         }
 
     }

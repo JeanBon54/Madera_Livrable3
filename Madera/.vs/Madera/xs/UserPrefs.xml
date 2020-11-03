@@ -1,12 +1,5 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.scss">
-    <Files>
-      <File FileName="Madera/Controllers/commercialController.cs" Line="1" Column="1" />
-      <File FileName="Madera/ClientApp/src/app/pages/projet/recherche-projet/recherche-projet.page.html" Line="60" Column="81" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.html" Line="41" Column="30" />
-      <File FileName="Madera/ClientApp/src/app/app.component.scss" Line="214" Column="27" />
-      <File FileName="Madera/ClientApp/src/app/pages/menu/menu-principal/menu-principal.page.scss" Line="13" Column="20" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -15,19 +8,16 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="pages" expanded="True">
-                      <Node name="menu" expanded="True">
-                        <Node name="menu-principal" expanded="True">
-                          <Node name="menu-principal.page.scss" selected="True" />
-                        </Node>
-                      </Node>
-                      <Node name="projet" expanded="True">
-                        <Node name="recherche-projet" expanded="True" />
-                      </Node>
-                    </Node>
+                    <Node name="webServices" selected="True" />
                   </Node>
+                  <Node name="environments" expanded="True" />
+                  <Node name="Shared" expanded="True" />
                 </Node>
               </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>

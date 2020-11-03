@@ -22,6 +22,6 @@ namespace Madera.Models
         public DateTime DateCreation { get; set; }
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
-        public DateTime DateArchivage { get; set; }
+        public DateTime? DateArchivage { get; set; }
     }
 }

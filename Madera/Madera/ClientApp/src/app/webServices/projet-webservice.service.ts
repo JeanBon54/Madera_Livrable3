@@ -11,7 +11,7 @@ import { ApiService } from 'src/Shared/api.service';
 })
 export class ProjetWebService extends ApiService {
 
-  projectUrl = environment.appUrl + 'api/Projet/';
+  projectUrl = environment.appUrl + 'api/Projets/';
 
   constructor(private http: HttpClient) {
     super(http);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Madera.Models
 {
@@ -19,7 +20,7 @@ namespace Madera.Models
         public DateTime DateCreation { get; set; }
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
-        public DateTime DateArchivage { get; set; }
+        public DateTime? DateArchivage { get; set; }
 
         public ICollection<Projet> Projets { get; set; }
     }

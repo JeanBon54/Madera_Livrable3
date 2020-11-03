@@ -33,7 +33,7 @@ namespace Madera.Migrations
                     b.Property<int>("CpClient")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateArchivage")
+                    b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -82,7 +82,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateArchivage")
+                    b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -124,7 +124,7 @@ namespace Madera.Migrations
                     b.Property<string>("CaractComposant")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateArchivage")
+                    b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -165,14 +165,14 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("largeurCoupePrincipale")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("LargeurCoupePrincipale")
+                        .HasColumnType("decimal(10 2)");
 
-                    b.Property<string>("libelleCoupePrincipale")
+                    b.Property<string>("LibelleCoupePrincipale")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("longueurCoupePrincipale")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("LongueurCoupePrincipale")
+                        .HasColumnType("decimal(10 2)");
 
                     b.HasKey("ID");
 
@@ -204,7 +204,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateArchivage")
+                    b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -274,7 +274,7 @@ namespace Madera.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("QualiteHuisserieGamme")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10 2)");
 
                     b.Property<string>("TypeGamme")
                         .HasColumnType("nvarchar(max)");
@@ -294,7 +294,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("libelleModele")
+                    b.Property<string>("LibelleModele")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -309,7 +309,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateArchivage")
+                    b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -319,16 +319,16 @@ namespace Madera.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("DdebutPointY")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("DebutPointX")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("FinPointX")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<decimal>("FinPointY")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<int>("GammeID")
                         .HasColumnType("int");
@@ -346,7 +346,7 @@ namespace Madera.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixHtModule")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.HasKey("ID");
 
@@ -412,7 +412,7 @@ namespace Madera.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("PrixPlancher")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(10, 2)");
 
                     b.Property<string>("TypePlancher")
                         .HasColumnType("nvarchar(max)");
