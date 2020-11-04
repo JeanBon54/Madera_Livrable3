@@ -33,6 +33,9 @@ export class NouveauProjetPage implements OnInit {
       this.postId = this.avRoute.snapshot.params[idParam];
     }
 
+  }
+
+  ngOnInit() {
     this.form = this.formBuilder.group(
       {
         postId: 0,
@@ -40,9 +43,7 @@ export class NouveauProjetPage implements OnInit {
         libelleProjet: ['', [Validators.required]]
       }
     )
-  }
 
-  ngOnInit() {
     if (this.postId >= 0) {
       this.actionType = 'Add';
       this.projetPostService.getProjet(this.postId)

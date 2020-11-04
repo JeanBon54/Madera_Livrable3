@@ -18,6 +18,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
@@ -46,12 +47,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201028180550_premierDeployement.cs" />
-    <Compile Remove="Migrations\20201028180550_premierDeployement.Designer.cs" />
-    <Compile Remove="Migrations\20201028183523_deuxiemeMigration.cs" />
-    <Compile Remove="Migrations\20201028183523_deuxiemeMigration.Designer.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ClientApp\src\app\pages\parametrage\" />
     <Folder Include="ClientApp\src\app\pages\parametrage\recherche-commercial\" />
     <Folder Include="ClientApp\src\app\pages\parametrage\recherche-composant\" />
@@ -63,7 +58,6 @@
     <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-module\" />
     <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-famille-composant\" />
     <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-gamme\" />
-    <Folder Include="ClientApp\src\app\models\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\CoupePrincipale.cs" />
@@ -107,7 +101,7 @@
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
       <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
-      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

@@ -11,9 +11,10 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        public String LIBELLE_FAMILLE_COMPOSANT { get; set; }
+        public string LibelleFamilleComposant { get; set; }
 
-        public ICollection<Composant> Composants { get; set; }
+        [ForeignKey("FamilleComposantID")]
+        public virtual ICollection<Composant> Composants { get; set; }
 
     }
 }

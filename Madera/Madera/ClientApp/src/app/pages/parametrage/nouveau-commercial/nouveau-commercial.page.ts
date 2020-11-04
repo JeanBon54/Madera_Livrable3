@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CommercialWebService } from './../../../webServices/commercial-web-service.service';  
 import { Commercial } from 'src/app/models/Commercial';
-import { data } from 'jquery';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 

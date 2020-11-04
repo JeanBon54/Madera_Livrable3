@@ -25,7 +25,9 @@ export class GestionProjetPage implements OnInit {
   }
 
   loadProjet() {
+    console.log('ici')
     this.projet$ = this.pService.getProjet(this.projetId);
+
   }
 
 }

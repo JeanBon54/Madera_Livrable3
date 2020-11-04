@@ -4,14 +4,16 @@ using Madera.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Madera.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201104155324_correctionForeignKey")]
+    partial class correctionForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -506,8 +508,14 @@ namespace Madera.Migrations
             modelBuilder.Entity("Madera.Models.Composant", b =>
                 {
                     b.HasOne("Madera.Models.FamilleComposant", "familleComposant")
-                        .WithMany("Composants")
+                        .WithMany()
                         .HasForeignKey("FamilleComposantID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.FamilleComposant", null)
+                        .WithMany("Composants")
+                        .HasForeignKey("ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -545,8 +553,14 @@ namespace Madera.Migrations
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Couverture", "couverture")
-                        .WithMany("plans")
+                        .WithMany()
                         .HasForeignKey("CouvertureID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Couverture", null)
+                        .WithMany("plans")
+                        .HasForeignKey("ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -560,14 +574,26 @@ namespace Madera.Migrations
             modelBuilder.Entity("Madera.Models.Projet", b =>
                 {
                     b.HasOne("Madera.Models.Client", "client")
-                        .WithMany("Projets")
+                        .WithMany()
                         .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Commercial", "commercial")
-                        .WithMany("Projets")
+                        .WithMany()
                         .HasForeignKey("CommercialID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Client", null)
+                        .WithMany("Projets")
+                        .HasForeignKey("ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Commercial", null)
+                        .WithMany("Projets")
+                        .HasForeignKey("ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

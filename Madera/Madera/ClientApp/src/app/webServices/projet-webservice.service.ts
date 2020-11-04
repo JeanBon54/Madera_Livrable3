@@ -3,8 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Projet } from '../models/Projet';
+import { Projet, ProjetCommercial } from '../models/Projet';
 import { ApiService } from 'src/Shared/api.service';
+import { SearchProjet } from '../models/Search/SearchProjet';
 
 @Injectable({
   providedIn: 'root'
@@ -18,23 +19,29 @@ export class ProjetWebService extends ApiService {
   }
 
 
-  getProjets(): Observable<Projet[]> {
-    return this.get<Projet[]>(this.projectUrl, [])
+  getProjets(): Observable<ProjetCommercial[]> {
+    return this.get<ProjetCommercial[]>(this.projectUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
     );
   }
 
-  getProjet(projetId: number): Observable<Projet> {
-    return this.get<Projet>(this.projectUrl, [{key: 'id', value: projetId.toString()}] )
+  getProjet(projetId: number): Observable<ProjetCommercial> {
+    return this.getById<ProjetCommercial>(this.projectUrl, projetId.toString() )
       .pipe(
-        tap(resp => console.log(resp)),
         retry(1),
         catchError(this.errorHandler)
       );
   }
 
+  searchProjet<T>(search: string): Observable<T> {
+    return this.post<T>(this.projectUrl + 'search', search)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
 
   saveProjet(projet): Observable<Projet> {
     return this.post<Projet>(this.projectUrl, JSON.stringify(projet))

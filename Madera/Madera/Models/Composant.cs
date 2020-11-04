@@ -13,6 +13,7 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
+        [ForeignKey("FamilleComposantID")]
         public int FamilleComposantID { get; set; }
         public string LibelleComposant { get; set; }
         public string NatureComposant { get; set; }
@@ -24,6 +25,7 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-        public FamilleComposant familleComposant;
+
+        public virtual FamilleComposant familleComposant { get; set; }
     }
 }

@@ -12,8 +12,10 @@ namespace Madera.Models
         [Key]
         public int ID { get; set; }
         [Required]
+        [ForeignKey("CommercialID")]
         public int CommercialID { get; set; }
         [Required]
+        [ForeignKey("ClientID")]
         public int ClientID { get; set; }
         [Required]
         public string LibelleProjet { get; set; }
@@ -27,8 +29,35 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-        public Client client;
-        public Commercial commercial;
+
+        public virtual Client client { get; set; }
+        public virtual Commercial commercial { get; set; }
 
     }
+
+    public class ProjetCommercial : Projet
+    {
+        public string NomCommercial => this.commercial == null ? string.Empty : this.commercial.NomCommercial;
+        public string NomClient => this.client == null ? string.Empty : this.client.NomClient;
+
+        public ProjetCommercial(Projet projet)
+        {
+            this.ID = projet.ID;
+            this.CommercialID = projet.CommercialID;
+            this.ClientID = projet.ClientID;
+            this.LibelleProjet = projet.LibelleProjet;
+            this.LibelleNom = projet.LibelleNom;
+            this.LibelleRemarque = projet.LibelleRemarque;
+            this.DateDebutProjet = projet.DateDebutProjet;
+            this.IdUtilisateurCreation = projet.IdUtilisateurCreation;
+            this.DateCreation = projet.DateCreation;
+            this.IdUtilisateurModification = projet.IdUtilisateurModification;
+            this.DateModification = projet.DateModification;
+            this.DateArchivage = projet.DateArchivage;
+            //this.client = projet.client;
+            //this.commercial = projet.commercial;
+        }
+
+    }
+
 }

@@ -10,6 +10,7 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
+        [ForeignKey("GammeID")]
         public int GammeID { get; set; }
         public int PlanID { get; set; }
         public string LibelleModule { get; set; }
@@ -29,7 +30,8 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-        public Gamme gamme;
-        
+
+        public virtual Gamme gamme { get; set; }
+
     }
 }

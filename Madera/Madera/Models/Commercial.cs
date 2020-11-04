@@ -22,6 +22,7 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-        public ICollection<Projet> Projets { get; set; }
+        [ForeignKey("CommercialID")]
+        public virtual ICollection<Projet> Projets { get; set; }
     }
 }

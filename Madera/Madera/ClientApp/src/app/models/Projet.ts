@@ -12,3 +12,8 @@ export class Projet {
   DateModification: Date;
   DateArchivage: Date;
 }
+
+export class ProjetCommercial extends Projet {
+  NomCommercial: string;
+  NomClient: string;
+}

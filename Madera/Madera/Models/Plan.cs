@@ -11,8 +11,12 @@ namespace Madera.Models
         [Key]
         public int ID { get; set; }
         [Required]
+        [ForeignKey("PlancherID")]
         public int PlancherID { get; set; }
+        [Required]
+        [ForeignKey("CoupePrincipaleID")]
         public int CoupePrincipaleID { get; set; }
+        [ForeignKey("CouvertureID")]
         public int CouvertureID { get; set; }
         public string ReferencePlan { get; set; }
         public string libellePlan { get; set; }
@@ -27,8 +31,9 @@ namespace Madera.Models
         public DateTime DateArchivage { get; set; }
 
         //Classe associée 
-        public Plancher plancher;
-        public Couverture couverture;
-        public CoupePrincipale coupePrincipales;
+
+        public virtual Plancher plancher { get; set; }
+        public virtual Couverture couverture { get; set; }
+        public virtual CoupePrincipale coupePrincipales { get; set; } 
     }
 }

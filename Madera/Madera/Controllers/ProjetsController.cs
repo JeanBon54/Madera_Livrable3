@@ -1,11 +1,11 @@
-using System;
+using Madera.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Madera.Models;
+using Madera.Models.Search;
+using System.Security.Permissions;
 
 namespace Madera.Controllers
 {
@@ -22,14 +22,14 @@ namespace Madera.Controllers
 
         // GET: api/Projets
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projet>>> GetProjets()
+        public async Task<ActionResult<IEnumerable<ProjetCommercial>>> GetProjets()
         {
-            return await _context.Projets.ToListAsync();
+            return await _context.Projets.Select(p => new ProjetCommercial(p)).ToListAsync();
         }
 
         // GET: api/Projets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projet>> GetProjet(int id)
+        public async Task<ActionResult<ProjetCommercial>> GetProjet(int id)
         {
             var projet = await _context.Projets.FindAsync(id);
 
@@ -38,7 +38,25 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return projet;
+            return new ProjetCommercial(projet);
+        }
+
+        // GET: api/Projets/5
+        [HttpPost("search")]
+        public async Task<List<ProjetCommercial>> GetListeProjet([FromBody] SearchProjet search)
+        {
+            var listeProject = _context.Projets.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.LibelleProjet))
+                listeProject = listeProject.Where(p => p.LibelleProjet.ToLower().Contains(search.LibelleProjet.ToLower()));
+
+            if (search.ClientId.GetValueOrDefault() != 0)
+                listeProject = listeProject.Where(p => p.ClientID == search.ClientId.Value);
+
+            if (search.DateCreation.HasValue)
+                listeProject = listeProject.Where(p => p.DateCreation.Date == search.DateCreation.Value.Date);
+
+            return await listeProject.Select(p => new ProjetCommercial(p)).ToListAsync();
         }
 
         // PUT: api/Projets/5

@@ -17,7 +17,7 @@ namespace Madera.Models
         public decimal LongueurCoupePrincipale { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal LargeurCoupePrincipale { get; set; }
-
-        public Plan plan;
+        
+        //public Plan plan { get; set; }
     }
 }

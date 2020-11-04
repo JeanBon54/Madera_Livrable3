@@ -16,6 +16,7 @@ namespace Madera.Models
         [Column(TypeName = "decimal(10, 2)")]
         public decimal QualiteHuisserieGamme { get; set; }
 
+        [ForeignKey("ID")]
         public ICollection<Module> Modules;
     }
 }

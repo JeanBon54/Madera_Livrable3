@@ -15,13 +15,17 @@ export class ApiService {
     return this.httpClient.post<T>(url, body, { headers: this.getHeaders() } );
   }
 
-  public get<T>(url: string, parameters: { key: string; value: string }[] ): Observable<T> {
+  public get<T>(url: string, parameters: { key: string; value: any }[] ): Observable<T> {
     let httpParameters: HttpParams;
     if (parameters != null) {
       httpParameters = parameters.reduce((params, p) => params.set(p.key, p.value), new HttpParams());
     }
 
     return this.httpClient.get<T>(url, { headers: this.getHeaders(), params: httpParameters });
+  }
+
+  public getById<T>(url: string, value: string): Observable<T> {
+    return this.httpClient.get<T>(url + value, { headers: this.getHeaders() });
   }
 
   private getHeaders(): HttpHeaders {
