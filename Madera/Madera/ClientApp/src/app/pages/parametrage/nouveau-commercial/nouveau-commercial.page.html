@@ -1,3 +1,5 @@
+<ion-col size="12">
+ 
 <form [formGroup]="form" (ngSubmit)="save()">
 <ion-card>
     <ion-card-header>
@@ -8,7 +10,7 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Nom" formControlName="nomCommercial"></ion-input>
+            <ion-input formControlName="nomCommercial">Nom :</ion-input>
           </ion-col>
           <ion-col>
             <ion-input placeholder="Prénom" formControlName="prenomCommercial" ></ion-input>
@@ -47,9 +49,10 @@
           <ion-button size="block" color="danger"[routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
         </div>
         <div class="nouveau-btn">
-          <ion-button type="submit" expand="block" color="success">Enregistrer</ion-button>
+          <ion-button expand="block" color="success" type="submit" >Enregistrer</ion-button>
         </div>
       </div>
     </div>
   </ion-footer>
 </form>
+</ion-col>

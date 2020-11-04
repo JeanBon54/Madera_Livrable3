@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CommercialWebService } from './../../../webServices/commercial-web-service.service';  
 import { Commercial } from 'src/app/models/Commercial';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 
 @Component({
@@ -16,12 +15,9 @@ export class NouveauCommercialPage implements OnInit {
 
   form: FormGroup;
   actionType: string;
-  formTitle: string;
-  formBody: string;
   nomCommercial : string;
   prenomCommercial : string;
   emailCommercial : string;
-  dateCreation : string;
   postId: number;
   errorMessage: any;
   existingCommercialPost: Commercial;
@@ -32,9 +28,10 @@ export class NouveauCommercialPage implements OnInit {
     
     const idParam = 'id';
     this.actionType = 'Add';
-    this.nomCommercial = '';
-    this.prenomCommercial= '';
-    this.emailCommercial = '';
+    this.nomCommercial = 'nomCommercial';
+    this.prenomCommercial= 'prenomCommercial';
+    this.emailCommercial = 'emailCommercial';
+
     if (this.avRoute.snapshot.params[idParam]) {
       this.postId = this.avRoute.snapshot.params[idParam];
     }
@@ -44,20 +41,20 @@ export class NouveauCommercialPage implements OnInit {
         postId: 0,
         nomCommercial: ['', [Validators.required]],
         prenomCommercial: ['', [Validators.required]],
-        emailCommercial: ['', [Validators.required]],
+        emailCommercial: ['', [Validators.required]]
       }
     )
   }
 
   ngOnInit() {
-    if (this.postId > 0) {
+    if (this.postId >= 0) {
       this.actionType = 'Add';
       this.commercialService.getCommercialID(this.postId)
         .subscribe(data => (
           this.existingCommercialPost = data,
           this.form.controls[this.nomCommercial].setValue(data.NomCommercial),
           this.form.controls[this.prenomCommercial].setValue(data.PrenomCommercial),
-          this.form.controls[this.emailCommercial].setValue(data.EmailCommercial)
+          this.form.controls[this.emailCommercial].setValue(data.EmailCommerce)
         ));
     }
   }
@@ -71,21 +68,18 @@ export class NouveauCommercialPage implements OnInit {
       let commercial: Commercial = {
         NomCommercial: this.form.get(this.nomCommercial).value,
         PrenomCommercial: this.form.get(this.prenomCommercial).value,
-        EmailCommercial: this.form.get(this.emailCommercial).value,
-        // DateCreation: this.form.get(this.formBody).value,
+        EmailCommerce: this.form.get(this.emailCommercial).value,
         MdpCommercial : 'toto',
         IdUtilisateurCreation :1,
         DateCreation :new Date(),
         IdUtilisateurModification :1,
         DateModification :new Date(),
         DateArchivage :new Date()
-        
-
       };
 
       this.commercialService.saveCommercial(commercial)
         .subscribe((data) => {
-          this.router.navigate(['api/Projets/', data.ID]);
+          this.router.navigate(['api/Commercials/', data.ID]);
         });
     }
   }
