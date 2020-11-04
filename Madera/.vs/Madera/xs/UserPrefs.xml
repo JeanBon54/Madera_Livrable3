@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ProjetsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/CommercialsController.cs">
     <Files>
       <File FileName="Madera/Controllers/ProjetsController.cs" Line="1" Column="1" />
+      <File FileName="Madera/Controllers/CommercialsController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
             <Node name="Madera" expanded="True">
               <Node name="ClientApp" expanded="True" />
               <Node name="Controllers" expanded="True">
-                <Node name="ProjetsController.cs" selected="True" />
+                <Node name="CommercialsController.cs" selected="True" />
               </Node>
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
