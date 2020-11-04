@@ -1,32 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+
 import { Commercial } from '../models/Commercial';
+import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommercialWebService {
+export class CommercialWebService extends ApiService {
 
 
-  myAppUrl: string;
-  myApiUrl: string;
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8'
-    })
-  };
+  commercialUrl = environment.appUrl + 'api/Commercials/';
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = environment.appUrl;
-    this.myApiUrl = 'api/Commercial/';
+    super(http);
   }
 
   // GET POUR PRENDRE LES INFOS
   getCommercial(): Observable<Commercial[]> {
-    return this.http.get<Commercial[]>(this.myAppUrl + this.myApiUrl)
+    return this.get<Commercial[]>(this.commercialUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
@@ -34,18 +29,19 @@ export class CommercialWebService {
   }
 
 
-  getCommercialID(postId: number): Observable<Commercial> {
-    return this.http.get<Commercial>(this.myAppUrl + this.myApiUrl + postId)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandler)
-    );
-}
+  getCommercialID(commercialId: number): Observable<Commercial> {
+    return this.get<Commercial>(this.commercialUrl, [{key: 'id', value: commercialId.toString()}] )
+      .pipe(
+        tap(resp => console.log(resp)),
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
 
 
   // POST  --> AJOUT
-  saveCommercial(comercial): Observable<Commercial> {
-    return this.http.post<Commercial>(this.myAppUrl + this.myApiUrl, JSON.stringify(comercial), this.httpOptions)
+  saveCommercial(commercial): Observable<Commercial> {
+    return this.post<Commercial>(this.commercialUrl, JSON.stringify(commercial))
     .pipe(
       retry(1),
       catchError(this.errorHandler)
