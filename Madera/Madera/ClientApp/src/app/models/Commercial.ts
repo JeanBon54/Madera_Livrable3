@@ -3,7 +3,7 @@ export class Commercial {
     ID?:number;
     NomCommercial : string;
     PrenomCommercial : string;
-    EmailCommerce : string;
+    EmailCommercial : string;
     MdpCommercial : string;
     IdUtilisateurCreation :number;
     DateCreation :Date;

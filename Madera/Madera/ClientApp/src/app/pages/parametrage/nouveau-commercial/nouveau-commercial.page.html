@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+<form [formGroup]="form" (ngSubmit)="save()">
 <ion-card>
     <ion-card-header>
       <h3>Création d'un commercial</h3>
@@ -8,10 +8,10 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-input placeholder="Nom"></ion-input>
+            <ion-input placeholder="Nom" formControlName="nomCommercial"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Prénom" ></ion-input>
+            <ion-input placeholder="Prénom" formControlName="prenomCommercial" ></ion-input>
           </ion-col>
           <ion-col>
             <ion-item>
@@ -26,7 +26,7 @@
             <ion-input placeholder="Numéro de téléphone"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Adresse mail" ></ion-input>
+            <ion-input placeholder="Adresse mail" formControlName="emailCommercial" ></ion-input>
           </ion-col>
 
         </ion-row>
