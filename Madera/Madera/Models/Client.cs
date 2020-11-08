@@ -35,5 +35,22 @@ namespace Madera.Models
         public DateTime? DateArchivage { get; set; }
         [ForeignKey("ClientID")]
         public virtual ICollection<Projet> Projets { get; set; }
+
+       
+    }
+
+    public class SearchingClient : Client
+    {
+
+        public SearchingClient(Client client)
+        {
+            this.NomClient = client.NomClient;
+            this.PrenomClient = client.PrenomClient;
+            this.DateCreation = client.DateCreation;
+            this.DateModification = client.DateModification;
+
+
+        }
+
     }
 }

@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Projet.cs">
     <Files>
-      <File FileName="Madera/Controllers/CommercialsController.cs" Line="53" Column="75" />
-      <File FileName="Madera/Models/Commercial.cs" Line="38" Column="2" />
-      <File FileName="Madera/Models/Search/SearchCommercial.cs" Line="1" Column="1" />
+      <File FileName="Madera/Controllers/CommercialsController.cs" Line="50" Column="1" />
+      <File FileName="Madera/Models/Commercial.cs" Line="22" Column="41" />
+      <File FileName="Madera/Models/Search/SearchCommercial.cs" Line="11" Column="1" />
+      <File FileName="Madera/Controllers/ClientsController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Madera/Models/Client.cs" Line="47" Column="52" NotebookId="1" />
+      <File FileName="Madera/Models/Search/SearchClient.cs" Line="10" Column="43" NotebookId="1" />
       <File FileName="Madera/Models/Search/SearchProjet.cs" Line="21" Column="1" NotebookId="1" />
-      <File FileName="Madera/Models/Projet.cs" Line="21" Column="23" NotebookId="1" />
-      <File FileName="Madera/Controllers/ProjetsController.cs" Line="52" Column="67" NotebookId="1" />
+      <File FileName="Madera/Models/Projet.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,9 +27,8 @@
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="Search" expanded="True">
-                  <Node name="SearchProjet.cs" selected="True" />
-                </Node>
+                <Node name="Search" expanded="True" />
+                <Node name="Projet.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -1,19 +1,73 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Client,SearchingClient } from '../models/Client';
+import { ApiService } from 'src/Shared/api.service';
+import { SearchClient } from '../models/Search/SearchClient';
+
 @Injectable({
   providedIn: 'root'
 })
-export class ClientWebServiceService {
+export class ClientWebServiceService extends ApiService {
 
-  constructor(private http: HttpClient) { }
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+
+  clientUrl = environment.appUrl + 'api/Clients/';
+
+  constructor(private http: HttpClient) {
+    super(http);
   }
-  getData() {
 
-    return this.http.get('/Client');
-  }  
+  // GET POUR PRENDRE LES INFOS
+  getClient(): Observable<SearchingClient[]> {
+    return this.get<SearchingClient[]>(this.clientUrl, [])
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+
+  getClientID(clientId: number): Observable<SearchingClient> {
+    return this.get<SearchingClient>(this.clientUrl, [{key: 'id', value: clientId.toString()}] )
+      .pipe(
+        tap(resp => console.log(resp)),
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  searchClient<T>(search: string): Observable<T> {
+    return this.post<T>(this.clientUrl + 'search', search)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+
+  // POST  --> AJOUT
+  saveClient(client): Observable<Client> {
+    return this.post<Client>(this.clientUrl, JSON.stringify(client))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+// GESTION DES ERREURS
+  errorHandler(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
 
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Madera.Models;
+using Madera.Models.Search;
 
 namespace Madera.Controllers
 {
@@ -22,14 +23,14 @@ namespace Madera.Controllers
 
         // GET: api/Clients
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Client>>> GetClients()
+        public async Task<ActionResult<IEnumerable<SearchingClient>>> GetClients()
         {
-            return await _context.Clients.ToListAsync();
+            return await _context.Clients.Select(p => new SearchingClient(p)).ToListAsync();
         }
 
         // GET: api/Clients/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> GetClient(int id)
+        public async Task<ActionResult<SearchingClient>> GetClient(int id)
         {
             var client = await _context.Clients.FindAsync(id);
 
@@ -38,8 +39,24 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return client;
+            return new SearchingClient(client);
         }
+
+
+        // GET: api/Projets/5
+        [HttpPost("search")]
+        public async Task<List<SearchingClient>> GetListeClient([FromBody] SearchClient search)
+        {
+            var listeClient = _context.Clients.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.NomClient))
+                listeClient = listeClient.Where(p => p.NomClient.ToLower().Contains(search.NomClient.ToLower()));
+
+            return await listeClient.Select(p => new SearchingClient(p)).ToListAsync();
+        }
+
+
+
 
         // PUT: api/Clients/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for

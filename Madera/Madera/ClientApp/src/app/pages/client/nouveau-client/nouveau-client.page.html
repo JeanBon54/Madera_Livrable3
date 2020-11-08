@@ -1,4 +1,6 @@
-
+<ion-col size="12">
+ 
+  <form [formGroup]="form" (ngSubmit)="save()">
 <ion-card>
   <ion-card-header>
     <h2>Création d'un client</h2>
@@ -8,10 +10,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Nom"></ion-input>
+          <ion-input formControlName="nomClient" placeholder="Nom"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Prénom"></ion-input>
+          <ion-input formControlName="prenomClient" placeholder="Prénom"></ion-input>
         </ion-col>
         <ion-col>
           <ion-item>
@@ -36,7 +38,7 @@
           <ion-input placeholder="Ville"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Adresse mail"></ion-input>
+          <ion-input placeholder="Adresse mail" formControlName="emailClient"></ion-input>
         </ion-col>
       </ion-row>
 
@@ -87,3 +89,5 @@
     </div>
   </div>
 </ion-footer>
+</form>
+</ion-col>
