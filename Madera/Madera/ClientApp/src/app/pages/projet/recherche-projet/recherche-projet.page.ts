@@ -12,7 +12,6 @@ import { SearchProjet } from '../../../models/Search/SearchProjet';
   styleUrls: ['./recherche-projet.page.scss', './../../../app.component.scss'],
 })
 
-
 export class RechercheProjetPage implements OnInit {
 
   projets$: Observable<ProjetCommercial[]>;

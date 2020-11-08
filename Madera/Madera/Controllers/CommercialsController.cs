@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Madera.Models;
+using Madera.Models.Search;
 
 namespace Madera.Controllers
 {
@@ -22,14 +23,14 @@ namespace Madera.Controllers
 
         // GET: api/Commercials
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Commercial>>> GetCommercials()
+        public async Task<ActionResult<IEnumerable<SearchingCommercial>>> GetCommercials()
         {
-            return await _context.Commercials.ToListAsync();
+            return await _context.Commercials.Select(p => new SearchingCommercial(p)).ToListAsync();
         }
 
         // GET: api/Commercials/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Commercial>> GetCommercial(int id)
+        public async Task<ActionResult<SearchingCommercial>> GetCommercial(int id)
         {
             var commercial = await _context.Commercials.FindAsync(id);
 
@@ -38,8 +39,25 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return commercial;
+            return new SearchingCommercial(commercial);
         }
+
+
+        // GET: api/Projets/5
+        [HttpPost("search")]
+        public async Task<List<SearchingCommercial>> GetListeCommercial([FromBody] SearchCommercial search)
+        {
+            var listeComercial = _context.Commercials.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.NomCommercial))
+                listeComercial = listeComercial.Where(p => p.NomCommercial.ToLower().Contains(search.NomCommercial.ToLower()));
+
+            return await listeComercial.Select(p => new SearchingCommercial(p)).ToListAsync();
+        }
+
+
+
+
 
         // PUT: api/Commercials/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for

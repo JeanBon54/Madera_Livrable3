@@ -12,3 +12,9 @@ export class Commercial {
     DateArchivage :Date;
 
 }
+
+export class SearchingCommercial extends Commercial {
+    NomCommercial: string;
+    PrenomCommercial : string;
+    EmailCommerce : string;
+  }

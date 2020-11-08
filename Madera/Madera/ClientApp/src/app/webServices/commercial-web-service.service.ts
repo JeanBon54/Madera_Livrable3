@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-
-import { Commercial } from '../models/Commercial';
+import { Commercial,SearchingCommercial } from '../models/Commercial';
 import { ApiService } from 'src/Shared/api.service';
+import { SearchCommercial } from '../models/Search/SearchCommercial';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class CommercialWebService extends ApiService {
   }
 
   // GET POUR PRENDRE LES INFOS
-  getCommercial(): Observable<Commercial[]> {
-    return this.get<Commercial[]>(this.commercialUrl, [])
+  getCommercial(): Observable<SearchingCommercial[]> {
+    return this.get<SearchingCommercial[]>(this.commercialUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
@@ -29,10 +29,18 @@ export class CommercialWebService extends ApiService {
   }
 
 
-  getCommercialID(commercialId: number): Observable<Commercial> {
-    return this.get<Commercial>(this.commercialUrl, [{key: 'id', value: commercialId.toString()}] )
+  getCommercialID(commercialId: number): Observable<SearchingCommercial> {
+    return this.get<SearchingCommercial>(this.commercialUrl, [{key: 'id', value: commercialId.toString()}] )
       .pipe(
         tap(resp => console.log(resp)),
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  searchCommercial<T>(search: string): Observable<T> {
+    return this.post<T>(this.commercialUrl + 'search', search)
+      .pipe(
         retry(1),
         catchError(this.errorHandler)
       );

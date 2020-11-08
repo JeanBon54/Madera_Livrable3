@@ -25,4 +25,16 @@ namespace Madera.Models
         [ForeignKey("CommercialID")]
         public virtual ICollection<Projet> Projets { get; set; }
     }
+
+    public class SearchingCommercial : Commercial
+    {
+
+        public SearchingCommercial(Commercial commercial)
+        {
+            this.NomCommercial = commercial.NomCommercial;
+            this.PrenomCommercial = commercial.PrenomCommercial;
+            this.EmailCommerce = commercial.EmailCommerce;
+        }
+
+    }
 }
