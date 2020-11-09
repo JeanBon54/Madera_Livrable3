@@ -23,9 +23,18 @@ namespace Madera.Data
                 new Commercial{ 
                     NomCommercial="Giroud",
                     PrenomCommercial="Gabriel",
-                    EmailCommerce="g.gabriel@madera.fr",
+                    EmailCommercial=@"g.gabriel@madera.fr",
                     MdpCommercial="toto"
                 },
+                new Commercial{NomCommercial="CHampi",PrenomCommercial="Patrick",EmailCommercial=@"patrick.champi@madera.fr",MdpCommercial="toto"},
+                new Commercial{NomCommercial="houmar",PrenomCommercial="Garcia",EmailCommercial=@"garcia.houmar@madera.fr",MdpCommercial="toto1"},
+                new Commercial{NomCommercial="Madson",PrenomCommercial="Willy",EmailCommercial=@"willy.madson@madera.fr",MdpCommercial="toto"},
+                new Commercial{NomCommercial="Poulet",PrenomCommercial="Martine",EmailCommercial=@"martine.poulet@madera.fr",MdpCommercial="toto45"},
+                new Commercial{NomCommercial="Mario",PrenomCommercial="Thiery",EmailCommercial=@"mario.champi@madera.fr",MdpCommercial="toto123"},
+                new Commercial{NomCommercial="Timmy",PrenomCommercial="Jonathan",EmailCommercial=@"timmy.jonathan@madera.fr"},
+                new Commercial{NomCommercial="Lazard",PrenomCommercial="Vincent",EmailCommercial=@"lazard.vincent@madera.fr"},
+                new Commercial{NomCommercial="Clement",PrenomCommercial="Jean-pierre",EmailCommercial=@"clement.jeanpierre@madera.fr"},
+                new Commercial{NomCommercial="CHarlie",PrenomCommercial="popine",EmailCommercial=@"charlie.popine@madera.fr"},
             };
             foreach (Commercial c in commercials)
             {
@@ -50,6 +59,17 @@ namespace Madera.Data
             foreach (Client c in clients)
             {
                 context.Clients.Add(c);
+            }
+            context.SaveChanges();
+
+            var coupePrincipales = new CoupePrincipale[]
+            {
+                new CoupePrincipale{},
+                
+            };
+            foreach (CoupePrincipale cp in coupePrincipales)
+            {
+                context.CoupePrincipales.Add(cp);
             }
             context.SaveChanges();
         }

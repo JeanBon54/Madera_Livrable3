@@ -18,6 +18,9 @@ namespace Madera.Models
         [ForeignKey("ClientID")]
         public int ClientID { get; set; }
         [Required]
+        [ForeignKey("PlanID")]
+        public int PlanID { get; set; }
+        [Required]
         public string LibelleProjet { get; set; }
         [Required]
         public string LibelleNom { get; set; }
@@ -29,9 +32,10 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-
+        //Propriétés de navigation
         public virtual Client client { get; set; }
         public virtual Commercial commercial { get; set; }
+        public Plan Plan { get; set; }
 
     }
 

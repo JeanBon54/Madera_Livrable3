@@ -16,6 +16,7 @@ namespace Madera.Models
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PrixPlancher { get; set; }
 
+        //Propriétés de navigation
         [ForeignKey("ID")]
         public ICollection<Plan> plans;
     }

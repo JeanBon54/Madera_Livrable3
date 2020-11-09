@@ -13,6 +13,7 @@ namespace Madera.Models
         public int ID { get; set; }
         public string LibelleFamilleComposant { get; set; }
 
+        //Propriétés de navigation
         [ForeignKey("FamilleComposantID")]
         public virtual ICollection<Composant> Composants { get; set; }
 
