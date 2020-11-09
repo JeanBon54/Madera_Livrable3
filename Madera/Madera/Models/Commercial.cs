@@ -34,7 +34,7 @@ namespace Madera.Models
         {
             this.NomCommercial = commercial.NomCommercial;
             this.PrenomCommercial = commercial.PrenomCommercial;
-            this.EmailCommerce = commercial.EmailCommerce;
+            this.EmailCommercial = commercial.EmailCommercial;
         }
 
     }
