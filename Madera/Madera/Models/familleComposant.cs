@@ -11,10 +11,20 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        public string LibelleFamilleComposant { get; set; }
+        public string LIBELLE_FAMILLE_COMPOSANT { get; set; }
 
         [ForeignKey("FamilleComposantID")]
         public virtual ICollection<Composant> Composants { get; set; }
+
+    }
+
+    public class SearchingFamilleComposant : FamilleComposant
+    {
+
+        public SearchingFamilleComposant(FamilleComposant familleComposant)
+        {
+            this.LIBELLE_FAMILLE_COMPOSANT = familleComposant.LIBELLE_FAMILLE_COMPOSANT;
+        }
 
     }
 }
