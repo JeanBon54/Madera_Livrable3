@@ -14,7 +14,7 @@ namespace Madera.Models
         public int ID { get; set; }
         public string NomCommercial { get; set; }
         public string PrenomCommercial { get; set; }
-        public string EmailCommerce { get; set; }
+        public string EmailCommercial { get; set; }
         public string MdpCommercial { get; set; }
         public int IdUtilisateurCreation { get; set; }
         public DateTime DateCreation { get; set; }
@@ -22,6 +22,7 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
+        //Propriétés de navigation
         [ForeignKey("CommercialID")]
         public virtual ICollection<Projet> Projets { get; set; }
     }
@@ -33,7 +34,7 @@ namespace Madera.Models
         {
             this.NomCommercial = commercial.NomCommercial;
             this.PrenomCommercial = commercial.PrenomCommercial;
-            this.EmailCommerce = commercial.EmailCommerce;
+            this.EmailCommercial = commercial.EmailCommercial;
         }
 
     }

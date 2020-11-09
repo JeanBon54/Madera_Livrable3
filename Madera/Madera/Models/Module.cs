@@ -13,6 +13,8 @@ namespace Madera.Models
         [ForeignKey("GammeID")]
         public int GammeID { get; set; }
         public int PlanID { get; set; }
+        public int ComposantID { get; set; }
+        public int ModeleID { get; set; }
         public string LibelleModule { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PrixHtModule { get; set; }
@@ -30,8 +32,10 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
 
-
-        public virtual Gamme gamme { get; set; }
+        //Propriétés de navigation
+        public virtual Gamme Gamme { get; set; }
+        public Composant Composant { get; set; }
+        public Modele Modele { get; set; }
 
     }
 }
