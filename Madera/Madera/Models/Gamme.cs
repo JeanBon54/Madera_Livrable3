@@ -17,5 +17,6 @@ namespace Madera.Models
         public decimal QualiteHuisserieGamme { get; set; }
 
         public ICollection<Module> Modules { get; set; }
+        public ICollection<ModuleGamme> ModuleGamme { get; set; }
     }
 }

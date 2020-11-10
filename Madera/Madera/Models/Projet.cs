@@ -35,6 +35,8 @@ namespace Madera.Models
         public virtual Commercial commercial { get; set; }
         public ICollection<Plan> Plans { get; set; }
 
+        public ICollection<ProjetPlan> ProjetPlans { get; set; }
+
     }
 
     public class ProjetCommercial : Projet

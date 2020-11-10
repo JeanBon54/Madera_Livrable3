@@ -1,19 +1,35 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Composant.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Modele.cs">
     <Files>
-      <File FileName="Madera/Models/familleComposant.cs" Line="14" Column="48" />
-      <File FileName="Madera/Models/Composant.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Madera/Models/Search/SearchComposant.cs" NotebookId="1" />
-      <File FileName="Madera/Controllers/ComposantController.cs" NotebookId="1" />
-      <File FileName="Madera/Models/Module.cs" NotebookId="1" />
-      <File FileName="Madera/Models/ModuleComposant.cs" NotebookId="1" />
+      <File FileName="Madera/Models/familleComposant.cs" Line="31" Column="2" />
+      <File FileName="Madera/Models/Devis.cs" />
+      <File FileName="Madera/Models/ModuleGamme.cs" />
+      <File FileName="Madera/Models/Slot.cs" Line="25" Column="1" />
+      <File FileName="Madera/Models/Composant.cs" Line="29" Column="9" NotebookId="1" />
+      <File FileName="Madera/Models/Module.cs" Line="41" Column="9" NotebookId="1" />
       <File FileName="Madera/Models/Gamme.cs" NotebookId="1" />
+      <File FileName="Madera/Data/AppDbContext.cs" Line="105" Column="39" NotebookId="1" />
+      <File FileName="Madera/Models/ProjetPlan.cs" NotebookId="1" />
+      <File FileName="Madera/Models/Projet.cs" NotebookId="1" />
+      <File FileName="Madera/Models/Plan.cs" Line="47" Column="65" NotebookId="1" />
+      <File FileName="Madera/Models/ModuleSlot.cs" Line="16" Column="1" NotebookId="1" />
+      <File FileName="Madera/Data/DataRepository.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Madera/Models/Modele.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
-            <Node name="Madera" expanded="True" selected="True" />
+            <Node name="Madera" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Modele.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -25,9 +41,8 @@
     <BreakpointStore>
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="99" column="1" />
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ClientsController.cs" relfile="Madera/Controllers/ClientsController.cs" line="102" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ComposantController.cs" relfile="Madera/Controllers/ComposantController.cs" line="28" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.Madera PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

@@ -26,6 +26,7 @@ namespace Madera.Models
 
 
         public virtual FamilleComposant familleComposant { get; set; }
+        public ICollection<ModuleComposant> ModuleComposant { get; set; }
         public ICollection<Module> Modules { get; set; }
     }
 

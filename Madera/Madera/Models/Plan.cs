@@ -43,5 +43,7 @@ namespace Madera.Models
         public virtual Slot Slot { get; set; }
         public ICollection<Projet> Projets { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
+        public ICollection<ModulePlan> ModulePlan { get; set; }
+        public ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
 }

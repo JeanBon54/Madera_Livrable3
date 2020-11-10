@@ -18,5 +18,7 @@ namespace Madera.Models
 
         //Propriétés de navigation
         public ICollection<Module> Modules { get; set; }
+        public ICollection<ModuleSlot> ModuleSlots { get; set; }
+
     }
 }

@@ -46,6 +46,66 @@ namespace Madera.Models
             modelBuilder.Entity<Projet>().ToTable("Projet");
             modelBuilder.Entity<Devis>().ToTable("Devis");
             modelBuilder.Entity<Slot>().ToTable("Slot");
+
+            modelBuilder.Entity<ModuleComposant>()
+            .HasKey(mc => new { mc.ModuleID, mc.ComposantID });
+            modelBuilder.Entity<ModuleComposant>()
+                .HasOne(mc => mc.Module)
+                .WithMany(m => m.ModuleComposant)
+                .HasForeignKey(mc => mc.ModuleID);
+            modelBuilder.Entity<ModuleComposant>()
+                .HasOne(mc => mc.Composant)
+                .WithMany(c => c.ModuleComposant)
+                .HasForeignKey(mc => mc.ComposantID);
+
+            modelBuilder.Entity<ModuleGamme>()
+            .HasKey(mc => new { mc.ModuleID, mc.GammeID });
+            modelBuilder.Entity<ModuleGamme>()
+                .HasOne(mc => mc.Module)
+                .WithMany(m => m.ModuleGamme)
+                .HasForeignKey(mc => mc.ModuleID);
+            modelBuilder.Entity<ModuleGamme>()
+                .HasOne(mc => mc.Gamme)
+                .WithMany(c => c.ModuleGamme)
+                .HasForeignKey(mc => mc.GammeID);
+
+
+            modelBuilder.Entity<ModulePlan>()
+            .HasKey(mc => new { mc.ModuleID, mc.PlanID });
+            modelBuilder.Entity<ModulePlan>()
+                .HasOne(mc => mc.Module)
+                .WithMany(m => m.ModulePlan)
+                .HasForeignKey(mc => mc.ModuleID);
+            modelBuilder.Entity<ModulePlan>()
+                .HasOne(mc => mc.Plan)
+                .WithMany(c => c.ModulePlan)
+                .HasForeignKey(mc => mc.PlanID);
+
+
+            modelBuilder.Entity<ProjetPlan>()
+            .HasKey(mc => new { mc.ProjetID, mc.PlanID });
+            modelBuilder.Entity<ProjetPlan>()
+                .HasOne(mc => mc.Projet)
+                .WithMany(m => m.ProjetPlans)
+                .HasForeignKey(mc => mc.ProjetID);
+            modelBuilder.Entity<ProjetPlan>()
+                .HasOne(mc => mc.Plan)
+                .WithMany(c => c.ProjetPlans)
+                .HasForeignKey(mc => mc.PlanID);
+
+
+
+            modelBuilder.Entity<ModuleSlot>()
+        .HasKey(ms => new { ms.ModuleID, ms.SlotID });
+            modelBuilder.Entity<ModuleSlot>()
+                .HasOne(ms => ms.Module)
+                .WithMany(m => m.ModuleSlots)
+                .HasForeignKey(ms => ms.ModuleID);
+            modelBuilder.Entity<ModuleSlot>()
+                .HasOne(ms => ms.Slot)
+                .WithMany(s => s.ModuleSlots)
+                .HasForeignKey(ms => ms.SlotID);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -56,3 +116,4 @@ namespace Madera.Models
 
     }
 }
+    

@@ -10,6 +10,6 @@ namespace Madera.Models
         public int ModuleID { get; set; }
         public Module Module { get; set; }
         public int SlotID { get; set; }
-        public Plan Slot { get; set; }
+        public Slot Slot { get; set; }
     }
 }
