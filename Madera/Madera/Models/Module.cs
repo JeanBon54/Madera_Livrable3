@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
@@ -7,14 +8,10 @@ namespace Madera.Models
 {
     public class Module
     {
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        [ForeignKey("GammeID")]
-        public int GammeID { get; set; }
-        public int PlanID { get; set; }
-        public int ComposantID { get; set; }
-        public int ModeleID { get; set; }
         public string LibelleModule { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PrixHtModule { get; set; }
@@ -33,9 +30,13 @@ namespace Madera.Models
         public DateTime? DateArchivage { get; set; }
 
         //Propriétés de navigation
-        public virtual Gamme Gamme { get; set; }
-        public Composant Composant { get; set; }
-        public Modele Modele { get; set; }
+        public ICollection<Gamme> Gammes { get; set; }
+        public ICollection<Slot> Slot { get; set; }
+        public ICollection<Plan> Plans { get; set; }
+        public ICollection<Modele> Modeles { get; set; }
+        public ICollection<Composant> Composants { get; set; }
+
+
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
@@ -18,7 +19,6 @@ namespace Madera.Models
         public int CoupePrincipaleID { get; set; }
         [ForeignKey("CouvertureID")]
         public int CouvertureID { get; set; }
-        public int ModuleID { get; set; }
         [Required]
         [ForeignKey("SlotID")]
         public int SlotID { get; set; }
@@ -40,7 +40,8 @@ namespace Madera.Models
         public virtual Plancher plancher { get; set; }
         public virtual Couverture couverture { get; set; }
         public virtual CoupePrincipale coupePrincipales { get; set; } 
-        public Slot Slot { get; set; }
-        public Module Module { get; set; }
+        public virtual Slot Slot { get; set; }
+        public ICollection<Projet> Projets { get; set; }
+        public virtual ICollection<Module> Modules { get; set; }
     }
 }

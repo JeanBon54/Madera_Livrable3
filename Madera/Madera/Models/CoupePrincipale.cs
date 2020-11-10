@@ -19,6 +19,7 @@ namespace Madera.Models
         public decimal LargeurCoupePrincipale { get; set; }
 
         //Propriétés de navigation
-        public ICollection<Plan> plan { get; set; }
+        [ForeignKey("CoupePrincipaleID")]
+        public virtual ICollection<Plan> plan { get; set; }
     }
 }
