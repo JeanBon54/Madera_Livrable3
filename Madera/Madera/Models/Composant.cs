@@ -31,6 +31,7 @@ namespace Madera.Models
 
     public class SearchingComposant : Composant
     {
+        public string LIBELLE_FAMILLE_COMPOSANT => this.familleComposant == null ? string.Empty : this.familleComposant.LIBELLE_FAMILLE_COMPOSANT;
 
         public SearchingComposant(Composant composant)
         {
