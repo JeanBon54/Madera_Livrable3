@@ -28,4 +28,16 @@ namespace Madera.Models
         public virtual FamilleComposant familleComposant { get; set; }
         public ICollection<Module> Modules { get; set; }
     }
+
+    public class SearchingComposant : Composant
+    {
+
+        public SearchingComposant(Composant composant)
+        {
+            this.LibelleComposant = composant.LibelleComposant;
+            this.NatureComposant = composant.NatureComposant;
+            this.CaractComposant = composant.CaractComposant;
+        }
+
+    }
 }
