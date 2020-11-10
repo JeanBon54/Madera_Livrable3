@@ -34,6 +34,7 @@ namespace Madera.Models
         [AllowNull]
         public DateTime DateArchivage { get; set; }
 
+
         //Propriétés de navigation
 
         public virtual Plancher plancher { get; set; }
