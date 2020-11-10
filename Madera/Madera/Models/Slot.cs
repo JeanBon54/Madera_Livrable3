@@ -17,7 +17,6 @@ namespace Madera.Models
         public string LibelleSlot { get; set; }
 
         //Propriétés de navigation
-        [ForeignKey("ModuleID")]
-        public virtual Module module { get; set; }
+        public ICollection<Module> Modules { get; set; }
     }
 }

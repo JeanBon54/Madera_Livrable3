@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Madera.Models
 {
-    [Table("COMPOSANT")]
     public class Composant
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,5 +26,6 @@ namespace Madera.Models
 
 
         public virtual FamilleComposant familleComposant { get; set; }
+        public ICollection<Module> Modules { get; set; }
     }
 }

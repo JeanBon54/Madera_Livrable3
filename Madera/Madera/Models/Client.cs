@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Madera.Models
 {
-    [Table("CLIENT")]
+
     public class Client
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

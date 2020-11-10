@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Madera.Models
 {
-    [Table("FAMILLE_COMPOSANT")]
+
     public class FamilleComposant
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

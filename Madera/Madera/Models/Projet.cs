@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
@@ -18,9 +19,6 @@ namespace Madera.Models
         [ForeignKey("ClientID")]
         public int ClientID { get; set; }
         [Required]
-        [ForeignKey("PlanID")]
-        public int PlanID { get; set; }
-        [Required]
         public string LibelleProjet { get; set; }
         [Required]
         public string LibelleNom { get; set; }
@@ -35,7 +33,7 @@ namespace Madera.Models
         //Propriétés de navigation
         public virtual Client client { get; set; }
         public virtual Commercial commercial { get; set; }
-        public Plan Plan { get; set; }
+        public ICollection<Plan> Plans { get; set; }
 
     }
 
