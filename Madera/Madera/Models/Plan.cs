@@ -41,9 +41,9 @@ namespace Madera.Models
         public virtual Couverture couverture { get; set; }
         public virtual CoupePrincipale coupePrincipales { get; set; } 
         public virtual Slot Slot { get; set; }
-        public ICollection<Projet> Projets { get; set; }
+        public virtual ICollection<Projet> Projets { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
-        public ICollection<ModulePlan> ModulePlan { get; set; }
-        public ICollection<ProjetPlan> ProjetPlans { get; set; }
+        public virtual ICollection<ModulePlan> ModulePlan { get; set; }
+        public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
 }

@@ -30,17 +30,17 @@ namespace Madera.Models
         public DateTime? DateArchivage { get; set; }
 
         //Propriétés de navigation
-        public ICollection<Gamme> Gammes { get; set; }
-        public ICollection<Slot> Slot { get; set; }
-        public ICollection<Plan> Plans { get; set; }
-        public ICollection<Modele> Modeles { get; set; }
-        public ICollection<Composant> Composants { get; set; }
+        public virtual ICollection<Gamme> Gammes { get; set; }
+        public virtual ICollection<Slot> Slot { get; set; }
+        public virtual ICollection<Plan> Plans { get; set; }
+        public virtual ICollection<Modele> Modeles { get; set; }
+        public virtual ICollection<Composant> Composants { get; set; }
 
-        public ICollection<ModuleComposant> ModuleComposant { get; set; }
-        public ICollection<ModuleGamme> ModuleGamme { get; set; }
-        public ICollection<ModulePlan> ModulePlan { get; set; }
-        public ICollection<ModuleSlot> ModuleSlots { get; set; }
-        public ICollection<ModuleModele> ModuleModeles { get; set; }
+        public virtual ICollection<ModuleComposant> ModuleComposant { get; set; }
+        public virtual ICollection<ModuleGamme> ModuleGamme { get; set; }
+        public virtual ICollection<ModulePlan> ModulePlan { get; set; }
+        public virtual ICollection<ModuleSlot> ModuleSlots { get; set; }
+        public virtual ICollection<ModuleModele> ModuleModeles { get; set; }
 
 
 
