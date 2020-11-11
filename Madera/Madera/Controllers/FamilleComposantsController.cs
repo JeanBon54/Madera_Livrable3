@@ -12,11 +12,11 @@ namespace Madera.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class familleComposantController : ControllerBase
+    public class FamilleComposantsController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public familleComposantController(AppDbContext context)
+        public FamilleComposantsController(AppDbContext context)
         {
             _context = context;
         }
@@ -48,8 +48,8 @@ namespace Madera.Controllers
         {
             var listeFamilleComposant = _context.FamilleComposants.Select(p => p);
 
-            if (!string.IsNullOrWhiteSpace(search.LIBELLE_FAMILLE_COMPOSANT))
-                listeFamilleComposant = listeFamilleComposant.Where(p => p.LIBELLE_FAMILLE_COMPOSANT.ToLower().Contains(search.LIBELLE_FAMILLE_COMPOSANT.ToLower()));
+            if (!string.IsNullOrWhiteSpace(search.LibelleFamilleComposant))
+                listeFamilleComposant = listeFamilleComposant.Where(p => p.LibelleFamilleComposant.ToLower().Contains(search.LibelleFamilleComposant.ToLower()));
 
             return await listeFamilleComposant.Select(p => new SearchingFamilleComposant(p)).ToListAsync();
         }

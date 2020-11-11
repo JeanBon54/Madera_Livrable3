@@ -7,5 +7,6 @@ namespace Madera.Models
         public virtual Module Module { get; set; }
         public int ModeleID { get; set; }
         public virtual Modele Modele { get; set; }
+        public int quantite { get; set; }
     }
 }

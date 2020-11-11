@@ -12,6 +12,8 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
+
+        [Required]
         [ForeignKey("FamilleComposantID")]
         public int FamilleComposantID { get; set; }
         public string LibelleComposant { get; set; }
@@ -25,14 +27,13 @@ namespace Madera.Models
         public DateTime? DateArchivage { get; set; }
 
 
-        public virtual FamilleComposant familleComposant { get; set; }
+        public virtual FamilleComposant FamilleComposant { get; set; }
         public virtual ICollection<ModuleComposant> ModuleComposant { get; set; }
-        public virtual ICollection<Module> Modules { get; set; }
     }
 
     public class SearchingComposant : Composant
     {
-        public string LIBELLE_FAMILLE_COMPOSANT => this.familleComposant == null ? string.Empty : this.familleComposant.LIBELLE_FAMILLE_COMPOSANT;
+        public string LibelleFamilleComposant => this.FamilleComposant == null ? string.Empty : this.FamilleComposant.LibelleFamilleComposant;
 
         public SearchingComposant(Composant composant)
         {

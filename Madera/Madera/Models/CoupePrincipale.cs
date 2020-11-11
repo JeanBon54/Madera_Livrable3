@@ -11,6 +11,7 @@ namespace Madera.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
+
         public int ID { get; set; }
         public string LibelleCoupePrincipale { get; set; }
         [Column(TypeName = "decimal(10, 2)")]

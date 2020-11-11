@@ -28,17 +28,8 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
-        [Required]
-        [ForeignKey("SlotID")]
-        public int SlotID { get; set; }
 
         //Propriétés de navigation
-        public virtual ICollection<Gamme> Gammes { get; set; }
-        public virtual ICollection<Slot> Slot { get; set; }
-        //public virtual ICollection<Plan> Plans { get; set; }
-        public virtual ICollection<Modele> Modeles { get; set; }
-        public virtual ICollection<Composant> Composants { get; set; }
-
         public virtual ICollection<ModuleComposant> ModuleComposant { get; set; }
         public virtual ICollection<ModuleGamme> ModuleGamme { get; set; }
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }

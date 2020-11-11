@@ -19,36 +19,6 @@ namespace Madera.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("ComposantModule", b =>
-                {
-                    b.Property<int>("ComposantsID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModulesID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ComposantsID", "ModulesID");
-
-                    b.HasIndex("ModulesID");
-
-                    b.ToTable("ComposantModule");
-                });
-
-            modelBuilder.Entity("GammeModule", b =>
-                {
-                    b.Property<int>("GammesID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModulesID")
-                        .HasColumnType("int");
-
-                    b.HasKey("GammesID", "ModulesID");
-
-                    b.HasIndex("ModulesID");
-
-                    b.ToTable("GammeModule");
-                });
-
             modelBuilder.Entity("Madera.Models.Client", b =>
                 {
                     b.Property<int>("ID")
@@ -264,7 +234,7 @@ namespace Madera.Migrations
                     b.Property<decimal>("MargeEntrepriseDevis")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int?>("PlanID")
+                    b.Property<int>("PlanID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixTotalHtDevis")
@@ -272,9 +242,6 @@ namespace Madera.Migrations
 
                     b.Property<decimal>("PrixTotalTtcDevis")
                         .HasColumnType("decimal(10,2)");
-
-                    b.Property<int>("ProjetID")
-                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -290,7 +257,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("LIBELLE_FAMILLE_COMPOSANT")
+                    b.Property<string>("LibelleFamilleComposant")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -374,18 +341,10 @@ namespace Madera.Migrations
                     b.Property<string>("LibelleModule")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PlanID")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("PrixHtModule")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("SlotID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("PlanID");
 
                     b.ToTable("Module");
                 });
@@ -402,7 +361,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("ComposantID");
 
-                    b.ToTable("ModuleComposant");
+                    b.ToTable("ModuleComposants");
                 });
 
             modelBuilder.Entity("Madera.Models.ModuleGamme", b =>
@@ -417,7 +376,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("GammeID");
 
-                    b.ToTable("ModuleGamme");
+                    b.ToTable("ModuleGammes");
                 });
 
             modelBuilder.Entity("Madera.Models.ModuleModele", b =>
@@ -428,11 +387,14 @@ namespace Madera.Migrations
                     b.Property<int>("ModeleID")
                         .HasColumnType("int");
 
+                    b.Property<int>("quantite")
+                        .HasColumnType("int");
+
                     b.HasKey("ModuleID", "ModeleID");
 
                     b.HasIndex("ModeleID");
 
-                    b.ToTable("ModuleModele");
+                    b.ToTable("ModuleModeles");
                 });
 
             modelBuilder.Entity("Madera.Models.ModulePlan", b =>
@@ -447,7 +409,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("PlanID");
 
-                    b.ToTable("ModulePlan");
+                    b.ToTable("ModulePlans");
                 });
 
             modelBuilder.Entity("Madera.Models.ModuleSlot", b =>
@@ -462,7 +424,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("SlotID");
 
-                    b.ToTable("ModuleSlot");
+                    b.ToTable("ModuleSlots");
                 });
 
             modelBuilder.Entity("Madera.Models.Plan", b =>
@@ -499,17 +461,11 @@ namespace Madera.Migrations
                     b.Property<int>("IdUtilisateurModification")
                         .HasColumnType("int");
 
-                    b.Property<int>("ModuleID")
-                        .HasColumnType("int");
-
                     b.Property<int>("PlancherID")
                         .HasColumnType("int");
 
                     b.Property<string>("ReferencePlan")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SlotID")
-                        .HasColumnType("int");
 
                     b.Property<string>("VillePlan")
                         .HasColumnType("nvarchar(max)");
@@ -523,11 +479,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("CouvertureID");
 
-                    b.HasIndex("ModuleID");
-
                     b.HasIndex("PlancherID");
-
-                    b.HasIndex("SlotID");
 
                     b.ToTable("Plan");
                 });
@@ -613,7 +565,7 @@ namespace Madera.Migrations
 
                     b.HasIndex("PlanID");
 
-                    b.ToTable("ProjetPlan");
+                    b.ToTable("ProjetPlans");
                 });
 
             modelBuilder.Entity("Madera.Models.Slot", b =>
@@ -626,101 +578,31 @@ namespace Madera.Migrations
                     b.Property<string>("LibelleSlot")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ModuleID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("ModuleID");
 
                     b.ToTable("Slot");
                 });
 
-            modelBuilder.Entity("ModeleModule", b =>
-                {
-                    b.Property<int>("ModelesID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("modulesID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ModelesID", "modulesID");
-
-                    b.HasIndex("modulesID");
-
-                    b.ToTable("ModeleModule");
-                });
-
-            modelBuilder.Entity("PlanProjet", b =>
-                {
-                    b.Property<int>("PlansID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProjetsID")
-                        .HasColumnType("int");
-
-                    b.HasKey("PlansID", "ProjetsID");
-
-                    b.HasIndex("ProjetsID");
-
-                    b.ToTable("PlanProjet");
-                });
-
-            modelBuilder.Entity("ComposantModule", b =>
-                {
-                    b.HasOne("Madera.Models.Composant", null)
-                        .WithMany()
-                        .HasForeignKey("ComposantsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Madera.Models.Module", null)
-                        .WithMany()
-                        .HasForeignKey("ModulesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GammeModule", b =>
-                {
-                    b.HasOne("Madera.Models.Gamme", null)
-                        .WithMany()
-                        .HasForeignKey("GammesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Madera.Models.Module", null)
-                        .WithMany()
-                        .HasForeignKey("ModulesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Madera.Models.Composant", b =>
                 {
-                    b.HasOne("Madera.Models.FamilleComposant", "familleComposant")
+                    b.HasOne("Madera.Models.FamilleComposant", "FamilleComposant")
                         .WithMany("Composants")
                         .HasForeignKey("FamilleComposantID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("familleComposant");
+                    b.Navigation("FamilleComposant");
                 });
 
             modelBuilder.Entity("Madera.Models.Devis", b =>
                 {
-                    b.HasOne("Madera.Models.Projet", "Projet")
+                    b.HasOne("Madera.Models.Plan", "Plan")
                         .WithMany()
-                        .HasForeignKey("PlanID");
+                        .HasForeignKey("PlanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Projet");
-                });
-
-            modelBuilder.Entity("Madera.Models.Module", b =>
-                {
-                    b.HasOne("Madera.Models.Plan", null)
-                        .WithMany("Modules")
-                        .HasForeignKey("PlanID");
+                    b.Navigation("Plan");
                 });
 
             modelBuilder.Entity("Madera.Models.ModuleComposant", b =>
@@ -728,13 +610,13 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Composant", "Composant")
                         .WithMany("ModuleComposant")
                         .HasForeignKey("ComposantID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Module", "Module")
                         .WithMany("ModuleComposant")
                         .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Composant");
@@ -747,13 +629,13 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Gamme", "Gamme")
                         .WithMany("ModuleGamme")
                         .HasForeignKey("GammeID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Module", "Module")
                         .WithMany("ModuleGamme")
                         .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Gamme");
@@ -766,13 +648,13 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Modele", "Modele")
                         .WithMany("ModuleModeles")
                         .HasForeignKey("ModeleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Module", "Module")
                         .WithMany("ModuleModeles")
                         .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Modele");
@@ -785,13 +667,13 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Module", "Module")
                         .WithMany("ModulePlan")
                         .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Plan", "Plan")
                         .WithMany("ModulePlan")
                         .HasForeignKey("PlanID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Module");
@@ -804,13 +686,13 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Module", "Module")
                         .WithMany("ModuleSlots")
                         .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Slot", "Slot")
                         .WithMany("ModuleSlots")
                         .HasForeignKey("SlotID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Module");
@@ -832,21 +714,9 @@ namespace Madera.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Madera.Models.Module", "Module")
-                        .WithMany()
-                        .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Madera.Models.Plancher", "plancher")
                         .WithMany()
                         .HasForeignKey("PlancherID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Madera.Models.Slot", "Slot")
-                        .WithMany()
-                        .HasForeignKey("SlotID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -854,11 +724,7 @@ namespace Madera.Migrations
 
                     b.Navigation("couverture");
 
-                    b.Navigation("Module");
-
                     b.Navigation("plancher");
-
-                    b.Navigation("Slot");
                 });
 
             modelBuilder.Entity("Madera.Models.Projet", b =>
@@ -885,57 +751,18 @@ namespace Madera.Migrations
                     b.HasOne("Madera.Models.Plan", "Plan")
                         .WithMany("ProjetPlans")
                         .HasForeignKey("PlanID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Madera.Models.Projet", "Projet")
                         .WithMany("ProjetPlans")
                         .HasForeignKey("ProjetID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Plan");
 
                     b.Navigation("Projet");
-                });
-
-            modelBuilder.Entity("Madera.Models.Slot", b =>
-                {
-                    b.HasOne("Madera.Models.Module", null)
-                        .WithMany("Slot")
-                        .HasForeignKey("ModuleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ModeleModule", b =>
-                {
-                    b.HasOne("Madera.Models.Modele", null)
-                        .WithMany()
-                        .HasForeignKey("ModelesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Madera.Models.Module", null)
-                        .WithMany()
-                        .HasForeignKey("modulesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PlanProjet", b =>
-                {
-                    b.HasOne("Madera.Models.Plan", null)
-                        .WithMany()
-                        .HasForeignKey("PlansID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Madera.Models.Projet", null)
-                        .WithMany()
-                        .HasForeignKey("ProjetsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Madera.Models.Client", b =>
@@ -989,15 +816,11 @@ namespace Madera.Migrations
                     b.Navigation("ModulePlan");
 
                     b.Navigation("ModuleSlots");
-
-                    b.Navigation("Slot");
                 });
 
             modelBuilder.Entity("Madera.Models.Plan", b =>
                 {
                     b.Navigation("ModulePlan");
-
-                    b.Navigation("Modules");
 
                     b.Navigation("ProjetPlans");
                 });

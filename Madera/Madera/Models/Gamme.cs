@@ -15,8 +15,6 @@ namespace Madera.Models
         public string TypeIsolantGamme { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal QualiteHuisserieGamme { get; set; }
-
-        public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<ModuleGamme> ModuleGamme { get; set; }
     }
 }

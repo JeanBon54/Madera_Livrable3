@@ -12,11 +12,11 @@ namespace Madera.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ComposantController : ControllerBase
+    public class ComposantsController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public ComposantController(AppDbContext context)
+        public ComposantsController(AppDbContext context)
         {
             _context = context;
         }
