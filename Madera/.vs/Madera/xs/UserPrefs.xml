@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Modele.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/ModuleModele.cs">
     <Files>
       <File FileName="Madera/Models/familleComposant.cs" Line="31" Column="2" />
       <File FileName="Madera/Models/Devis.cs" />
       <File FileName="Madera/Models/ModuleGamme.cs" />
-      <File FileName="Madera/Models/Slot.cs" Line="25" Column="1" />
+      <File FileName="Madera/Models/Slot.cs" />
       <File FileName="Madera/Models/Composant.cs" Line="29" Column="9" NotebookId="1" />
-      <File FileName="Madera/Models/Module.cs" Line="41" Column="9" NotebookId="1" />
+      <File FileName="Madera/Models/Module.cs" NotebookId="1" />
       <File FileName="Madera/Models/Gamme.cs" NotebookId="1" />
-      <File FileName="Madera/Data/AppDbContext.cs" Line="105" Column="39" NotebookId="1" />
+      <File FileName="Madera/Data/AppDbContext.cs" NotebookId="1" />
       <File FileName="Madera/Models/ProjetPlan.cs" NotebookId="1" />
       <File FileName="Madera/Models/Projet.cs" NotebookId="1" />
-      <File FileName="Madera/Models/Plan.cs" Line="47" Column="65" NotebookId="1" />
-      <File FileName="Madera/Models/ModuleSlot.cs" Line="16" Column="1" NotebookId="1" />
-      <File FileName="Madera/Data/DataRepository.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Madera/Models/Modele.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Madera/Models/Plan.cs" NotebookId="1" />
+      <File FileName="Madera/Models/ModuleSlot.cs" NotebookId="1" />
+      <File FileName="Madera/Data/DataRepository.cs" NotebookId="1" />
+      <File FileName="Madera/Models/Modele.cs" Line="21" Column="1" NotebookId="1" />
+      <File FileName="Madera/Models/ModuleModele.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,7 +28,7 @@
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="Modele.cs" selected="True" />
+                <Node name="ModuleModele.cs" selected="True" />
               </Node>
             </Node>
           </Node>

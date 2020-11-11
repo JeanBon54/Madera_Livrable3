@@ -106,6 +106,17 @@ namespace Madera.Models
                 .WithMany(s => s.ModuleSlots)
                 .HasForeignKey(ms => ms.SlotID);
 
+            modelBuilder.Entity<ModuleModele>()
+        .HasKey(ms => new { ms.ModuleID, ms.ModeleID });
+            modelBuilder.Entity<ModuleModele>()
+                .HasOne(ms => ms.Module)
+                .WithMany(m => m.ModuleModeles)
+                .HasForeignKey(ms => ms.ModuleID);
+            modelBuilder.Entity<ModuleModele>()
+                .HasOne(ms => ms.Modele)
+                .WithMany(s => s.ModuleModeles)
+                .HasForeignKey(ms => ms.ModeleID);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

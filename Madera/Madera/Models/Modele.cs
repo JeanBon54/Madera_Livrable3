@@ -16,5 +16,6 @@ namespace Madera.Models
 
         [ForeignKey("ID")]
         public virtual ICollection<Module> modules { get; set; }
+        public ICollection<ModuleModele> ModuleModeles { get; set; }
     }
 }

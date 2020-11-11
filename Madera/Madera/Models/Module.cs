@@ -40,6 +40,7 @@ namespace Madera.Models
         public ICollection<ModuleGamme> ModuleGamme { get; set; }
         public ICollection<ModulePlan> ModulePlan { get; set; }
         public ICollection<ModuleSlot> ModuleSlots { get; set; }
+        public ICollection<ModuleModele> ModuleModeles { get; set; }
 
 
 
