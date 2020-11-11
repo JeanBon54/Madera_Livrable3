@@ -1,12 +1,43 @@
-<ion-footer>
-    <div class="footer footer-btn" >
-        <div class="container-image">
-          <div class="retour-btn">
-              <ion-button size="block" color="danger"[routerLink]="['/recherche-composant']">Annuler</ion-button>
-          </div>
-          <div class="nouveau-btn">
-                <ion-button expand="block" color="success">Enregistrer</ion-button>
+<ion-col size="12">
+ 
+    <form [formGroup]="form" (ngSubmit)="save()">
+    <ion-card>
+        <ion-card-header>
+          <h3>Création d'un commercial</h3>
+        </ion-card-header>
+        <hr class="solid">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-input formControlName="libelleComposant">Libelle :</ion-input>
+              </ion-col>
+              <ion-col>
+                <ion-input placeholder="natureComposant" formControlName="natureComposant" ></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row class="lastRow">
+              <ion-col>
+                <ion-input placeholder="caractComposant" formControlName="caractComposant"></ion-input>
+              </ion-col>
+    
+            </ion-row>
+    
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    
+      <ion-footer>
+        <div class="footer footer-btn">
+          <div class="container-image">
+            <div class="retour-btn">
+              <ion-button size="block" color="danger"[routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
+            </div>
+            <div class="nouveau-btn">
+              <ion-button expand="block" color="success" type="submit" >Enregistrer</ion-button>
+            </div>
           </div>
         </div>
-    </div>
-</ion-footer>
+      </ion-footer>
+    </form>
+    </ion-col>
