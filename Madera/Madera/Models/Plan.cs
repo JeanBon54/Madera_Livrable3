@@ -22,6 +22,9 @@ namespace Madera.Models
         [Required]
         [ForeignKey("SlotID")]
         public int SlotID { get; set; }
+        //[Required]
+        //[ForeignKey("ModuleID")]
+        //public int ModuleID { get; set; }
         public string ReferencePlan { get; set; }
         public string libellePlan { get; set; }
         public string AdressPlan { get; set; }
@@ -41,6 +44,7 @@ namespace Madera.Models
         public virtual Couverture couverture { get; set; }
         public virtual CoupePrincipale coupePrincipales { get; set; } 
         public virtual Slot Slot { get; set; }
+        public virtual Module Module { get; set; }
         public virtual ICollection<Projet> Projets { get; set; }
         public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }

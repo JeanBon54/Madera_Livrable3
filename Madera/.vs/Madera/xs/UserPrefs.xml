@@ -1,25 +1,13 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/ProjetPlan.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ClientsController.cs">
     <Files>
-      <File FileName="Madera/Models/familleComposant.cs" Line="18" Column="23" />
-      <File FileName="Madera/Models/Devis.cs" Line="1" Column="1" />
+      <File FileName="Madera/Models/ModulePlan.cs" Line="11" Column="47" />
+      <File FileName="Madera/Data/AppDbContext.cs" Line="78" Column="51" />
+      <File FileName="Madera/Models/Plan.cs" Line="25" Column="21" />
+      <File FileName="Madera/Models/Module.cs" Line="33" Column="40" />
+      <File FileName="Madera/Models/ModuleSlot.cs" Line="1" Column="1" />
       <File FileName="Madera/Models/Slot.cs" Line="25" Column="1" />
-      <File FileName="Madera/Models/Client.cs" Line="36" Column="23" />
-      <File FileName="Madera/Models/Gamme.cs" Line="23" Column="1" />
-      <File FileName="Madera/Models/Couverture.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/ModuleComposant.cs" Line="11" Column="23" />
-      <File FileName="Madera/Models/ModuleGamme.cs" Line="13" Column="23" />
-      <File FileName="Madera/Models/ModuleModele.cs" Line="9" Column="23" />
-      <File FileName="Madera/Models/ModulePlan.cs" Line="13" Column="23" />
-      <File FileName="Madera/Models/ModuleSlot.cs" Line="13" Column="23" />
-      <File FileName="Madera/Models/ProjetPlan.cs" Line="13" Column="23" />
-      <File FileName="Madera/Models/Composant.cs" Line="29" Column="16" NotebookId="1" />
-      <File FileName="Madera/Models/Module.cs" Line="34" Column="8" NotebookId="1" />
-      <File FileName="Madera/Models/Projet.cs" Line="38" Column="23" NotebookId="1" />
-      <File FileName="Madera/Models/Plan.cs" Line="44" Column="23" NotebookId="1" />
-      <File FileName="Madera/Models/Modele.cs" Line="19" Column="23" NotebookId="1" />
-      <File FileName="Madera/Models/CoupePrincipale.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Madera/Models/Commercial.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Madera/Controllers/ClientsController.cs" Line="102" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,7 +20,7 @@
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="ProjetPlan.cs" selected="True" />
+                <Node name="Slot.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -45,7 +33,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="99" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ClientsController.cs" relfile="Madera/Controllers/ClientsController.cs" line="102" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

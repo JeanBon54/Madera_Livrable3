@@ -15,16 +15,46 @@ namespace Madera.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("ComposantModule", b =>
+                {
+                    b.Property<int>("ComposantsID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ModulesID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ComposantsID", "ModulesID");
+
+                    b.HasIndex("ModulesID");
+
+                    b.ToTable("ComposantModule");
+                });
+
+            modelBuilder.Entity("GammeModule", b =>
+                {
+                    b.Property<int>("GammesID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ModulesID")
+                        .HasColumnType("int");
+
+                    b.HasKey("GammesID", "ModulesID");
+
+                    b.HasIndex("ModulesID");
+
+                    b.ToTable("GammeModule");
+                });
 
             modelBuilder.Entity("Madera.Models.Client", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("AdresseClient")
                         .IsRequired()
@@ -80,7 +110,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
@@ -91,7 +121,7 @@ namespace Madera.Migrations
                     b.Property<DateTime>("DateModification")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("EmailCommerce")
+                    b.Property<string>("EmailCommercial")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdUtilisateurCreation")
@@ -119,7 +149,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("CaractComposant")
                         .HasColumnType("nvarchar(max)");
@@ -163,16 +193,16 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("LargeurCoupePrincipale")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("LibelleCoupePrincipale")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("LongueurCoupePrincipale")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("ID");
 
@@ -184,10 +214,10 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("PrixHtCouverture")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("TypeCouverture")
                         .HasColumnType("nvarchar(max)");
@@ -202,7 +232,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
@@ -229,19 +259,22 @@ namespace Madera.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("MargeCommercialDevis")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<decimal>("MargeEntrepriseDevis")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("PlanID")
+                    b.Property<int?>("PlanID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixTotalHtDevis")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<decimal>("PrixTotalTtcDevis")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("ProjetID")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -255,9 +288,9 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
-                    b.Property<string>("LibelleFamilleComposant")
+                    b.Property<string>("LIBELLE_FAMILLE_COMPOSANT")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -270,13 +303,13 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("LibelleGamme")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("QualiteHuisserieGamme")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("TypeGamme")
                         .HasColumnType("nvarchar(max)");
@@ -294,7 +327,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("LibelleModele")
                         .HasColumnType("nvarchar(max)");
@@ -309,7 +342,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<DateTime?>("DateArchivage")
                         .HasColumnType("datetime2");
@@ -321,19 +354,16 @@ namespace Madera.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("DdebutPointY")
-                        .HasColumnType("decimal(5, 2)");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("DebutPointX")
-                        .HasColumnType("decimal(5, 2)");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("FinPointX")
-                        .HasColumnType("decimal(5, 2)");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("FinPointY")
-                        .HasColumnType("decimal(5, 2)");
-
-                    b.Property<int>("GammeID")
-                        .HasColumnType("int");
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("IdUtilisateurCreation")
                         .HasColumnType("int");
@@ -344,17 +374,95 @@ namespace Madera.Migrations
                     b.Property<string>("LibelleModule")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PlanID")
+                    b.Property<int?>("PlanID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixHtModule")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("SlotID")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("GammeID");
+                    b.HasIndex("PlanID");
 
                     b.ToTable("Module");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleComposant", b =>
+                {
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ComposantID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleID", "ComposantID");
+
+                    b.HasIndex("ComposantID");
+
+                    b.ToTable("ModuleComposant");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleGamme", b =>
+                {
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GammeID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleID", "GammeID");
+
+                    b.HasIndex("GammeID");
+
+                    b.ToTable("ModuleGamme");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleModele", b =>
+                {
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ModeleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleID", "ModeleID");
+
+                    b.HasIndex("ModeleID");
+
+                    b.ToTable("ModuleModele");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModulePlan", b =>
+                {
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlanID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleID", "PlanID");
+
+                    b.HasIndex("PlanID");
+
+                    b.ToTable("ModulePlan");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleSlot", b =>
+                {
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SlotID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleID", "SlotID");
+
+                    b.HasIndex("SlotID");
+
+                    b.ToTable("ModuleSlot");
                 });
 
             modelBuilder.Entity("Madera.Models.Plan", b =>
@@ -362,7 +470,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("AdressPlan")
                         .HasColumnType("nvarchar(max)");
@@ -391,11 +499,17 @@ namespace Madera.Migrations
                     b.Property<int>("IdUtilisateurModification")
                         .HasColumnType("int");
 
+                    b.Property<int>("ModuleID")
+                        .HasColumnType("int");
+
                     b.Property<int>("PlancherID")
                         .HasColumnType("int");
 
                     b.Property<string>("ReferencePlan")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SlotID")
+                        .HasColumnType("int");
 
                     b.Property<string>("VillePlan")
                         .HasColumnType("nvarchar(max)");
@@ -409,7 +523,11 @@ namespace Madera.Migrations
 
                     b.HasIndex("CouvertureID");
 
+                    b.HasIndex("ModuleID");
+
                     b.HasIndex("PlancherID");
+
+                    b.HasIndex("SlotID");
 
                     b.ToTable("Plan");
                 });
@@ -419,10 +537,10 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<decimal>("PrixPlancher")
-                        .HasColumnType("decimal(10, 2)");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("TypePlancher")
                         .HasColumnType("nvarchar(max)");
@@ -437,7 +555,7 @@ namespace Madera.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<int>("ClientID")
                         .HasColumnType("int");
@@ -483,12 +601,27 @@ namespace Madera.Migrations
                     b.ToTable("Projet");
                 });
 
+            modelBuilder.Entity("Madera.Models.ProjetPlan", b =>
+                {
+                    b.Property<int>("ProjetID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlanID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProjetID", "PlanID");
+
+                    b.HasIndex("PlanID");
+
+                    b.ToTable("ProjetPlan");
+                });
+
             modelBuilder.Entity("Madera.Models.Slot", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("LibelleSlot")
                         .HasColumnType("nvarchar(max)");
@@ -503,6 +636,66 @@ namespace Madera.Migrations
                     b.ToTable("Slot");
                 });
 
+            modelBuilder.Entity("ModeleModule", b =>
+                {
+                    b.Property<int>("ModelesID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("modulesID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModelesID", "modulesID");
+
+                    b.HasIndex("modulesID");
+
+                    b.ToTable("ModeleModule");
+                });
+
+            modelBuilder.Entity("PlanProjet", b =>
+                {
+                    b.Property<int>("PlansID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjetsID")
+                        .HasColumnType("int");
+
+                    b.HasKey("PlansID", "ProjetsID");
+
+                    b.HasIndex("ProjetsID");
+
+                    b.ToTable("PlanProjet");
+                });
+
+            modelBuilder.Entity("ComposantModule", b =>
+                {
+                    b.HasOne("Madera.Models.Composant", null)
+                        .WithMany()
+                        .HasForeignKey("ComposantsID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Module", null)
+                        .WithMany()
+                        .HasForeignKey("ModulesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GammeModule", b =>
+                {
+                    b.HasOne("Madera.Models.Gamme", null)
+                        .WithMany()
+                        .HasForeignKey("GammesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Module", null)
+                        .WithMany()
+                        .HasForeignKey("ModulesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Madera.Models.Composant", b =>
                 {
                     b.HasOne("Madera.Models.FamilleComposant", "familleComposant")
@@ -510,36 +703,125 @@ namespace Madera.Migrations
                         .HasForeignKey("FamilleComposantID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("familleComposant");
                 });
 
             modelBuilder.Entity("Madera.Models.Devis", b =>
                 {
-                    b.HasOne("Madera.Models.Plan", "plan")
+                    b.HasOne("Madera.Models.Projet", "Projet")
                         .WithMany()
-                        .HasForeignKey("PlanID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PlanID");
+
+                    b.Navigation("Projet");
                 });
 
             modelBuilder.Entity("Madera.Models.Module", b =>
                 {
-                    b.HasOne("Madera.Models.Gamme", "gamme")
-                        .WithMany()
+                    b.HasOne("Madera.Models.Plan", null)
+                        .WithMany("Modules")
+                        .HasForeignKey("PlanID");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleComposant", b =>
+                {
+                    b.HasOne("Madera.Models.Composant", "Composant")
+                        .WithMany("ModuleComposant")
+                        .HasForeignKey("ComposantID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany("ModuleComposant")
+                        .HasForeignKey("ModuleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Composant");
+
+                    b.Navigation("Module");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleGamme", b =>
+                {
+                    b.HasOne("Madera.Models.Gamme", "Gamme")
+                        .WithMany("ModuleGamme")
                         .HasForeignKey("GammeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Madera.Models.Modele", null)
-                        .WithMany("modules")
-                        .HasForeignKey("ID")
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany("ModuleGamme")
+                        .HasForeignKey("ModuleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Gamme");
+
+                    b.Navigation("Module");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleModele", b =>
+                {
+                    b.HasOne("Madera.Models.Modele", "Modele")
+                        .WithMany("ModuleModeles")
+                        .HasForeignKey("ModeleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany("ModuleModeles")
+                        .HasForeignKey("ModuleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Modele");
+
+                    b.Navigation("Module");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModulePlan", b =>
+                {
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany("ModulePlan")
+                        .HasForeignKey("ModuleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Plan", "Plan")
+                        .WithMany("ModulePlan")
+                        .HasForeignKey("PlanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Module");
+
+                    b.Navigation("Plan");
+                });
+
+            modelBuilder.Entity("Madera.Models.ModuleSlot", b =>
+                {
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany("ModuleSlots")
+                        .HasForeignKey("ModuleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Slot", "Slot")
+                        .WithMany("ModuleSlots")
+                        .HasForeignKey("SlotID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Module");
+
+                    b.Navigation("Slot");
                 });
 
             modelBuilder.Entity("Madera.Models.Plan", b =>
                 {
                     b.HasOne("Madera.Models.CoupePrincipale", "coupePrincipales")
-                        .WithMany()
+                        .WithMany("plan")
                         .HasForeignKey("CoupePrincipaleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -550,11 +832,33 @@ namespace Madera.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Madera.Models.Module", "Module")
+                        .WithMany()
+                        .HasForeignKey("ModuleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Madera.Models.Plancher", "plancher")
                         .WithMany()
                         .HasForeignKey("PlancherID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Madera.Models.Slot", "Slot")
+                        .WithMany()
+                        .HasForeignKey("SlotID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("coupePrincipales");
+
+                    b.Navigation("couverture");
+
+                    b.Navigation("Module");
+
+                    b.Navigation("plancher");
+
+                    b.Navigation("Slot");
                 });
 
             modelBuilder.Entity("Madera.Models.Projet", b =>
@@ -570,15 +874,142 @@ namespace Madera.Migrations
                         .HasForeignKey("CommercialID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("client");
+
+                    b.Navigation("commercial");
+                });
+
+            modelBuilder.Entity("Madera.Models.ProjetPlan", b =>
+                {
+                    b.HasOne("Madera.Models.Plan", "Plan")
+                        .WithMany("ProjetPlans")
+                        .HasForeignKey("PlanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Projet", "Projet")
+                        .WithMany("ProjetPlans")
+                        .HasForeignKey("ProjetID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Plan");
+
+                    b.Navigation("Projet");
                 });
 
             modelBuilder.Entity("Madera.Models.Slot", b =>
                 {
-                    b.HasOne("Madera.Models.Module", "module")
-                        .WithMany()
+                    b.HasOne("Madera.Models.Module", null)
+                        .WithMany("Slot")
                         .HasForeignKey("ModuleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ModeleModule", b =>
+                {
+                    b.HasOne("Madera.Models.Modele", null)
+                        .WithMany()
+                        .HasForeignKey("ModelesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Module", null)
+                        .WithMany()
+                        .HasForeignKey("modulesID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("PlanProjet", b =>
+                {
+                    b.HasOne("Madera.Models.Plan", null)
+                        .WithMany()
+                        .HasForeignKey("PlansID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Madera.Models.Projet", null)
+                        .WithMany()
+                        .HasForeignKey("ProjetsID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Madera.Models.Client", b =>
+                {
+                    b.Navigation("Projets");
+                });
+
+            modelBuilder.Entity("Madera.Models.Commercial", b =>
+                {
+                    b.Navigation("Projets");
+                });
+
+            modelBuilder.Entity("Madera.Models.Composant", b =>
+                {
+                    b.Navigation("ModuleComposant");
+                });
+
+            modelBuilder.Entity("Madera.Models.CoupePrincipale", b =>
+                {
+                    b.Navigation("plan");
+                });
+
+            modelBuilder.Entity("Madera.Models.Couverture", b =>
+                {
+                    b.Navigation("plans");
+                });
+
+            modelBuilder.Entity("Madera.Models.FamilleComposant", b =>
+                {
+                    b.Navigation("Composants");
+                });
+
+            modelBuilder.Entity("Madera.Models.Gamme", b =>
+                {
+                    b.Navigation("ModuleGamme");
+                });
+
+            modelBuilder.Entity("Madera.Models.Modele", b =>
+                {
+                    b.Navigation("ModuleModeles");
+                });
+
+            modelBuilder.Entity("Madera.Models.Module", b =>
+                {
+                    b.Navigation("ModuleComposant");
+
+                    b.Navigation("ModuleGamme");
+
+                    b.Navigation("ModuleModeles");
+
+                    b.Navigation("ModulePlan");
+
+                    b.Navigation("ModuleSlots");
+
+                    b.Navigation("Slot");
+                });
+
+            modelBuilder.Entity("Madera.Models.Plan", b =>
+                {
+                    b.Navigation("ModulePlan");
+
+                    b.Navigation("Modules");
+
+                    b.Navigation("ProjetPlans");
+                });
+
+            modelBuilder.Entity("Madera.Models.Projet", b =>
+                {
+                    b.Navigation("ProjetPlans");
+                });
+
+            modelBuilder.Entity("Madera.Models.Slot", b =>
+                {
+                    b.Navigation("ModuleSlots");
                 });
 #pragma warning restore 612, 618
         }

@@ -17,7 +17,7 @@ namespace Madera.Models
         public string LibelleSlot { get; set; }
 
         //Propriétés de navigation
-        public virtual ICollection<Module> Modules { get; set; }
+        //public virtual ICollection<Module> Modules { get; set; }
         public virtual ICollection<ModuleSlot> ModuleSlots { get; set; }
 
     }
