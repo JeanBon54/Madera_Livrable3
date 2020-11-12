@@ -1,10 +1,10 @@
 export class familleComposant {
 
     ID?:number;
-    LIBELLE_FAMILLE_COMPOSANT : string;
+    libelleFamilleComposant : string;
 }
 
 export class SearchingFamilleComposant extends familleComposant {
     ID?:number;
-    LIBELLE_FAMILLE_COMPOSANT : string;
+    libelleFamilleComposant : string;
   }

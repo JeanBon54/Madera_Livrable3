@@ -12,7 +12,7 @@ import { SearchFamilleComposant } from '../models/Search/SearchFamilleComposant'
 })
 export class FamilleComposantWebServiceService extends ApiService {
 
-  familleComposantUrl = environment.appUrl + 'api/familleComposant/';
+  familleComposantUrl = environment.appUrl + 'api/familleComposants/';
 
   constructor(private http: HttpClient) {
     super(http);

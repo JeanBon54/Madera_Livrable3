@@ -79,8 +79,9 @@ export class NouveauComposantPage implements OnInit {
 
       this.commercialService.saveComposant(composant)
         .subscribe((data) => {
-          this.router.navigate(['api/Composant/', data.ID]);
+          this.router.navigate(['api/Composants/', data.ID]);
         });
     }
+    
   }
 }

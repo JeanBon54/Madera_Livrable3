@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/ModulePlan.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/FamilleComposantsController.cs">
     <Files>
       <File FileName="Madera/Models/ModulePlan.cs" Line="11" Column="47" />
       <File FileName="Madera/Data/AppDbContext.cs" />
@@ -8,16 +8,19 @@
       <File FileName="Madera/Models/ModuleSlot.cs" />
       <File FileName="Madera/Models/Slot.cs" />
       <File FileName="Madera/Controllers/ClientsController.cs" />
+      <File FileName="Madera/Controllers/FamilleComposantsController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Madera" expanded="True" selected="True">
+          <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="FamilleComposantsController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
