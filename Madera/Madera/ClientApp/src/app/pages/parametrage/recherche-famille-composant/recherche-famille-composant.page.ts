@@ -37,7 +37,7 @@ export class RechercheFamilleComposantPage implements OnInit {
 
   searchFamComposant() {
     const search: SearchFamilleComposant = {
-      LIBELLE_FAMILLE_COMPOSANT: this.form.get("reference").value
+      libelleFamilleComposant: this.form.get("reference").value
     };
 
     const searchString = JSON.stringify(search);

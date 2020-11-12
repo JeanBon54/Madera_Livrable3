@@ -33,7 +33,7 @@ namespace Madera.Models
         //Propriétés de navigation
         public virtual Client client { get; set; }
         public virtual Commercial commercial { get; set; }
-        public ICollection<Plan> Plans { get; set; }
+        public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
 
     }
 

@@ -10,9 +10,10 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        public int ProjetID { get; set; }
         public string LibelleDevis { get; set; }
         public string EtatDevis { get; set; }
+        [ForeignKey("PlanID")]
+        public int PlanID { get; set; }
         public DateTime DateDebutDevis { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PrixTotalHtDevis { get; set; }
@@ -27,7 +28,7 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
-        [ForeignKey("PlanID")]
-        public virtual Projet Projet { get; set; }
+
+        public virtual Plan Plan { get; set; }
     }
 }

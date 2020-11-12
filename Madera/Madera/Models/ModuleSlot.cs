@@ -8,8 +8,8 @@ namespace Madera.Models
     public class ModuleSlot
     {
         public int ModuleID { get; set; }
-        public Module Module { get; set; }
+        public virtual Module Module { get; set; }
         public int SlotID { get; set; }
-        public Plan Slot { get; set; }
+        public virtual Slot Slot { get; set; }
     }
 }

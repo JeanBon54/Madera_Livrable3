@@ -13,10 +13,10 @@ namespace Madera.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
-        public int ModuleID { get; set; }
         public string LibelleSlot { get; set; }
 
         //Propriétés de navigation
-        public ICollection<Module> Modules { get; set; }
+        public virtual ICollection<ModuleSlot> ModuleSlots { get; set; }
+
     }
 }

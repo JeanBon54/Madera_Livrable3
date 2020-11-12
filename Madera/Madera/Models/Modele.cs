@@ -13,8 +13,6 @@ namespace Madera.Models
         [Key]
         public int ID { get; set; }
         public string LibelleModele { get; set; }
-
-        [ForeignKey("ID")]
-        public virtual ICollection<Module> modules { get; set; }
+        public virtual ICollection<ModuleModele> ModuleModeles { get; set; }
     }
 }

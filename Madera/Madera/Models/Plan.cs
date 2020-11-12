@@ -17,11 +17,9 @@ namespace Madera.Models
         [Required]
         [ForeignKey("CoupePrincipaleID")]
         public int CoupePrincipaleID { get; set; }
+        [Required]
         [ForeignKey("CouvertureID")]
         public int CouvertureID { get; set; }
-        [Required]
-        [ForeignKey("SlotID")]
-        public int SlotID { get; set; }
         public string ReferencePlan { get; set; }
         public string libellePlan { get; set; }
         public string AdressPlan { get; set; }
@@ -40,8 +38,7 @@ namespace Madera.Models
         public virtual Plancher plancher { get; set; }
         public virtual Couverture couverture { get; set; }
         public virtual CoupePrincipale coupePrincipales { get; set; } 
-        public virtual Slot Slot { get; set; }
-        public ICollection<Projet> Projets { get; set; }
-        public virtual ICollection<Module> Modules { get; set; }
+        public virtual ICollection<ModulePlan> ModulePlan { get; set; }
+        public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
 }
