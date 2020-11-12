@@ -12,7 +12,7 @@ import { SearchComposant } from '../models/Search/SearchComposant';
 })
 export class ComposantWebServiceService extends ApiService {
 
-  composantUrl = environment.appUrl + 'api/Composant/';
+  composantUrl = environment.appUrl + 'api/Composants/';
 
   constructor(private http: HttpClient) {
     super(http);
