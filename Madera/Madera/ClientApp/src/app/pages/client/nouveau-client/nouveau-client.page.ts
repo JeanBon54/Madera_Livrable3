@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { Client,SearchingClient } from 'src/app/models/Client';
 import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
 import { SearchClient } from '../../../models/Search/SearchClient';
+import { CommercialWebService } from './../../../webServices/commercial-web-service.service';
+import { Commercial,SearchingCommercial } from 'src/app/models/Commercial';
+
 
 @Component({
   selector: 'app-nouveau-client',
@@ -28,10 +31,12 @@ export class NouveauClientPage implements OnInit {
   postId: number;
   errorMessage: any;
   existingClientPost: Client;
+  commercial$: Observable<SearchingCommercial[]>;
 
 
 
-  constructor(private clientService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
+
+  constructor(private clientService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router,private commercialService: CommercialWebService) {
     
     const idParam = 'id';
     this.actionType = 'Add';
@@ -79,7 +84,13 @@ export class NouveauClientPage implements OnInit {
           this.form.controls[this.emailClient].setValue(data.EmailClient)
         ));
     }
+    this.loadCommercial();
   }
+
+  loadCommercial() {
+    this.commercial$ = this.commercialService.getCommercial();
+  }
+
 
   save() {
     if (!this.form.valid) {

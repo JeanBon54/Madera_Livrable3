@@ -2,7 +2,7 @@
  
   <form [formGroup]="form" (ngSubmit)="save()">
 <ion-card>
-  <ion-card-header>
+  <ion-card-header *ngIf="(commercial$ | async)?.length>0">
     <h2>Création d'un client</h2>
   </ion-card-header>
   <hr class="solid">
@@ -61,7 +61,11 @@
 
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Commercial"></ion-input>
+        <ion-item >
+          <ion-select placeholder="Commercial"  interface="popover">
+            <ion-select-option *ngFor="let com of (commercial$ | async)">{{com.nomCommercial}} {{com.prenomCommercial}}</ion-select-option>
+          </ion-select>
+        </ion-item>
         </ion-col>
       </ion-row>
 
