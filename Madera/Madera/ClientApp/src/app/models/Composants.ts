@@ -1,7 +1,7 @@
 export class Composant {
 
     ID?:number;
-    FamilleComposantID? : number;
+    FamilleComposantID: number;
     LibelleComposant : string;
     NatureComposant : string;
     CaractComposant :string;
@@ -15,6 +15,7 @@ export class Composant {
 }
 
 export class SearchingComposant extends Composant {
+    // FamilleComposantID:number;
     LibelleComposant : string; 
     NatureComposant: string;
     CaractComposant :string;

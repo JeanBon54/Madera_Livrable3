@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
+import { FamilleComposantWebServiceService } from './../../../webServices/famille-composant-web-service.service'; 
+
 import { NouveauComposantPageRoutingModule } from './nouveau-composant-routing.module';
 import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service';  
 import { NouveauComposantPage } from './nouveau-composant.page';
@@ -18,6 +20,6 @@ import { NouveauComposantPage } from './nouveau-composant.page';
     NouveauComposantPageRoutingModule
   ],
   declarations: [NouveauComposantPage],
-  providers: [ComposantWebServiceService]
+  providers: [ComposantWebServiceService,FamilleComposantWebServiceService]
 })
 export class NouveauComposantPageModule {}

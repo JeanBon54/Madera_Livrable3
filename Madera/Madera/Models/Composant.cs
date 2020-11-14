@@ -37,6 +37,8 @@ namespace Madera.Models
 
         public SearchingComposant(Composant composant)
         {
+            this.ID = composant.ID;
+            this.FamilleComposant = composant.FamilleComposant;
             this.LibelleComposant = composant.LibelleComposant;
             this.NatureComposant = composant.NatureComposant;
             this.CaractComposant = composant.CaractComposant;

@@ -24,6 +24,7 @@ namespace Madera.Models
 
         public SearchingFamilleComposant(FamilleComposant familleComposant)
         {
+            this.ID = familleComposant.ID;
             this.LibelleFamilleComposant = familleComposant.LibelleFamilleComposant;
         }
 

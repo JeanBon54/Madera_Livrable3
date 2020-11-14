@@ -2,7 +2,7 @@
  
     <form [formGroup]="form" (ngSubmit)="save()">
     <ion-card>
-        <ion-card-header>
+        <ion-card-header *ngIf="(famComposant$ | async)?.length>0">
           <h3>Création d'un commercial</h3>
         </ion-card-header>
         <hr class="solid">
@@ -20,7 +20,12 @@
               <ion-col>
                 <ion-input placeholder="caractComposant" formControlName="caractComposant"></ion-input>
               </ion-col>
-    
+              <ion-col>
+              <ion-select placeholder="Famille du composant" formControlName="idFamille"  interface="popover">
+                <ion-select-option *ngFor="let compo of (famComposant$ | async)"  value="{{compo.id}}">{{compo.libelleFamilleComposant}}</ion-select-option>
+                <!-- <IonSelectOption *ngFor="let compo of (famComposant$ | async)"  value="{{compo.id}}">{{compo.libelleFamilleComposant}}</IonSelectOption> -->
+              </ion-select>
+              </ion-col>
             </ion-row>
     
           </ion-grid>
