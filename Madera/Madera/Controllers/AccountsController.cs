@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿//using AutoMapper;
 using Madera.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +14,8 @@ namespace Madera.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly AppDbContext _appDbContext;
-        private readonly IMapper _mapper;
+       // private readonly AppDbContext _appDbContext;
+      //  private readonly IMapper _mapper;
         
     //     [HttpPost]
     //public async Task<IActionResult> Post([FromBody]LoginModel model)
@@ -25,11 +25,11 @@ namespace Madera.Controllers
         //        return BadRequest(ModelState);
        //     }
 
-            var userIdentity = _mapper.Map<Commercial>(model);
-            await _appDbContext.Commercials.AddAsync(new Commercial { ID = userIdentity.ID, EmailCommercial = userIdentity.EmailCommercial });
-            await _appDbContext.SaveChangesAsync();
+        //    var userIdentity = _mapper.Map<Commercial>(model);
+       //     await _appDbContext.Commercials.AddAsync(new Commercial { ID = userIdentity.ID, EmailCommercial = userIdentity.EmailCommercial });
+       //     await _appDbContext.SaveChangesAsync();
 
-            return new OkObjectResult("Compte créer");
-        }
+          // return new OkObjectResult("Compte créer");
+       // }
     }
 }

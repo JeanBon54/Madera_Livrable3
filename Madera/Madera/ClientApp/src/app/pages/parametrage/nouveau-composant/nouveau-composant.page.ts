@@ -28,8 +28,6 @@ export class NouveauComposantPage implements OnInit {
   existingCommercialPost: Composant;
   famComposant$: Observable<SearchingFamilleComposant[]>;
 
-
-
   constructor(private commercialService: ComposantWebServiceService, 
     private cd: ChangeDetectorRef,
     private formBuilder: FormBuilder, 
@@ -55,7 +53,6 @@ export class NouveauComposantPage implements OnInit {
         libelleComposant: ['', [Validators.required]],
         natureComposant: ['', [Validators.required]],
         caractComposant: ['', [Validators.required]]
-
       }
     )
   }
@@ -70,8 +67,6 @@ export class NouveauComposantPage implements OnInit {
           this.form.controls[this.libelleComposant].setValue(data.LibelleComposant),
           this.form.controls[this.natureComposant].setValue(data.NatureComposant),
           this.form.controls[this.caractComposant].setValue(data.CaractComposant)
-
-
           ));
     }
 

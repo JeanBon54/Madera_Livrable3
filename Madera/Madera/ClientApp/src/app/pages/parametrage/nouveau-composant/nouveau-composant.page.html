@@ -3,7 +3,7 @@
     <form [formGroup]="form" (ngSubmit)="save()">
     <ion-card>
         <ion-card-header *ngIf="(famComposant$ | async)?.length>0">
-          <h3>Création d'un commercial</h3>
+          <h3>Création d'un composant</h3>
         </ion-card-header>
         <hr class="solid">
         <ion-card-content>
@@ -38,7 +38,7 @@
               <ion-button size="block" color="danger"[routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
             </div>
             <div class="nouveau-btn">
-              <ion-button expand="block" color="success" type="submit" >Enregistrer</ion-button>
+              <ion-button expand="block" color="success" type="submit">Enregistrer</ion-button>
             </div>
           </div>
         </div>

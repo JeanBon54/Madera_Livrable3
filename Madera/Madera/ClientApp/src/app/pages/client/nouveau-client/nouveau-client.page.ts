@@ -19,6 +19,11 @@ export class NouveauClientPage implements OnInit {
   actionType: string;
   nomClient : string;
   prenomClient: string;
+  dateNaissance :any ;
+  adresseClient: string;
+  villeClient: string;
+  cpClient: any;
+  telephoneClient: any;
   emailClient : string;
   postId: number;
   errorMessage: any;
@@ -32,6 +37,11 @@ export class NouveauClientPage implements OnInit {
     this.actionType = 'Add';
     this.nomClient = 'nomClient';
     this.prenomClient= 'prenomClient';
+    this.dateNaissance='';
+    this.adresseClient='',
+    this.villeClient='';
+    this.cpClient='';
+    this.telephoneClient='';
     this.emailClient = 'emailClient';
 
     if (this.avRoute.snapshot.params[idParam]) {
@@ -43,6 +53,11 @@ export class NouveauClientPage implements OnInit {
         postId: 0,
         nomClient: ['', [Validators.required]],
         prenomClient: ['', [Validators.required]],
+        dateNaissance: ['', [Validators.required]],
+        adresseClient: ['', [Validators.required]],
+        villeClient: ['', [Validators.required]],
+        cpClient: ['', [Validators.required]],
+        telephoneClient: ['', [Validators.required]],
         emailClient: ['', [Validators.required]]
       }
     )
@@ -56,6 +71,11 @@ export class NouveauClientPage implements OnInit {
           this.existingClientPost = data,
           this.form.controls[this.nomClient].setValue(data.NomClient),
           this.form.controls[this.prenomClient].setValue(data.PrenomClient),
+          this.form.controls[this.dateNaissance].setValue(data.DateNaissanceClient),
+          this.form.controls[this.adresseClient].setValue(data.AdresseClient),
+          this.form.controls[this.villeClient].setValue(data.VilleClient),
+          this.form.controls[this.cpClient].setValue(data.CpClient),
+          this.form.controls[this.telephoneClient].setValue(data.Telephone),
           this.form.controls[this.emailClient].setValue(data.EmailClient)
         ));
     }
@@ -70,11 +90,11 @@ export class NouveauClientPage implements OnInit {
       let client: Client = {
         NomClient: this.form.get(this.nomClient).value,
         PrenomClient: this.form.get(this.prenomClient).value,
-        DateNaissanceClient : new Date(),
-        AdresseClient : 'toto',
-        VilleClient :'toto',
-        CpClient :12,
-        Telephone:23456,
+        DateNaissanceClient : this.form.value.dateNaissance,
+        AdresseClient :  this.form.value.adresseClient,
+        VilleClient :  this.form.value.villeClient,
+        CpClient :  this.form.value.cpClient,
+        Telephone:  this.form.value.telephoneClient,
         EmailClient: this.form.get(this.emailClient).value,
         IdUtilisateurCreation :1,
         DateCreation :new Date(),

@@ -10,25 +10,24 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-input formControlName="nomCommercial">Nom :</ion-input>
+            <ion-input placeholder="Nom" formControlName="nomCommercial"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Prénom" formControlName="prenomCommercial" ></ion-input>
+            <ion-input placeholder="Prénom" formControlName="prenomCommercial"></ion-input>
           </ion-col>
           <ion-col>
             <ion-item>
-              <ion-label>Date de naissance</ion-label>
-              <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" display-timezone="utc" ></ion-datetime>
+              <ion-datetime placeholder="Date de naissance" displayFormat="D MMM YYYY" min="1930" max="2050" display-timezone="utc" ></ion-datetime>
               <ion-input type="hidden"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
         <ion-row class="lastRow">
           <ion-col>
-            <ion-input placeholder="Numéro de téléphone"></ion-input>
+            <ion-input placeholder="Numéro de téléphone" type="number" minlength="1" maxlength="10" ></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="Adresse mail" formControlName="emailCommercial" ></ion-input>
+            <ion-input placeholder="Adresse mail" type="email"  pattern=".+@" size="35"  minlength="3" maxlength="35"  formControlName="emailCommercial"></ion-input>
           </ion-col>
 
         </ion-row>
