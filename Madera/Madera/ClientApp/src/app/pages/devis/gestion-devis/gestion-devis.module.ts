@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { GestionDevisPageRoutingModule } from './gestion-devis-routing.module';
-
+import { DevisService } from '../../../WebServices/devis-webservice.service'; 
 import { GestionDevisPage } from './gestion-devis.page';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { GestionDevisPage } from './gestion-devis.page';
     IonicModule,
     GestionDevisPageRoutingModule
   ],
-  declarations: [GestionDevisPage]
+  declarations: [GestionDevisPage],
+  providers: [DevisService]
 })
 export class GestionDevisPageModule {}

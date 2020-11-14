@@ -1,8 +1,8 @@
 export class Commercial {
 
-    ID?:number;
-    NomCommercial : string;
-    PrenomCommercial : string;
+    ID?: number;
+    NomCommercial: string;
+    PrenomCommercial: string;
     EmailCommerce : string;
     MdpCommercial : string;
     IdUtilisateurCreation? :number;

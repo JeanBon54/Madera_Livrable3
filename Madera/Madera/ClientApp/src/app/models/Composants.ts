@@ -1,7 +1,7 @@
 export class Composant {
 
     ID?:number;
-    FamilleComposantID? : number;
+    FamilleComposantID : number;
     LibelleComposant : string;
     NatureComposant : string;
     CaractComposant :string;

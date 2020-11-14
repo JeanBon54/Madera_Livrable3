@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { DevisWebServiceService } from './../../../webServices/devis-web-service.service'; 
+import { DevisService } from '../../../WebServices/devis-webservice.service'; 
 
 import { RechercheDevisPageRoutingModule } from './recherche-devis-routing.module';
 
@@ -20,6 +20,6 @@ import { RechercheDevisPage } from './recherche-devis.page';
     RechercheDevisPageRoutingModule
   ],
   declarations: [RechercheDevisPage],
-  providers: [DevisWebServiceService]
+  providers: [DevisService]
 })
 export class RechercheDevisPageModule {}
