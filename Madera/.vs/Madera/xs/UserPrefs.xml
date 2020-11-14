@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/FamilleComposantsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Composant.cs">
     <Files>
       <File FileName="Madera/Models/ModulePlan.cs" Line="11" Column="47" />
       <File FileName="Madera/Data/AppDbContext.cs" />
@@ -8,7 +8,12 @@
       <File FileName="Madera/Models/ModuleSlot.cs" />
       <File FileName="Madera/Models/Slot.cs" />
       <File FileName="Madera/Controllers/ClientsController.cs" />
-      <File FileName="Madera/Controllers/FamilleComposantsController.cs" Line="1" Column="1" />
+      <File FileName="Madera/Controllers/FamilleComposantsController.cs" />
+      <File FileName="Madera/Models/Composant.cs" Line="41" Column="64" />
+      <File FileName="Madera/Models/Search/SearchComposant.cs" />
+      <File FileName="Madera/Models/Search/SearchFamilleComposant.cs" />
+      <File FileName="Madera/Models/familleComposant.cs" />
+      <File FileName="Madera/Controllers/ComposantsController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,11 +24,13 @@
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True">
-                <Node name="FamilleComposantsController.cs" selected="True" />
+                <Node name="ComposantsController.cs" selected="True" />
               </Node>
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Search" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -35,6 +42,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="99" column="1" />
+      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/ComposantsController.cs" relfile="Madera/Controllers/ComposantsController.cs" line="55" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

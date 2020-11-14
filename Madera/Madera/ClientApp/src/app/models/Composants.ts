@@ -15,6 +15,7 @@ export class Composant {
 }
 
 export class SearchingComposant extends Composant {
+    // FamilleComposantID:number;
     LibelleComposant : string; 
     NatureComposant: string;
     CaractComposant :string;

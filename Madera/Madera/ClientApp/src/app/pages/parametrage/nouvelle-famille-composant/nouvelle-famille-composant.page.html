@@ -33,8 +33,9 @@
               <ion-col>Carat</ion-col>
               <ion-col></ion-col>
             </ion-row>
-            <ion-row *ngFor="let compo of (composant$ | async)">
+            <ion-row *ngFor="let compo of (composant$ | async);let i=index">
               <ion-col>
+                <ion-label center text-center>{{compo.id}}</ion-label>
                 <ion-label center text-center>{{compo.libelleComposant}}</ion-label>
               </ion-col>
               <ion-col>
@@ -44,7 +45,7 @@
                 <ion-label center text-center>{{compo.caractComposant}}</ion-label>
               </ion-col>
               <ion-col>
-                <ion-checkbox></ion-checkbox>
+                <ion-checkbox [value]="compo.libelleComposant" (change)="onCheckboxChange($event)"></ion-checkbox>
               </ion-col>
             </ion-row>
           </ion-grid>
