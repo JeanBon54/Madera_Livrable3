@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, FormControl,FormArray,Validators } from '@angul
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Observable } from 'rxjs';
 
-import { familleComposant,SearchingFamilleComposant } from 'src/app/models/FamilleComposant';
-import { FamilleComposantWebServiceService } from './../../../webServices/famille-composant-web-service.service'; 
-
 import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service';  
-import { Composant } from 'src/app/models/Composants';
+import { Composant,SearchingComposant } from 'src/app/models/Composants';
+import { SearchComposant } from '../../../models/Search/SearchComposant';
+import { familleComposant,SearchingFamilleComposant } from 'src/app/models/FamilleComposant';
+import { SearchFamilleComposant } from '../../../models/Search/SearchFamilleComposant';
+import { FamilleComposantWebServiceService } from './../../../webServices/famille-composant-web-service.service'; 
 
 @Component({
   selector: 'app-nouveau-composant',
@@ -18,7 +19,7 @@ export class NouveauComposantPage implements OnInit {
 
   form: FormGroup;
   actionType: string;
-  idFamille: any;
+  familleCompo: number;
   libelleComposant : string;
   natureComposant : string;
   caractComposant : string;
@@ -37,7 +38,7 @@ export class NouveauComposantPage implements OnInit {
     private router: Router) {
     
     const idParam = 'id';
-    this.idFamille = 0;
+    this.familleCompo = 0;
     this.actionType = 'Add';
     this.libelleComposant = 'libelleComposant';
     this.natureComposant= 'natureComposant';
@@ -50,7 +51,7 @@ export class NouveauComposantPage implements OnInit {
     this.form = this.formBuilder.group(
       {
         postId: 0,
-        idFamille:0, 
+        familleCompo:0, 
         libelleComposant: ['', [Validators.required]],
         natureComposant: ['', [Validators.required]],
         caractComposant: ['', [Validators.required]]
@@ -65,7 +66,7 @@ export class NouveauComposantPage implements OnInit {
       this.commercialService.getComposantID(this.postId)
         .subscribe(data => (
           this.existingCommercialPost = data,
-          this.form.controls[this.idFamille].setValue(data.FamilleComposantID),
+          this.form.controls[this.familleCompo].setValue(data.FamilleComposantID),
           this.form.controls[this.libelleComposant].setValue(data.LibelleComposant),
           this.form.controls[this.natureComposant].setValue(data.NatureComposant),
           this.form.controls[this.caractComposant].setValue(data.CaractComposant)
@@ -82,16 +83,17 @@ export class NouveauComposantPage implements OnInit {
   }
 
   save() {
+    console.log(this.form.value.familleCompo)
     if (!this.form.valid) {
       return;
     }
 
     if (this.actionType === 'Add') {
-      let composant: Composant = {
+      let composants: Composant = {
+        FamilleComposantID : this.form.value.familleCompo,
         LibelleComposant: this.form.get(this.libelleComposant).value,
         NatureComposant: this.form.get(this.natureComposant).value,
         CaractComposant: this.form.get(this.caractComposant).value,
-        FamilleComposantID : this.form.get(this.idFamille).value,
         UniteUsageComposant : 3,
         IdUtilisateurCreation :1,
         DateCreation :new Date(),
@@ -100,7 +102,7 @@ export class NouveauComposantPage implements OnInit {
         DateArchivage :new Date()
       };
 
-      this.commercialService.saveComposant(composant)
+      this.commercialService.saveComposant(composants)
         .subscribe((data) => {
           this.router.navigate(['api/Composants/', data.ID]);
         });
