@@ -15,8 +15,8 @@ import { PlanService } from 'src/app/WebServices/plan-webservice.service';
 })
 export class GestionProjetPage implements OnInit {
   projet$: Observable<Projet>;
-  plan$: Observable<Plan>;
-  devis$: Observable<Devis>;
+  plan$: Observable<Plan[]>;
+  devis$: Observable<Devis[]>;
   projetId: number;
 
   constructor(private pService: ProjetWebService,private plService: PlanService, private dService: DevisService,private avRoute: ActivatedRoute) {

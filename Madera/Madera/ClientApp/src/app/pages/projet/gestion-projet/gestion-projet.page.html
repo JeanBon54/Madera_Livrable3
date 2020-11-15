@@ -35,12 +35,15 @@
       </ion-grid>
     </ion-card-content>
 
-    <ion-card *ngIf="(plan$ | async) as plan">
+    <ion-card>
       <ion-card-content>
         <ion-card-header>
           <h6>Plan associés</h6>
         </ion-card-header>
+        <ion-card-content>
+          <div class="col-text">
         <ion-grid>
+
           <ion-row>
             <ion-col size="2">Référence</ion-col>
             <ion-col size="3">Nom</ion-col>
@@ -68,14 +71,16 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+          </div>
       </ion-card-content>
     </ion-card>
 
     <ion-card>
-      <ion-card-content>
         <ion-card-header>
           <h5>Devis associés</h5>
         </ion-card-header>
+        <div class="col-text">
+        <ion-card-content>
         <ion-grid>
           <ion-row>
             <ion-col size="2">Référence</ion-col>
@@ -105,6 +110,7 @@
           </ion-row>
         </ion-grid>
       </ion-card-content>
+      </div>
     </ion-card>
     <ion-card>
       <ion-item>
@@ -118,11 +124,11 @@
       <div class="container-image">
 
         <div class="retour-btn">
-          <ion-button size="block" color="danger" [routerLink]="['/menu-principal']" routerDirection="forward">Retour</ion-button>
+          <ion-button size="block" color="danger" [routerLink]="['/recherche-projet']" routerDirection="forward">Retour</ion-button>
         </div>
 
         <div class="nouveau-btn">
-          <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']" routerDirection="forward">Modifier</ion-button>
+          <ion-button expand="block" color="secondary" [routerLink]="['/gestion-plan/']" routerDirection="forward">Modifier</ion-button>
         </div>
       </div>
     </div>
