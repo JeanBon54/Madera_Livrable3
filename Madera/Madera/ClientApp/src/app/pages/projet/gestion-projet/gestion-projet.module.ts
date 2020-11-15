@@ -6,6 +6,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { GestionProjetPageRoutingModule } from './gestion-projet-routing.module';
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
+import { DevisService } from './../../../webServices/devis-webservice.service';
+import { PlanService } from './../../../webServices/plan-webservice.service';
 import { GestionProjetPage } from './gestion-projet.page';
 
 @NgModule({
@@ -17,6 +19,6 @@ import { GestionProjetPage } from './gestion-projet.page';
     HttpClientModule
   ],
   declarations: [GestionProjetPage],
-  providers: [ProjetWebService]
+  providers: [ProjetWebService,DevisService,PlanService]
 })
 export class GestionProjetPageModule {}

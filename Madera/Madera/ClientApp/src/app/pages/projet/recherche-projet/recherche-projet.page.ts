@@ -14,7 +14,7 @@ import { SearchProjet } from '../../../models/Search/SearchProjet';
 
 export class RechercheProjetPage implements OnInit {
 
-  projets$: Observable<ProjetCommercial[]>;
+  projets$: Observable<Projet[]>;
   form: FormGroup;
 
   constructor(private projetService: ProjetWebService,
