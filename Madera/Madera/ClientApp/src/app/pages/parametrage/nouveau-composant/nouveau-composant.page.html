@@ -3,27 +3,26 @@
     <form [formGroup]="form" (ngSubmit)="save()">
     <ion-card>
         <ion-card-header *ngIf="(famComposant$ | async)?.length>0">
-          <h3>Création d'un commercial</h3>
+          <h3>Création d'un composant</h3>
         </ion-card-header>
         <hr class="solid">
         <ion-card-content>
           <ion-grid>
             <ion-row>
               <ion-col>
-                <ion-input formControlName="libelleComposant">Libelle :</ion-input>
+                <ion-input placeholder="Nom du composant" formControlName="libelleComposant"></ion-input>
               </ion-col>
               <ion-col>
-                <ion-input placeholder="natureComposant" formControlName="natureComposant" ></ion-input>
+                <ion-input placeholder="Nature du composant" formControlName="natureComposant" ></ion-input>
               </ion-col>
             </ion-row>
             <ion-row class="lastRow">
               <ion-col>
-                <ion-input placeholder="caractComposant" formControlName="caractComposant"></ion-input>
+                <ion-input placeholder="Caractéristique du composant" formControlName="caractComposant"></ion-input>
               </ion-col>
               <ion-col>
-              <ion-select placeholder="Famille du composant" formControlName="idFamille"  interface="popover">
+              <ion-select placeholder="Famille du composant" formControlName="familleCompo"  interface="popover">
                 <ion-select-option *ngFor="let compo of (famComposant$ | async)"  value="{{compo.id}}">{{compo.libelleFamilleComposant}}</ion-select-option>
-                <!-- <IonSelectOption *ngFor="let compo of (famComposant$ | async)"  value="{{compo.id}}">{{compo.libelleFamilleComposant}}</IonSelectOption> -->
               </ion-select>
               </ion-col>
             </ion-row>
@@ -39,7 +38,7 @@
               <ion-button size="block" color="danger"[routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
             </div>
             <div class="nouveau-btn">
-              <ion-button expand="block" color="success" type="submit" >Enregistrer</ion-button>
+              <ion-button expand="block" color="success" type="submit">Enregistrer</ion-button>
             </div>
           </div>
         </div>

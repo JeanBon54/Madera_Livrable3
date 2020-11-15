@@ -34,8 +34,17 @@ namespace Madera.Models
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }
         public virtual ICollection<ModuleSlot> ModuleSlots { get; set; }
         public virtual ICollection<ModuleModele> ModuleModeles { get; set; }
+    }
 
+    public class SearchingModule : Module
+    {
 
+        public SearchingModule(Module module)
+        {
+            this.ID = module.ID;
+            this.LibelleModule = module.LibelleModule;
+
+        }
 
     }
 }

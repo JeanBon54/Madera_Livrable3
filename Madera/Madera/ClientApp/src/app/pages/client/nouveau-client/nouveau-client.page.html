@@ -2,7 +2,7 @@
  
   <form [formGroup]="form" (ngSubmit)="save()">
 <ion-card>
-  <ion-card-header>
+  <ion-card-header *ngIf="(commercial$ | async)?.length>0">
     <h2>Création d'un client</h2>
   </ion-card-header>
   <hr class="solid">
@@ -18,24 +18,24 @@
         <ion-col>
           <ion-item>
             <ion-label>Date de naissance</ion-label>
-            <ion-datetime displayFormat="D MMM YYYY" min="2000" max="2050" value="2005-06-17T11"></ion-datetime>
+            <ion-datetime displayFormat="D MMM YYYY" min="1930" max="2050" formControlName="dateNaissance"></ion-datetime>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Adresse postale"></ion-input>
+          <ion-input placeholder="Adresse postale" formControlName="adresseClient"></ion-input>
         </ion-col>
         <ion-col>
           <ion-input placeholder="Complément"></ion-input>
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Code postale"></ion-input>
+          <ion-input placeholder="Code postale" formControlName="cpClient"></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-input placeholder="Ville"></ion-input>
+          <ion-input placeholder="Ville" formControlName="villeClient"></ion-input>
         </ion-col>
         <ion-col>
           <ion-input placeholder="Adresse mail" formControlName="emailClient"></ion-input>
@@ -44,7 +44,7 @@
 
       <ion-row class="lastRow">
         <ion-col>
-          <ion-input placeholder="Numéro de téléphone"></ion-input>
+          <ion-input placeholder="Numéro de téléphone" formControlName="telephoneClient"></ion-input>
         </ion-col>
         <ion-col>
 
@@ -61,7 +61,11 @@
 
         </ion-col>
         <ion-col>
-          <ion-input placeholder="Commercial"></ion-input>
+        <ion-item >
+          <ion-select placeholder="Commercial"  interface="popover">
+            <ion-select-option *ngFor="let com of (commercial$ | async)">{{com.nomCommercial}} {{com.prenomCommercial}}</ion-select-option>
+          </ion-select>
+        </ion-item>
         </ion-col>
       </ion-row>
 

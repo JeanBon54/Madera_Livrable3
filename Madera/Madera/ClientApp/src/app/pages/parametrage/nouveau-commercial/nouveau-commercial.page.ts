@@ -54,7 +54,7 @@ export class NouveauCommercialPage implements OnInit {
           this.existingCommercialPost = data,
           this.form.controls[this.nomCommercial].setValue(data.NomCommercial),
           this.form.controls[this.prenomCommercial].setValue(data.PrenomCommercial),
-          this.form.controls[this.emailCommercial].setValue(data.EmailCommerce)
+          this.form.controls[this.emailCommercial].setValue(data.EmailCommercial)
         ));
     }
   }
@@ -68,7 +68,7 @@ export class NouveauCommercialPage implements OnInit {
       let commercial: Commercial = {
         NomCommercial: this.form.get(this.nomCommercial).value,
         PrenomCommercial: this.form.get(this.prenomCommercial).value,
-        EmailCommerce: this.form.get(this.emailCommercial).value,
+        EmailCommercial: this.form.get(this.emailCommercial).value,
         MdpCommercial : 'toto',
         IdUtilisateurCreation :1,
         DateCreation :new Date(),

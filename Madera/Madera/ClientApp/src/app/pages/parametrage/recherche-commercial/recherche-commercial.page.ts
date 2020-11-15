@@ -28,7 +28,7 @@ export class RechercheCommercialPage implements OnInit {
         reference: ['', []]
       }
     )
-
+    
     this.loadCommercial();
   }
 

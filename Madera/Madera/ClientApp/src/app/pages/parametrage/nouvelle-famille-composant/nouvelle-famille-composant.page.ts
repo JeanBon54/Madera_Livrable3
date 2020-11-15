@@ -45,7 +45,6 @@ export class NouvelleFamilleComposantPage implements OnInit {
         {
           postId: 0,
           libelleFamComposant: ['', [Validators.required]],
-          checkArray: this.formBuilder.array([], [Validators.required])
         }
       )
     }
@@ -66,10 +65,6 @@ export class NouvelleFamilleComposantPage implements OnInit {
   loadComposant() {
     this.composant$ = this.composantService.getComposant();
   }
-
-  // save() {
-  //   console.log(this.form.value)
-  // }
 
   save() {
     if (!this.form.valid) {

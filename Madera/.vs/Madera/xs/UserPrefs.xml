@@ -1,19 +1,10 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/Composant.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ClientsController.cs">
     <Files>
-      <File FileName="Madera/Models/ModulePlan.cs" Line="11" Column="47" />
-      <File FileName="Madera/Data/AppDbContext.cs" />
-      <File FileName="Madera/Models/Plan.cs" />
+      <File FileName="Madera/Controllers/ModulesController.cs" Line="28" Column="10" />
       <File FileName="Madera/Models/Module.cs" />
-      <File FileName="Madera/Models/ModuleSlot.cs" />
-      <File FileName="Madera/Models/Slot.cs" />
-      <File FileName="Madera/Controllers/ClientsController.cs" />
-      <File FileName="Madera/Controllers/FamilleComposantsController.cs" />
-      <File FileName="Madera/Models/Composant.cs" Line="41" Column="64" />
-      <File FileName="Madera/Models/Search/SearchComposant.cs" />
-      <File FileName="Madera/Models/Search/SearchFamilleComposant.cs" />
-      <File FileName="Madera/Models/familleComposant.cs" />
-      <File FileName="Madera/Controllers/ComposantsController.cs" />
+      <File FileName="Madera/Models/Search/SearchModule.cs" />
+      <File FileName="Madera/Controllers/ClientsController.cs" Line="46" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +15,7 @@
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True">
-                <Node name="ComposantsController.cs" selected="True" />
+                <Node name="ClientsController.cs" selected="True" />
               </Node>
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />

@@ -31,11 +31,12 @@
             <h2>Resultat</h2>   
            </ion-card-header>
         <ion-card-content>
+            <div class="col-text" >
             <ion-grid >
                 <ion-row>
                     <ion-col>Nom</ion-col>
                     <ion-col>Prenom</ion-col>
-                    <ion-col> Mail</ion-col>
+                    <ion-col>Mail</ion-col>
                 </ion-row>
                 <ion-row  *ngFor="let com of (commercial$ | async)">
                     <ion-col>
@@ -45,10 +46,11 @@
                       <ion-label center text-center>{{com.prenomCommercial}}</ion-label>
                     </ion-col>
                     <ion-col>
-                      <ion-label center text-center>{{com.emailCommerce}}</ion-label>  
+                      <ion-label center text-center>{{com.emailCommercial}}</ion-label>  
                     </ion-col>
                 </ion-row>
             </ion-grid>
+            </div>
         </ion-card-content>
     </ion-card>
 

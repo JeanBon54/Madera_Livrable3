@@ -29,35 +29,37 @@
     <ion-card>
         <ion-card-header *ngIf="(client$ | async)?.length>0">
             <h2>Resultat</h2>   
-           </ion-card-header>
+        </ion-card-header>
         <ion-card-content>
+            <div class="col-text" >
             <ion-grid>
                 <ion-row>
-                    <ion-col>Nom</ion-col>
-                    <ion-col>Prenom</ion-col>
-                    <ion-col>Date-création</ion-col>
-                    <ion-col>Date-modification</ion-col>
-                    <ion-col>Commercial</ion-col>
+                    <ion-col text-center>Nom</ion-col>
+                    <ion-col text-center>Prenom</ion-col>
+                    <ion-col text-center>Date-création</ion-col>
+                    <ion-col text-center>Date-modification</ion-col>
+                    <!-- <ion-col>Commercial</ion-col> -->
                     <ion-col>Actif</ion-col>
                 </ion-row>
                 <ion-row *ngFor="let cli of (client$ | async)">
                     <ion-col>
-                      <ion-label center text-center>{{cli.nomClient}}</ion-label>
+                      <ion-label  text-center>{{cli.nomClient}}</ion-label>
                     </ion-col>
                     <ion-col>
-                      <ion-label center text-center>{{cli.prenomClient}}</ion-label>
+                      <ion-label  text-center>{{cli.prenomClient}}</ion-label>
                     </ion-col>
                     <ion-col>
-                      <ion-label center text-center>{{cli.dateCreation}}</ion-label>
+                      <ion-label  text-center>{{cli.dateCreation| date: 'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
                     <ion-col>
-                      <ion-label center text-center>{{cli.dateModification}}</ion-label>
+                      <ion-label  text-center>{{cli.dateModification| date: 'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
                     <ion-col>
-                      <ion-label center text-center>{{cli.nomClient}}</ion-label>
+                      <ion-label  text-center>{{cli.nomClient}}</ion-label>
                     </ion-col>
                 </ion-row>
             </ion-grid>
+        </div>
         </ion-card-content>
     </ion-card>
     <ion-footer>
