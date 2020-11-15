@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule, HttpClient } from '@angular/common/http';  
 
@@ -14,9 +14,10 @@ import { GestionProjetPage } from './gestion-projet.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
+    HttpClientModule,
     GestionProjetPageRoutingModule,
-    HttpClientModule
   ],
   declarations: [GestionProjetPage],
   providers: [ProjetWebService,DevisService,PlanService]
