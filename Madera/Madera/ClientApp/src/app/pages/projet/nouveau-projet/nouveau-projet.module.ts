@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule, HttpClient } from '@angular/common/http';  
 
 import { NouveauProjetPageRoutingModule } from './nouveau-projet-routing.module';
 import { NouveauProjetPage } from './nouveau-projet.page';
@@ -12,8 +12,8 @@ import { ProjetWebService } from './../../../webServices/projet-webservice.servi
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     ReactiveFormsModule,
+    IonicModule,
     HttpClientModule,
     NouveauProjetPageRoutingModule
   ],
