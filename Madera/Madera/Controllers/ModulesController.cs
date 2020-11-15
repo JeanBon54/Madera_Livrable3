@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Madera.Models;
-
+using Madera.Models.Search;
 namespace Madera.Controllers
 {
     [Route("api/[controller]")]
@@ -22,24 +22,38 @@ namespace Madera.Controllers
 
         // GET: api/Modules
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Module>>> GetModules()
+        public async Task<ActionResult<IEnumerable<SearchingModule>>> GetClients()
         {
-            return await _context.Modules.ToListAsync();
+            return await _context.Modules.Select(p => new SearchingModule(p)).ToListAsync();
         }
 
         // GET: api/Modules/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Module>> GetModule(int id)
+        public async Task<ActionResult<SearchingModule>> GetClient(int id)
         {
-            var @module = await _context.Modules.FindAsync(id);
+            var module = await _context.Modules.FindAsync(id);
 
-            if (@module == null)
+            if (module == null)
             {
                 return NotFound();
             }
 
-            return @module;
+            return new SearchingModule(module);
         }
+
+        // GET: api/Projets/5
+        [HttpPost("search")]
+        public async Task<List<SearchingModule>> GetListeClient([FromBody] SearchModule search)
+        {
+            var listeModule = _context.Modules.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.LibelleModule))
+                listeModule = listeModule.Where(p => p.LibelleModule.ToLower().Contains(search.LibelleModule.ToLower()));
+
+            return await listeModule.Select(p => new SearchingModule(p)).ToListAsync();
+        }
+
+
 
         // PUT: api/Modules/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
