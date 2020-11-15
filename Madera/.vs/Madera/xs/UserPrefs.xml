@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ClientsController.cs">
     <Files>
-      <File FileName="Madera/Controllers/ModulesController.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/Module.cs" Line="45" Column="31" />
-      <File FileName="Madera/Models/Search/SearchModule.cs" Line="6" Column="36" />
-      <File FileName="Madera/Controllers/ClientsController.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Madera/Controllers/ModulesController.cs" Line="28" Column="10" />
+      <File FileName="Madera/Models/Module.cs" />
+      <File FileName="Madera/Models/Search/SearchModule.cs" />
+      <File FileName="Madera/Controllers/ClientsController.cs" Line="46" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

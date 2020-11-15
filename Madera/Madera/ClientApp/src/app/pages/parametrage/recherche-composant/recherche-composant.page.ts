@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Composant,SearchingComposant } from 'src/app/models/Composants';
 import { SearchComposant } from '../../../models/Search/SearchComposant';
 import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service';  
-import { Console } from 'console';
 @Component({
   selector: 'app-recherche-composant',
   templateUrl: './recherche-composant.page.html',
