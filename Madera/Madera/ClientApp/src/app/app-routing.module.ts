@@ -9,13 +9,7 @@ import { GestionProjetPage } from './pages/projet/gestion-projet/gestion-projet.
 const routerConfig: Routes = [
   {
     path: '',
-    redirectTo: 'connexion',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
-    component: ConnexionPage
-
+    component: MenuPrincipalPage
   },
   {
     path: 'menu-principal',
