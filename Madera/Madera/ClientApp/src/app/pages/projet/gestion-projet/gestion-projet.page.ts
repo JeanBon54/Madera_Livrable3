@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ProjetWebService } from './../../../webServices/projet-webservice.service';
+import { ChangeDetectorRef,Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+
+
+import { ActivatedRoute } from '@angular/router';
+
+import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Projet } from 'src/app/models/Projet';
 import { Devis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
-import { DevisService } from 'src/app/WebServices/devis-webservice.service';
-import { PlanService } from 'src/app/WebServices/plan-webservice.service';
+import { DevisService } from './../../../WebServices/devis-webservice.service';
+import { PlanService } from './../../../WebServices/plan-webservice.service';
 
 @Component({
   selector: 'app-gestion-projet',
@@ -19,7 +23,10 @@ export class GestionProjetPage implements OnInit {
   devis$: Observable<Devis[]>;
   projetId: number;
 
-  constructor(private pService: ProjetWebService,private plService: PlanService, private dService: DevisService,private avRoute: ActivatedRoute) {
+  constructor(private pService: ProjetWebService,
+    private plService: PlanService, 
+    private dService: DevisService,
+    private avRoute: ActivatedRoute,private formBuilder: FormBuilder) {
     const idParam = 'id';
     if (this.avRoute.snapshot.params[idParam]) {
       this.projetId = this.avRoute.snapshot.params[idParam];

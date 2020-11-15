@@ -36,7 +36,7 @@ export class RechercheProjetPage implements OnInit {
   }
 
   loadProjet() {
-    this.projets$ = this.projetService.getProjets();
+   // this.projets$ = this.projetService.getProjets();
   }
 
   searchProjet() {
