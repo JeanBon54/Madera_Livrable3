@@ -3,48 +3,47 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Projet, ProjetCommercial } from '../models/Projet';
+import { Plan } from '../models/Plan';
 import { ApiService } from 'src/Shared/api.service';
-import { SearchProjet } from '../models/Search/SearchProjet';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProjetWebService extends ApiService {
+export class PlanService extends ApiService {
 
-  projectUrl = environment.appUrl + 'api/Projets/';
+  planUrl = environment.appUrl + 'api/Plans/';
 
   constructor(private http: HttpClient) {
     super(http);
   }
 
 
-  getProjets(): Observable<Projet[]> {
-    return this.get<Projet[]>(this.projectUrl, [])
+  getPlans(): Observable<Plan[]> {
+    return this.get<Plan[]>(this.planUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
     );
   }
 
-  getProjet(projetId: number): Observable<Projet> {
-    return this.getById<Projet>(this.projectUrl, projetId.toString() )
+  getPlan(planId: number): Observable<Plan> {
+    return this.getById<Plan>(this.planUrl, planId.toString() )
       .pipe(
         retry(1),
         catchError(this.errorHandler)
       );
   }
 
-  searchProjet<T>(search: string): Observable<T> {
-    return this.post<T>(this.projectUrl + 'search', search)
+  searchPlans<T>(search: string): Observable<T> {
+    return this.post<T>(this.planUrl + 'search', search)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
       );
   }
 
-  saveProjet(projet): Observable<Projet> {
-    return this.post<Projet>(this.projectUrl, JSON.stringify(projet))
+  saveplan(plan): Observable<Plan> {
+    return this.post<Plan>(this.planUrl, JSON.stringify(plan))
     .pipe(
       retry(1),
       catchError(this.errorHandler)

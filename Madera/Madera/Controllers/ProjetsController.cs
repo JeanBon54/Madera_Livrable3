@@ -23,14 +23,14 @@ namespace Madera.Controllers
 
         // GET: api/Projets
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProjetCommercial>>> GetProjets()
+        public async Task<ActionResult<IEnumerable<Projet>>> GetProjets()
         {
-            return await _context.Projets.Select(p => new ProjetCommercial(p)).ToListAsync();
+            return await _context.Projets.ToListAsync();
         }
 
         // GET: api/Projets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProjetCommercial>> GetProjet(int id)
+        public async Task<ActionResult<Projet>> GetProjet(int id)
         {
             var projet = await _context.Projets.FindAsync(id);
 
@@ -39,7 +39,7 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return new ProjetCommercial(projet);
+            return projet;
         }
 
         // GET: api/Projets/5

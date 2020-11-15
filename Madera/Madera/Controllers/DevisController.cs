@@ -1,10 +1,14 @@
 ﻿using System;
+using System.IO;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Stubble.Core;
+using GrapeCity.Documents.Html;
 using Madera.Models;
 
 namespace Madera.Controllers
@@ -103,5 +107,44 @@ namespace Madera.Controllers
         {
             return _context.Devis.Any(e => e.ID == id);
         }
+
+        // GET: api/Devis/5
+        [HttpGet("genpdf/{id}")]
+        public async Task<ActionResult<Devis>> Getpdf(int id)
+        {
+            var devis = await _context.Devis.FindAsync(id);
+
+            var pdf = new createpdf();
+
+            string templatePath = pdf.getTemplate();
+
+            // Bind the template to data:
+            var builder = new Stubble.Core.Builders.StubbleBuilder();
+            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis });
+
+
+          
+            string pdfPath = "pdftest.pdf";
+
+            // Render the bound HTML
+            using (var re = new GcHtmlRenderer(boundTemplate))
+            {
+                re.RenderToPdf(pdfPath);
+            }
+
+            // opens the generated PDF file
+            ProcessStartInfo psi = new ProcessStartInfo() { FileName = pdfPath, UseShellExecute = true };
+            Process.Start(psi);
+
+            if (devis == null)
+            {
+                return NotFound();
+            }
+
+            return devis;
+        }
+
+
+
     }
 }

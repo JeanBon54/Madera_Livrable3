@@ -18,7 +18,7 @@ namespace Madera.Migrations
                 defaultValue: 0m);
 
             migrationBuilder.AddColumn<int>(
-                name: "quatite",
+                name: "quantite",
                 table: "ModuleComposants",
                 type: "int",
                 nullable: false,
@@ -32,7 +32,7 @@ namespace Madera.Migrations
                 table: "ModuleComposants");
 
             migrationBuilder.DropColumn(
-                name: "quatite",
+                name: "quantite",
                 table: "ModuleComposants");
 
             migrationBuilder.AddColumn<decimal>(
