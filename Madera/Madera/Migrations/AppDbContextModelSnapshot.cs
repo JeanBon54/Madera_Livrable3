@@ -204,7 +204,7 @@ namespace Madera.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<DateTime?>("DateArchivage")
+                    b.Property<DateTime>("DateArchivage")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateCreation")
@@ -357,7 +357,7 @@ namespace Madera.Migrations
                     b.Property<decimal>("PrixHt")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("quatite")
+                    b.Property<int>("quantite")
                         .HasColumnType("int");
 
                     b.HasKey("ModuleID", "ComposantID");

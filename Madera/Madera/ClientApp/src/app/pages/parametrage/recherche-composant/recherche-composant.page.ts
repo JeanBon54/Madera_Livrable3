@@ -32,6 +32,7 @@ export class RechercheComposantPage implements OnInit {
 
   loadComposant() {
     this.composant$ = this.composantService.getComposant();
+    console.log(this.composantService.getComposant());
   }
 
   searchComposant() {

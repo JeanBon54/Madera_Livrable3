@@ -19,16 +19,16 @@ export class ProjetWebService extends ApiService {
   }
 
 
-  getProjets(): Observable<ProjetCommercial[]> {
-    return this.get<ProjetCommercial[]>(this.projectUrl, [])
+  getProjets(): Observable<Projet[]> {
+    return this.get<Projet[]>(this.projectUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
     );
   }
 
-  getProjet(projetId: number): Observable<ProjetCommercial> {
-    return this.getById<ProjetCommercial>(this.projectUrl, projetId.toString() )
+  getProjet(projetId: number): Observable<Projet> {
+    return this.getById<Projet>(this.projectUrl, projetId.toString() )
       .pipe(
         retry(1),
         catchError(this.errorHandler)

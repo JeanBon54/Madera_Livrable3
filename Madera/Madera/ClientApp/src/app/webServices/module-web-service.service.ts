@@ -1,19 +1,66 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Observable, throwError } from 'rxjs';
+import { retry, catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { Module ,SearchingModule} from '../models/Module';
+import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ModuleWebServiceService {
-  constructor(private http: HttpClient) { }
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
-  getData() {
+export class ModuleService extends ApiService {
 
-    return this.http.get('/Module');
-  }  
+  moduleComposantUrl = environment.appUrl + 'api/Modules/';
+
+  constructor(private http: HttpClient) {
+    super(http);
+  }
+
+
+  getModules(): Observable<SearchingModule[]> {
+    return this.get<SearchingModule[]>(this.moduleComposantUrl, [])
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+  getModule(ModuleId: number): Observable<SearchingModule> {
+    return this.getById<SearchingModule>(this.moduleComposantUrl, ModuleId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  savemodule(module): Observable<SearchingModule> {
+    return this.post<SearchingModule>(this.moduleComposantUrl, JSON.stringify(module))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+  searchModule<T>(search: string): Observable<T> {
+    return this.post<T>(this.moduleComposantUrl + 'search', search)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
+  errorHandler(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
+
 }
