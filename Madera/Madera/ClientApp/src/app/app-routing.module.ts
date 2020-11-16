@@ -106,7 +106,7 @@ const routerConfig: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routerConfig, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routerConfig, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' })
   ],
   exports: [RouterModule]
 })
