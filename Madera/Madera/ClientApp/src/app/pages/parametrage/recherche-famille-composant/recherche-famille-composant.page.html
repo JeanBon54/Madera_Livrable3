@@ -31,12 +31,15 @@
             <h2>Resultat</h2>   
            </ion-card-header>
         <ion-card-content>
-            <div class="col-text" >
+
             <ion-grid>
+                <div class="col-text-titre"> 
                 <ion-row>
-                    <ion-col>Nature</ion-col>
-                    <ion-col>Caractéristiques</ion-col>
+                    <ion-col>Nature de la famille composant</ion-col>
+                    <!-- <ion-col>Caractéristiques</ion-col> -->
                 </ion-row>
+                </div>
+                <div class="col-text" >
                 <ion-row *ngFor="let fam of (famComposant$ | async)">
                     <ion-col>
                         <ion-label center text-center>{{fam.libelleFamilleComposant}}</ion-label>
@@ -45,8 +48,8 @@
                         <ion-label center text-center>{{fam.familleComposantLibelle}}</ion-label>
                     </ion-col> -->
                 </ion-row>
+                </div>
             </ion-grid>
-            </div>
         </ion-card-content>
     </ion-card>
 
@@ -59,7 +62,8 @@
                 </div>
 
                 <div class="nouveau-btn">
-                    <ion-button expand="block" color="secondary"  [routerLink]="['/nouvelle-famille-composant']">Nouvelle famille</ion-button>
+                    <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-composant']">Nouvelle famille</ion-button>
+                    <!-- <ion-button expand="block" color="secondary"  [routerLink]="['/nouvelle-famille-composant']">Nouvelle famille</ion-button> -->
                 </div>
             </div>
         </div>
