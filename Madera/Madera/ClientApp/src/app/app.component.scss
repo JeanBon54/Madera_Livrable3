@@ -19,6 +19,19 @@
   text-align: justify;
 }
 
+.col-menu-text{
+  text-align: center;
+  font-size: medium;
+//  justify-content: center;
+}
+.col-menu-text-center{
+  text-align: center;
+  font-size: medium;
+  position:absolute;
+  right: 18px;
+//  justify-content: center;
+}
+
   ion-item {
     padding-bottom: 10px;
   }

@@ -5,17 +5,27 @@
         </ion-col>
     </ion-row>
     <ion-row class="ion-padding-top ion-justify-content-around">
+ 
         <ion-col size="4">
             <ion-img class="img" (click)="goTo('recherche-projet')" src="assets/image/menu-recherche_projet.png"></ion-img>
+            <div class="col-menu-text">
+                <ion-label color="dark">Recherche projet</ion-label>
+            </div>
         </ion-col>
         <ion-col class="ion-padding-start ion-padding-end" size="4">
             <ion-img class="img" (click)="goTo('nouveau-projet')" src="assets/image/menu-nouveau_projet.png"></ion-img>
+            <div class="col-menu-text-center">
+                <ion-label ion-text-center color="dark">Nouveau projet</ion-label>
+            </div>
         </ion-col>
         <ion-col class="ion-padding-start" size="4">
             <ion-img class="img" (click)="goTo('recherche-devis')" src="assets/image/menu-recherche_devis.png"></ion-img>
+            <div class="col-menu-text">
+                <ion-label color="dark">Recherche devis</ion-label>
+            </div>
         </ion-col>
     </ion-row>
-    <ion-row class="ion-padding-top ion-justify-content-around">
+    <!-- <ion-row class="ion-padding-top ion-justify-content-around">
         <ion-col class="label ion-text-nowrap" size="4">
             <ion-label color="dark">Recherche projet</ion-label>
         </ion-col>
@@ -25,19 +35,28 @@
         <ion-col class="label ion-text-nowrap ion-padding-start" size="4">
             <ion-label color="dark">Recherche devis</ion-label>
         </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row class="ion-padding-top ion-justify-content-around">
         <ion-col size="4">
             <ion-img class="img" (click)="goTo('recherche-client')" src="assets/image/menu-recherche_client.png"></ion-img>
+            <div class="col-menu-text">
+                <ion-label color="dark">Recherche client</ion-label>
+            </div>
         </ion-col>
         <ion-col class="ion-padding-start ion-padding-end" size="4">
             <ion-img class="img" (click)="goTo('nouveau-client')" src="assets/image/menu-nouveau_client.png"></ion-img>
+            <div class="col-menu-text-center">
+                <ion-label color="dark">Nouveau client</ion-label>
+            </div>
         </ion-col>
         <ion-col class="ion-padding-start" size="4">
             <ion-img class="img" (click)="goTo('parametrage')" src="assets/image/menu-parametre.png"></ion-img>
+            <div class="col-menu-text">
+                <ion-label color="dark">Paramétrage</ion-label>
+            </div>
         </ion-col>
     </ion-row>
-    <ion-row size="12" class="ion-padding-top ion-justify-content-around">
+    <!-- <ion-row size="12" class="ion-padding-top ion-justify-content-around">
         <ion-col class="label ion-text-nowrap " size="4">
             <ion-label color="dark">Recherche client</ion-label>
         </ion-col>
@@ -47,7 +66,7 @@
         <ion-col class="label ion-text-nowrap" size="4">
             <ion-label color="dark">Paramétrage</ion-label>
         </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row class="ion-justify-content-center ion-padding-top">
         <ion-col class="button" size="12">
             <ion-button color="danger" expand="block" (click)="logOut()">Déconnexion</ion-button>

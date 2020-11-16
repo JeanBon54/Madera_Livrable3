@@ -37,7 +37,8 @@
 
      <ion-card>
         <ion-card-header>
-          <h6>Plan associés</h6>
+          <h5>Plan associés</h5>
+          <hr class="solid">
         </ion-card-header>
         <ion-card-content>
           <div class="col-text">
@@ -46,7 +47,7 @@
                 <ion-col size="2">Référence</ion-col>
                 <ion-col size="3">Nom</ion-col>
                 <ion-col size="3">Début de création</ion-col>
-                <ion-col size="2">Dernière mise à jour</ion-col>
+                <ion-col size="3">Dernière mise à jour</ion-col>
                 <ion-col size="1">Etat </ion-col>
               </ion-row>
               <ion-row *ngFor="let plan of (plan$ | async)">
@@ -59,7 +60,7 @@
                 <ion-col size="3">
                   <ion-label center text-center>{{plan.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
-                <ion-col size="2">
+                <ion-col size="3">
                   <ion-label center text-center>{{plan.dateModification | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
                 <ion-col size="1">
@@ -76,6 +77,7 @@
     <ion-card>
         <ion-card-header>
           <h5>Devis associés</h5>
+          <hr class="solid">
         </ion-card-header>
       <ion-card-content>
         <div class="col-text">
@@ -135,6 +137,5 @@
       </div>
     </div>
   </ion-footer>
-
 </ion-col>
 
