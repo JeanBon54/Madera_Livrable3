@@ -21,10 +21,15 @@ namespace Madera.Controllers
         }
 
         // GET: api/Modules
+
+        //public async Task<ActionResult<IEnumerable<SearchingModule>>> GetClients()
+        //{
+        //    return await _context.Modules.Select(p => new SearchingModule(p)).ToListAsync();
+        //}
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SearchingModule>>> GetClients()
+        public async Task<ActionResult<IEnumerable<Module>>> GetClients()
         {
-            return await _context.Modules.Select(p => new SearchingModule(p)).ToListAsync();
+            return await _context.Modules.ToListAsync();
         }
 
         // GET: api/Modules/5
