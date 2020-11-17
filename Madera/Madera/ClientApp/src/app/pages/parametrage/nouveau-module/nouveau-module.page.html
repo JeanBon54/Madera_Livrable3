@@ -1,4 +1,5 @@
-
+<ion-col size="12">
+  <form [formGroup]="form" (ngSubmit)="save()">
     <ion-card>
         <ion-card-header>
          <h3>Création d'un module</h3>   
@@ -8,10 +9,10 @@
             <ion-grid>
                 <ion-row>
                     <ion-col>
-                        <ion-input placeholder="Libelle"></ion-input>
-                        <ion-input placeholder="Hauteur"></ion-input>
+                        <ion-input placeholder="Libelle" formControlName="libelleModule"></ion-input>
+                        <!-- <ion-input placeholder="Hauteur"></ion-input> -->
                       </ion-col>
-                  <ion-col>
+                  <!-- <ion-col>
                     <ion-item > 
                         <ion-label>Caractéristiques</ion-label>
                         <ion-select placeholder="">
@@ -21,7 +22,7 @@
                       </ion-item>
 
                       <ion-input placeholder="Longueur"></ion-input>
-                  </ion-col>
+                  </ion-col> -->
         
                 </ion-row>
 
@@ -29,11 +30,34 @@
         </ion-card-content>
     </ion-card>
     <ion-card>
-        <ion-card-header>
+        <ion-card-header *ngIf="(composant$ | async)?.length>0">
             <h2>Resultat</h2>   
            </ion-card-header>
-            <ion-card-content>
-            </ion-card-content>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>Libelle</ion-col>
+              <ion-col>Nature</ion-col>
+              <ion-col>Carat</ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+            <ion-row *ngFor="let compo of (composant$ | async);let i=index">
+              <ion-col>
+                <ion-label center text-center>{{compo.id}}</ion-label>
+                <ion-label center text-center>{{compo.libelleComposant}}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-label center text-center>{{compo.natureComposant}}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-label center text-center>{{compo.caractComposant}}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ion-checkbox [value]="compo.id" (ionChange)="onCheckboxChange($event)"></ion-checkbox>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
     </ion-card>
 
     <ion-footer>
@@ -43,8 +67,10 @@
                 <ion-button size="block" color="danger">Annuler</ion-button>
             </div>
             <div class="nouveau-btn">
-                  <ion-button expand="block" color="success">Enregistrer</ion-button>
+                  <ion-button expand="block" type="submit" color="success">Enregistrer</ion-button>
             </div>
           </div>
       </div>
   </ion-footer>
+</form>
+</ion-col>
