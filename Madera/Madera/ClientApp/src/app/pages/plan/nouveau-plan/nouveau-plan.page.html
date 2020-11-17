@@ -1,5 +1,4 @@
 <ion-col size="12">
-
   <ion-card>
     <ion-card-header>
       <h3>
@@ -12,11 +11,11 @@
         <ion-row>
           <ion-col>
             <ion-label>Clent :</ion-label>
-            <ion-input placeholder="Adresse du projet :"></ion-input>
-            <ion-input placeholder="Ville :"></ion-input>
+            <ion-input placeholder="Adresse du projet :" formControlName="adresse"></ion-input>
+            <ion-input placeholder="Ville :" formControlName="ville"></ion-input>
           </ion-col>
           <ion-col>
-            <ion-input placeholder="CP :"></ion-input>
+            <ion-input placeholder="CP :" formControlName="cp"></ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -35,8 +34,8 @@
           <ion-row>
             <ion-col>
               <ion-item>
-                <ion-select placeholder="Coupe de principe :" interface="alert">
-                  <ion-select-option *ngFor="let cp of (coupePrincipal$ | async)">{{cp.libelleCoupePrincipale}}</ion-select-option>
+                <ion-select placeholder="Coupe de principe :"  formControlName="cpId" interface="alert">
+                  <ion-select-option *ngFor="let cp of (coupePrincipal$ | async)"value="{{cp.id}}">{{cp.libelleCoupePrincipale}}</ion-select-option>
                 </ion-select>
               </ion-item>
               <ion-item>
@@ -53,13 +52,13 @@
 
               <ion-item>
                 <ion-select placeholder="Type de plancher :"interface="alert">
-                  <ion-select-option *ngFor="let plancher of (planchers$ | async)">{{plancher.typePlancher}}</ion-select-option>
+                  <ion-select-option *ngFor="let plancher of (planchers$ | async)" value="{{plancher.id}}"> {{plancher.typePlancher}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
                 <ion-select placeholder="Type de couverture :"interface="alert">
-                  <ion-select-option *ngFor="let couv of (couvertures$ | async)">{{couv.typeCouverture}}</ion-select-option>
+                  <ion-select-option *ngFor="let couv of (couvertures$ | async)" value="{{couv.id}}">{{couv.typeCouverture}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
@@ -82,11 +81,10 @@
           </div>
 
           <div class="nouveau-btn">
-            <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']" routerDirection="forward">Modifer</ion-button>
+            <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']"  type="submit">Modifer</ion-button>
           </div>
         </div>
       </div>
     </ion-footer>
-
 </ion-col>
 

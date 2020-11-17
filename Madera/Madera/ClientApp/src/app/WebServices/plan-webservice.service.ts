@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Plan } from '../models/Plan';
+import { Plan } from 'src/app/models/Plan';
 import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({

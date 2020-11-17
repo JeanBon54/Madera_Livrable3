@@ -33,6 +33,7 @@ export class NouveauModulePage implements OnInit {
   
       const idParam = 'id';
       this.actionType = 'Add';
+      
       if (this.avRoute.snapshot.params[idParam]) {
         this.postId = this.avRoute.snapshot.params[idParam];
       }
