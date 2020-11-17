@@ -1,9 +1,98 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>nouveau-plan</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-col size="12">
 
-<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h3>
+        <ion-label>Nouveau plan :</ion-label>
+      </h3>
+    </ion-card-header>
+    <hr class="solid">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
 
-</ion-content>
+              <ion-label>Clent :</ion-label>
+
+              <ion-input placeholder="Adresse du projet :"></ion-input>
+
+              <ion-input placeholder="Ville :"></ion-input>
+
+          </ion-col>
+          <ion-col>
+
+              <ion-input placeholder="CP :"></ion-input>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header *ngIf="(plans$ | async)?.length>0">
+        <h3>
+          <ion-label>Caractéristiques du plan</ion-label>
+        </h3>
+      </ion-card-header>
+      <hr class="solid">
+      <ion-card-content >
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-select placeholder="Coupe de principe :" interface="alert">
+                  <ion-select-option *ngFor="let plan of (plans$ | async)">{{plan.coupePrincipales.libelleCoupePrincipale}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-select placeholder="Taille en mètre :"interface="popover">
+                  <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-select placeholder="Gamme :"interface="popover">
+                  <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-select placeholder="Type de plancher :"interface="popover">
+                  <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-select placeholder="Type de couverture :"interface="alert">
+                  <ion-select-option *ngFor="let plan of (plans$ | async)">{{plan.couverture.typeCouverture}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item>
+          <ion-textarea placeholder="Remarque :"></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-footer>
+      <div class="footer footer-btn">
+        <div class="container-image">
+
+          <div class="retour-btn">
+            <ion-button size="block" color="danger" (click)="back()" routerDirection="forward">Annuler</ion-button>
+          </div>
+
+          <div class="nouveau-btn">
+            <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']" routerDirection="forward">Modifer</ion-button>
+          </div>
+        </div>
+      </div>
+    </ion-footer>
+
+</ion-col>
+
