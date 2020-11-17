@@ -13,6 +13,7 @@ export class HttpInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Gestion des messages d'erreur HTTP
     return next.handle(req).pipe(catchError(err => {
+      console.log(err);
       if (err.status === 0) {
         const message = 'Impossible de communiquer avec le serveur. Merci de contacter un administrateur.';
         return throwError(message);

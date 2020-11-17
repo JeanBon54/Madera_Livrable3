@@ -51,16 +51,16 @@
             <div class="col-text">
             <ion-row class="ion-align-items-center" *ngFor="let devis of (devis$ | async)">
                 <ion-col size="3">
-                    <ion-label center text-center>{{devis.LibelleDevis}}</ion-label>
+                    <ion-label center text-center>{{devis.libelleDevis}}</ion-label>
                 </ion-col>
                 <ion-col size="2">
-                    <ion-label center text-center>{{devis.client.nomClient}} {{devis.client.prenomClient}}</ion-label>
+                    <ion-label center text-center>{{devis.plan.projetPlans[0].projet.client.nomClient}} {{devis.plan.projetPlans[0].projet.client.prenomClient}}</ion-label>
                 </ion-col>
                 <ion-col size="3">
-                    <ion-label center text-center>{{devis.DateDebutProjet | date:'dd/MM/yyyy'}}</ion-label>
+                    <ion-label center text-center>{{devis.dateDebutDevis | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
                 <ion-col size="3">
-                    <ion-label center text-center>{{devis.DateModification | date:'dd/MM/yyyy'}}</ion-label>
+                    <ion-label center text-center>{{devis.dateModification | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
                 <ion-col size="1">
                     <ion-button [routerLink]="['/gestion-devis/', devis.id]">

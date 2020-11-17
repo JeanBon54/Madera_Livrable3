@@ -4,7 +4,7 @@ export class Projet {
   ClientID?: number;
   LibelleProjet: string;
   LibelleNom: string;
-  LibelleRemarque: string;
+  libelleRemarque: string;
   DateDebutProjet: Date;
   IdUtilisateurCreation: number;
   DateCreation: Date;
