@@ -27,8 +27,8 @@ export class DevisService extends ApiService {
     );
   }
 
-  getDevis(projetId: number): Observable<Devis> {
-    return this.getById<Devis>(this.devisUrl, projetId.toString() )
+  getDevis(devisId: number): Observable<Devis> {
+    return this.getById<Devis>(this.devisUrl, devisId.toString() )
       .pipe(
         retry(1),
         catchError(this.errorHandler)
@@ -49,6 +49,14 @@ export class DevisService extends ApiService {
       retry(1),
       catchError(this.errorHandler)
     );
+  }
+
+  genPDF(devisId: number) {
+    return this.getpdf(this.devisUrl + 'getpdf/', devisId.toString() ) 
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
   }
 
 

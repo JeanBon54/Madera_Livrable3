@@ -30,6 +30,12 @@ export class GestionDevisPage implements OnInit {
     this.devis$ = this.dService.getDevis(this.devisId);
   }
 
+  exportPDF(id) {
+   this.dService.genPDF(id).subscribe();
+  }
 
+  back() {
+    window.history.go(-1);
+  }
 
 }

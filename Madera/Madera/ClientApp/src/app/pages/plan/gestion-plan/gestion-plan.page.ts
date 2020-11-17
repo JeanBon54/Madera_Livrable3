@@ -12,4 +12,7 @@ export class GestionPlanPage implements OnInit {
   ngOnInit() {
   }
 
+  back() {
+    window.history.go(-1);
+  }
 }

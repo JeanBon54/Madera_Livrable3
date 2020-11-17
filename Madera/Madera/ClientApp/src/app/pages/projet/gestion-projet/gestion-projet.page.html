@@ -48,9 +48,9 @@
                 <ion-col size="3">Nom</ion-col>
                 <ion-col size="3">Début de création</ion-col>
                 <ion-col size="3">Dernière mise à jour</ion-col>
-                <ion-col size="1">Etat </ion-col>
+                <ion-col size="1"></ion-col>
               </ion-row>
-              <ion-row *ngFor="let plan of (plan$ | async)">
+              <ion-row class="ion-align-items-center" *ngFor="let plan of (plan$ | async)">
                 <ion-col size="2">
                   <ion-label center text-center>{{plan.referencePlan}}</ion-label>
                 </ion-col>
@@ -65,7 +65,7 @@
                 </ion-col>
                 <ion-col size="1">
                   <ion-button [routerLink]="['/gestion-plan/', plan.id]">
-                    <ion-icon size="small" slot="end" name="eye"></ion-icon>
+                    <ion-icon size="small" name="eye"></ion-icon>
                   </ion-button>
                 </ion-col>
               </ion-row>
@@ -89,7 +89,7 @@
               <ion-col size="3">Dernière mise à jour</ion-col>
               <ion-col size="1">Etat</ion-col>
             </ion-row>
-            <ion-row *ngFor="let devis of (devis$ | async)">
+            <ion-row class="ion-align-items-center" *ngFor="let devis of (devis$ | async)">
               <ion-col size="2">
                 <ion-label center text-center>{{devis.libelleDevis}}</ion-label>
               </ion-col>
@@ -103,8 +103,8 @@
                 <ion-label center text-center>{{devis.dateModification | date:'dd/MM/yyyy'}}</ion-label>
               </ion-col>
               <ion-col size="1">
-                <ion-button [routerLink]="['/gestion-projet/', projet.id]">
-                  <ion-icon size="small" slot="end" name="eye"></ion-icon>
+                <ion-button [routerLink]="['/gestion-devis/', devis.id]">
+                  <ion-icon size="small" name="eye"></ion-icon>
                 </ion-button>
               </ion-col>
             </ion-row>
@@ -128,7 +128,7 @@
       <div class="container-image">
 
         <div class="retour-btn">
-          <ion-button size="block" color="danger" [routerLink]="['/recherche-projet']" routerDirection="forward">Retour</ion-button>
+          <ion-button size="block" color="danger" (click)="back()" routerDirection="forward">Retour</ion-button>
         </div>
 
         <div class="nouveau-btn">

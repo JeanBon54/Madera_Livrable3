@@ -47,9 +47,8 @@
                     <ion-col size="3">Modification</ion-col>
                     <ion-col size="1"></ion-col>
                 </ion-row>
-              </div>
                 <div class="col-text">
-                <ion-row  *ngFor="let projet of (projets$ | async)">
+                <ion-row class="ion-align-items-center" *ngFor="let projet of (projets$ | async)">
                     <ion-col size="3">
                         <ion-label center text-center>{{projet.libelleProjet}}</ion-label>
                     </ion-col>
@@ -64,7 +63,7 @@
                     </ion-col>
                     <ion-col size="1">
                         <ion-button [routerLink]="['/gestion-projet/', projet.id]">
-                            <ion-icon size="small" slot="end" name="eye"></ion-icon>
+                            <ion-icon size="small" name="eye"></ion-icon>
                         </ion-button>
                     </ion-col>
                 </ion-row>

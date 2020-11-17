@@ -50,5 +50,8 @@ export class GestionProjetPage implements OnInit {
   loadPlans() {
     this.plan$ = this.plService.getPlans();
   }
-
+  
+  back() {
+    window.history.go(-1);
+  }
 }

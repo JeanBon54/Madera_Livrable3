@@ -28,6 +28,10 @@ export class ApiService {
     return this.httpClient.get<T>(url + value, { headers: this.getHeaders() });
   }
 
+  public getpdf<T>(url: string, value: string) {
+    return this.httpClient.get<any>(url + value);
+  }
+
   private getHeaders(): HttpHeaders {
     let headers = new HttpHeaders();
     // headers = headers.set('Access-Control-Allow-Origin', window.location.origin);
