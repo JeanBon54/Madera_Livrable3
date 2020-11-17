@@ -91,15 +91,57 @@ namespace Madera.Controllers
             return NoContent();
         }
 
-        // POST: api/Modules
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Création d'un nouveau module
+        /// </summary>
         [HttpPost]
-        public async Task<ActionResult<Module>> PostModule(Module @module)
+        public async Task<ActionResult<Module>> PostModule(SaveModule @module)
         {
-            _context.Modules.Add(@module);
-            await _context.SaveChangesAsync();
+            module = await this.SaveModule(module);
 
             return CreatedAtAction("GetModule", new { id = @module.ID }, @module);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<Module>> PatchModule(SaveModule @module)
+        {
+            module = await this.SaveModule(module);
+
+            return CreatedAtAction("GetModule", new { id = @module.ID }, @module);
+        }
+
+        private async Task<SaveModule> SaveModule(SaveModule @module)
+        {
+            Module newModule = null;
+            if (module.ID == 0) { 
+                newModule = new Module();
+                _context.Modules.Add(newModule);
+            }
+            else { 
+                newModule = _context.Modules.Where(mo => mo.ID == module.ID).FirstOrDefault();
+            }
+
+            newModule.LibelleModule = module.LibelleModule;
+
+            await _context.SaveChangesAsync();
+
+            if (newModule.ModuleComposant == null) newModule.ModuleComposant = new List<ModuleComposant>();
+            newModule.ModuleComposant.Clear();
+
+            if (module.ListeIdComposant != null && module.ListeIdComposant.Count() > 0)
+            {
+                newModule.ModuleComposant = @module.ListeIdComposant.Select(idComp => new ModuleComposant()
+                {
+                    ComposantID = idComp,
+                    ModuleID = module.ID
+                }).ToList();
+
+                newModule.ModuleComposant.ToList().ForEach(comp => _context.ModuleComposants.Add(comp));
+            }
+
+            await _context.SaveChangesAsync();
+
+            return module;
         }
 
         // DELETE: api/Modules/5
