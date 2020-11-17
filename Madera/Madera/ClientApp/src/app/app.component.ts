@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { User } from './models/user';
-import { AuthenticationService } from './_services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -13,20 +11,13 @@ import { AuthenticationService } from './_services/authentication.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  user: User;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    protected router: Router,
-    private authenticationService: AuthenticationService
+    protected router: Router
   ) {
     this.initializeApp();
-    this.authenticationService.user.subscribe(x => this.user = x);
-  }
-
-  logout() {
-    this.authenticationService.logout();
   }
 
   initializeApp() {
