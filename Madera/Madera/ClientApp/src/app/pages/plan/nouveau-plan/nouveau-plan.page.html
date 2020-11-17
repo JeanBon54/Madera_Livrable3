@@ -11,18 +11,12 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-
-              <ion-label>Clent :</ion-label>
-
-              <ion-input placeholder="Adresse du projet :"></ion-input>
-
-              <ion-input placeholder="Ville :"></ion-input>
-
+            <ion-label>Clent :</ion-label>
+            <ion-input placeholder="Adresse du projet :"></ion-input>
+            <ion-input placeholder="Ville :"></ion-input>
           </ion-col>
           <ion-col>
-
-              <ion-input placeholder="CP :"></ion-input>
-
+            <ion-input placeholder="CP :"></ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -30,42 +24,42 @@
   </ion-card>
 
   <ion-card>
-      <ion-card-header *ngIf="(plans$ | async)?.length>0">
+      <ion-card-header>
         <h3>
           <ion-label>Caractéristiques du plan</ion-label>
         </h3>
       </ion-card-header>
       <hr class="solid">
-      <ion-card-content >
+      <ion-card-content>
         <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-item >
+              <ion-item>
                 <ion-select placeholder="Coupe de principe :" interface="alert">
-                  <ion-select-option *ngFor="let plan of (plans$ | async)">{{plan.coupePrincipales.libelleCoupePrincipale}}</ion-select-option>
+                  <ion-select-option *ngFor="let cp of (coupePrincipal$ | async)">{{cp.libelleCoupePrincipale}}</ion-select-option>
                 </ion-select>
               </ion-item>
               <ion-item>
-                <ion-select placeholder="Taille en mètre :"interface="popover">
+                <ion-select placeholder="Taille en mètre :" interface="alert">
                   <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
-                <ion-select placeholder="Gamme :"interface="popover">
-                  <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
+                <ion-select placeholder="Gamme :" interface="alert">
+                  <ion-select-option *ngFor="let gam of (gammes$ | async)">{{gam.libelleGamme}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
-                <ion-select placeholder="Type de plancher :"interface="popover">
-                  <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
+                <ion-select placeholder="Type de plancher :"interface="alert">
+                  <ion-select-option *ngFor="let plancher of (planchers$ | async)">{{plancher.typePlancher}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
                 <ion-select placeholder="Type de couverture :"interface="alert">
-                  <ion-select-option *ngFor="let plan of (plans$ | async)">{{plan.couverture.typeCouverture}}</ion-select-option>
+                  <ion-select-option *ngFor="let couv of (couvertures$ | async)">{{couv.typeCouverture}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
