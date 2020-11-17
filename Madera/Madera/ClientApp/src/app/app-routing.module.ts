@@ -23,7 +23,8 @@ const routerConfig: Routes = [
   },
   {
     path: 'connexion',
-    loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
+    component: ConnexionPage
+   // loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
     path: 'recherche-projet',
