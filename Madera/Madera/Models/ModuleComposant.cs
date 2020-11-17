@@ -14,6 +14,12 @@ namespace Madera.Models
         public virtual Composant Composant { get; set; }
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PrixHt { get; set; }
-        public int quantite { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal PrixTtc { get; set; }
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal PrixTotal { get; set; }
+
+
+        public int Quantite { get; set; }
     }
 }

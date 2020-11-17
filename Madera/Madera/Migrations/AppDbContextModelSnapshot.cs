@@ -357,6 +357,12 @@ namespace Madera.Migrations
                     b.Property<decimal>("PrixHt")
                         .HasColumnType("decimal(10,2)");
 
+                    b.Property<decimal>("PrixTotal")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("PrixTtc")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<int>("quantite")
                         .HasColumnType("int");
 
