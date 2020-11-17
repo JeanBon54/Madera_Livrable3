@@ -3,6 +3,5 @@
     ListeIdComposant: number[];
 
 }export class SearchingModule extends Module {
-    ID?:number;
-    libelleFamilleComposant : string;
+    ID:number;
   }
