@@ -3,24 +3,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Gamme} from '../models/Gamme';
+import { Couverture} from '../models/Couverture';
 import { ApiService } from 'src/Shared/api.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class GammeWebServiceService  extends ApiService { 
+export class CouvertureWebServiceService  extends ApiService { 
 
 
-  moduleComposantUrl = environment.appUrl + 'api/Gammes/';
+  moduleComposantUrl = environment.appUrl + 'api/Couvertures/';
 
   constructor(private http: HttpClient) {
     super(http);
   }
 
 
-  getGamme(): Observable<Gamme[]> {
-    return this.get<Gamme[]>(this.moduleComposantUrl, [])
+  getCouverture(): Observable<Couverture[]> {
+    return this.get<Couverture[]>(this.moduleComposantUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)
