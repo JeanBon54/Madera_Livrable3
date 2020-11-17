@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Projet } from 'src/app/models/Projet';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nouveau-projet',
@@ -48,11 +49,14 @@ export class NouveauProjetPage implements OnInit {
     if (this.postId >= 0) {
       this.actionType = 'Add';
       this.projetPostService.getProjet(this.postId)
-        .subscribe(data => (
-          this.existingProjetPost = data,
-          this.form.controls[this.libelleNom].setValue(data.LibelleNom),
-          this.form.controls[this.libelleProjet].setValue(data.LibelleProjet)
-        ));
+        .pipe(
+          tap(data => {
+              this.existingProjetPost = data,
+              this.form.controls[this.libelleNom].setValue(data.LibelleNom),
+              this.form.controls[this.libelleProjet].setValue(data.LibelleProjet)
+            }
+          )
+        ).subscribe();
     }
   }
 
@@ -67,7 +71,7 @@ export class NouveauProjetPage implements OnInit {
         ClientID: 1,
         LibelleNom: this.form.get(this.libelleNom).value,
         LibelleProjet: this.form.get(this.libelleProjet).value,
-        LibelleRemarque: '',
+        libelleRemarque: '',
         DateDebutProjet:new Date(),
         IdUtilisateurCreation: 1,
         DateCreation:new Date(),

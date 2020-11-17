@@ -51,6 +51,13 @@ export class ProjetWebService extends ApiService {
     );
   }
 
+  editRemarque(id: number, remarque: string) {
+    return this.post<Projet>(this.projectUrl + 'remarque', JSON.stringify({id, remarque}))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
 
   errorHandler(error) {
     let errorMessage = '';

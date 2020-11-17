@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 
 
@@ -11,17 +11,20 @@ import { Devis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
 import { DevisService } from './../../../WebServices/devis-webservice.service';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gestion-projet',
   templateUrl: './gestion-projet.page.html',
   styleUrls: ['./gestion-projet.page.scss', './../../../app.component.scss'],
 })
-export class GestionProjetPage implements OnInit {
-  projet$: Observable<Projet>;
+export class GestionProjetPage implements OnInit, OnDestroy {
+  subscription: Subscription[] = [];
+  projet$ = new Projet();
   plan$: Observable<Plan[]>;
   devis$: Observable<Devis[]>;
   projetId: number;
+  remarque = '';
 
   constructor(private pService: ProjetWebService,
     private plService: PlanService, 
@@ -32,6 +35,9 @@ export class GestionProjetPage implements OnInit {
       this.projetId = this.avRoute.snapshot.params[idParam];
     }
   }
+  ngOnDestroy(): void {
+    this.subscription.forEach(sub => sub.unsubscribe());
+  }
 
   ngOnInit() {
     this.loadProjet();
@@ -40,7 +46,14 @@ export class GestionProjetPage implements OnInit {
   }
 
   loadProjet() {
-    this.projet$ = this.pService.getProjet(this.projetId);
+    this.subscription.push(
+      this.pService.getProjet(this.projetId).pipe(
+        tap(projet => {
+          this.projet$ = projet;
+          this.remarque = this.projet$.libelleRemarque;
+        })
+      ).subscribe()
+    ) 
   }
 
   loadDevis() {
@@ -53,5 +66,11 @@ export class GestionProjetPage implements OnInit {
   
   back() {
     window.history.go(-1);
+  }
+
+  save() {
+    this.subscription.push(
+      this.pService.editRemarque(this.projetId, this.remarque).subscribe()
+    )
   }
 }

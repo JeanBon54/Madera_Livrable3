@@ -65,14 +65,7 @@ namespace Madera
                  };
              });*/
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        );
-            });
+            services.AddCors();
 
             //injection de AppDbContext
             services.AddDbContext<AppDbContext>(options =>
@@ -99,10 +92,10 @@ namespace Madera
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
+
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
             else
             {
                 app.UseExceptionHandler("/Error");
@@ -110,12 +103,9 @@ namespace Madera
                 app.UseHsts();
             }
 
-            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
             //app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
-
 
             if (!env.IsDevelopment())
             {
@@ -123,6 +113,7 @@ namespace Madera
             }
 
             app.UseRouting();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
 

@@ -17,4 +17,10 @@ namespace Madera.Models.Search
         public DateTime? DateCreation { get; set; }
 
     }
+
+    public class EditRemarque {
+        public int id { get; set; }
+        public string remarque { get; set; }
+    }
+
 }

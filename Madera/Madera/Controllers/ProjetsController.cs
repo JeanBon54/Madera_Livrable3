@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Madera.Models;
 using Madera.Models.Search;
 using System.Security.Permissions;
+using System;
 
 namespace Madera.Controllers
 {
@@ -60,11 +61,24 @@ namespace Madera.Controllers
             return await listeProject.Select(p => new ProjetCommercial(p)).ToListAsync();
         }
 
+        [HttpPost("remarque")]
+        public async Task<IActionResult> EditRemarque([FromBody] EditRemarque editRemarque) {
+            var projet = await _context.Projets.Where(p => p.ID == editRemarque.id).FirstOrDefaultAsync();
+            if (projet == null) return NotFound($"L'identifiant {editRemarque.id} ne correspond à aucun projet.");
+
+
+            projet.LibelleRemarque = editRemarque.remarque;
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
         // PUT: api/Projets/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProjet(int id, Projet projet)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchProjet(int id, Projet projet)
         {
             if (id != projet.ID)
             {
