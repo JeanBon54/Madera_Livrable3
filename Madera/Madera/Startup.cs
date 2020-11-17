@@ -1,5 +1,8 @@
+using Madera._Helpers;
+using Madera._Services;
 using Madera.Data;
 using Madera.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,28 +36,34 @@ namespace Madera
 
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:Jwt_Secret"]);
 
-            services.AddAuthentication(opt =>
-            {
-                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.RequireHttpsMetadata = false;
-                options.SaveToken = false;
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
-                    ValidIssuer = " https://localhost:5001",
-                    ValidAudience = "https://localhost:5001",
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
-            });
+            // configure DI for application services
+            services.AddScoped<IUserService, UserService>();
+
+            /* services.AddAuthentication(opt =>
+             {
+                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                 opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+             })
+             .AddJwtBearer(options =>
+             {
+                 options.RequireHttpsMetadata = false;
+                 options.SaveToken = false;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidateAudience = true,
+                     ValidateLifetime = true,
+                     ValidateIssuerSigningKey = true,
+
+                     ValidIssuer = " https://localhost:5001",
+                     ValidAudience = "https://localhost:5001",
+                     IssuerSigningKey = new SymmetricSecurityKey(key)
+                 };
+             });*/
 
             services.AddCors(options =>
             {

@@ -17,7 +17,8 @@ const routerConfig: Routes = [
   },
   {
     path: 'connexion',
-    loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
+    component: ConnexionPage
+   // loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
     path: 'recherche-projet',
@@ -100,7 +101,7 @@ const routerConfig: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routerConfig, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routerConfig, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' })
   ],
   exports: [RouterModule]
 })
