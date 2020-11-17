@@ -76,7 +76,7 @@ export class RechercheProjetPage implements OnInit {
     };
 
     const searchString = JSON.stringify(search);
-    this.projets$ = this.projetService.searchProjet<ProjetCommercial[]>(searchString);
+    this.projets$ = this.projetService.searchProjet<Projet[]>(searchString);
 
   }
 
