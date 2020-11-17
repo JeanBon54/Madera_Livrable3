@@ -76,11 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\app\models\file.ts" />
-    <None Remove="ClientApp\src\app\_helpers\app.initializer.ts" />
-    <None Remove="ClientApp\src\app\_helpers\auth.guard.ts" />
-    <None Remove="ClientApp\src\app\_helpers\error.interceptor.ts" />
-    <None Remove="ClientApp\src\app\_helpers\fake-backend.ts" />
-    <None Remove="ClientApp\src\app\_helpers\jwt.interceptor.ts" />
     <None Remove="obj\Debug\netcoreapp3.1\Razor\Views\All.cshtml.g.cs" />
     <None Remove="obj\Debug\netcoreapp3.1\Razor\Views\Index.cshtml.g.cs" />
     <None Remove="obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs" />

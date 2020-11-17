@@ -93,7 +93,7 @@
       <div class="container-image">
 
         <div class="retour-btn">
-          <ion-button size="block">Export</ion-button>
+          <ion-button (click)="exportPDF(devis.id)" size="block">Export</ion-button>
         </div>
 
         <div class="nouveau-btn">
@@ -114,7 +114,7 @@
       <div class="container-image">
 
         <div class="retour-btn">
-          <ion-button size="block" color="danger" [routerLink]="['/menu-principal']" routerDirection="forward">Retour</ion-button>
+          <ion-button size="block" color="danger" (click)="back()" routerDirection="forward">Retour</ion-button>
         </div>
 
         <div class="nouveau-btn">

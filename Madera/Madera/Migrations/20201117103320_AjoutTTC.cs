@@ -2,45 +2,34 @@
 
 namespace Madera.Migrations
 {
-    public partial class AjustementPrixModule : Migration
+    public partial class AjoutTTC : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "PrixHtModule",
-                table: "Module");
-
             migrationBuilder.AddColumn<decimal>(
-                name: "PrixHt",
+                name: "PrixTotal",
                 table: "ModuleComposants",
                 type: "decimal(10,2)",
                 nullable: false,
                 defaultValue: 0m);
 
-            migrationBuilder.AddColumn<int>(
-                name: "Quantite",
+            migrationBuilder.AddColumn<decimal>(
+                name: "PrixTtc",
                 table: "ModuleComposants",
-                type: "int",
+                type: "decimal(10,2)",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: 0m);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "PrixHt",
+                name: "PrixTotal",
                 table: "ModuleComposants");
 
             migrationBuilder.DropColumn(
-                name: "Quantite",
+                name: "PrixTtc",
                 table: "ModuleComposants");
-
-            migrationBuilder.AddColumn<decimal>(
-                name: "PrixHtModule",
-                table: "Module",
-                type: "decimal(10,2)",
-                nullable: false,
-                defaultValue: 0m);
         }
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Stubble.Core;
 using GrapeCity.Documents.Html;
 using Madera.Models;
+using GrapeCity.Documents.Pdf;
 
 namespace Madera.Controllers
 {
@@ -108,27 +109,28 @@ namespace Madera.Controllers
             return _context.Devis.Any(e => e.ID == id);
         }
 
-        // GET: api/Devis/5
-        [HttpGet("genpdf/{id}")]
+        // GET: api/Devis/getpdf/5
+        [HttpGet("getpdf/{id}")]
         public async Task<ActionResult<Devis>> Getpdf(int id)
         {
             var devis = await _context.Devis.FindAsync(id);
-
+            
             var pdf = new createpdf();
 
             string templatePath = pdf.getTemplate();
 
             // Bind the template to data:
             var builder = new Stubble.Core.Builders.StubbleBuilder();
-            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis });
+            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans });
 
 
           
-            string pdfPath = "pdftest.pdf";
+            string pdfPath = devis.LibelleDevis + ".pdf";
 
             // Render the bound HTML
             using (var re = new GcHtmlRenderer(boundTemplate))
             {
+                re.ApplyGcPdfLicenseKey("maxime.masetto@viacesi.fr,E571738649846194#A0cJfLiQTOxYDN8kDN6gzM7EzN5IiOiQWSisnOiQkIsISP3c6VSFXYxpVT7J5LyR7bMBzbh5WcxJWbqRzYNhFUXpEVxkVewpGM5djRRhmVtRkV4h5LnRjQzVDN0lzV0p6Qz3mYPJHNaZWR9YkVsplZYZXSMJlcBVXRiojITJCLxUDM5ETO7ADN0IicfJye#4Xfd5nIzMkQBJiOiMkIsIyM6BCdl9kLgYGZQBicvZGI49WZtV7YvREIDdkI0IiTis7W0ICZyBlIsIyM5ATNzADI6ETMxAjMwIjI0ICdyNkIsIiNxITMwIDMyIiOiAHeFJCLiInZuk6clNWYpZHQvRHdlNXYt9SZtlGeh5mI0ISYONkIsUWdyRnOMwId");
                 re.RenderToPdf(pdfPath);
             }
 
@@ -141,7 +143,7 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return devis;
+            return Ok();  // OK = 200
         }
 
 

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Madera.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201115101833_FixLibelleComposant")]
-    partial class FixLibelleComposant
+    [Migration("20201117103320_AjoutTTC")]
+    partial class AjoutTTC
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -357,6 +357,12 @@ namespace Madera.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixHt")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("PrixTotal")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("PrixTtc")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("quantite")
