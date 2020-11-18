@@ -10,9 +10,10 @@ import { SearchProjet } from '../../../models/Search/SearchProjet';
 import { Devis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
 import { Client } from 'src/app/models/Client';
+import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
 import { DevisService } from './../../../WebServices/devis-webservice.service';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
-import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
+
 
 
 @Component({

@@ -54,21 +54,21 @@
                 <ion-col size="3">Dernière mise à jour</ion-col>
                 <ion-col size="1"></ion-col>
               </ion-row>
-              <ion-row class="ion-align-items-center" *ngFor="let plan of (plan$ | async)">
+              <ion-row class="ion-align-items-center" *ngFor="let projetPlans of projet.projetPlans">
                 <ion-col size="2">
-                  <ion-label center text-center>{{plan.referencePlan}}</ion-label>
+                  <ion-label center text-center>{{projetPlans.plan.referencePlan}}</ion-label>
                 </ion-col>
                 <ion-col size="3">
-                  <ion-label center text-center>{{plan.libellePlan}}</ion-label>
+                  <ion-label center text-center>{{projetPlans.plan.libellePlan}}</ion-label>
                 </ion-col>
                 <ion-col size="3">
-                  <ion-label center text-center>{{plan.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
+                  <ion-label center text-center>{{projetPlans.plan.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
                 <ion-col size="3">
-                  <ion-label center text-center>{{plan.dateModification | date:'dd/MM/yyyy'}}</ion-label>
+                  <ion-label center text-center>{{projetPlans.plan.dateModification | date:'dd/MM/yyyy'}}</ion-label>
                 </ion-col>
                 <ion-col size="1">
-                  <ion-button [routerLink]="['/gestion-plan/', plan.id]">
+                  <ion-button [routerLink]="['/gestion-plan/', projetPlans.plan.id]">
                     <ion-icon size="small" name="eye"></ion-icon>
                   </ion-button>
                 </ion-col>

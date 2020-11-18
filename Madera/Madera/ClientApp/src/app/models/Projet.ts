@@ -1,5 +1,5 @@
 export class Projet {
-  ID?: number;
+  id?: number;
   CommercialID?: number;
   ClientID?: number;
   LibelleProjet: string;

@@ -4,15 +4,17 @@
   <ion-card >
       <ion-card-header>
         <h3>
-          <ion-label>Création plan </ion-label>
+          <ion-label>Création d'un projet </ion-label>
         </h3>
       </ion-card-header>
       <hr class="solid">
-      <ion-card-content>
+      <ion-card-content  *ngIf="(clients$ | async)?.length>0">
         <ion-grid>
           <ion-row>
             <ion-col>
-                <ion-input formControlName="libelleNom">Client :</ion-input>
+              <ion-select placeholder="Client" formControlName="client"  interface="popover">
+                <ion-select-option *ngFor="let client of (clients$ | async)" value="{{client.id}}">{{client.nomClient}} {{client.prenomClient}}</ion-select-option>
+              </ion-select>
             </ion-col>
             <ion-col>
                 <ion-input formControlName="libelleProjet"> Nom du projet :</ion-input>

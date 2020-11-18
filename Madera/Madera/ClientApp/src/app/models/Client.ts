@@ -1,6 +1,6 @@
 export class Client {
 
-    ID?: number;
+    id?: number;
     NomClient: string;
     PrenomClient: string;
     DateNaissanceClient : Date;
