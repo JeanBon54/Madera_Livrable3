@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="GrapeCity.Documents.Html" Version="3.2.0.558" />
     <PackageReference Include="GrapeCity.Documents.Pdf" Version="3.2.0.558" />
+    <PackageReference Include="GrapeCity.Documents.Html.Mac.X64" Version="3.2.0.558" />
     <PackageReference Include="GrapeCity.Documents.Html.Windows.X64" Version="3.2.0.558" />
     <PackageReference Include="Stubble.Core" Version="1.9.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
@@ -38,7 +39,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Cors" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="GrapeCity.Documents.Html.Mac.X64" Version="3.2.0.558" />
   </ItemGroup>
   
 
