@@ -20,8 +20,7 @@
           </ion-card-content>
       </ion-card>
       <ion-card>
-          <ion-card-header *ngIf="(module$ | async)?.length>0">
-              <h2>Resultat</h2>   
+          <ion-card-header *ngIf="(module$ | async)?.length>0"> 
              </ion-card-header>
           <ion-card-content>
             <ion-grid>
@@ -31,9 +30,9 @@
                 <ion-col>Carat</ion-col>
                 <ion-col></ion-col>
               </ion-row>
-              <ion-row *ngFor="let compo of (module$ | async);let i=index">
+              <ion-row *ngFor="let mod of (module$ | async);let i=index">
                 <ion-col>
-                  <ion-label center text-center>{{compo.libelleModule}}</ion-label>
+                  <ion-label center text-center>{{mod.libelleModule}}</ion-label>
                 </ion-col>
                 <!-- <ion-col>
                   <ion-label center text-center>{{compo.natureComposant}}</ion-label>
@@ -42,7 +41,7 @@
                   <ion-label center text-center>{{compo.caractComposant}}</ion-label>
                 </ion-col> -->
                 <ion-col>
-                  <ion-checkbox [value]="compo.id" (ionChange)="onCheckboxChange($event)"></ion-checkbox>
+                  <ion-checkbox [value]="mod.id" (ionChange)="onCheckboxChange($event)"></ion-checkbox>
                 </ion-col>
               </ion-row>
             </ion-grid>

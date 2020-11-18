@@ -3,11 +3,13 @@ import { FormBuilder, FormGroup, FormControl,FormArray,Validators } from '@angul
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Observable } from 'rxjs';
 
-import { PlanService } from './../../../webServices/plan-webservice.service';  
-import { Plan } from 'src/app/models/Plan';
 
+import { Plan } from 'src/app/models/Plan';
+import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { Module} from 'src/app/models/Module';
 import { ModuleService } from './../../../webServices/module-web-service.service';  
+
+
 
 @Component({
   selector: 'app-gestion-modelisation',
@@ -36,7 +38,7 @@ export class GestionModelisationPage implements OnInit {
   constructor(private moduleService: ModuleService, 
     private cd: ChangeDetectorRef,
     private formBuilder: FormBuilder, 
-    private planService: PlanService, 
+ private planService: PlanService, 
     private avRoute: ActivatedRoute, 
     private router: Router) {
   
@@ -50,7 +52,7 @@ export class GestionModelisationPage implements OnInit {
       this.form = this.formBuilder.group(
         {
           postId: 0,
-          libelleModule: ['', [Validators.required]],
+         // libelleModule: ['', [Validators.required]],
         }
       )
     }
@@ -58,13 +60,13 @@ export class GestionModelisationPage implements OnInit {
 
   ngOnInit() {
     if (this.postId >= 0) {
-      this.actionType = 'Add';
-      this.planService.getPlan(this.postId)
-        .subscribe(data => (
-          this.existingPlanPost = data,
-          this.form.controls['libelleModule'].setValue(data.LibellePlan)
-        ));
-    }
+       this.actionType = 'Add';
+       this.planService.getPlan(this.postId)
+         .subscribe(data => (
+           this.existingPlanPost = data,
+           this.form.controls['libelleModule'].setValue(data.LibellePlan)
+         ));
+     }
     this.loadModule();
   }
 
@@ -113,13 +115,13 @@ export class GestionModelisationPage implements OnInit {
         IdUtilisateurModification :1,
         DateModification :new Date(),
         DateArchivage :new Date(),
-        ListeIdModule: this.form.get('libelleModule').value,
+        ListeIdModule: this.listeModuleChecked,
       };
-      console.log(plan);
-     this.planService.saveplan(plan)
-         .subscribe((data) => {
-          this.router.navigate(['api/Plans/', data.ID]);
-        });
+  console.log(plan);
+ this.planService.saveplan(plan)
+     .subscribe((data) => {
+      this.router.navigate(['api/Plans/', data.ID]);
+    });
      }
    }
 }

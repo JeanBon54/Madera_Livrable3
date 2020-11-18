@@ -42,4 +42,11 @@ namespace Madera.Models
         public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
 
+    public class SavePlan
+    {
+        public int ID { get; set; }
+        public string libellePlan { get; set; }
+        public IEnumerable<int> ListeIdModule { get; set; }
+    }
+
 }

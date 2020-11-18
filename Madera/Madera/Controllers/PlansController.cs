@@ -72,16 +72,71 @@ namespace Madera.Controllers
             return NoContent();
         }
 
+
+
         // POST: api/Plans
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Plan>> PostPlan(Plan plan)
+        public async Task<ActionResult<Plan>> PostPlan(SavePlan @plan)
         {
-            _context.Plans.Add(plan);
+            plan = await this.SavePlan(plan);
+
+            return CreatedAtAction("GetPlan", new { id = @plan.ID }, @plan);
+        }
+
+        [HttpPatch]
+        public async Task<ActionResult<Plan>> PatchPlan(SavePlan @plan)
+        {
+            plan = await this.SavePlan(plan);
+
+            return CreatedAtAction("GetPlan", new { id = @plan.ID }, @plan);
+        }
+
+
+
+
+        private async Task<SavePlan> SavePlan(SavePlan @plan)
+        {
+            Plan newPlan = null;
+            if (plan.ID == 0)
+            {
+                newPlan = new Plan();
+                _context.Plans.Add(newPlan);
+            }
+            else
+            {
+                newPlan = _context.Plans.Where(pl => pl.ID == plan.ID).FirstOrDefault();
+
+            }
+            newPlan.libellePlan = plan.libellePlan;
+
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPlan", new { id = plan.ID }, plan);
+            if (newPlan.ModulePlan == null) newPlan.ModulePlan = new List<ModulePlan>();
+
+            newPlan.ModulePlan.Clear();
+
+            if (plan.ListeIdModule != null && plan.ListeIdModule.Count() > 0)
+            {
+                newPlan.ModulePlan = @plan.ListeIdModule.Select(idPlan => new ModulePlan()
+                {
+                    PlanID = idPlan,
+                    ModuleID = plan.ID
+                }).ToList();
+
+                newPlan.ModulePlan.ToList().ForEach(plan => _context.ModulePlans.Add(plan));
+            }
+
+            await _context.SaveChangesAsync();
+
+            return plan;
         }
+
+
+
+
+
+
+
+
 
         // DELETE: api/Plans/5
         [HttpDelete("{id}")]
