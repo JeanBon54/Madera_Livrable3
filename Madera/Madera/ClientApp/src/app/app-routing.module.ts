@@ -29,7 +29,7 @@ const routerConfig: Routes = [
     loadChildren: () => import('./pages/projet/gestion-projet/gestion-projet.module').then(m => m.GestionProjetPageModule)
   },
   {
-    path: 'gestion-modelisation',
+    path: 'gestion-modelisation/:id',
     loadChildren: () => import('./pages/plan/gestion-modelisation/gestion-modelisation.module').then(m => m.GestionModelisationPageModule)
   },
   {

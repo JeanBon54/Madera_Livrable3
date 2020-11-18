@@ -91,7 +91,7 @@
               <ion-col size="3">Référence du plan</ion-col>
               <ion-col size="3">Date de création</ion-col>
               <ion-col size="3">Dernière mise à jour</ion-col>
-              <ion-col size="1">Etat</ion-col>
+              <ion-col size="1"></ion-col>
             </ion-row>
             <ion-row class="ion-align-items-center"  *ngFor="let devis of (devis$ | async)">
               <ion-col size="2">
@@ -130,7 +130,7 @@
   <ion-footer>
     <div class="footer footer-btn">
       <div class="container-image">
-
+        
         <div class="retour-btn">
           <ion-button size="block" color="danger" (click)="back()" routerDirection="forward">Retour</ion-button>
         </div>

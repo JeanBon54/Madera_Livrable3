@@ -20,7 +20,7 @@ export class GestionModelisationPage implements OnInit {
 
   form: FormGroup;
   actionType: string;
-  postId: number;
+  planId: number;
   errorMessage: any;
   module$: Observable<Module[]>;
   listeModuleChecked: number[] = [];
@@ -47,7 +47,7 @@ export class GestionModelisationPage implements OnInit {
       this.actionType = 'Add';
       
       if (this.avRoute.snapshot.params[idParam]) {
-        this.postId = this.avRoute.snapshot.params[idParam];
+        this.planId = this.avRoute.snapshot.params[idParam];
       }
   
       this.form = this.formBuilder.group(
@@ -60,12 +60,11 @@ export class GestionModelisationPage implements OnInit {
 
 
   ngOnInit() {
-    if (this.postId >= 0) {
+    if (this.planId >= 0) {
        this.actionType = 'Add';
-       this.planService.getPlan(this.postId)
+       this.planService.getPlan(this.planId)
          .subscribe(data => (
-           this.existingPlanPost = data,
-           this.form.controls['libelleModule'].setValue(data.LibellePlan)
+           this.existingPlanPost = data
          ));
      }
     this.loadModule();
@@ -102,15 +101,15 @@ export class GestionModelisationPage implements OnInit {
 
     if (this.actionType === 'Add') {
       const plan: Plan = {
-        ID :2002,
-        CoupePrincipaleID: 1,
-        PlancherID: 1,
-        CouvertureID: 1,
-        ReferencePlan : 'test',
-        LibellePlan : 'test',
-        AdressPlan: 'test',
-        CpPlan: 88000,
-        VillePlan: 'azert',
+        id : this.planId,
+        CoupePrincipaleID: this.existingPlanPost.CoupePrincipaleID,
+        PlancherID: this.existingPlanPost.PlancherID,
+        CouvertureID: this.existingPlanPost.CouvertureID,
+        ReferencePlan : this.existingPlanPost.ReferencePlan,
+        LibellePlan : this.existingPlanPost.LibellePlan,
+        AdressPlan: this.existingPlanPost.AdressPlan,
+        CpPlan: this.existingPlanPost.CpPlan,
+        VillePlan: this.existingPlanPost.VillePlan,
         IdUtilisateurCreation :1,
         DateCreation :new Date(),
         IdUtilisateurModification :1,
@@ -121,7 +120,7 @@ export class GestionModelisationPage implements OnInit {
   console.log(plan);
  this.planService.saveplan(plan)
      .subscribe((data) => {
-      this.router.navigate(['api/Plans/', data.ID]);
+      this.router.navigate(['/gestion-plan/', data.id]);
     });
      }
    }

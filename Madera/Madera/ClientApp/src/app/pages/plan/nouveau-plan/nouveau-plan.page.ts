@@ -158,7 +158,7 @@ export class NouveauPlanPage implements OnInit {
 
       this.plService.saveplan(plan)
         .subscribe((data) => {
-          this.router.navigate(['api/Plans/', data.ID]);
+          this.router.navigate(['api/Plans/', data.id]);
         });
     }
   }

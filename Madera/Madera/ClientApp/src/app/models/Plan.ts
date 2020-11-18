@@ -1,5 +1,5 @@
 export class Plan {
-    ID?;
+    id?;
     PlancherID: number;
     CoupePrincipaleID: number;
     CouvertureID: number;

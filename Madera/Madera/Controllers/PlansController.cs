@@ -108,11 +108,14 @@ namespace Madera.Controllers
             }
             newPlan.libellePlan = plan.libellePlan;
 
-            await _context.SaveChangesAsync();
-
             if (newPlan.ModulePlan == null) newPlan.ModulePlan = new List<ModulePlan>();
 
+
             newPlan.ModulePlan.Clear();
+
+
+            await _context.SaveChangesAsync();
+
 
             if (plan.ListeIdModule != null && plan.ListeIdModule.Count() > 0)
             {
