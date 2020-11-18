@@ -41,4 +41,5 @@ namespace Madera.Models
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }
         public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
+
 }

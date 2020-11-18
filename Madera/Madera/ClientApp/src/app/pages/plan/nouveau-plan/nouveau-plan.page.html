@@ -1,4 +1,5 @@
 <ion-col size="12">
+  <form [formGroup]="form" (ngSubmit)="save()">
   <ion-card>
     <ion-card-header>
       <h3>
@@ -12,7 +13,7 @@
           <ion-col>
             <ion-label>Clent :</ion-label>
             <ion-input placeholder="Adresse du projet :" formControlName="adresse"></ion-input>
-            <ion-input placeholder="Ville :" formControlName="ville"></ion-input>
+            <ion-input placeholder="Ville :" formControlName="ville" ></ion-input>
           </ion-col>
           <ion-col>
             <ion-input placeholder="CP :" formControlName="cp"></ion-input>
@@ -34,30 +35,30 @@
           <ion-row>
             <ion-col>
               <ion-item>
-                <ion-select placeholder="Coupe de principe :"  formControlName="cpId" interface="alert">
-                  <ion-select-option *ngFor="let cp of (coupePrincipal$ | async)"value="{{cp.id}}">{{cp.libelleCoupePrincipale}}</ion-select-option>
+                <ion-select placeholder="Coupe de principe :" formControlName="cpId"  interface="alert">
+                  <ion-select-option *ngFor="let cp of (coupePrincipal$ | async)" value="{{cp.id}}">{{cp.libelleCoupePrincipale}}</ion-select-option>
                 </ion-select>
               </ion-item>
               <ion-item>
-                <ion-select placeholder="Taille en mètre :" interface="alert">
+                <ion-select placeholder="Taille en mètre :"  interface="alert">
                   <ion-select-option *ngFor="let plan of (plans$ | async)"></ion-select-option>
                 </ion-select>
               </ion-item>
 
-              <ion-item>
+              <!-- <ion-item>
                 <ion-select placeholder="Gamme :" interface="alert">
                   <ion-select-option *ngFor="let gam of (gammes$ | async)">{{gam.libelleGamme}}</ion-select-option>
                 </ion-select>
-              </ion-item>
+              </ion-item> -->
 
               <ion-item>
-                <ion-select placeholder="Type de plancher :"interface="alert">
+                <ion-select placeholder="Type de plancher :" formControlName="plancherId" interface="alert">
                   <ion-select-option *ngFor="let plancher of (planchers$ | async)" value="{{plancher.id}}"> {{plancher.typePlancher}}</ion-select-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
-                <ion-select placeholder="Type de couverture :"interface="alert">
+                <ion-select placeholder="Type de couverture :" formControlName="couvertureId" interface="alert">
                   <ion-select-option *ngFor="let couv of (couvertures$ | async)" value="{{couv.id}}">{{couv.typeCouverture}}</ion-select-option>
                 </ion-select>
               </ion-item>
@@ -81,10 +82,11 @@
           </div>
 
           <div class="nouveau-btn">
-            <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-commercial']"  type="submit">Modifer</ion-button>
+            <ion-button expand="block" color="secondary"  type="submit">Modifer</ion-button>
           </div>
         </div>
       </div>
     </ion-footer>
+  </form>
 </ion-col>
 

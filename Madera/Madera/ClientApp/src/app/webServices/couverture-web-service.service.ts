@@ -13,7 +13,7 @@ import { ApiService } from 'src/Shared/api.service';
 export class CouvertureWebServiceService  extends ApiService { 
 
 
-  moduleComposantUrl = environment.appUrl + 'api/Couvertures/';
+  couvertureUrl = environment.appUrl + 'api/Couvertures/';
 
   constructor(private http: HttpClient) {
     super(http);
@@ -21,7 +21,7 @@ export class CouvertureWebServiceService  extends ApiService {
 
 
   getCouverture(): Observable<Couverture[]> {
-    return this.get<Couverture[]>(this.moduleComposantUrl, [])
+    return this.get<Couverture[]>(this.couvertureUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)

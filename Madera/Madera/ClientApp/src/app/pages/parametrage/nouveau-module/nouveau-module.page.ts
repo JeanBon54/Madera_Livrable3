@@ -3,10 +3,8 @@ import { FormBuilder, FormGroup, FormControl,FormArray,Validators } from '@angul
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Observable } from 'rxjs';
 import { ComposantWebServiceService } from './../../../webServices/composant-web-service.service';  
-import { Composant,SearchingComposant } from 'src/app/models/Composants';
-import { SearchComposant } from '../../../models/Search/SearchComposant';
-import { Module,SearchingModule } from 'src/app/models/Module';
-import { SearchModule } from '../../../models/Search/SearchModule';
+import { SearchingComposant } from 'src/app/models/Composants';
+import { Module } from 'src/app/models/Module';
 import { ModuleService } from './../../../webServices/module-web-service.service';  
 
 @Component({

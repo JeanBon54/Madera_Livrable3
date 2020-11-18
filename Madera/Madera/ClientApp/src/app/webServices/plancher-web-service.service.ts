@@ -12,7 +12,7 @@ import { ApiService } from 'src/Shared/api.service';
 export class PlancherWebServiceService extends ApiService { 
 
 
-  moduleComposantUrl = environment.appUrl + 'api/Planchers/';
+  planchertUrl = environment.appUrl + 'api/Planchers/';
 
   constructor(private http: HttpClient) {
     super(http);
@@ -20,7 +20,7 @@ export class PlancherWebServiceService extends ApiService {
 
 
   getPlanchers(): Observable<Plancher[]> {
-    return this.get<Plancher[]>(this.moduleComposantUrl, [])
+    return this.get<Plancher[]>(this.planchertUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)

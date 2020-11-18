@@ -12,7 +12,7 @@ import { ApiService } from 'src/Shared/api.service';
 export class CoupePrincipaleWebServiceService extends ApiService { 
 
 
-  moduleComposantUrl = environment.appUrl + 'api/coupePrincipales/';
+  coupePrincipalUrl = environment.appUrl + 'api/coupePrincipales/';
 
   constructor(private http: HttpClient) {
     super(http);
@@ -20,7 +20,7 @@ export class CoupePrincipaleWebServiceService extends ApiService {
 
 
   getCoupePrincipal(): Observable<coupePrincipale[]> {
-    return this.get<coupePrincipale[]>(this.moduleComposantUrl, [])
+    return this.get<coupePrincipale[]>(this.coupePrincipalUrl, [])
     .pipe(
       retry(1),
       catchError(this.errorHandler)

@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Projet } from 'src/app/models/Projet';
-import { Devis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
+
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 
 import { Plancher} from 'src/app/models/Plancher';
@@ -17,7 +17,7 @@ import { CoupePrincipaleWebServiceService } from './../../../WebServices/coupe-p
 import { Couverture} from 'src/app/models/Couverture';
 import { CouvertureWebServiceService } from './../../../WebServices/couverture-web-service.service';
 import { Gamme} from 'src/app/models/Gamme';
-import { GammeWebServiceService } from './../../../WebServices/gamme-web-service.service';
+
 
 
 
@@ -33,7 +33,7 @@ export class NouveauPlanPage implements OnInit {
   coupePrincipal$: Observable<coupePrincipale[]>;
   planchers$: Observable<Plancher[]>;
   couvertures$: Observable<Couverture[]>;
-  gammes$: Observable<Gamme[]>;
+  // gammes$: Observable<Gamme[]>;
   adresse : any;
   libellePlan : any;
   cp : any;
@@ -42,10 +42,11 @@ export class NouveauPlanPage implements OnInit {
   projetId: number;
   actionType: string;
   existingPlanPost: Plan;
-  cpId: any;
-  plancherId: any;
-  couvertureId: any;
+  cpId: number;
+  plancherId: number;
+  couvertureId: number;
   gammeId: any;
+  listeModuleChecked: number[] = [];
 
   constructor(private pService: ProjetWebService,
     private cd: ChangeDetectorRef,
@@ -53,7 +54,7 @@ export class NouveauPlanPage implements OnInit {
     private cpService: CoupePrincipaleWebServiceService,
     private plancherService: PlancherWebServiceService,
     private couvService: CouvertureWebServiceService,
-    private gammeService: GammeWebServiceService,
+    // private gammeService: GammeWebServiceService,
     private avRoute: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder) {
@@ -64,34 +65,44 @@ export class NouveauPlanPage implements OnInit {
     if (this.avRoute.snapshot.params[idParam]) {
       this.projetId = this.avRoute.snapshot.params[idParam];
     }
+
+    this.form = this.formBuilder.group(
+      {
+        postId: 0,
+      //  libellePlan: ['', [Validators.required]],
+        adresse: ['', [Validators.required]],
+        ville: ['', [Validators.required]],
+        cp:'',
+        cpId: 0,
+        plancherId: 0,
+        couvertureId:0
+      }
+    )
+
+
   }
 
-
-
   ngOnInit() {
-    if (this.postId >= 0) {
-      this.actionType = 'Add';
-      this.plService.getPlan(this.postId)
-        .subscribe(data => (
+      if (this.postId >= 0) {
+          this.actionType = 'Add';
+          this.plService.getPlan(this.postId)
+          .subscribe(data => (
           this.existingPlanPost = data,
-       //   this.form.controls[this.libellePlan].setValue(data.LibellePlan),
+         // this.form.controls[this.libellePlan].setValue(data.LibellePlan),
           this.form.controls[this.adresse].setValue(data.AdressPlan),
           this.form.controls[this.ville].setValue(data.VillePlan),
           this.form.controls[this.cp].setValue(data.CpPlan),
-
-          this.form.controls[this.cpId].setValue(data.CoupePrincipalID),
-
-          this.form.controls[this.plancherId].setValue(data.PlancherID),
-
+          this.form.controls[this.cpId].setValue(data.CoupePrincipaleID),
+           this.form.controls[this.plancherId].setValue(data.PlancherID),
           this.form.controls[this.couvertureId].setValue(data.CouvertureID)
 
         ));
-    }
+     }
     this.loadCP();
     this.loadPlancher() 
     this.loadPlans();
     this.loadCouverture();
-    this.loadGamme() 
+   // this.loadGamme() 
   }
 
 
@@ -108,9 +119,9 @@ export class NouveauPlanPage implements OnInit {
     this.planchers$ = this.plancherService.getPlanchers();
   }
 
-  loadGamme() {
-    this.gammes$ = this.gammeService.getGamme();
-  }
+  // loadGamme() {
+  //   this.gammes$ = this.gammeService.getGamme();
+  // }
 
   loadCouverture() {
     this.couvertures$ = this.couvService.getCouverture();
@@ -128,15 +139,21 @@ export class NouveauPlanPage implements OnInit {
 
     if (this.actionType === 'Add') {
       let plan: Plan = {
+        CoupePrincipaleID: this.form.value.cpId,
         PlancherID: this.form.value.plancherId,
-        CoupePrincipalID: this.form.value.cpId,
         CouvertureID: this.form.value.couvertureId,
         ReferencePlan : 'test',
         LibellePlan : 'test',
         AdressPlan: this.form.value.adresse,
         CpPlan: this.form.value.cp,
-        VillePlan: this.form.value.ville
-    
+        VillePlan: this.form.value.ville,
+        IdUtilisateurCreation :1,
+        DateCreation :new Date(),
+        IdUtilisateurModification :1,
+        DateModification :new Date(),
+        DateArchivage :new Date(),
+        ListeIdModule: []
+  
       };
 
       this.plService.saveplan(plan)
