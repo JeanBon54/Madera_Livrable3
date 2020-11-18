@@ -24,6 +24,7 @@ export class GestionModelisationPage implements OnInit {
   errorMessage: any;
   module$: Observable<Module[]>;
   listeModuleChecked: number[] = [];
+  id : any;
   adresse : any;
   libellePlan : any;
   cp : any;
@@ -101,7 +102,7 @@ export class GestionModelisationPage implements OnInit {
 
     if (this.actionType === 'Add') {
       const plan: Plan = {
-
+        ID :2002,
         CoupePrincipaleID: 1,
         PlancherID: 1,
         CouvertureID: 1,

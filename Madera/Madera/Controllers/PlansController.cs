@@ -118,8 +118,9 @@ namespace Madera.Controllers
             {
                 newPlan.ModulePlan = @plan.ListeIdModule.Select(idPlan => new ModulePlan()
                 {
-                    PlanID = idPlan,
-                    ModuleID = plan.ID
+                    PlanID = plan.ID,
+                    ModuleID = idPlan,
+                    
                 }).ToList();
 
                 newPlan.ModulePlan.ToList().ForEach(plan => _context.ModulePlans.Add(plan));
