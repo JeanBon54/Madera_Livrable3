@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ModuleComposant } from 'src/app/models/ModuleComposant';
 import { Devis } from 'src/app/models/Devis';
 
+
 @Component({
   selector: 'app-gestion-devis',
   templateUrl: './gestion-devis.page.html',
@@ -15,7 +16,8 @@ export class GestionDevisPage implements OnInit {
   devis$: Observable<Devis>;
   devisId: number;
 
-    constructor(private dService: DevisService, private avRoute: ActivatedRoute) {
+    constructor(private dService: DevisService,
+      private avRoute: ActivatedRoute) {
     const idParam = 'id';
     if (this.avRoute.snapshot.params[idParam]) {
       this.devisId = this.avRoute.snapshot.params[idParam];

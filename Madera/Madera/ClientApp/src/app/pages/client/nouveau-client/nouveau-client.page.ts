@@ -116,7 +116,7 @@ export class NouveauClientPage implements OnInit {
 
       this.clientService.saveClient(client)
         .subscribe((data) => {
-          this.router.navigate(['api/Clients/', data.ID]);
+          this.router.navigate(['recherche-client/']);
         });
     }
   }

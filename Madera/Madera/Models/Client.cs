@@ -44,6 +44,7 @@ namespace Madera.Models
 
         public SearchingClient(Client client)
         {
+            this.ID = client.ID;
             this.NomClient = client.NomClient;
             this.PrenomClient = client.PrenomClient;
             this.DateCreation = client.DateCreation;

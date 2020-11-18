@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router'; 
 
-
+import { Client } from 'src/app/models/Client';
+import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Projet } from 'src/app/models/Projet';
 import { tap } from 'rxjs/operators';
@@ -14,6 +15,7 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./nouveau-projet.page.scss', './../../../app.component.scss'],
 })
 export class NouveauProjetPage implements OnInit {
+  clients$: Observable<Client[]>;
   form: FormGroup;
   actionType: string;
   formTitle: string;
@@ -25,7 +27,7 @@ export class NouveauProjetPage implements OnInit {
   existingProjetPost: Projet;
 
 
-  constructor(private projetPostService: ProjetWebService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
+  constructor(private projetPostService: ProjetWebService, private cService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
     const idParam = 'id';
     this.actionType = 'Add';
     this.libelleNom = 'libelleNom';
@@ -41,10 +43,12 @@ export class NouveauProjetPage implements OnInit {
     this.form = this.formBuilder.group(
       {
         postId: 0,
-        libelleNom: ['', [Validators.required]],
+        client: ['', [Validators.required]],
         libelleProjet: ['', [Validators.required]]
       }
     )
+    
+    this.loadClient();
 
     if (this.postId >= 0) {
       this.actionType = 'Add';
@@ -60,6 +64,10 @@ export class NouveauProjetPage implements OnInit {
     }
   }
 
+  loadClient() {
+    this.clients$ = this.cService.getClient();
+  }
+
   save() {
     if (!this.form.valid) {
       return;
@@ -68,8 +76,8 @@ export class NouveauProjetPage implements OnInit {
     if (this.actionType === 'Add') {
       let projet: Projet = {
         CommercialID: 1,
-        ClientID: 1,
-        LibelleNom: this.form.get(this.libelleNom).value,
+        ClientID: this.form.get("client").value ? this.form.get("client").value : null,
+        LibelleNom: this.form.get(this.libelleProjet).value,
         LibelleProjet: this.form.get(this.libelleProjet).value,
         libelleRemarque: '',
         DateDebutProjet:new Date(),
@@ -78,13 +86,12 @@ export class NouveauProjetPage implements OnInit {
         IdUtilisateurModification: 1,
         DateModification: new Date(),
         DateArchivage: new Date()
-        
-
       };
 
       this.projetPostService.saveProjet(projet)
         .subscribe((data) => {
-          this.router.navigate(['api/Projets/', data.ID]);
+          console.log(data);
+          this.router.navigate(['gestion-projet/', data.id]);
         });
     }
   }

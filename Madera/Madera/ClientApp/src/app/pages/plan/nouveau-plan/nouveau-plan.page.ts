@@ -17,7 +17,7 @@ import { CoupePrincipaleWebServiceService } from './../../../WebServices/coupe-p
 import { Couverture} from 'src/app/models/Couverture';
 import { CouvertureWebServiceService } from './../../../WebServices/couverture-web-service.service';
 import { Gamme} from 'src/app/models/Gamme';
-import { GammeWebServiceService } from './../../../WebServices/gamme-web-service.service';
+
 
 
 
@@ -41,7 +41,6 @@ export class NouveauPlanPage implements OnInit {
     private cpService: CoupePrincipaleWebServiceService,
     private plancherService: PlancherWebServiceService,
     private couvService: CouvertureWebServiceService,
-    private gammeService: GammeWebServiceService,
     private avRoute: ActivatedRoute,
     private formBuilder: FormBuilder) {
 
@@ -54,10 +53,9 @@ export class NouveauPlanPage implements OnInit {
 
   ngOnInit() {
    this.loadCP();
-   this.loadPlancher() 
+   this.loadPlancher();
    this.loadPlans();
    this.loadCouverture();
-   this.loadGamme() 
   }
 
   loadProjet() {
@@ -72,9 +70,6 @@ export class NouveauPlanPage implements OnInit {
     this.planchers$ = this.plancherService.getPlanchers();
   }
 
-  loadGamme() {
-    this.gammes$ = this.gammeService.getGamme();
-  }
 
   loadCouverture() {
     this.couvertures$ = this.couvService.getCouverture();
