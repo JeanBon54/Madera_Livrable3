@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { coupePrincipale} from '../models/coupePrincipale';
+import { coupePrincipale} from 'src/app/models/coupePrincipale';
 import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({

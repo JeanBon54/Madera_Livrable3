@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError, tap } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Gamme} from '../models/Gamme';
+import { Gamme} from 'src/app/models/Gamme';
 import { ApiService } from 'src/Shared/api.service';
 
 @Injectable({

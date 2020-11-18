@@ -34,29 +34,66 @@ export class NouveauPlanPage implements OnInit {
   planchers$: Observable<Plancher[]>;
   couvertures$: Observable<Couverture[]>;
   gammes$: Observable<Gamme[]>;
+  adresse : any;
+  libellePlan : any;
+  cp : any;
+  ville : string;
+  postId: number;
   projetId: number;
+  actionType: string;
+  existingPlanPost: Plan;
+  cpId: any;
+  plancherId: any;
+  couvertureId: any;
+  gammeId: any;
 
   constructor(private pService: ProjetWebService,
+    private cd: ChangeDetectorRef,
     private plService: PlanService, 
     private cpService: CoupePrincipaleWebServiceService,
     private plancherService: PlancherWebServiceService,
     private couvService: CouvertureWebServiceService,
     private avRoute: ActivatedRoute,
+    private router: Router,
     private formBuilder: FormBuilder) {
 
-    const idParam = 'id';
+      const idParam = 'id';
+      this.actionType = 'Add';
 
     if (this.avRoute.snapshot.params[idParam]) {
       this.projetId = this.avRoute.snapshot.params[idParam];
     }
   }
 
+
+
   ngOnInit() {
-   this.loadCP();
-   this.loadPlancher();
-   this.loadPlans();
-   this.loadCouverture();
+    if (this.postId >= 0) {
+      this.actionType = 'Add';
+      this.plService.getPlan(this.postId)
+        .subscribe(data => (
+          this.existingPlanPost = data,
+       //   this.form.controls[this.libellePlan].setValue(data.LibellePlan),
+          this.form.controls[this.adresse].setValue(data.AdressPlan),
+          this.form.controls[this.ville].setValue(data.VillePlan),
+          this.form.controls[this.cp].setValue(data.CpPlan),
+
+          this.form.controls[this.cpId].setValue(data.CoupePrincipalID),
+
+          this.form.controls[this.plancherId].setValue(data.PlancherID),
+
+          this.form.controls[this.couvertureId].setValue(data.CouvertureID)
+
+        ));
+    }
+    this.loadCP();
+    this.loadPlancher() 
+    this.loadPlans();
+    this.loadCouverture();
+    this.loadGamme() 
   }
+
+
 
   loadProjet() {
     this.projet$ = this.pService.getProjets();
@@ -78,5 +115,33 @@ export class NouveauPlanPage implements OnInit {
   loadPlans() {
     this.plans$ = this.plService.getPlans();
   }
+
+
+  save() {
+    if (!this.form.valid) {
+      return;
+    }
+
+    if (this.actionType === 'Add') {
+      let plan: Plan = {
+        PlancherID: this.form.value.plancherId,
+        CoupePrincipalID: this.form.value.cpId,
+        CouvertureID: this.form.value.couvertureId,
+        ReferencePlan : 'test',
+        LibellePlan : 'test',
+        AdressPlan: this.form.value.adresse,
+        CpPlan: this.form.value.cp,
+        VillePlan: this.form.value.ville
+    
+      };
+
+      this.plService.saveplan(plan)
+        .subscribe((data) => {
+          this.router.navigate(['api/Plans/', data.ID]);
+        });
+    }
+  }
+
+  
 
 }
