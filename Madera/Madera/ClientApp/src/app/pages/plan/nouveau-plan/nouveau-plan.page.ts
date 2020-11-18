@@ -54,7 +54,7 @@ export class NouveauPlanPage implements OnInit {
     private cpService: CoupePrincipaleWebServiceService,
     private plancherService: PlancherWebServiceService,
     private couvService: CouvertureWebServiceService,
-    private gammeService: GammeWebServiceService,
+    //private gammeService: GammeWebServiceService,
     private avRoute: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder) {
@@ -119,9 +119,9 @@ export class NouveauPlanPage implements OnInit {
     this.planchers$ = this.plancherService.getPlanchers();
   }
 
-  loadGamme() {
-    this.gammes$ = this.gammeService.getGamme();
-  }
+  // loadGamme() {
+  //   this.gammes$ = this.gammeService.getGamme();
+  // }
 
   loadCouverture() {
     this.couvertures$ = this.couvService.getCouverture();
