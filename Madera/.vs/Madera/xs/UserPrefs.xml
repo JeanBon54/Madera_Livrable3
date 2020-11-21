@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Madera.csproj">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Madera/Controllers/ModulesController.cs" Line="26" Column="12" />
-      <File FileName="Madera/Models/Module.cs" Line="55" Column="36" />
-      <File FileName="Madera/Models/Search/SearchModule.cs" Line="1" Column="1" />
-      <File FileName="Madera/Models/Plan.cs" Line="48" Column="34" />
-      <File FileName="Madera/Controllers/PlansController.cs" Line="117" Column="47" NotebookId="1" />
-      <File FileName="Madera/Data/AppDbContext.cs" Line="152" Column="1" NotebookId="1" />
-      <File FileName="Madera/Madera.csproj" Line="18" Column="88" NotebookId="1" />
+      <File FileName="Madera/Models/Module.cs" />
+      <File FileName="Madera/Models/Search/SearchModule.cs" />
+      <File FileName="Madera/Models/Plan.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,9 +24,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
