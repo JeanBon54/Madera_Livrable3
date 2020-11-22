@@ -13,6 +13,11 @@
   ion-card{
     border: 1px solid #bbb;
     padding-bottom: 5px;
+    
+  }
+
+  ion-card-content{
+    overflow: scroll;
   }
 
 .col-text-titre{
