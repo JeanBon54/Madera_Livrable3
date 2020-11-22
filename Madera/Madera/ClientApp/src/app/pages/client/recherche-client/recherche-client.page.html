@@ -27,11 +27,13 @@
         </ion-card-content>
     </form>
     </ion-card>
+
     <ion-card style="height:680px;" scroll-y="true"  class="groupList">
         <ion-card-header *ngIf="(client$ | async)?.length>0">
         </ion-card-header>
         <ion-card-content>
-            <div class="col-text" >
+          <div class="col-text-titre" > 
+
             <ion-grid>
                 <ion-row>
                     <ion-col text-center>Nom</ion-col>
@@ -41,6 +43,7 @@
                     <!-- <ion-col>Commercial</ion-col> -->
                     <ion-col>Actif</ion-col>
                 </ion-row>
+            </div>
                 <ion-row *ngFor="let cli of (client$ | async)">
                     <ion-col>
                       <ion-label  text-center>{{cli.nomClient}}</ion-label>
