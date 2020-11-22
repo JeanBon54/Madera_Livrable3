@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Stubble.Core;
 using GrapeCity.Documents.Html;
 using Madera.Models;
+using Madera.Models.Search;
 using GrapeCity.Documents.Pdf;
 
 namespace Madera.Controllers
@@ -107,6 +108,21 @@ namespace Madera.Controllers
         private bool DevisExists(int id)
         {
             return _context.Devis.Any(e => e.ID == id);
+        }
+
+                // GET: api/Devis/5
+        [HttpPost("search")]
+        public async Task<List<Devis>> GetListeProjet([FromBody] SearchDevis search)
+        {
+            var listeDevis =  _context.Devis.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.LibelleDevis))
+                listeDevis = listeDevis.Where(p => p.LibelleDevis.ToLower().Contains(search.LibelleDevis.ToLower()));
+
+            if (search.DateCreation != null)
+                listeDevis = listeDevis.Where(p => p.DateCreation.Date == search.DateCreation);
+
+            return await listeDevis.ToListAsync();
         }
 
         // GET: api/Devis/getpdf/5
