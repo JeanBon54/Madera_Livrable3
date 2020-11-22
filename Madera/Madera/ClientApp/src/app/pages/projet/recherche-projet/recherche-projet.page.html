@@ -1,6 +1,5 @@
 <ion-col size="12">
-  <ion-content 
->
+  <ion-content>
   <ion-card>
     <form [formGroup]="form" (ngSubmit)="searchProjet()">
       <ion-card-header *ngIf="(clients$ | async)?.length>0">
