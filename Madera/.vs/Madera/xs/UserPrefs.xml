@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ModulesController.cs">
     <Files>
       <File FileName="Madera/Controllers/ModulesController.cs" Line="26" Column="12" />
       <File FileName="Madera/Models/Module.cs" />

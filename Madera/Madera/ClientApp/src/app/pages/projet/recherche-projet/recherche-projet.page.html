@@ -1,4 +1,6 @@
 <ion-col size="12">
+  <ion-content 
+>
   <ion-card>
     <form [formGroup]="form" (ngSubmit)="searchProjet()">
       <ion-card-header *ngIf="(clients$ | async)?.length>0">
@@ -36,10 +38,11 @@
     </form>
   </ion-card>
 
-  <ion-card>
+  <ion-card >
     <ion-card-header *ngIf="(projets$ | async)?.length>0">
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content >
+
       <ion-grid>
         <div class="col-text-titre">
           <ion-row>
@@ -70,23 +73,22 @@
               </ion-button>
             </ion-col>
           </ion-row>
-          <ion-infinite-scroll>
-            <ion-infinite-scroll-content></ion-infinite-scroll-content>
-          </ion-infinite-scroll>
         </div>
       </ion-grid>
+
     </ion-card-content>
   </ion-card>
+
+
+  </ion-content>
 
   <ion-footer>
     <div class="footer footer-btn">
       <div class="container-image">
         <div class="nouveau-btn">
-          <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-projet']" routerDirection="forward">
-            Nouveau projet</ion-button>
+          <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-projet']" routerDirection="forward"> Nouveau projet</ion-button>
         </div>
       </div>
     </div>
   </ion-footer>
-
 </ion-col>
