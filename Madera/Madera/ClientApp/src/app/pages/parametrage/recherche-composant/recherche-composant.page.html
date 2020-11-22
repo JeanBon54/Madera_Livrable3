@@ -1,5 +1,5 @@
-<ion-col size="12">
-  <ion-content>
+<ion-content>
+
   <ion-card>
       <form [formGroup]="form" (ngSubmit)="searchComposant()">
         <ion-card-header>
@@ -24,7 +24,8 @@
         </ion-card-content>
       </form>
     </ion-card>
-    <ion-card>
+    <ion-card style="height:680px;" scroll-y="true"  class="groupList">
+      
         <ion-card-header *ngIf="(composant$ | async)?.length>0">
            </ion-card-header>
         <ion-card-content>
@@ -54,20 +55,19 @@
 
         </ion-card-content>
     </ion-card>
-  </ion-content>
-  
-    <ion-footer>
-      <div class="footer footer-btn" >
-          <div class="container-image">
+</ion-content>
 
-              <div class="retour-btn">
-                  <ion-button size="block" color="danger" [routerLink]="['/menu-principal']">Retour</ion-button>
-              </div>
+<ion-footer>
+  <div class="footer footer-btn" >
+      <div class="container-image">
 
-              <div class="nouveau-btn">
-                  <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-composant']">Nouveau composant</ion-button>
-              </div>
+          <div class="retour-btn">
+              <ion-button size="block" color="danger" [routerLink]="['/menu-principal']">Retour</ion-button>
+          </div>
+
+          <div class="nouveau-btn">
+              <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-composant']">Nouveau composant</ion-button>
           </div>
       </div>
-  </ion-footer>  
-</ion-col>
+  </div>
+</ion-footer>  

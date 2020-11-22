@@ -37,7 +37,7 @@
     </form>
   </ion-card>
 
-  <ion-card >
+  <ion-card style="height:590px;" scroll-y="true"  class="groupList">
     <ion-card-header *ngIf="(projets$ | async)?.length>0">
     </ion-card-header>
     <ion-card-content >
@@ -81,13 +81,14 @@
 
   </ion-content>
 
-  <ion-footer>
-    <div class="footer footer-btn">
-      <div class="container-image">
-        <div class="nouveau-btn">
-          <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-projet']" routerDirection="forward"> Nouveau projet</ion-button>
-        </div>
+
+</ion-col>
+<ion-footer>
+  <div class="footer footer-btn">
+    <div class="container-image">
+      <div class="nouveau-btn">
+        <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-projet']" routerDirection="forward"> Nouveau projet</ion-button>
       </div>
     </div>
-  </ion-footer>
-</ion-col>
+  </div>
+</ion-footer>

@@ -13,12 +13,18 @@
   ion-card{
     border: 1px solid #bbb;
     padding-bottom: 5px;
-    
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   ion-card-content{
     overflow: scroll;
   }
+
+  .groupList {
+    overflow: scroll;
+}
+
 
 .col-text-titre{
     text-align: justify;

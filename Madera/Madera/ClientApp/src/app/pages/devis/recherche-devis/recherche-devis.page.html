@@ -1,7 +1,6 @@
 <ion-col size="12">
-  <ion-content>
 
-    <ion-card>
+  <ion-card>
         <form [formGroup]="form" (ngSubmit)="searchDevis()">
         <ion-card-header>
          <h3>Rechercher devis</h3>
@@ -36,8 +35,8 @@
           </ion-card-content>
         </form>
     </ion-card>
-    <ion-card>
-        <ion-card-header *ngIf="(projets$ | async)?.length>0">
+    <ion-card style="height:660px;" scroll-y="true"  class="groupList">
+      <ion-card-header *ngIf="(projets$ | async)?.length>0">
         </ion-card-header>
         <ion-card-content>
         <ion-grid>
@@ -75,5 +74,4 @@
         
     </ion-card-content>
 </ion-card>
-  </ion-content>
 </ion-col>
