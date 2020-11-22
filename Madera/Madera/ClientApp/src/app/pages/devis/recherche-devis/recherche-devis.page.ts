@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 import { Projet, ProjetCommercial } from 'src/app/models/Projet';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SearchProjet } from '../../../models/Search/SearchProjet';
+import { SearchDevis } from '../../../models/Search/SearchDevis';
 import { Devis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
 import { Client } from 'src/app/models/Client';
@@ -68,15 +68,14 @@ export class RechercheDevisPage implements OnInit {
   }
 
   searchDevis() {
-    const search: SearchProjet = {
-      LibelleProjet: this.form.get("reference").value,
-      ClientId: this.form.get("client").value ? this.form.get("client").value : null,
+    const search: SearchDevis = {
+      LibelleDevis: this.form.get("reference").value,
       DateCreation: this.form.get("date").value ? this.form.get("date").value : null
       // ClientId: this.form.value.client ? this.form.value.client:null,
     };
 
     const searchString = JSON.stringify(search);
-    this.projets$ = this.projetService.searchProjet<Projet[]>(searchString);
+    this.devis$ = this.dService.searchDevis<Devis[]>(searchString);
 
   }
 
