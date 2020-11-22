@@ -45,20 +45,20 @@ namespace Madera.Controllers
 
         // GET: api/Projets/5
         [HttpPost("search")]
-        public async Task<List<ProjetCommercial>> GetListeProjet([FromBody] SearchProjet search)
+        public async Task<List<Projet>> GetListeProjet([FromBody] ProjetCommercial search)
         {
-            var listeProject = _context.Projets.Select(p => p);
+            var listeProject =  _context.Projets.Select(p => p);
 
             if (!string.IsNullOrWhiteSpace(search.LibelleProjet))
                 listeProject = listeProject.Where(p => p.LibelleProjet.ToLower().Contains(search.LibelleProjet.ToLower()));
 
-            if (search.ClientId.GetValueOrDefault() != 0)
-                listeProject = listeProject.Where(p => p.ClientID == search.ClientId.Value);
+            if (search.ClientID != 0)
+                listeProject = listeProject.Where(p => p.ClientID == search.ClientID);
 
-            if (search.DateCreation.HasValue)
-                listeProject = listeProject.Where(p => p.DateCreation.Date == search.DateCreation.Value.Date);
+            if (search.DateCreation.Date != null)
+                listeProject = listeProject.Where(p => p.DateCreation.Date == search.DateCreation.Date);
 
-            return await listeProject.Select(p => new ProjetCommercial(p)).ToListAsync();
+            return await listeProject.ToListAsync();
         }
 
         [HttpPost("remarque")]
