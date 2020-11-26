@@ -47,6 +47,22 @@ namespace Madera.Controllers
             return devis;
         }
 
+
+        // GET: api/Projets/5
+        [HttpPost("search")]
+        public async Task<List<SearchingDevis>> GetListeDevis([FromBody] SearchDevis search)
+        {
+            var listeDevis = _context.Devis.Select(p => p);
+
+            if (!string.IsNullOrWhiteSpace(search.LibelleDevis))
+                listeDevis = listeDevis.Where(p => p.LibelleDevis.ToLower().Contains(search.LibelleDevis.ToLower()));
+
+            return await listeDevis.Select(p => new SearchingDevis(p)).ToListAsync();
+        }
+
+
+
+
         // PUT: api/Devis/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

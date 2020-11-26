@@ -31,4 +31,18 @@ namespace Madera.Models
 
         public virtual Plan Plan { get; set; }
     }
+
+    public class SearchingDevis : Devis
+    {
+
+        public SearchingDevis(Devis devis)
+        {
+            this.ID = devis.ID;
+            this.LibelleDevis = devis.LibelleDevis;
+            this.DateCreation = devis.DateCreation;
+        }
+
+    }
+
+
 }

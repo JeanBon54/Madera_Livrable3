@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { Projet, ProjetCommercial } from 'src/app/models/Projet';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchDevis } from '../../../models/Search/SearchDevis';
-import { Devis } from 'src/app/models/Devis';
+import { Devis,SearchingDevis } from 'src/app/models/Devis';
 import { Plan } from 'src/app/models/Plan';
 import { Client } from 'src/app/models/Client';
 import { DevisService } from './../../../WebServices/devis-webservice.service';
@@ -42,13 +42,18 @@ export class RechercheDevisPage implements OnInit {
     this.form = this.formBuilder.group(
       {
         reference: ['', []],
-        client: ['', []], 
-        date: ['', []]
+        // client: ['', []], 
+        // date: ['', []]
       }
     )
     this.loadDevis();
     this.loadClient();
   }
+
+  refresh(){
+    this.loadDevis();
+    this.loadClient();
+   }
 
   loadProjet() {
    this.projets$ = this.projetService.getProjets();
@@ -69,13 +74,13 @@ export class RechercheDevisPage implements OnInit {
 
   searchDevis() {
     const search: SearchDevis = {
-      LibelleDevis: this.form.get("reference").value,
-      DateCreation: this.form.get("date").value ? this.form.get("date").value : null
+      LibelleDevis: this.form.get("reference").value
+    //  DateCreation: this.form.get("date").value ? this.form.get("date").value : null
       // ClientId: this.form.value.client ? this.form.value.client:null,
     };
 
     const searchString = JSON.stringify(search);
-    this.devis$ = this.dService.searchDevis<Devis[]>(searchString);
+    this.devis$ = this.dService.searchDevis<SearchingDevis[]>(searchString);
 
   }
 
