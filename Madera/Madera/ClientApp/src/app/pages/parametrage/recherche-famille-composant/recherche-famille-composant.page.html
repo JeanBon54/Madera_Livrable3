@@ -1,4 +1,5 @@
 <ion-col size="12">
+<ion-content>
     <ion-card>
         <form [formGroup]="form" (ngSubmit)="searchFamComposant()">
         <ion-card-header>
@@ -26,7 +27,7 @@
         </ion-card-content>
         </form>
     </ion-card>
-    <ion-card>
+    <ion-card style="height:680px;" scroll-y="true"  class="groupList">
         <ion-card-header *ngIf="(famComposant$ | async)?.length>0"> 
            </ion-card-header>
         <ion-card-content>
@@ -50,7 +51,7 @@
             </ion-grid>
         </ion-card-content>
     </ion-card>
-
+</ion-content>
     <ion-footer>
         <div class="footer footer-btn" >
             <div class="container-image">

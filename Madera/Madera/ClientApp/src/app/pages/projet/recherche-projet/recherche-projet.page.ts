@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component, Inject, OnInit, ViewChild  } from '@angul
 import { ActivatedRoute } from '@angular/router';
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Observable } from 'rxjs';
-
 import { Projet, ProjetCommercial } from 'src/app/models/Projet';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SearchProjet } from '../../../models/Search/SearchProjet';
@@ -22,14 +21,14 @@ import { PlanService } from './../../../WebServices/plan-webservice.service';
 })
 
 export class RechercheProjetPage implements OnInit {
-
   projets$: Observable<Projet[]>;
   plan$: Observable<Plan[]>;
   devis$: Observable<Devis[]>;
   clients$: Observable<Client[]>;
   
+  
   form: FormGroup;
-
+  
 
   constructor(private projetService: ProjetWebService,
     private plService: PlanService, 
@@ -39,7 +38,10 @@ export class RechercheProjetPage implements OnInit {
     private formBuilder: FormBuilder) {
   }
 
+
+
   ngOnInit() {
+ 
     this.form = this.formBuilder.group(
       {
         reference: ['', []],
@@ -50,6 +52,7 @@ export class RechercheProjetPage implements OnInit {
     this.loadProjet();
     this.loadClient();
   }
+
 
   loadProjet() {
    this.projets$ = this.projetService.getProjets();
@@ -80,6 +83,8 @@ export class RechercheProjetPage implements OnInit {
     this.projets$ = this.projetService.searchProjet<Projet[]>(searchString);
 
   }
+
+
 
 }
 
