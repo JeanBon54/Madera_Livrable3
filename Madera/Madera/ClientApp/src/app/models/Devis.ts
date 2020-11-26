@@ -16,3 +16,8 @@ export class Devis {
     DateArchivage: Date;
 
 }
+
+export class SearchingDevis extends Devis {
+    LibelleDevis : string;
+
+  }

@@ -12,7 +12,7 @@ namespace Madera.Models.Search
         /// </summary>
         public string LibelleDevis { get; set; }
 
-        public int? ClientId { get; set; }
+        //public int? ClientId { get; set; }
 
         public DateTime? DateCreation { get; set; }
 
