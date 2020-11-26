@@ -28,11 +28,22 @@
             </ion-col>
 
           </ion-row>
+          <ion-row>
+            <ion-col size="6">
+
+            </ion-col>
+            <ion-col size="3">
+              <ion-button (click)="refresh()" type="reset" color="danger">Réinitialiser</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button type="submit" color="success">Rechercher</ion-button>
+            </ion-col>
+          </ion-row>
 
         </ion-grid>
         <div class="flex-right">
-          <ion-button (click)="refresh()" type="reset" color="danger">Réinitialiser</ion-button>
-          <ion-button type="submit" color="success">Rechercher</ion-button>
+          
+          
         </div>
       </ion-card-content>
     </form>

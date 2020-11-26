@@ -19,6 +19,7 @@ export class MenuPrincipalPage implements OnInit {
   }
 
   logOut() {
+    
     this.router.navigateByUrl('connexion');
   }
 
