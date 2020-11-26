@@ -8,6 +8,10 @@ import { GestionProjetPage } from './pages/projet/gestion-projet/gestion-projet.
 
 const routerConfig: Routes = [
   {
+    path: 'connexion',
+    component: ConnexionPage
+  },
+  {
     path: '',
     component: MenuPrincipalPage
   },
