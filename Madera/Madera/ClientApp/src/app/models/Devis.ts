@@ -18,6 +18,8 @@ export class Devis {
 }
 
 export class SearchingDevis extends Devis {
+    ID: number;
     LibelleDevis : string;
+    DateCreation : Date;
 
   }
