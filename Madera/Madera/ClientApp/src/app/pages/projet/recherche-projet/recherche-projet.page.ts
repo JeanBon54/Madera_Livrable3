@@ -53,6 +53,10 @@ export class RechercheProjetPage implements OnInit {
     this.loadClient();
   }
 
+  refresh() {
+    this.loadProjet();
+    this.loadClient();
+   }
 
   loadProjet() {
    this.projets$ = this.projetService.getProjets();

@@ -34,12 +34,14 @@
            </ion-card-header>
         <ion-card-content>
           <ion-grid>
-            <ion-row>
-              <ion-col>Libelle</ion-col>
-              <ion-col>Nature</ion-col>
-              <ion-col>Carat</ion-col>
-              <ion-col></ion-col>
-            </ion-row>
+            <div class="col-text-titre"> 
+              <ion-row>
+                  <ion-col>Libelle</ion-col>
+                  <ion-col>Nature</ion-col>
+                  <ion-col>Catégorie</ion-col>
+                  <ion-col></ion-col>
+              </ion-row>
+            </div>
             <ion-row *ngFor="let compo of (composant$ | async);let i=index">
               <ion-col>
                 <ion-label center text-center>{{compo.libelleComposant}}</ion-label>
@@ -62,7 +64,7 @@
       <div class="footer footer-btn" >
           <div class="container-image">
             <div class="retour-btn">
-                <ion-button size="block" color="danger">Annuler</ion-button>
+              <ion-button size="block" color="danger" [routerLink]="['/recherche-module']"routerDirection="forward">Retour</ion-button>
             </div>
             <div class="nouveau-btn">
                   <ion-button expand="block" type="submit" color="success">Enregistrer</ion-button>

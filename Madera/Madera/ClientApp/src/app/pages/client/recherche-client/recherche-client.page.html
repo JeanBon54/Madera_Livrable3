@@ -37,8 +37,8 @@
                 <ion-row>
                     <ion-col text-center>Nom</ion-col>
                     <ion-col text-center>Prenom</ion-col>
-                    <ion-col text-center>Date-création</ion-col>
-                    <ion-col text-center>Date-modification</ion-col>
+                    <ion-col text-center>Création</ion-col>
+                    <ion-col text-center>Modification</ion-col>
                     <!-- <ion-col>Commercial</ion-col> -->
                     <ion-col>Actif</ion-col>
                 </ion-row>
@@ -69,7 +69,13 @@
     <ion-footer>
         <div class="footer footer-btn" >
             <div class="container-image">
-                <ion-button size="default" color="secondary" [routerLink]="['/nouveau-client']">Nouveau client</ion-button>
+
+                <div class="retour-btn">
+                    <ion-button size="block" color="danger" [routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
+                </div>
+                <div class="nouveau-btn">
+                    <ion-button size="default" color="secondary" [routerLink]="['/nouveau-client']">Nouveau client</ion-button>
+                </div>
             </div>
         
         </div>

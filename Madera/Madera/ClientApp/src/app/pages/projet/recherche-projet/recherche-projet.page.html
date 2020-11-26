@@ -31,6 +31,7 @@
 
         </ion-grid>
         <div class="flex-right">
+          <ion-button (click)="refresh()" type="reset" color="danger">Réinitialiser</ion-button>
           <ion-button type="submit" color="success">Rechercher</ion-button>
         </div>
       </ion-card-content>
@@ -86,6 +87,9 @@
 <ion-footer>
   <div class="footer footer-btn">
     <div class="container-image">
+      <div class="retour-btn">
+        <ion-button size="block" color="danger" [routerLink]="['/menu-principal']"routerDirection="forward">Retour</ion-button>
+      </div>
       <div class="nouveau-btn">
         <ion-button expand="block" color="secondary" [routerLink]="['/nouveau-projet']" routerDirection="forward"> Nouveau projet</ion-button>
       </div>
