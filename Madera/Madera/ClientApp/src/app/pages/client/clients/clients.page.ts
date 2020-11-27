@@ -11,8 +11,9 @@ import { ClientWebServiceService } from './../../../webServices/client-web-servi
   styleUrls: ['./clients.page.scss','./../../../app.component.scss'],
 })
 export class CLientsPage implements OnInit {
-  client$: Observable<Client>;
+
   clientId: number;
+  client$: Observable<Client>;
 
   constructor(private dService: ClientWebServiceService,
     private avRoute: ActivatedRoute) {

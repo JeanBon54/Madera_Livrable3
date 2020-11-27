@@ -1,6 +1,6 @@
 export class Devis {
 
-    ID: number;
+    id?: number;
     LibelleDevis: string;
     EtatDevis: string;
     PlanID: number;
@@ -18,7 +18,7 @@ export class Devis {
 }
 
 export class SearchingDevis extends Devis {
-    ID: number;
+    id?: number;
     LibelleDevis : string;
     DateCreation : Date;
 
