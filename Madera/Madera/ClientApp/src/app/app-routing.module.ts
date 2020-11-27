@@ -61,6 +61,10 @@ const routerConfig: Routes = [
     loadChildren: () => import('./pages/client/recherche-client/recherche-client.module').then( m => m.RechercheClientPageModule)
   },
   {
+    path: 'client/:id',
+    loadChildren: () => import('./pages/client/clients/clients.module').then( m => m.CLientsPageModule)
+  },
+  {
     path: 'nouveau-client',
     loadChildren: () => import('./pages/client/nouveau-client/nouveau-client.module').then( m => m.NouveauClientPageModule)
   },

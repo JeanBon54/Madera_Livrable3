@@ -40,7 +40,7 @@
                     <ion-col text-center>Création</ion-col>
                     <ion-col text-center>Modification</ion-col>
                     <!-- <ion-col>Commercial</ion-col> -->
-                    <ion-col>Actif</ion-col>
+                    <ion-col size="1"></ion-col>
                 </ion-row>
             </div>
             <div class="col-text" >
@@ -57,9 +57,11 @@
                     <ion-col>
                       <ion-label  text-center>{{cli.dateModification| date: 'dd/MM/yyyy'}}</ion-label>
                     </ion-col>
-                    <ion-col>
-                      <ion-label  text-center>{{cli.nomClient}}</ion-label>
-                    </ion-col>
+                    <ion-col size="1">
+                        <ion-button [routerLink]="['/client/', cli.id]">
+                          <ion-icon size="small" name="eye"></ion-icon>
+                        </ion-button>
+                      </ion-col>
                 </ion-row>
             </div>
             </ion-grid>

@@ -30,7 +30,7 @@ namespace Madera.Controllers
 
         // GET: api/Clients/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<SearchingClient>> GetClient(int id)
+        public async Task<ActionResult<Client>> GetClient(int id)
         {
             var client = await _context.Clients.FindAsync(id);
 
@@ -39,7 +39,7 @@ namespace Madera.Controllers
                 return NotFound();
             }
 
-            return new SearchingClient(client);
+            return client;
         }
 
 

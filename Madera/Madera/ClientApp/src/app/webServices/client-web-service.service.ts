@@ -29,10 +29,9 @@ export class ClientWebServiceService extends ApiService {
   }
 
 
-  getClientID(clientId: number): Observable<SearchingClient> {
-    return this.get<SearchingClient>(this.clientUrl, [{key: 'id', value: clientId.toString()}] )
+  getClientID(clientId: number): Observable<Client> {
+    return this.getById<Client>(this.clientUrl, clientId.toString() )
       .pipe(
-        tap(resp => console.log(resp)),
         retry(1),
         catchError(this.errorHandler)
       );
