@@ -47,6 +47,12 @@ namespace Madera.Models
             this.ID = client.ID;
             this.NomClient = client.NomClient;
             this.PrenomClient = client.PrenomClient;
+            this.DateNaissanceClient = client.DateNaissanceClient;
+            this.AdresseClient = client.AdresseClient;
+            this.VilleClient = client.VilleClient;
+            this.CpClient = client.CpClient;
+            this.Telephone = client.Telephone;
+            this.EmailClient = client.EmailClient;
             this.DateCreation = client.DateCreation;
             this.DateModification = client.DateModification;
 

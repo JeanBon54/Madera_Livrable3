@@ -17,7 +17,7 @@ export class Client {
 }
 
 export class SearchingClient extends Client {
-    ID?: number;
+    id?: number;
     NomClient : string;
     PrenomClient : string;
     DateCreation : Date;

@@ -23,7 +23,7 @@ import { ClientWebServiceService } from './../../../webServices/client-web-servi
     RechercheProjetPageRoutingModule,
   ],
   declarations: [RechercheProjetPage], 
-  providers: [ProjetWebService,,DevisService,PlanService,ClientWebServiceService]
+  providers: [ProjetWebService,DevisService,PlanService,ClientWebServiceService]
   
 })
 export class RechercheProjetPageModule {}
