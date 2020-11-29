@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 
-import { Plan } from 'src/app/models/Plan';
+import { Plan, SelectedQuantite } from 'src/app/models/Plan';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { Module} from 'src/app/models/Module';
 import { ModuleService } from './../../../webServices/module-web-service.service';  
@@ -23,7 +23,8 @@ export class GestionModelisationPage implements OnInit {
   planId: number;
   errorMessage: any;
   module$: Observable<Module[]>;
-  listeModuleChecked: number[] = [];
+  listeModuleChecked: SelectedQuantite[] = [];
+  quati : number[] = [];
   id : any;
   adresse : any;
   libellePlan : any;
@@ -39,7 +40,7 @@ export class GestionModelisationPage implements OnInit {
   constructor(private moduleService: ModuleService, 
     private cd: ChangeDetectorRef,
     private formBuilder: FormBuilder, 
- private planService: PlanService, 
+    private planService: PlanService, 
     private avRoute: ActivatedRoute, 
     private router: Router) {
   
@@ -53,7 +54,7 @@ export class GestionModelisationPage implements OnInit {
       this.form = this.formBuilder.group(
         {
           postId: 0,
-         // libelleModule: ['', [Validators.required]],
+          quanti: ['', [Validators.required]],
         }
       )
     }
@@ -79,12 +80,13 @@ export class GestionModelisationPage implements OnInit {
   }
 
 
-
-  onCheckboxChange(e) {
+  onCheckboxChange(e, quantite) {
     if (e.target.checked) {
-      this.listeModuleChecked.push(e.target.value);
+      this.listeModuleChecked.push(new SelectedQuantite(e.target.value, quantite));
+      // this.quati.push(this.form.value.quanti);
     } else {
       const indexItem = this.listeModuleChecked.indexOf(e.target.value);
+ 
       if (indexItem !== -1) {
         this.listeModuleChecked.splice(indexItem, 1);
       }
@@ -115,7 +117,7 @@ export class GestionModelisationPage implements OnInit {
         IdUtilisateurModification :1,
         DateModification :new Date(),
         DateArchivage :new Date(),
-        ListeIdModule: this.listeModuleChecked,
+        ListeIdModule: this.listeModuleChecked
       };
   console.log(plan);
  this.planService.saveplan(plan)

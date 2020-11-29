@@ -46,7 +46,16 @@ namespace Madera.Models
     {
         public int ID { get; set; }
         public string libellePlan { get; set; }
-        public IEnumerable<int> ListeIdModule { get; set; }
+        public IEnumerable<SelectedModule> ListeIdModule { get; set; }
+        //public IEnumerable<int> quantite { get; set; }
+        //public int quantite { get; set; }
     }
+
+    public class SelectedModule {
+        public int ID { get; set; }
+        public int quantite { get; set; }
+    }
+
+
 
 }
