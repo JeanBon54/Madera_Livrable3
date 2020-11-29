@@ -15,6 +15,10 @@ export class ApiService {
     return this.httpClient.post<T>(url, body, { headers: this.getHeaders() } );
   }
 
+  public put<T>(url: string, body: string): Observable<T> {
+    return this.httpClient.put<T>(url, body, { headers: this.getHeaders() } );
+  }
+
   public get<T>(url: string, parameters: { key: string; value: any }[] ): Observable<T> {
     let httpParameters: HttpParams;
     if (parameters != null) {

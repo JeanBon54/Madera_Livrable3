@@ -59,11 +59,11 @@ export class CLientsPage implements OnInit {
       nomClient: ['', [Validators.required]],
       prenomClient: ['', [Validators.required]],
       dateNaissance: ['', [Validators.required]],
-      // adresseClient: ['', [Validators.required]],
-      // villeClient: ['', [Validators.required]],
-      // cpClient: ['', [Validators.required]],
-      // telephoneClient: ['', [Validators.required]],
-      // emailClient: ['', [Validators.required]]
+      adresseClient: ['', [Validators.required]],
+      villeClient: ['', [Validators.required]],
+      cpClient: ['', [Validators.required]],
+      telephoneClient: ['', [Validators.required]],
+      emailClient: ['', [Validators.required]]
     }
   )
 
@@ -94,6 +94,7 @@ save() {
 
   if (this.actionType === 'Add') {
     let client: Client = {
+      id : this.clientId,
       NomClient: this.form.get(this.nomClient).value,
       PrenomClient: this.form.get(this.prenomClient).value,
       DateNaissanceClient : this.form.value.dateNaissance,
@@ -109,7 +110,7 @@ save() {
       DateArchivage :new Date()
     };
 
-    this.clientService.saveClient(client)
+    this.clientService.updateClient(client)
       .subscribe((data) => {
         this.router.navigate(['recherche-client/']);
       });

@@ -27,9 +27,7 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-item>
-              <ion-label>Adresse postale : {{client.adresseClient}}</ion-label>
-            </ion-item>
+            <ion-input placeholder={{client.adresseClient}} formControlName="adresseClient"></ion-input>
           </ion-col>
           <ion-col>
             <ion-item>
@@ -37,29 +35,21 @@
             </ion-item>
           </ion-col>
           <ion-col>
-            <ion-item>
-              <ion-label>Code postale : {{client.cpClient}}</ion-label>
-            </ion-item>
+            <ion-input placeholder="{{client.cpClient}}" formControlName="cpClient"></ion-input>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-item>
-              <ion-label>Ville : {{client.villeClient}}</ion-label>
-          </ion-item>
+            <ion-input placeholder="{{client.villeClient}}" formControlName="villeClient"></ion-input>
           </ion-col>
           <ion-col>
-          <ion-item>
-            <ion-label>Adresse mail : {{client.emailClient}}</ion-label>
-          </ion-item>
+            <ion-input placeholder="{{client.emailClient}}" formControlName="emailClient"></ion-input>
           </ion-col>
         </ion-row>
   
         <ion-row class="lastRow">
           <ion-col>
-            <ion-item>
-              <ion-label>Numéro de téléphone : {{client.telephone}}</ion-label>
-            </ion-item>
+            <ion-input placeholder="{{client.telephone}}" formControlName="telephoneClient"></ion-input>
           </ion-col>
           <ion-col>
   

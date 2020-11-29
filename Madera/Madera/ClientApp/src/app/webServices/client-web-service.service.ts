@@ -55,6 +55,14 @@ export class ClientWebServiceService extends ApiService {
     );
   }
 
+  updateClient(client): Observable<Client> {
+    return this.put<Client>(this.clientUrl, JSON.stringify(client))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
 // GESTION DES ERREURS
   errorHandler(error) {
     let errorMessage = '';
