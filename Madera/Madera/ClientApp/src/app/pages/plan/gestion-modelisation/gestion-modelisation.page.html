@@ -7,12 +7,22 @@
             <ion-grid>
               <div class="col-text-titre"> 
               <ion-row>
-                <ion-col text-center size="3">Libelle</ion-col>
-                <ion-col text-center size="3">Quatité</ion-col>
-                <ion-col text-center size="3">Sélection</ion-col>
+                <table>
+                  <tr>
+                    <th>Libelle </th>
+                    <th>Quantité</th>
+                    <th>Sélection</th>
+                  </tr>
+                  <tr *ngFor="let mod of (module$ | async);let i=index">
+                    <td>{{mod.libelleModule}}</td>
+                    <td><ion-input text-center size="3" type="number"  value="0" #quantite formControlName="quanti"></ion-input></td>
+                    <td><ion-checkbox [value]="mod.id" (ionChange)="onCheckboxChange($event, quantite.value)" style="text-align: center; vertical-align: middle;"></ion-checkbox></td>
+                  </tr>
+                  
+                </table>
               </ion-row>
               </div>
-              <div class="col-text">
+              <!--<div class="col-text">
               <ion-row *ngFor="let mod of (module$ | async);let i=index">
                 <ion-col class="ion-justify-content-start">
                   <ion-label text-center  size="3">{{mod.libelleModule}}</ion-label>
@@ -20,14 +30,14 @@
                 <ion-col>
                   <ion-input text-center size="3" type="number"  value="0" #quantite formControlName="quanti"></ion-input>                
                 </ion-col>
-                <!-- <ion-col>
+                 <ion-col>
                   <ion-label text-centersize="3" >{{compo.caractComposant}}</ion-label>
-                </ion-col> -->
+                </ion-col> 
                 <ion-col class="ion-justify-content-end" size="3">
                   <ion-checkbox [value]="mod.id" (ionChange)="onCheckboxChange($event, quantite.value)"></ion-checkbox>
                 </ion-col>
               </ion-row>
-              </div>
+              </div>-->
             </ion-grid>
           </ion-card-content>
       </ion-card>
