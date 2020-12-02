@@ -19,6 +19,10 @@ export class ApiService {
     return this.httpClient.put<T>(url, body, { headers: this.getHeaders() } );
   }
 
+  public patch<T>(url: string, body: string): Observable<T> {
+    return this.httpClient.patch<T>(url, body, { headers: this.getHeaders() } );
+  }
+
   public get<T>(url: string, parameters: { key: string; value: any }[] ): Observable<T> {
     let httpParameters: HttpParams;
     if (parameters != null) {
@@ -40,9 +44,9 @@ export class ApiService {
     let headers = new HttpHeaders();
     // headers = headers.set('Access-Control-Allow-Origin', window.location.origin);
     headers = headers.set('Content-Type', 'application/json');
-    // if (localStorage.getItem('token') !== null) {
-    //   headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    // }
+    if (localStorage.getItem('token') !== null) {
+      headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    }
     return headers;
   }
 

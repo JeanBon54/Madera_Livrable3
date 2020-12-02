@@ -56,7 +56,7 @@ export class ClientWebServiceService extends ApiService {
   }
 
   updateClient(client): Observable<Client> {
-    return this.put<Client>(this.clientUrl, JSON.stringify(client))
+    return this.post<Client>(this.clientUrl + 'edit', JSON.stringify(client))
     .pipe(
       retry(1),
       catchError(this.errorHandler)

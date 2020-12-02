@@ -34,6 +34,8 @@ namespace Madera
         {
             //Jwt Authentication
 
+            services.AddCors();
+
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:Jwt_Secret"]);
 
             services.AddAuthentication("BasicAuthentication")
@@ -65,7 +67,6 @@ namespace Madera
                  };
              });*/
 
-            services.AddCors();
 
             //injection de AppDbContext
             services.AddDbContext<AppDbContext>(options =>
