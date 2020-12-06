@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Madera.Models
 {
-    public class User
+    public class AuthenticateRequest
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [Required]
         public string Username { get; set; }
+
+        [Required]
         public string Password { get; set; }
     }
 }

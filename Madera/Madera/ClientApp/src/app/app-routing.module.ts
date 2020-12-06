@@ -9,20 +9,24 @@ import { GestionProjetPage } from './pages/projet/gestion-projet/gestion-projet.
 const routerConfig: Routes = [
   {
     path: 'connexion',
-    component: ConnexionPage
+   // component: ConnexionPage
+    loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
+
   },
   {
     path: '',
-    component: MenuPrincipalPage
+    //component: MenuPrincipalPage
+    loadChildren: () => import('./pages/menu/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
   },
   {
     path: 'menu-principal',
-    component: MenuPrincipalPage
+    // component: MenuPrincipalPage
+    loadChildren: () => import('./pages/menu/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
   },
   {
     path: 'connexion',
-    component: ConnexionPage
-   // loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
+   // component: ConnexionPage
+    loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
     path: 'recherche-projet',

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpInterceptorService implements HttpInterceptor {
+export class LoginInterceptor implements HttpInterceptor {
 
   constructor(private router: Router) { }
 
@@ -33,6 +33,5 @@ export class HttpInterceptorService implements HttpInterceptor {
         return throwError(error);
       }
     }));
- }
-
+  }
 }

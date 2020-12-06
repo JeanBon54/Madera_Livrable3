@@ -10,6 +10,7 @@ using Madera.Models;
 namespace Madera.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class ProjetPlansController : ControllerBase
     {

@@ -8,15 +8,15 @@ namespace Madera._Helpers
 {
     public static class ExtensionMethods
     {
-        public static IEnumerable<User> WithoutPasswords(this IEnumerable<User> users)
+        public static IEnumerable<Commercial> WithoutPasswords(this IEnumerable<Commercial> commercials)
         {
-            return users.Select(x => x.WithoutPassword());
+            return commercials.Select(x => x.WithoutPassword());
         }
 
-        public static User WithoutPassword(this User user)
+        public static Commercial WithoutPassword(this Commercial commercials)
         {
-            user.Password = null;
-            return user;
+            commercials.MdpCommercial = null;
+            return commercials;
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Madera.Models;
 using Madera.Models.Search;
+using Madera._Services;
 
 namespace Madera.Controllers
 {
@@ -15,20 +16,40 @@ namespace Madera.Controllers
     public class CommercialsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private IUserService _userService;
 
-        public CommercialsController(AppDbContext context)
+        public CommercialsController(AppDbContext context, IUserService userService)
         {
             _context = context;
+            _userService = userService;
+        }
+
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate(AuthenticateRequest model)
+        {
+            var response = _userService.Authenticate(model);
+
+            if (response == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(response);
         }
 
         // GET: api/Commercials
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SearchingCommercial>>> GetCommercials()
         {
             return await _context.Commercials.Select(p => new SearchingCommercial(p)).ToListAsync();
         }
 
+        public async Task<ActionResult<IEnumerable<Commercial>>> GetLoginCommercials()
+        {
+            return await _context.Commercials.ToListAsync();
+        }
+
         // GET: api/Commercials/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<SearchingCommercial>> GetCommercial(int id)
         {
@@ -44,6 +65,7 @@ namespace Madera.Controllers
 
 
         // GET: api/Projets/5
+        [Authorize]
         [HttpPost("search")]
         public async Task<List<SearchingCommercial>> GetListeCommercial([FromBody] SearchCommercial search)
         {

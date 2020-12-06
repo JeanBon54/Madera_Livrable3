@@ -43,27 +43,27 @@ namespace Madera._Helpers
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            User user = null;
+            Commercial commercial = null;
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
                 var credentialBytes = Convert.FromBase64String(authHeader.Parameter);
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
-                var username = credentials[0];
-                var password = credentials[1];
-                user = await _userService.Authenticate(username, password);
+                var emailCommercial = credentials[0];
+                var mdpCommercial = credentials[1];
+
             }
             catch
             {
                 return AuthenticateResult.Fail("Invalid Authorization Header");
             }
 
-            if (user == null)
+            if (commercial == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
 
             var claims = new[] {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.NameIdentifier, commercial.ID.ToString()),
+                new Claim(ClaimTypes.Name, commercial.EmailCommercial),
             };
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);

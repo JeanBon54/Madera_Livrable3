@@ -36,9 +36,9 @@ export class ApiService {
     let headers = new HttpHeaders();
     // headers = headers.set('Access-Control-Allow-Origin', window.location.origin);
     headers = headers.set('Content-Type', 'application/json');
-    // if (localStorage.getItem('token') !== null) {
-    //   headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
-    // }
+    if (localStorage.getItem('token') !== null) {
+      headers = headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    }
     return headers;
   }
 

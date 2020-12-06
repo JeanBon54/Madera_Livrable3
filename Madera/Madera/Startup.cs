@@ -34,48 +34,19 @@ namespace Madera
         {
             //Jwt Authentication
 
-            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:Jwt_Secret"]);
-
-            services.AddAuthentication("BasicAuthentication")
-                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
 
-            /* services.AddAuthentication(opt =>
-             {
-                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                 opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-             })
-             .AddJwtBearer(options =>
-             {
-                 options.RequireHttpsMetadata = false;
-                 options.SaveToken = false;
-                 options.TokenValidationParameters = new TokenValidationParameters
-                 {
-                     ValidateIssuer = true,
-                     ValidateAudience = true,
-                     ValidateLifetime = true,
-                     ValidateIssuerSigningKey = true,
-
-                     ValidIssuer = " https://localhost:5001",
-                     ValidAudience = "https://localhost:5001",
-                     IssuerSigningKey = new SymmetricSecurityKey(key)
-                 };
-             });*/
-
             services.AddCors();
 
             //injection de AppDbContext
-            services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")), ServiceLifetime.Scoped
-
+            services.AddDbContext<AppDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultContext")), ServiceLifetime.Scoped
             );
 
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
-
-
 
             services.AddControllersWithViews()
                     .AddNewtonsoftJson(options =>
@@ -114,8 +85,11 @@ namespace Madera
 
             app.UseRouting();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseMiddleware<JwtMiddleware>();
+
             app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

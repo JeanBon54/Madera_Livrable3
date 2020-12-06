@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup,ReactiveFormsModule, FormControl,FormArray,Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs/operators';
+import {ConnexionService} from '../../WebServices/connexion.service'
 
 
 @Component({
@@ -7,57 +11,74 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.page.scss', './../../app.component.scss'],
 })
 export class ConnexionPage implements OnInit {
-  // loginForm: FormGroup;
-  // loading = false;
-  // submitted = false;
-  // returnUrl: string;
-  // error = '';
+  infos = {
+    result: null,
+    id: null
+  }
+  form: FormGroup;
+  loading = false;
+  identifiant : any;
+  submitted = false;
+  returnUrl: string;
+  error = '';
 
   constructor(
-  //   private formBuilder: FormBuilder,
-  //   private route: ActivatedRoute,
-  //   private router: Router,
-  //   private authenticationService: AuthenticationService
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private ConnexionService: ConnexionService
 
   ) {
-  //   if (this.authenticationService.userValue) {
-  //     this.router.navigate(['/']);
-  //   }
+    if (this.ConnexionService.userValue) {
+      this.router.navigate(['/']);
+    }
+
+    this.form = this.formBuilder.group({
+      identifiant: ['', Validators.required],
+      motDePasse: ['', Validators.required]
+    })
+
+    
   }
 
   ngOnInit() {
-    // this.loginForm = this.formBuilder.group({
-    //   username: ['', Validators.required],
-    //   password: ['', Validators.required]
-    };
+this.form.controls['identifiant']
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+  }
 
-  //   // get return url from route parameters or default to '/'
-  //   this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  // }
+  // convenience getter for easy access to form fields
+  get f() { return this.form.controls; }
 
-  // // convenience getter for easy access to form fields
-  // get f() { return this.loginForm.controls; }
+  login() {
+    this.submitted = true;
 
-  // onSubmit() {
-  //   this.submitted = true;
 
-  //   // stop here if form is invalid
-  //   if (this.loginForm.invalid) {
-  //     return;
-  //   }
+    const identifiants = {
+      
+       username : this.form.value.identifiant,
+       password: this.form.get("motDePasse").value
 
-  //   this.loading = true;
-  //   this.authenticationService.login(this.f.username.value, this.f.password.value)
-  //     .pipe(first())
-  //     .subscribe({
-  //       next: () => {
-  //         this.router.navigate([this.returnUrl]);
-  //       },
-  //       error: error => {
-  //         this.error = error;
-  //         this.loading = false;
-  //       }
-  //     });
-  // }
+    }
+    const identifiantsString = JSON.stringify(identifiants);
+    this.loading = true;
+    console.log(identifiantsString);
+    this.ConnexionService.authenticate(identifiantsString)
+      .pipe(first())
+      .subscribe({
+        next: (log) => {
+          this.infos.result = log.result;
+          if(this.infos.result != undefined) {
+            localStorage.setItem('token', this.infos.result.token);
+            localStorage.setItem('id', this.infos.result.id);
+            this.router.navigate(['menu-principal']);
+          }
+        },
+        error: error => {
+          this.error = error;
+          this.loading = false;
+        }
+      });
+  }
 
 }

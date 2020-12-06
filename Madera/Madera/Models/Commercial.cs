@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,6 +16,7 @@ namespace Madera.Models
         public string NomCommercial { get; set; }
         public string PrenomCommercial { get; set; }
         public string EmailCommercial { get; set; }
+        [JsonIgnore]
         public string MdpCommercial { get; set; }
         public int IdUtilisateurCreation { get; set; }
         public DateTime DateCreation { get; set; }

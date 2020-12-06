@@ -32,7 +32,6 @@ export class CommercialWebService extends ApiService {
   getCommercialID(commercialId: number): Observable<SearchingCommercial> {
     return this.get<SearchingCommercial>(this.commercialUrl, [{key: 'id', value: commercialId.toString()}] )
       .pipe(
-        tap(resp => console.log(resp)),
         retry(1),
         catchError(this.errorHandler)
       );

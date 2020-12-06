@@ -4,38 +4,79 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Madera.Controllers;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Security.Claims;
 
 namespace Madera._Services
 {
     public interface IUserService
     {
-        Task<User> Authenticate(string username, string password);
-        Task<IEnumerable<User>> GetAll();
+        Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
+        IEnumerable<Commercial> GetAll();
+        Commercial GetById(int id);
     }
+
 
     public class UserService : IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User> _users = new List<User>
+        private readonly AppDbContext _context;
+        private readonly AppSettings _appSettings;
+        private List<Commercial> _commercials;
+
+        public UserService(AppDbContext context, IOptions<AppSettings> appSettings)
         {
-            new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
-        };
-
-        public async Task<User> Authenticate(string username, string password)
-        {
-            var user = await Task.Run(() => _users.SingleOrDefault(x => x.Username == username && x.Password == password));
-
-            // return null if user not found
-            if (user == null)
-                return null;
-
-            // authentication successful so return user details without password
-            return user.WithoutPassword();
+            _context = context;
+            _appSettings = appSettings.Value;
         }
 
-        public Task<IEnumerable<User>> GetAll()
+        public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
-            throw new NotImplementedException();
+            List<Commercial> commercials = await _context.Commercials.ToListAsync();
+            _commercials = commercials;
+            var commercial = _commercials.SingleOrDefault(x => x.EmailCommercial == model.Username && x.MdpCommercial == model.Password);
+
+            // return null if user not found
+            if (commercial == null) return null;
+
+            // authentication successful so generate jwt token
+            var token = generateJwtToken(commercial);
+
+            return new AuthenticateResponse(commercial, token);
+        }
+
+        public IEnumerable<Commercial> GetAll()
+        {
+
+            return _commercials;
+        }
+
+        public  Commercial GetById(int id)
+        {
+
+            return _commercials.FirstOrDefault(x => x.ID == id);
+        }
+
+        // helper methods
+
+        private string generateJwtToken(Commercial commercial)
+        {
+            // generate token that is valid for 7 days
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[] { new Claim("id", commercial.ID.ToString()) }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
+
