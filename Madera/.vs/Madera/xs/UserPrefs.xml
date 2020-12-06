@@ -1,19 +1,32 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ClientsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/ClientApp/src/app/pages/connexion/connexion.page.html">
     <Files>
-      <File FileName="Madera/Controllers/ClientsController.cs" Line="71" Column="1" />
-      <File FileName="Madera/Startup.cs" Line="112" Column="14" />
-      <File FileName="Madera/ClientApp/node_modules/selenium-webdriver/lib/test/data/Web.Config" Line="29" Column="35" />
-      <File FileName="Madera/Controllers/AuthController.cs" Line="18" Column="8" />
-      <File FileName="Madera/Controllers/CommercialsController.cs" Line="20" Column="7" />
+      <File FileName="Madera/Controllers/ClientsController.cs" Line="96" Column="44" />
+      <File FileName="Madera/Startup.cs" />
+      <File FileName="Madera/ClientApp/node_modules/selenium-webdriver/lib/test/data/Web.Config" />
+      <File FileName="Madera/Controllers/CommercialsController.cs" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.ts" Line="72" Column="53" />
+      <File FileName="Madera/_Services/UserService.cs" Line="73" Column="67" />
+      <File FileName="Madera/ClientApp/src/app/pages/connexion/connexion.page.html" Line="30" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Madera" expanded="True">
             <Node name="Madera" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="_Helpers" expanded="True" />
+              <Node name="_Services" expanded="True" />
+              <Node name="ClientApp" expanded="True">
+                <Node name="src" expanded="True">
+                  <Node name="app" expanded="True">
+                    <Node name="pages" expanded="True">
+                      <Node name="connexion" expanded="True">
+                        <Node name="connexion.page.html" selected="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
