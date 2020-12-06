@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
 import { CLientsPageRoutingModule } from './clients-routing.module';
@@ -13,9 +12,10 @@ import { CLientsPage } from './clients.page';
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     CLientsPageRoutingModule
   ],
   declarations: [CLientsPage]

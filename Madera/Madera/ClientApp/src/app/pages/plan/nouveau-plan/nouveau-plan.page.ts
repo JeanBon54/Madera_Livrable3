@@ -152,8 +152,9 @@ export class NouveauPlanPage implements OnInit {
         IdUtilisateurModification :1,
         DateModification :new Date(),
         DateArchivage :new Date(),
-        ListeIdModule: []
-  
+        ListeIdModule: [],
+        // quantite:[]
+
       };
 
       this.plService.saveplan(plan)

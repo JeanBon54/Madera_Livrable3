@@ -36,7 +36,9 @@ export class NouveauClientPage implements OnInit {
 
 
 
-  constructor(private clientService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router,private commercialService: CommercialWebService) {
+  constructor(private clientService: ClientWebServiceService, 
+    private formBuilder: FormBuilder,
+    private avRoute: ActivatedRoute, private router: Router,private commercialService: CommercialWebService) {
     
     const idParam = 'id';
     this.actionType = 'Add';

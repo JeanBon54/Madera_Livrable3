@@ -13,7 +13,17 @@ export class Plan {
     IdUtilisateurModification?:number;
     DateModification :Date;
     DateArchivage :Date;
-    ListeIdModule: number[];
+    ListeIdModule: SelectedQuantite[];
+  }
 
+  export class SelectedQuantite {
+
+    public constructor(id: number, quantite: number) {
+      this.id = id;
+      this.quantite = quantite;
+    }
+
+    id: number;
+    quantite: number;
   }
   

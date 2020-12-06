@@ -62,23 +62,18 @@ namespace Madera.Controllers
         // PUT: api/Clients/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutClient(int id, Client client)
+        [HttpPost("edit")]
+        public async Task<IActionResult> EditClient(Client client)
         {
-            if (id != client.ID)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(client).State = EntityState.Modified;
 
             try
-            {
+            {   
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(id))
+                if (!ClientExists(client.ID))
                 {
                     return NotFound();
                 }

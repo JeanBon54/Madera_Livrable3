@@ -120,11 +120,13 @@ namespace Madera.Controllers
 
             if (plan.ListeIdModule != null && plan.ListeIdModule.Count() > 0)
             {
-                newPlan.ModulePlan = @plan.ListeIdModule.Select(idPlan => new ModulePlan()
+                newPlan.ModulePlan = @plan.ListeIdModule.Select(pl => new ModulePlan()
                 {
                     PlanID = plan.ID,
-                    ModuleID = idPlan,
-                    
+                    ModuleID = pl.ID,
+                    quantite = pl.quantite
+
+
                 }).ToList();
 
                 newPlan.ModulePlan.ToList().ForEach(plan => _context.ModulePlans.Add(plan));
