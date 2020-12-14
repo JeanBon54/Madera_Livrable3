@@ -25,6 +25,7 @@ namespace Madera.Models
         public string AdressPlan { get; set; }
         public int CpPlan { get; set; }
         public string VillePlan { get; set; }
+        public int idProjetPlan { get; set; }
         public int IdUtilisateurCreation { get; set; }
         public DateTime DateCreation { get; set; }
         public int IdUtilisateurModification { get; set; }

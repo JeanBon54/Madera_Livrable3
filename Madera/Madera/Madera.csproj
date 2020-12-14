@@ -49,6 +49,8 @@
     <Content Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
     <None Include="**/*" />
+    <Compile Remove="Migrations\20201214153750_champsDegueuDevis.cs" />
+    <Compile Remove="Migrations\20201214153750_champsDegueuDevis.Designer.cs" />
     
     <Content Remove="Views\Projet\Create.cshtml" />
     <Content Remove="Views\Projet\Edit.cshtml" />

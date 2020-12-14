@@ -16,7 +16,7 @@ const routerConfig: Routes = [
   {
     path: '',
     //component: MenuPrincipalPage
-    loadChildren: () => import('./pages/menu/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
+    loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
     path: 'menu-principal',
