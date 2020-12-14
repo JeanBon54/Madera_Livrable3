@@ -12,6 +12,7 @@ using GrapeCity.Documents.Html;
 using Madera.Models;
 using Madera.Models.Search;
 using GrapeCity.Documents.Pdf;
+using System.Net;
 
 namespace Madera.Controllers
 {
@@ -168,6 +169,7 @@ namespace Madera.Controllers
             // opens the generated PDF file
             ProcessStartInfo psi = new ProcessStartInfo() { FileName = pdfPath, UseShellExecute = true };
             Process.Start(psi);
+
 
             if (devis == null)
             {
