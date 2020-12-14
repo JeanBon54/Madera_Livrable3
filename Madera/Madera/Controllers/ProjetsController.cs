@@ -12,7 +12,6 @@ using System;
 namespace Madera.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class ProjetsController : ControllerBase
     {

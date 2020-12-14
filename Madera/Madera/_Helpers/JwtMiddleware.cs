@@ -51,7 +51,7 @@ namespace Madera._Helpers
                 var commercialId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 // attach user to context on successful jwt validation
-                context.Items["tokenIsValid"] = (commercialId != null);
+                context.Items["Commercial"] = (commercialId != null);
             }
             catch(Exception ex)
             {

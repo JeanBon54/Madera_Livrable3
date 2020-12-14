@@ -36,7 +36,6 @@ namespace Madera.Controllers
         }
 
         // GET: api/Commercials
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SearchingCommercial>>> GetCommercials()
         {
@@ -49,7 +48,6 @@ namespace Madera.Controllers
         }
 
         // GET: api/Commercials/5
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<SearchingCommercial>> GetCommercial(int id)
         {
@@ -65,7 +63,7 @@ namespace Madera.Controllers
 
 
         // GET: api/Projets/5
-        [Authorize]
+        
         [HttpPost("search")]
         public async Task<List<SearchingCommercial>> GetListeCommercial([FromBody] SearchCommercial search)
         {

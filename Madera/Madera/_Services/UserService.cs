@@ -18,7 +18,7 @@ namespace Madera._Services
     {
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
         IEnumerable<Commercial> GetAll();
-        Commercial GetById(int id);
+        Task<Commercial> GetByIdAsync(int id);
     }
 
 
@@ -55,10 +55,13 @@ namespace Madera._Services
             return _commercials;
         }
 
-        public  Commercial GetById(int id)
+        public async Task<Commercial> GetByIdAsync(int id)
         {
+            List<Commercial> commercials = await _context.Commercials.ToListAsync();
+            _commercials = commercials;
+            var commercial = _commercials.SingleOrDefault(x => x.ID == id);
 
-            return _commercials.FirstOrDefault(x => x.ID == id);
+            return commercial;
         }
 
         // helper methods

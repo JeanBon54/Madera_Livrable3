@@ -11,7 +11,6 @@ using Madera.Models.Search;
 namespace Madera.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class ClientsController : ControllerBase
     {

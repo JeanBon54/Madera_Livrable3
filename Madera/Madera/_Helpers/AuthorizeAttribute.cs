@@ -9,8 +9,8 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
 {
     public void OnAuthorization(AuthorizationFilterContext context)
     {
-        var tokenValid = context.HttpContext.Items["tokenIsValid"] != null ? (bool)context.HttpContext.Items["tokenIsValid"] : false;
-        if (!tokenValid)
+        var commercial = (Commercial)context.HttpContext.Items["Commercial"];
+        if (commercial == null)
         {
             // not logged in
             context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };

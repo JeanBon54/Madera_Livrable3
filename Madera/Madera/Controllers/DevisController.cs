@@ -16,7 +16,6 @@ using GrapeCity.Documents.Pdf;
 namespace Madera.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class DevisController : ControllerBase
     {
