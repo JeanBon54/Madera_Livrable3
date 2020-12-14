@@ -1,6 +1,6 @@
 import { ChangeDetectorRef,Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl,FormArray,Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 
@@ -50,7 +50,7 @@ export class NouveauPlanPage implements OnInit {
 
   constructor(private pService: ProjetWebService,
     private cd: ChangeDetectorRef,
-    private plService: PlanService, 
+    private plService: PlanService,
     private cpService: CoupePrincipaleWebServiceService,
     private plancherService: PlancherWebServiceService,
     private couvService: CouvertureWebServiceService,
@@ -93,16 +93,16 @@ export class NouveauPlanPage implements OnInit {
           this.form.controls[this.ville].setValue(data.VillePlan),
           this.form.controls[this.cp].setValue(data.CpPlan),
           this.form.controls[this.cpId].setValue(data.CoupePrincipaleID),
-           this.form.controls[this.plancherId].setValue(data.PlancherID),
+          this.form.controls[this.plancherId].setValue(data.PlancherID),
           this.form.controls[this.couvertureId].setValue(data.CouvertureID)
 
         ));
      }
     this.loadCP();
-    this.loadPlancher() 
+    this.loadPlancher()
     this.loadPlans();
     this.loadCouverture();
-   // this.loadGamme() 
+   // this.loadGamme()
   }
 
 
@@ -147,9 +147,9 @@ export class NouveauPlanPage implements OnInit {
         AdressPlan: this.form.value.adresse,
         CpPlan: this.form.value.cp,
         VillePlan: this.form.value.ville,
-        IdUtilisateurCreation :1,
+        IdUtilisateurCreation :3003,
         DateCreation :new Date(),
-        IdUtilisateurModification :1,
+        IdUtilisateurModification :3003,
         DateModification :new Date(),
         DateArchivage :new Date(),
         ListeIdModule: [],
@@ -164,6 +164,6 @@ export class NouveauPlanPage implements OnInit {
     }
   }
 
-  
+
 
 }
