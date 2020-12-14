@@ -47,7 +47,6 @@ namespace Madera.Controllers
             return devis;
         }
 
-
         // GET: api/Projets/5
         [HttpPost("search")]
         public async Task<List<SearchingDevis>> GetListeDevis([FromBody] SearchDevis search)
