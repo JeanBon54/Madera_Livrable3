@@ -67,9 +67,10 @@ this.form.controls['identifiant']
       .pipe(first())
       .subscribe({
         next: (log) => {
-          if (log != undefined) {
-            localStorage.setItem('token', log.result.token);
-            localStorage.setItem('id', log.result.id);
+          const newObj: any = log;
+          if (newObj.result != null) {
+            localStorage.setItem('token', newObj.result.token);
+            localStorage.setItem('id', newObj.result.id);
             this.router.navigate(['menu-principal']);
           }
         },

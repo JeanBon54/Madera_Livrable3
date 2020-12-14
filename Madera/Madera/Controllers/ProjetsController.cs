@@ -65,10 +65,7 @@ namespace Madera.Controllers
         [HttpPost("remarque")]
         public async Task<IActionResult> EditRemarque([FromBody] EditRemarque editRemarque) {
             var projet = await _context.Projets.Where(p => p.ID == editRemarque.id).FirstOrDefaultAsync();
-            if (projet == null) return NotFound($"L'identifiant {editRemarque.id} ne correspond à aucun projet.");
 
-
-            projet.LibelleRemarque = editRemarque.remarque;
             await _context.SaveChangesAsync();
 
             return Ok();
