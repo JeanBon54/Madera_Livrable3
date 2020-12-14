@@ -97,6 +97,11 @@ namespace Madera.Controllers
             return CreatedAtAction("GetClient", new { id = client.ID }, client);
         }
 
+
+
+
+
+
         // DELETE: api/Clients/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Client>> DeleteClient(int id)
