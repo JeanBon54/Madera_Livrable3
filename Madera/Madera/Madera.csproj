@@ -5,7 +5,6 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
-    <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
 
     <!-- Set this to true if you enable server-side prerendering -->
@@ -33,17 +32,17 @@
     <None Include="$(SpaRoot)**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\pages\parametrage\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-commercial\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-composant\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-famille-composant\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-gamme\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\recherche-module\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-commercial\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-composant\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\nouveau-module\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-famille-composant\" />
-    <Folder Include="ClientApp\src\app\pages\parametrage\nouvelle-gamme\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\recherche-commercial\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\recherche-composant\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\recherche-famille-composant\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\recherche-gamme\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\recherche-module\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\nouveau-commercial\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\nouveau-composant\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\nouveau-module\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\nouvelle-famille-composant\" />
+    <Folder Include="..\..\ClientApp\src\app\pages\parametrage\nouvelle-gamme\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\devisController.cs" />
