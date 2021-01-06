@@ -55,9 +55,23 @@ namespace Madera.Models
             this.EmailClient = client.EmailClient;
             this.DateCreation = client.DateCreation;
             this.DateModification = client.DateModification;
-
-
         }
+
+    }
+
+    public class RechercheClient 
+    {
+        public int ID { get; set; }
+        public string NomClient { get; set; }
+        public string PrenomClient { get; set; }
+        public DateTime DateNaissanceClient { get; set; }
+        public string AdresseClient { get; set; }
+        public string VilleClient { get; set; }
+        public int CpClient { get; set; }  
+        public int Telephone { get; set; }  
+        public string EmailClient { get; set; }
+        public int IdUtilisateurCreation { get; set; }
+
 
     }
 }

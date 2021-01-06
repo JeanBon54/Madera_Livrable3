@@ -23,13 +23,25 @@ namespace Madera.Controllers
 
         // GET: api/Clients
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SearchingClient>>> GetClients()
+        public async Task<ActionResult<IEnumerable<RechercheClient>>> GetClients()
         {
-            return await _context.Clients.Select(p => new SearchingClient(p)).ToListAsync();
+            return await _context.Clients.Select(p => new RechercheClient()
+            {
+                ID = p.ID,
+                NomClient = p.NomClient,
+                PrenomClient = p.PrenomClient,
+                DateNaissanceClient = p.DateNaissanceClient,
+                AdresseClient = p.AdresseClient,
+                VilleClient = p.VilleClient,
+                CpClient = p.CpClient,
+                Telephone = p.Telephone,
+                EmailClient = p.EmailClient,
+                IdUtilisateurCreation = p.IdUtilisateurCreation
+            }).ToListAsync();
         }
 
-        // GET: api/Clients/5
-        [HttpGet("{id}")]
+            // GET: api/Clients/5
+            [HttpGet("{id}")]
         public async Task<ActionResult<Client>> GetClient(int id)
         {
             var client = await _context.Clients.FindAsync(id);

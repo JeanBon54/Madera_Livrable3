@@ -79,6 +79,8 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
+        public virtual Client client { get; set; }
+        public virtual Commercial commercial { get; set; }
     }
 
 }

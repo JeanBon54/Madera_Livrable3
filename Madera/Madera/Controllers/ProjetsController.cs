@@ -39,7 +39,9 @@ namespace Madera.Controllers
                 LibelleRemarque = p.LibelleRemarque,
                 IdUtilisateurModification = p.IdUtilisateurModification,
                 DateModification = p.DateModification,
-                DateArchivage = p.DateArchivage
+                DateArchivage = p.DateArchivage,
+                client = p.client,
+                commercial = p.commercial
             }).ToListAsync();
         }
         // GET: api/Projets/5
