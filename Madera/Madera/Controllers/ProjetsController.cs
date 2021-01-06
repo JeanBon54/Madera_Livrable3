@@ -24,11 +24,24 @@ namespace Madera.Controllers
 
         // GET: api/Projets
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Projet>>> GetProjets()
+        public async Task<ActionResult<IEnumerable<rechercheProjet>>> GetCommandes()
         {
-            return await _context.Projets.ToListAsync();
+            return await _context.Projets.Select(p => new rechercheProjet()
+            {
+                ID = p.ID,
+                CommercialID = p.CommercialID,
+                ClientID = p.ClientID,
+                LibelleProjet = p.LibelleProjet,
+                LibelleNom = p.LibelleNom,
+                DateDebutProjet = p.DateDebutProjet,
+                IdUtilisateurCreation = p.IdUtilisateurCreation,
+                DateCreation = p.DateCreation,
+                LibelleRemarque = p.LibelleRemarque,
+                IdUtilisateurModification = p.IdUtilisateurModification,
+                DateModification = p.DateModification,
+                DateArchivage = p.DateArchivage
+            }).ToListAsync();
         }
-
         // GET: api/Projets/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Projet>> GetProjet(int id)
