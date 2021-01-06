@@ -56,4 +56,16 @@ namespace Madera.Models
         public IEnumerable<int> ListeIdComposant { get; set; }
     }
 
+
+    public class RechercheModule
+    {
+        public int ID { get; set; }
+        public string LibelleModule { get; set; }
+
+        public decimal DebutPointX { get; set; }
+        public decimal FinPointX { get; set; }
+        public decimal DdebutPointY { get; set; }
+        public decimal FinPointY { get; set; }
+    }
+
 }

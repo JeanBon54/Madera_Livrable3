@@ -27,9 +27,18 @@ namespace Madera.Controllers
         //    return await _context.Modules.Select(p => new SearchingModule(p)).ToListAsync();
         //}
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Module>>> GetClients()
+        public async Task<ActionResult<IEnumerable<RechercheModule>>> GetClients()
         {
-            return await _context.Modules.ToListAsync();
+            return await _context.Modules.Select(p => new RechercheModule()
+            {
+                ID = p.ID,
+                LibelleModule = p.LibelleModule,
+                DebutPointX = p.DebutPointX,
+                FinPointX = p.FinPointX,
+                DdebutPointY = p.DdebutPointY,
+                FinPointY = p.FinPointY
+      
+            }).ToListAsync();
         }
 
         // GET: api/Modules/5

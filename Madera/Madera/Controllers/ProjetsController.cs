@@ -41,7 +41,7 @@ namespace Madera.Controllers
                 DateModification = p.DateModification,
                 DateArchivage = p.DateArchivage,
                 client = p.client,
-                commercial = p.commercial
+               // commercial = p.commercial
             }).ToListAsync();
         }
         // GET: api/Projets/5

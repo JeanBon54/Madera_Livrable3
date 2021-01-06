@@ -80,7 +80,7 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime? DateArchivage { get; set; }
         public virtual Client client { get; set; }
-        public virtual Commercial commercial { get; set; }
+       // public virtual Commercial commercial { get; set; }
     }
 
 }
