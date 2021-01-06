@@ -40,4 +40,22 @@ namespace Madera.Models
         }
 
     }
+
+    public class RechercheCommercial
+    {
+        public int ID { get; set; }
+        public string NomCommercial { get; set; }
+        public string PrenomCommercial { get; set; }
+        public string EmailCommercial { get; set; }
+
+        public string MdpCommercial { get; set; }
+        public int IdUtilisateurCreation { get; set; }
+        public DateTime DateCreation { get; set; }
+        public int IdUtilisateurModification { get; set; }
+        public DateTime DateModification { get; set; }
+        public DateTime? DateArchivage { get; set; }
+
+    }
+
+
 }

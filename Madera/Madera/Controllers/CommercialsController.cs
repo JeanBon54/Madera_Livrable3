@@ -37,9 +37,21 @@ namespace Madera.Controllers
 
         // GET: api/Commercials
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SearchingCommercial>>> GetCommercials()
+        public async Task<ActionResult<IEnumerable<RechercheCommercial>>> GetCommandes()
         {
-            return await _context.Commercials.Select(p => new SearchingCommercial(p)).ToListAsync();
+            return await _context.Commercials.Select(c => new RechercheCommercial()
+            {
+                ID = c.ID,
+                NomCommercial = c.NomCommercial,
+                PrenomCommercial = c.PrenomCommercial,
+                EmailCommercial = c.EmailCommercial,
+                MdpCommercial = c.MdpCommercial,
+                IdUtilisateurCreation = c.IdUtilisateurCreation,
+                DateCreation = c.DateCreation,
+                IdUtilisateurModification = c.IdUtilisateurModification,
+                DateModification = c.DateModification,
+                DateArchivage = c.DateArchivage
+            }).ToListAsync();
         }
 
         public async Task<ActionResult<IEnumerable<Commercial>>> GetLoginCommercials()
