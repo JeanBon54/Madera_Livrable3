@@ -36,6 +36,14 @@ export class PlanService extends ApiService {
       );
   }
 
+  getPlanss(planId: number): Observable<Plan[]> {
+    return this.getById<Plan[]>(this.planUrl + 'projet/', planId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
   searchPlans<T>(search: string): Observable<T> {
     return this.post<T>(this.planUrl + 'search', search)
       .pipe(

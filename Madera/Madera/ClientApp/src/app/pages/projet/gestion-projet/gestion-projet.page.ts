@@ -10,6 +10,8 @@ import { Projet } from './../../../models/Projet';
 import { tap } from 'rxjs/operators';
 import { Devis } from './../../../models/Devis';
 import { Client } from '../../../models/Client';
+import { Plan } from 'src/app/models/Plan';
+import { PlanService } from 'src/app/WebServices/plan-webservice.service';
 
 
 @Component({
@@ -23,6 +25,7 @@ export class GestionProjetPage implements OnInit, OnDestroy {
   client$: Observable<Client>;
   //projet$: Observable<Projet>;
   devis$: Observable<Devis[]>;
+  plans$: Observable<Plan[]>;
   projetId: number;
   remarque = '';
 
@@ -31,7 +34,8 @@ export class GestionProjetPage implements OnInit, OnDestroy {
     private dService: DevisService,
     private cService: ClientWebServiceService,
     private avRoute: ActivatedRoute,  
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private plService: PlanService) {
     const idParam = 'id';
     if (this.avRoute.snapshot.params[idParam]) {
       this.projetId = this.avRoute.snapshot.params[idParam];
@@ -43,21 +47,9 @@ export class GestionProjetPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loadProjetID();
-    // this.loadProjet();
-    this.loadDevis();
+
     
   }
-
-  //  loadProjet() {
-  //    this.subscription.push(
-  //      this.pService.getProjet(this.projetId).pipe(
-  //        tap(projet => {
-  //          this.projet$ = projet;
-  //          this.remarque = this.projet$.libelleRemarque;
-  //        })
-  //      ).subscribe()
-  //    ) 
-  //  }
 
    loadProjetID() {
     var newObj: any;
@@ -66,14 +58,20 @@ export class GestionProjetPage implements OnInit, OnDestroy {
          tap(projet => {
            newObj = projet;
            this.loadClient(newObj.clientID);
+           //this.loadDevis(newObj.id);
+           this.loadPlan(newObj.id);
            this.projet$ = projet;
          })
      ).subscribe()
      )
    }
 
-  loadDevis() {
-    // this.devis$ = this.dService.getDeviss();
+  loadDevis(id) {
+    this.devis$ = this.dService.getDevisProjet(id);
+  }
+
+  loadPlan(id) {
+    this.plans$ = this.plService.getPlanss(id);
   }
 
   loadClient(id) {
