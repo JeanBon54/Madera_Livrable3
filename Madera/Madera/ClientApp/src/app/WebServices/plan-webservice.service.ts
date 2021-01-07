@@ -12,6 +12,8 @@ import { ApiService } from 'src/Shared/api.service';
 export class PlanService extends ApiService {
 
   planUrl = environment.appUrl + 'api/Plans/';
+  planNewUrl = environment.appUrl + 'api/Plans/save/';
+  projetPlanNewUrl = environment.appUrl + 'api/ProjetPlans/save';
 
   constructor(private http: HttpClient) {
     super(http);
@@ -44,6 +46,22 @@ export class PlanService extends ApiService {
 
   saveplan(plan): Observable<Plan> {
     return this.post<Plan>(this.planUrl, JSON.stringify(plan))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+  postplan(plan): Observable<Plan> {
+    return this.post<Plan>(this.planNewUrl, JSON.stringify(plan))
+    .pipe(
+      retry(1),
+      catchError(this.errorHandler)
+    );
+  }
+
+  postProjetPlan(plan): Observable<Plan> {
+    return this.post<Plan>(this.projetPlanNewUrl, JSON.stringify(plan))
     .pipe(
       retry(1),
       catchError(this.errorHandler)

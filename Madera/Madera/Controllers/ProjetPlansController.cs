@@ -72,29 +72,13 @@ namespace Madera.Controllers
             return NoContent();
         }
 
-        // POST: api/ProjetPlans
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<ProjetPlan>> PostProjetPlan(ProjetPlan projetPlan)
+        [HttpPost("save")]
+        public async Task<ActionResult<ProjetPlan>> PostNewPlan(ProjetPlan ProjetPlan)
         {
-            _context.ProjetPlans.Add(projetPlan);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ProjetPlanExists(projetPlan.ProjetID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.ProjetPlans.Add(ProjetPlan);
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProjetPlan", new { id = projetPlan.ProjetID }, projetPlan);
+            return Ok();
         }
 
         // DELETE: api/ProjetPlans/5

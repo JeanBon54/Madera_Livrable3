@@ -57,6 +57,11 @@ namespace Madera.Models
         public int quantite { get; set; }
     }
 
+    public class planExtended : Plan
+    {
+        public int ProjetID { get; set; }
+    }
+
 
 
 }

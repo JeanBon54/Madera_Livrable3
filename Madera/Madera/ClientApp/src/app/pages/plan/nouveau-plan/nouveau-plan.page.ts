@@ -5,18 +5,19 @@ import { Observable } from 'rxjs';
 
 
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
-import { Projet } from 'src/app/models/Projet';
-import { Plan } from 'src/app/models/Plan';
+import { Projet } from './../../../models/Projet';
+import { Plan } from './../../../models/Plan';
 
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 
-import { Plancher} from 'src/app/models/Plancher';
+import { Plancher} from './../../../models/Plancher';
 import { PlancherWebServiceService } from './../../../WebServices/plancher-web-service.service';
-import { coupePrincipale} from 'src/app/models/coupePrincipale';
+import { coupePrincipale} from './../../../models/coupePrincipale';
 import { CoupePrincipaleWebServiceService } from './../../../WebServices/coupe-principale-web-service.service';
-import { Couverture} from 'src/app/models/Couverture';
+import { Couverture} from './../../../models/Couverture';
 import { CouvertureWebServiceService } from './../../../WebServices/couverture-web-service.service';
-import { Gamme} from 'src/app/models/Gamme';
+import { Gamme} from './../../../models/Gamme';
+import { ProjetPlan} from './../../../models/ProjetsPlan';
 
 
 
@@ -28,7 +29,7 @@ import { Gamme} from 'src/app/models/Gamme';
 })
 export class NouveauPlanPage implements OnInit {
   form: FormGroup;
-  projet$: Observable<Projet[]>;
+  projet$: Observable<Projet>;
   plans$: Observable<Plan[]>;
   coupePrincipal$: Observable<coupePrincipale[]>;
   planchers$: Observable<Plancher[]>;
@@ -103,12 +104,17 @@ export class NouveauPlanPage implements OnInit {
     this.loadPlans();
     this.loadCouverture();
    // this.loadGamme()
+   console.log(this.postId);
   }
 
 
 
-  loadProjet() {
-    this.projet$ = this.pService.getProjets();
+ // loadProjet() {
+///    this.projet$ = this.pService.getProjets();
+ // }
+
+  loadProjetID() {
+    this.projet$ = this.pService.getProjet(this.projetId);
   }
 
   loadCP() {
@@ -153,15 +159,18 @@ export class NouveauPlanPage implements OnInit {
         DateModification :new Date(),
         DateArchivage :new Date(),
         ListeIdModule: [],
+        ProjetID : this.projetId
         // quantite:[]
-
       };
 
-      this.plService.saveplan(plan)
+      
+      this.plService.postplan(plan)
         .subscribe((data) => {
-          this.router.navigate(['api/gestion-plan/', data.id]);
+          this.router.navigate(['/gestion-plan/', data.id]);
         });
     }
+
+
   }
 
 
