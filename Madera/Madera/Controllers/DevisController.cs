@@ -34,6 +34,30 @@ namespace Madera.Controllers
             return await _context.Devis.ToListAsync();
         }
 
+        // GET: api/Devis
+        [HttpGet("projet/{id}")]
+        public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevisProjet(int id)
+        {
+            var devis = _context.Devis.Select(p => new RechercheDevis()
+            {
+                ID = p.ID,
+                LibelleDevis = p.LibelleDevis,
+                EtatDevis = p.EtatDevis,
+                PrixTotalHtDevis = p.PrixTotalHtDevis,
+                PrixTotalTtcDevis = p.PrixTotalTtcDevis,
+                DateCreation = p.DateCreation,
+                DateModification = p.DateModification
+            }).Where(p => p.ProjetID == id);
+
+            if (devis == null)
+            {
+                return NotFound();
+            }
+
+             
+            return await devis.ToListAsync();
+        }
+
         // GET: api/Devis/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Devis>> GetDevis(int id)

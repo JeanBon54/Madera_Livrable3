@@ -95,12 +95,12 @@
               <ion-col size="1"></ion-col>
             </ion-row>
             <ion-row class="ion-align-items-center"  *ngFor="let devis of (devis$ | async)">
-              <ion-col size="2">
+              <ion-col size="5">
                 <ion-label center text-center>{{devis.libelleDevis}}</ion-label>
               </ion-col>
-              <ion-col size="3">
+              <!-- <ion-col size="3">
                 <ion-label center text-center>{{devis.plan.referencePlan}}</ion-label>
-              </ion-col>
+              </ion-col> -->
               <ion-col size="3">
                 <ion-label center text-center>{{devis.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
               </ion-col>

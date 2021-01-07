@@ -28,6 +28,7 @@ namespace Madera.Models
         public int IdUtilisateurModification { get; set; }
         public DateTime DateModification { get; set; }
         public DateTime DateArchivage { get; set; }
+        public int ProjetID { get; set; }
 
         public virtual Plan Plan { get; set; }
     }
@@ -49,5 +50,11 @@ namespace Madera.Models
         public int ID { get; set; }
         public string LibelleDevis { get; set; }
         public string EtatDevis { get; set; }
+        public decimal PrixTotalHtDevis { get; set; }
+        public decimal PrixTotalTtcDevis { get; set; }
+        public DateTime DateCreation { get; set; }
+        public DateTime DateModification { get; set; }
+
+        public int ProjetID { get; set; }
     }
 }

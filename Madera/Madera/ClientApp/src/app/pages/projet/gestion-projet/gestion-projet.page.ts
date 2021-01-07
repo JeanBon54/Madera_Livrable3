@@ -58,7 +58,7 @@ export class GestionProjetPage implements OnInit, OnDestroy {
          tap(projet => {
            newObj = projet;
            this.loadClient(newObj.clientID);
-           //this.loadDevis(newObj.id);
+           this.loadDevis(newObj.id);
            this.loadPlan(newObj.id);
            this.projet$ = projet;
          })

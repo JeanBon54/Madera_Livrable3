@@ -35,7 +35,7 @@ export class DevisService extends ApiService {
       );
   }
   getDevisProjet(devisId: number): Observable<Devis[]> {
-    return this.getById<Devis[]>(this.devisUrl, devisId.toString() )
+    return this.getById<Devis[]>(this.devisUrl + 'projet/', devisId.toString() )
       .pipe(
         retry(1),
         catchError(this.errorHandler)
