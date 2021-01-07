@@ -16,8 +16,8 @@ import { coupePrincipale} from './../../../models/coupePrincipale';
 import { CoupePrincipaleWebServiceService } from './../../../WebServices/coupe-principale-web-service.service';
 import { Couverture} from './../../../models/Couverture';
 import { CouvertureWebServiceService } from './../../../WebServices/couverture-web-service.service';
-import { Gamme} from './../../../models/Gamme';
-import { ProjetPlan} from './../../../models/ProjetsPlan';
+import { Gamme} from 'src/app/models/Gamme';
+
 
 
 

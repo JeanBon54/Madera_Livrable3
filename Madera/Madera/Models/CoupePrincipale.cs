@@ -23,4 +23,18 @@ namespace Madera.Models
         [ForeignKey("CoupePrincipaleID")]
         public virtual ICollection<Plan> plan { get; set; }
     }
+
+
+    public class RechercherCoupePrincipale
+    {
+
+        public int ID { get; set; }
+        public string LibelleCoupePrincipale { get; set; }
+
+        public decimal LongueurCoupePrincipale { get; set; }
+
+        public decimal LargeurCoupePrincipale { get; set; }
+
+
+    }
 }

@@ -22,11 +22,16 @@ namespace Madera.Controllers
 
         // GET: api/Planchers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Plancher>>> GetPlanchers()
+        public async Task<ActionResult<IEnumerable<RechercherPlancher>>> GetClients()
         {
-            return await _context.Planchers.ToListAsync();
-        }
+            return await _context.Planchers.Select(p => new RechercherPlancher()
+            {
+                ID = p.ID,
+                TypePlancher = p.TypePlancher,
+                PrixPlancher = p.PrixPlancher
 
+            }).ToListAsync();
+        }
         // GET: api/Planchers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Plancher>> GetPlancher(int id)

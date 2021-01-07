@@ -38,7 +38,7 @@ namespace Madera.Models
 
         public virtual Plancher plancher { get; set; }
         public virtual Couverture couverture { get; set; }
-        public virtual CoupePrincipale coupePrincipales { get; set; } 
+        public virtual CoupePrincipale coupePrincipales { get; set; }
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }
         public virtual ICollection<ProjetPlan> ProjetPlans { get; set; }
     }
@@ -52,7 +52,8 @@ namespace Madera.Models
         //public int quantite { get; set; }
     }
 
-    public class SelectedModule {
+    public class SelectedModule
+    {
         public int ID { get; set; }
         public int quantite { get; set; }
     }

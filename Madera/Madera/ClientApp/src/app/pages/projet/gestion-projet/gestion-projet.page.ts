@@ -17,7 +17,8 @@ import { Devis } from 'src/app/models/Devis';
 })
 export class GestionProjetPage implements OnInit, OnDestroy {
   subscription: Subscription[] = [];
-  projet$ = new Projet();
+  //projet$ = new Projet();
+  projet$: Observable<Projet>;
   devis$: Observable<Devis[]>;
   projetId: number;
   remarque = '';
@@ -37,7 +38,8 @@ export class GestionProjetPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadProjet();
+    this.loadProjetID();
+  //  this.loadProjet();
     this.loadDevis();
   }
 
@@ -45,11 +47,15 @@ export class GestionProjetPage implements OnInit, OnDestroy {
     this.subscription.push(
       this.pService.getProjet(this.projetId).pipe(
         tap(projet => {
-          this.projet$ = projet;
-          this.remarque = this.projet$.libelleRemarque;
+         // this.projet$ = projet;
+         // this.remarque = this.projet$.libelleRemarque;
         })
       ).subscribe()
     ) 
+  }
+
+  loadProjetID() {
+    this.projet$ = this.pService.getProjet(this.projetId);
   }
 
   loadDevis() {

@@ -19,4 +19,16 @@ namespace Madera.Models
         [ForeignKey("CouvertureID")]
         public virtual ICollection<Plan> plans { get; set; }
     }
+
+
+    public class RechercherCouverture
+    {
+
+        public int ID { get; set; }
+        public string TypeCouverture { get; set; }
+
+        public decimal PrixHtCouverture { get; set; }
+
+
+    }
 }

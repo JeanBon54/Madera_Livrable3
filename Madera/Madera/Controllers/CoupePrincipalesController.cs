@@ -22,9 +22,16 @@ namespace Madera.Controllers
 
         // GET: api/CoupePrincipales
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CoupePrincipale>>> GetCoupePrincipales()
+        public async Task<ActionResult<IEnumerable<RechercherCoupePrincipale>>> GetClients()
         {
-            return await _context.CoupePrincipales.ToListAsync();
+            return await _context.CoupePrincipales.Select(p => new RechercherCoupePrincipale()
+            {
+                ID = p.ID,
+                LibelleCoupePrincipale = p.LibelleCoupePrincipale,
+                LongueurCoupePrincipale = p.LongueurCoupePrincipale,
+                LargeurCoupePrincipale = p.LargeurCoupePrincipale
+
+            }).ToListAsync();
         }
 
         // GET: api/CoupePrincipales/5

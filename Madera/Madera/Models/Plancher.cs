@@ -20,4 +20,16 @@ namespace Madera.Models
         [ForeignKey("ID")]
         public ICollection<Plan> plans;
     }
+
+    public class RechercherPlancher
+    {
+
+        public int ID { get; set; }
+        public string TypePlancher { get; set; }
+
+        public decimal PrixPlancher { get; set; }
+
+    }
+
+
 }

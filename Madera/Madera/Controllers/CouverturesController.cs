@@ -22,9 +22,15 @@ namespace Madera.Controllers
 
         // GET: api/Couvertures
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Couverture>>> GetCouvertures()
+        public async Task<ActionResult<IEnumerable<RechercherCouverture>>> GetClients()
         {
-            return await _context.Couvertures.ToListAsync();
+            return await _context.Couvertures.Select(p => new RechercherCouverture()
+            {
+                ID = p.ID,
+                TypeCouverture = p.TypeCouverture,
+                PrixHtCouverture = p.PrixHtCouverture
+
+            }).ToListAsync();
         }
 
         // GET: api/Couvertures/5

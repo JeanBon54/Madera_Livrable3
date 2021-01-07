@@ -31,24 +31,7 @@ namespace Madera.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevis()
         {
-            return await _context.Devis.Select(p => new RechercheDevis()
-            {
-                ID = p.ID,
-                LibelleDevis = p.LibelleDevis,
-                EtatDevis = p.EtatDevis,
-                PlanID = p.PlanID,
-                DateDebutDevis = p.DateDebutDevis,
-                PrixTotalHtDevis = p.PrixTotalHtDevis,
-                PrixTotalTtcDevis = p.PrixTotalTtcDevis,
-                MargeCommercialDevis = p.MargeCommercialDevis,
-                MargeEntrepriseDevis = p.MargeEntrepriseDevis,
-                IdUtilisateurCreation = p.IdUtilisateurCreation,
-                DateCreation = p.DateCreation,
-                IdUtilisateurModification = p.IdUtilisateurModification,
-                DateModification = p.DateModification,
-                DateArchivage = p.DateArchivage,
-                Plan = p.Plan
-            }).ToListAsync();
+            return await _context.Devis.ToListAsync();
         }
 
         // GET: api/Devis/5
