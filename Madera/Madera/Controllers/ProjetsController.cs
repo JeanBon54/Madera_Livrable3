@@ -34,27 +34,33 @@ namespace Madera.Controllers
                 LibelleProjet = p.LibelleProjet,
                 LibelleNom = p.LibelleNom,
                 DateDebutProjet = p.DateDebutProjet,
-                IdUtilisateurCreation = p.IdUtilisateurCreation,
-                DateCreation = p.DateCreation,
                 LibelleRemarque = p.LibelleRemarque,
-                IdUtilisateurModification = p.IdUtilisateurModification,
-                DateModification = p.DateModification,
-                DateArchivage = p.DateArchivage,
-
+                DateModification = p.DateModification
             }).ToListAsync();
         }
         // GET: api/Projets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Projet>> GetProjet(int id)
+        public async Task<ActionResult<rechercheProjet>> GetProjet(int id)
         {
-            var projet = await _context.Projets.FindAsync(id);
+            var projet = _context.Projets.Select(p => new rechercheProjet()
+            {
+                ID = p.ID,
+                CommercialID = p.CommercialID,
+                ClientID = p.ClientID,
+                LibelleProjet = p.LibelleProjet,
+                LibelleNom = p.LibelleNom,
+                DateDebutProjet = p.DateDebutProjet,
+                LibelleRemarque = p.LibelleRemarque,
+                DateModification = p.DateModification
+            }).Where(p => p.ID == id);
 
             if (projet == null)
             {
                 return NotFound();
             }
 
-            return projet;
+            rechercheProjet rechercheProjet = await projet.FirstOrDefaultAsync();
+            return rechercheProjet;
         }
 
         // GET: api/Projets/5

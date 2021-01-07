@@ -5,9 +5,11 @@ import { Observable, Subscription } from 'rxjs';
 
 import { DevisService } from './../../../WebServices/devis-webservice.service';
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
-import { Projet } from 'src/app/models/Projet';
+import { ClientWebServiceService } from './../../../webServices/client-web-service.service';
+import { Projet } from './../../../models/Projet';
 import { tap } from 'rxjs/operators';
-import { Devis } from 'src/app/models/Devis';
+import { Devis } from './../../../models/Devis';
+import { Client } from '../../../models/Client';
 
 
 @Component({
@@ -18,6 +20,7 @@ import { Devis } from 'src/app/models/Devis';
 export class GestionProjetPage implements OnInit, OnDestroy {
   subscription: Subscription[] = [];
   projet$ = new Projet();
+  client$: Observable<Client>;
   //projet$: Observable<Projet>;
   devis$: Observable<Devis[]>;
   projetId: number;
@@ -26,6 +29,7 @@ export class GestionProjetPage implements OnInit, OnDestroy {
   constructor(
     private pService: ProjetWebService,
     private dService: DevisService,
+    private cService: ClientWebServiceService,
     private avRoute: ActivatedRoute,  
     private formBuilder: FormBuilder) {
     const idParam = 'id';
@@ -38,28 +42,44 @@ export class GestionProjetPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    //this.loadProjetID();
-    this.loadProjet();
+    this.loadProjetID();
+    // this.loadProjet();
     this.loadDevis();
+    
   }
 
-  loadProjet() {
-    this.subscription.push(
-      this.pService.getProjet(this.projetId).pipe(
-        tap(projet => {
-          this.projet$ = projet;
-         // this.remarque = this.projet$.libelleRemarque;
-        })
-      ).subscribe()
-    ) 
-  }
+  //  loadProjet() {
+  //    this.subscription.push(
+  //      this.pService.getProjet(this.projetId).pipe(
+  //        tap(projet => {
+  //          this.projet$ = projet;
+  //          this.remarque = this.projet$.libelleRemarque;
+  //        })
+  //      ).subscribe()
+  //    ) 
+  //  }
 
-  loadProjetID() {
-    this.projet$ = this.pService.getProjet(this.projetId);
-  }
+   loadProjetID() {
+    var newObj: any;
+     this.subscription.push(      
+       this.pService.getProjet(this.projetId).pipe(
+         tap(projet => {
+           newObj = projet;
+           this.loadClient(newObj.clientID);
+           this.projet$ = projet;
+         })
+     ).subscribe()
+     )
+   }
 
   loadDevis() {
-    this.devis$ = this.dService.getDeviss();
+    // this.devis$ = this.dService.getDeviss();
+  }
+
+  loadClient(id) {
+    this.client$ = this.cService.getClientID(id).pipe(
+      tap(p => {console.log(p)})
+    );
   }
   
   back() {

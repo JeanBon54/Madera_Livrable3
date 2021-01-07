@@ -11,8 +11,8 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-item *ngIf="projet.client">
-              <ion-label>Client : {{projet.client.nomClient}} {{projet.client.prenomClient}}</ion-label>
+            <ion-item *ngIf="(client$ | async) as client">
+              <ion-label>Client : {{client.nomClient}} {{client.prenomClient}}</ion-label>
             </ion-item>
             <ion-item>
               <ion-label></ion-label>
@@ -23,13 +23,13 @@
           </ion-col>
           <ion-col>
             <ion-item>
-              <ion-label>Date de création : {{projet.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
+              <ion-label>Date de création : {{projet.dateDebutProjet | date:'dd/MM/yyyy'}}</ion-label>
             </ion-item>
             <ion-item>
-              <ion-label>Date de modification : {{projet.dateCreation | date:'dd/MM/yyyy'}}</ion-label>
+              <ion-label>Date de modification : {{projet.dateModification | date:'dd/MM/yyyy'}}</ion-label>
             </ion-item>
             <ion-item *ngIf="projet.commercial">
-              <ion-label>Commercial : {{projet.commercial.nomCommercial}} {{projet.commercial.prenomCommercial}}</ion-label>
+              <ion-label>Commercial : {{commercial.nomCommercial}} {{commercial.prenomCommercial}}</ion-label>
             </ion-item>
           </ion-col>
         </ion-row>

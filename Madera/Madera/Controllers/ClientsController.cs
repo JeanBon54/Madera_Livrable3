@@ -40,18 +40,45 @@ namespace Madera.Controllers
             }).ToListAsync();
         }
 
-            // GET: api/Clients/5
-            [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> GetClient(int id)
-        {
-            var client = await _context.Clients.FindAsync(id);
+        //// GET: api/Clients/5
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Client>> GetClient(int id)
+        //{
+        //    var client = await _context.Clients.FindAsync(id);
 
-            if (client == null)
+        //    if (client == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return client;
+        //}
+
+        // GET: api/Clients/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<RechercheClient>> GetClient(int id)
+        {
+            var clients = _context.Clients.Select(p => new RechercheClient()
+            {
+                ID = p.ID,
+                NomClient = p.NomClient,
+                PrenomClient = p.PrenomClient,
+                DateNaissanceClient = p.DateNaissanceClient,
+                AdresseClient = p.AdresseClient,
+                VilleClient = p.VilleClient,
+                CpClient = p.CpClient,
+                Telephone = p.Telephone,
+                EmailClient = p.EmailClient,
+                IdUtilisateurCreation = p.IdUtilisateurCreation
+            }).Where(p => p.ID == id);
+
+            if (clients == null)
             {
                 return NotFound();
             }
 
-            return client;
+            RechercheClient rechercheClients = await clients.FirstOrDefaultAsync();
+            return rechercheClients;
         }
 
 
