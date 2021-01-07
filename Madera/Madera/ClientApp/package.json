@@ -30,6 +30,7 @@
     "@swimlane/ngx-datatable": "^18.0.0",
     "angular-material-pagination": "^1.0.2",
     "angular-paginator": "^6.0.0",
+    "ionic4-auto-complete": "^2.9.4",
     "materialize-css": "^1.0.0",
     "rxjs": "^6.6.3",
     "tslib": "^1.14.1",

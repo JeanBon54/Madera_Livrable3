@@ -12,10 +12,7 @@
             <ion-col>
               <ion-input placeholder="Référence" formControlName="reference"></ion-input>
 
-              <ion-select placeholder="Client" formControlName="client" interface="popover">
-                <ion-select-option *ngFor="let client of (clients$ | async)" value="{{client.nomClient}}">
-                  {{client.nomClient}} {{client.prenomClient}}</ion-select-option>
-              </ion-select>
+              <ion-auto-complete [dataProvider]="autocompleteClientService"  [options]="options"  formControlName="client">Client :</ion-auto-complete>
 
               <!-- <ion-input class="client" placeholder="Client" formControlName="client"></ion-input> -->
             </ion-col>

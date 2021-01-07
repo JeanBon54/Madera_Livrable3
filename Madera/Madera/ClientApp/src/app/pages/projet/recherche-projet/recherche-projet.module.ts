@@ -10,6 +10,8 @@ import { ProjetWebService } from './../../../webServices/projet-webservice.servi
 import { DevisService } from './../../../WebServices/devis-webservice.service';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
+import { AutocompleteClientService } from 'src/app/webServices/autocomplete-client.service';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 
 
 
@@ -21,9 +23,10 @@ import { ClientWebServiceService } from './../../../webServices/client-web-servi
     IonicModule,
     HttpClientModule,
     RechercheProjetPageRoutingModule,
+    AutoCompleteModule
   ],
   declarations: [RechercheProjetPage], 
-  providers: [ProjetWebService,DevisService,PlanService,ClientWebServiceService]
+  providers: [ProjetWebService,DevisService,PlanService,ClientWebServiceService,AutocompleteClientService]
   
 })
 export class RechercheProjetPageModule {}

@@ -45,6 +45,15 @@ export class ClientWebServiceService extends ApiService {
       );
   }
 
+  searchAutoClient<T>(search: string): Observable<T> {
+    return this.post<T>(this.clientUrl + 'autocomplete', search)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+  
+
 
   // POST  --> AJOUT
   saveClient(client): Observable<Client> {

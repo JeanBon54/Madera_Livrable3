@@ -74,4 +74,10 @@ namespace Madera.Models
 
 
     }
+
+    public class AutoCompleteClient
+    {
+        public int ID { get; set; }
+        public string labelAttribute { get; set; }
+    }
 }

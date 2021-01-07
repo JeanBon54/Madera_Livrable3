@@ -25,6 +25,19 @@
     overflow: scroll;
 }
 
+ion-auto-complete {
+  width: 45vw;
+}
+
+ion-auto-complete ion-icon { display:none!important; width:0; height:0; }
+
+ion-auto-complete ul {
+  z-index: 50;
+}
+
+.card-500 {
+  height: 500px;
+}
 
 .col-text-titre{
     text-align: justify;

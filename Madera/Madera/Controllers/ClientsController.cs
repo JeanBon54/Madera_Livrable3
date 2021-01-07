@@ -67,7 +67,28 @@ namespace Madera.Controllers
             return await listeClient.Select(p => new SearchingClient(p)).ToListAsync();
         }
 
+        // GET: api/Projets/5
+        [HttpPost("autocomplete")]
+        public async Task<List<AutoCompleteClient>> GetClient([FromBody] AutoCompleteClient search)
+        {
+            var listeClient = _context.Clients.Select(p => p);
 
+            if (!string.IsNullOrWhiteSpace(search.labelAttribute))
+                listeClient = listeClient.Where(p => p.NomClient.ToLower().Contains(search.labelAttribute.ToLower()));
+
+            return await listeClient.Select(p => new AutoCompleteClient() { ID = p.ID, labelAttribute = p.PrenomClient + ' ' + p.NomClient}).ToListAsync();
+        }
+
+        // GET: api/Clients
+        [HttpGet("autocomplete")]
+        public async Task<ActionResult<IEnumerable<AutoCompleteClient>>> GetAutoCompleteClients()
+        {
+            return await _context.Clients.Select(p => new AutoCompleteClient()
+            {
+                ID = p.ID,
+                labelAttribute = p.NomClient
+            }).ToListAsync();
+        }
 
 
         // PUT: api/Clients/5

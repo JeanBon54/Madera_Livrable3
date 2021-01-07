@@ -1,24 +1,29 @@
 <ion-col size="12">
  
 <form [formGroup]="form" (ngSubmit)="save()">
-  <ion-card >
+  <ion-card class="card-500">
       <ion-card-header>
         <h3>
-          <ion-label>Nouveau plan </ion-label>
+          <ion-label>Nouveau projet </ion-label>
         </h3>
       </ion-card-header>
       <hr class="solid">
-      <ion-card-content  *ngIf="(clients$ | async)?.length>0">
+      <ion-card-content class="card-500"  *ngIf="(clients$ | async)?.length>0">
         <ion-grid>
           <ion-row>
-            <ion-col>
-              <ion-select placeholder="Client" formControlName="client"  interface="popover">
+
+              <!-- <ion-select placeholder="Client" formControlName="client"  interface="popover">
                 <ion-select-option *ngFor="let client of (clients$ | async)" value="{{client.id}}">{{client.nomClient}} {{client.prenomClient}}</ion-select-option>
-              </ion-select>
-            </ion-col>
-            <ion-col>
+              </ion-select> -->
+              <div class="ion-form-group ion-align-items-end"><ion-label>Client : </ion-label></div>
+              <div class="ion-form-group">           
+                <ion-auto-complete [dataProvider]="autocompleteClientService"  [options]="options"  formControlName="client">Client :</ion-auto-complete>
+              </div>
+              <div class="ion-form-group">
                 <ion-input formControlName="libelleProjet"> Nom du projet :</ion-input>
-            </ion-col>
+              </div>
+
+ 
           </ion-row>
         </ion-grid>
       </ion-card-content>

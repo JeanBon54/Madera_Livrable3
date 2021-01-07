@@ -1,6 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -26,7 +27,7 @@ registerLocaleData(localeFr);
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,ReactiveFormsModule ,IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, CoreModule],
+  imports: [BrowserModule,ReactiveFormsModule ,IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, CoreModule,  AutoCompleteModule],
   providers: [
     StatusBar,
     ServiceService,

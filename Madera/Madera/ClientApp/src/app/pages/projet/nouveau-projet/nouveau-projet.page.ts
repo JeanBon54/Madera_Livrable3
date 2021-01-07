@@ -8,6 +8,8 @@ import { ClientWebServiceService } from './../../../webServices/client-web-servi
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
 import { Projet } from 'src/app/models/Projet';
 import { tap } from 'rxjs/operators';
+import { AutocompleteClientService } from 'src/app/webServices/autocomplete-client.service';
+import { AutoCompleteOptions } from 'ionic4-auto-complete';
 
 @Component({
   selector: 'app-nouveau-projet',
@@ -25,9 +27,10 @@ export class NouveauProjetPage implements OnInit {
   postId: number;
   errorMessage: any;
   existingProjetPost: Projet;
+  public options: AutoCompleteOptions;
 
 
-  constructor(private projetPostService: ProjetWebService, private cService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router) {
+  constructor(private projetPostService: ProjetWebService, private cService: ClientWebServiceService, private formBuilder: FormBuilder, private avRoute: ActivatedRoute, private router: Router, public autocompleteClientService: AutocompleteClientService) {
     const idParam = 'id';
     this.actionType = 'Add';
     this.libelleNom = 'libelleNom';
@@ -37,6 +40,12 @@ export class NouveauProjetPage implements OnInit {
       this.postId = this.avRoute.snapshot.params[idParam];
     }
 
+
+    this.options = new AutoCompleteOptions();
+
+    this.options.placeholder = '';
+    this.options.searchIcon = 'undefined';
+    this.options.type = 'search';
   }
 
   ngOnInit() {

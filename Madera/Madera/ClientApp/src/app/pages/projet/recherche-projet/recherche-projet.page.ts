@@ -11,6 +11,8 @@ import { Client } from 'src/app/models/Client';
 import { ClientWebServiceService } from './../../../webServices/client-web-service.service'; 
 import { DevisService } from './../../../WebServices/devis-webservice.service';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
+import { AutocompleteClientService } from 'src/app/webServices/autocomplete-client.service';
+import { AutoCompleteOptions } from 'ionic4-auto-complete';
 
 
 
@@ -25,7 +27,7 @@ export class RechercheProjetPage implements OnInit {
   plan$: Observable<Plan[]>;
   devis$: Observable<Devis[]>;
   clients$: Observable<Client[]>;
-  
+  public options:AutoCompleteOptions;
   
   form: FormGroup;
   
@@ -35,7 +37,15 @@ export class RechercheProjetPage implements OnInit {
     private dService: DevisService,
     private cService: ClientWebServiceService,
     private cd: ChangeDetectorRef,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    public autocompleteClientService: AutocompleteClientService) {
+
+      this.options = new AutoCompleteOptions();
+
+      this.options.placeholder = 'Client';
+      this.options.searchIcon = 'undefined';
+      this.options.type = 'search';
+
   }
 
 

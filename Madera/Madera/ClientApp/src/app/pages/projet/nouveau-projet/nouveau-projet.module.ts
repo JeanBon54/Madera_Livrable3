@@ -7,6 +7,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NouveauProjetPageRoutingModule } from './nouveau-projet-routing.module';
 import { NouveauProjetPage } from './nouveau-projet.page';
 import { ProjetWebService } from './../../../webServices/projet-webservice.service';
+import { AutocompleteClientService } from 'src/app/webServices/autocomplete-client.service';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 
 @NgModule({
   imports: [
@@ -15,9 +17,10 @@ import { ProjetWebService } from './../../../webServices/projet-webservice.servi
     ReactiveFormsModule,
     IonicModule,
     HttpClientModule,
-    NouveauProjetPageRoutingModule
+    NouveauProjetPageRoutingModule,
+    AutoCompleteModule
   ],
   declarations: [NouveauProjetPage],
-  providers: [ProjetWebService]
+  providers: [ProjetWebService,AutocompleteClientService]
 })
 export class NouveauProjetPageModule {}
