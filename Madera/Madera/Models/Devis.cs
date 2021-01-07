@@ -49,5 +49,5 @@ namespace Madera.Models
         public int ID { get; set; }
         public string LibelleDevis { get; set; }
         public string EtatDevis { get; set; }
-
+    }
 }

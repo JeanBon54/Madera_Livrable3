@@ -56,7 +56,7 @@ namespace Madera.Models
             this.IdUtilisateurModification = projet.IdUtilisateurModification;
             this.DateModification = projet.DateModification;
             this.DateArchivage = projet.DateArchivage;
-            //this.client = projet.client;
+           // this.client = projet.client;
             //this.commercial = projet.commercial;
         }
 

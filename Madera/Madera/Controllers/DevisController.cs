@@ -29,7 +29,7 @@ namespace Madera.Controllers
 
         // GET: api/Devis
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevis()
+        public async Task<ActionResult<IEnumerable<Devis>>> GetDevis()
         {
             return await _context.Devis.ToListAsync();
         }

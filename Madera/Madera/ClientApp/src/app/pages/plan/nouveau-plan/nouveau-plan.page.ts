@@ -99,12 +99,13 @@ export class NouveauPlanPage implements OnInit {
 
         ));
      }
+    this.loadProjetID();
     this.loadCP();
     this.loadPlancher()
     this.loadPlans();
     this.loadCouverture();
    // this.loadGamme()
-   console.log(this.postId);
+   console.log(this.projetId);
   }
 
 
