@@ -12,4 +12,5 @@ namespace Madera.Models
         public int PlanID { get; set; }
         public virtual Plan Plan { get; set; }
     }
+
 }

@@ -40,7 +40,7 @@ namespace Madera.Controllers
                 IdUtilisateurModification = p.IdUtilisateurModification,
                 DateModification = p.DateModification,
                 DateArchivage = p.DateArchivage,
-                client = p.client,
+                //client = p.client,
                // commercial = p.commercial
             }).ToListAsync();
         }

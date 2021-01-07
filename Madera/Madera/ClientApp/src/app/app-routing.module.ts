@@ -45,7 +45,7 @@ const routerConfig: Routes = [
     loadChildren: () => import('./pages/plan/gestion-plan/gestion-plan.module').then(m => m.GestionPlanPageModule)
   },
   {
-    path: 'nouveau-plan',
+    path: 'nouveau-plan/:id',
     loadChildren: () => import('./pages/plan/nouveau-plan/nouveau-plan.module').then(m => m.NouveauPlanPageModule)
   },
   {
