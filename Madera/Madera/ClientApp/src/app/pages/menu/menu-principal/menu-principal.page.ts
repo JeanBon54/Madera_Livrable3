@@ -25,7 +25,6 @@ export class MenuPrincipalPage implements OnInit {
   }
   
   goTo(menuName: string) {
-    console.log(menuName);
     this.router.navigateByUrl(menuName);
   }
 

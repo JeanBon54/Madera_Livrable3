@@ -38,6 +38,7 @@ namespace Madera.Controllers
         [HttpGet("projet/{id}")]
         public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevisProjet(int id)
         {
+
             var devis = _context.Devis.Select(p => new RechercheDevis()
             {
                 ID = p.ID,
@@ -46,30 +47,53 @@ namespace Madera.Controllers
                 PrixTotalHtDevis = p.PrixTotalHtDevis,
                 PrixTotalTtcDevis = p.PrixTotalTtcDevis,
                 DateCreation = p.DateCreation,
-                DateModification = p.DateModification
-            }).Where(p => p.ProjetID == id);
+                DateModification = p.DateModification,
+                PlanID = p.PlanID
+            }).AsQueryable();
 
-            if (devis == null)
-            {
-                return NotFound();
-            }
+            devis.Where(x => x.ProjetID == id);
 
-             
-            return await devis.ToListAsync();
+            return await devis.ToArrayAsync();
+
         }
 
         // GET: api/Devis/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Devis>> GetDevis(int id)
+        public async Task<ActionResult<RechercheDevis>> GetDevis(int id)
         {
-            var devis = await _context.Devis.FindAsync(id);
-
-            if (devis == null)
+            var devis =  _context.Devis.Select(p => new RechercheDevis()
             {
-                return NotFound();
-            }
+                ID = p.ID,
+                LibelleDevis = p.LibelleDevis,
+                EtatDevis = p.EtatDevis,
+                PrixTotalHtDevis = p.PrixTotalHtDevis,
+                PrixTotalTtcDevis = p.PrixTotalTtcDevis,
+                DateCreation = p.DateCreation,
+                DateModification = p.DateModification,
+                PlanID = p.PlanID
+            }).AsQueryable();
 
-            return devis;
+            devis.Where(x => x.ProjetID == id);
+
+            return await devis.FirstOrDefaultAsync();
+        }
+
+        // GET: api/Devis/5
+        [HttpGet("lignes/{id}")]
+        public async Task<ActionResult<IEnumerable<LignesDevis>>> GetLignesDevis(int id)
+        {
+            var lignes = _context.ModulePlans.Select(p => new LignesDevis()
+            {
+                LibelleModule = p.Module.LibelleModule,
+                PlanID = p.PlanID,
+                QuantiteModule = p.quantite,
+                ModuleComposant = p.Module.ModuleComposant,
+                PrixModule = p.Module.prixModule,
+            }).AsQueryable();
+
+            lignes.Where(x => x.PlanID == id);
+
+            return await lignes.ToArrayAsync();
         }
 
         // GET: api/Projets/5

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Numerics;
 
 namespace Madera.Models
@@ -29,13 +30,21 @@ namespace Madera.Models
         public DateTime? DateArchivage { get; set; }
 
         //Propriétés de navigation
-        public virtual ICollection<ModuleComposant> ModuleComposant { get; set; }
+        public virtual List<ModuleComposant> ModuleComposant { get; set; }
         public virtual ICollection<ModuleGamme> ModuleGamme { get; set; }
         public virtual ICollection<ModulePlan> ModulePlan { get; set; }
         public virtual ICollection<ModuleSlot> ModuleSlots { get; set; }
         public virtual ICollection<ModuleModele> ModuleModeles { get; set; }
 
-
+        [NotMapped]
+        public decimal prixModule
+        {
+            get
+            {
+                return ModuleComposant.Sum(x => x.PrixTotal);
+            }
+            set { }
+        }
     }
 
     public class SearchingModule : Module

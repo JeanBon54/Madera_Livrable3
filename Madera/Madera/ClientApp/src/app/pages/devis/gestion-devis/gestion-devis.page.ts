@@ -5,6 +5,7 @@ import { ModuleComposantService } from './../../../webServices/modulecomposant-w
 import { Observable } from 'rxjs';
 import { ModuleComposant } from 'src/app/models/ModuleComposant';
 import { Devis } from 'src/app/models/Devis';
+import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { Devis } from 'src/app/models/Devis';
 })
 export class GestionDevisPage implements OnInit {
   devis$: Observable<Devis>;
+  lignesDevis$: Observable<Devis[]>;
   devisId: number;
 
     constructor(private dService: DevisService,
@@ -29,7 +31,11 @@ export class GestionDevisPage implements OnInit {
   }
 
   loadDevis() {
-    this.devis$ = this.dService.getDevis(this.devisId);
+    this.devis$ = this.dService.getDevis(this.devisId).pipe(tap(x => this.loadLignesDevis(x.planID)));
+  }
+
+  loadLignesDevis(id) {
+    this.lignesDevis$ = this.dService.getLignesDevis(id);
   }
 
   exportPDF(id) {

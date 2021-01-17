@@ -3,7 +3,7 @@ export class Devis {
     id?: number;
     LibelleDevis: string;
     EtatDevis: string;
-    PlanID: number;
+    planID: number;
     DebutDateDevis: Date;
     PrixTotalHtDevis: number;
     PrixTotalTtcDevis: number;

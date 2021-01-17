@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Madera.Models
 {
@@ -29,7 +31,6 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public DateTime DateArchivage { get; set; }
         public int ProjetID { get; set; }
-
         public virtual Plan Plan { get; set; }
     }
 
@@ -54,7 +55,19 @@ namespace Madera.Models
         public decimal PrixTotalTtcDevis { get; set; }
         public DateTime DateCreation { get; set; }
         public DateTime DateModification { get; set; }
-
+        public int PlanID { get; set; }
         public int ProjetID { get; set; }
+    }
+
+    public class LignesDevis
+    {
+        public int PlanID { get; set; }
+        public string LibelleModule { get; set; }
+        public int QuantiteModule { get; set; }
+        public decimal PrixModule { get; set; }
+        public virtual Module Modules { get; set; }
+
+        public virtual List<ModuleComposant> ModuleComposant { get; set; }
+
     }
 }
