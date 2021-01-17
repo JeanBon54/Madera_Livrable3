@@ -62,16 +62,22 @@ namespace Madera.Controllers
 
         // GET: api/Plans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Plan>> GetPlan(int id)
+        public async Task<ActionResult<IEnumerable<recherchePlanID>>> GetPlanProjetID(int id)
         {
-            var plan = await _context.Plans.FindAsync(id);
-
-            if (plan == null)
+            return await _context.Plans.Select(p => new recherchePlanID()
             {
-                return NotFound();
-            }
-
-            return plan;
+                ID = p.ID,
+                ReferencePlan = p.ReferencePlan,
+                libellePlan = p.libellePlan,
+                AdressPlan = p.AdressPlan,
+                CpPlan = p.CpPlan,
+                VillePlan = p.VillePlan,
+                idProjetPlan = p.idProjetPlan,
+                IdUtilisateurCreation = p.IdUtilisateurCreation,
+                DateCreation = p.DateCreation,
+                IdUtilisateurModification = p.IdUtilisateurModification,
+                DateModification = p.DateModification
+            }).Where(p => p.idProjetPlan == id).ToListAsync();
         }
 
         // PUT: api/Plans/5
