@@ -1,5 +1,5 @@
-<ion-col size="12" *ngIf="(plan$ | async) as plan">
-    <ion-card>
+<ion-col size="12" >
+    <ion-card *ngIf="(plan$ | async) as plan">
       <ion-card-header>
         <h3>
           <ion-label>Référence du plan : {{plan.referencePlan}}</ion-label>
@@ -11,7 +11,7 @@
           <ion-row>
             <ion-col>
               <ion-item>
-                <ion-label>Client : {{plan.projetPlans[0].projet.client.prenomClient + ' ' + plan.projetPlans[0].projet.client.nomClient}}</ion-label>
+                <!-- <ion-label>Client : {{plan.projet.client.prenomClient + ' ' + plan.projetPlans[0].projet.client.nomClient}}</ion-label> -->
               </ion-item>
               <ion-item>
                 <ion-label>Adresse : {{plan.adressPlan}}</ion-label>
@@ -28,7 +28,7 @@
                 <ion-label>Date de modification : {{plan.dateModification | date: 'dd/MM/yyyy'}}</ion-label>
               </ion-item>
               <ion-item>
-                <ion-label>Commercial : {{plan.projetPlans[0].projet.commercial.prenomCommercial}} + ' ' + {{plan.projetPlans[0].projet.commercial.nomCommercial}}</ion-label>
+                <!-- <ion-label>Commercial : {{plan.projetPlans[0].projet.commercial.prenomCommercial}} + ' ' + {{plan.projetPlans[0].projet.commercial.nomCommercial}}</ion-label> -->
               </ion-item>
             </ion-col>
           </ion-row>
@@ -48,13 +48,13 @@
             <ion-row>
               <ion-col>
                 <ion-item>
-                  <ion-label>Coupe de principe : {{plan.coupePrincipales.libelleCoupePrincipale}}</ion-label>
+                  <!-- <ion-label>Coupe de principe : {{plan.coupePrincipales.libelleCoupePrincipale}}</ion-label> -->
                 </ion-item>
                 <ion-item>
-                  <ion-label>Type de couverture : {{plan.couverture.typeCouverture}}</ion-label>
+                  <!-- <ion-label>Type de couverture : {{plan.couverture.typeCouverture}}</ion-label> -->
                 </ion-item>
                 <ion-item>
-                  <ion-label>Type de plancher : {{plan.plancher.typePlancher}}</ion-label>
+                  <!-- <ion-label>Type de plancher : {{plan.plancher.typePlancher}}</ion-label> -->
                 </ion-item>
 
               </ion-col>
@@ -83,7 +83,7 @@
           </ion-row>
           <ion-row>
             <div class="test-btn">
-              <ion-button [routerLink]="['/gestion-devis/', plan.id]" size="block">Génération Devis</ion-button>
+              <!-- <ion-button [routerLink]="['/gestion-devis/', plan.id]" size="block">Génération Devis</ion-button> -->
             </div>
           </ion-row>
     

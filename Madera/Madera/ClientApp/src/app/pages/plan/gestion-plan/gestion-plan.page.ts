@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plan } from 'src/app/models/Plan';
+import { Plan } from '../../../models/Plan';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Observable } from 'rxjs';
@@ -27,6 +27,7 @@ export class GestionPlanPage implements OnInit {
   
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
+    console.log(this.planId)
   }
 
   back() {

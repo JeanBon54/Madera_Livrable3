@@ -10,7 +10,7 @@ import { Projet } from './../../../models/Projet';
 import { tap } from 'rxjs/operators';
 import { Devis } from './../../../models/Devis';
 import { Client } from '../../../models/Client';
-import { Plan } from 'src/app/models/Plan';
+import { Plan } from '../../../models/Plan';
 import { PlanService } from 'src/app/WebServices/plan-webservice.service';
 
 
