@@ -2,7 +2,7 @@
     <ion-card >
       <ion-card-header>
         <h3>
-          <ion-label>Référence du plan : {{plan.id}} {{plan.referencePlan}}</ion-label>
+          <ion-label>Référence du plan : {{plan.referencePlan}}</ion-label>
         </h3>
       </ion-card-header>
       <hr class="solid">
@@ -36,7 +36,7 @@
       </ion-card-content>
     </ion-card>
   
-    <ion-card>
+    <ion-card *ngIf="(extraDevis$ | async) as extraDevis">
         <ion-card-header>
           <h3>
             <ion-label>Caractéristiques du plan</ion-label>
@@ -48,13 +48,13 @@
             <ion-row>
               <ion-col>
                 <ion-item>
-                  <!-- <ion-label>Coupe de principe : {{plan.coupePrincipales.libelleCoupePrincipale}}</ion-label> -->
+                  <ion-label>Coupe de principe : {{extraDevis.libelleCoupePrincipal}}</ion-label>
                 </ion-item>
                 <ion-item>
-                  <!-- <ion-label>Type de couverture : {{plan.couverture.typeCouverture}}</ion-label> -->
+                  <ion-label>Type de couverture : {{extraDevis.libelleCouverture}}</ion-label>
                 </ion-item>
                 <ion-item>
-                  <!-- <ion-label>Type de plancher : {{plan.plancher.typePlancher}}</ion-label> -->
+                  <ion-label>Type de plancher : {{extraDevis.libellePlancher}}</ion-label>
                 </ion-item>
 
               </ion-col>

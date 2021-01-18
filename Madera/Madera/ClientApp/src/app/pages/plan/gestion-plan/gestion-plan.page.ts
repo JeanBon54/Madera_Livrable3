@@ -3,6 +3,8 @@ import { Plan } from '../../../models/Plan';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { Router, ActivatedRoute } from '@angular/router'; 
 import { Observable } from 'rxjs';
+import { Devis } from '../../../models/Devis';
+import { DevisService } from '../../../WebServices/devis-webservice.service';
 
 @Component({
   selector: 'app-gestion-plan',
@@ -12,9 +14,12 @@ import { Observable } from 'rxjs';
 export class GestionPlanPage implements OnInit {
   planId: number;
   plan$: Observable<Plan>;
+  extraDevis$: Observable<Devis>;
+
   
   constructor(private pService: PlanService,
-    private avRoute: ActivatedRoute) {
+    private avRoute: ActivatedRoute,
+    private dService: DevisService,) {
   const idParam = 'id';
   if (this.avRoute.snapshot.params[idParam]) {
     this.planId = this.avRoute.snapshot.params[idParam];
@@ -23,11 +28,16 @@ export class GestionPlanPage implements OnInit {
 
   ngOnInit() {
     this.loadPlan();
+    this.loadExtraDevis();
   }
   
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
     console.log(this.planId)
+  }
+
+  loadExtraDevis() {
+    this.extraDevis$ = this.dService.getExtraDevis(this.planId);
   }
 
   back() {
