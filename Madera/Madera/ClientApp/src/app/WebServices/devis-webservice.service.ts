@@ -50,6 +50,14 @@ export class DevisService extends ApiService {
       );
   }
 
+  getExtraDevis(planId: number): Observable<Devis> {
+    return this.getById<Devis>(this.devisUrl + 'extra/', planId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
   searchDevis<T>(search: string): Observable<T> {
     return this.post<T>(this.devisUrl + 'search', search)
       .pipe(

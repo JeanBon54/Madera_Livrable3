@@ -26,12 +26,12 @@ namespace Madera._Helpers
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (token != null)
-                attachUserToContext(context, userService, token);
+                await attachUserToContextAsync(context, userService, token);
 
             await _next(context);
         }
 
-        private void attachUserToContext(HttpContext context, IUserService userService, string token)
+        private async Task attachUserToContextAsync(HttpContext context, IUserService userService, string token)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace Madera._Helpers
                 var commercialId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 // attach user to context on successful jwt validation
-                context.Items["Commercial"] = (commercialId != null);
+                context.Items["Commercial"] = await userService.GetByIdAsync(commercialId);
             }
             catch(Exception ex)
             {

@@ -11,13 +11,14 @@ namespace Madera.Models
     public class AuthenticateResponse
     {
         public int ID { get; set; }
-        public string Token { get; set; } 
+        public string Token { get; set; }
+        public RechercheCommercial Commercial { get; set; }
 
 
-        public AuthenticateResponse(Commercial commercial, string token)
+        public AuthenticateResponse(RechercheCommercial commercial, string token)
         {
-            ID = commercial.ID;
             Token = token;
+            Commercial = commercial;
         }
     }
 }

@@ -37,6 +37,7 @@ namespace Madera.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Couverture>> GetCouverture(int id)
         {
+            _context.ChangeTracker.LazyLoadingEnabled = false;
             var couverture = await _context.Couvertures.FindAsync(id);
 
             if (couverture == null)

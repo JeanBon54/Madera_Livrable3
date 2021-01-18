@@ -38,6 +38,7 @@ namespace Madera.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<CoupePrincipale>> GetCoupePrincipale(int id)
         {
+            _context.ChangeTracker.LazyLoadingEnabled = false;
             var coupePrincipale = await _context.CoupePrincipales.FindAsync(id);
 
             if (coupePrincipale == null)

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,ReactiveFormsModule, FormControl,FormArray,Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { UtilisateurContextService } from 'src/shared/utilisateur-context.service';
 import {ConnexionService} from '../../WebServices/connexion.service'
 
 
@@ -26,7 +27,8 @@ export class ConnexionPage implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private ConnexionService: ConnexionService
+    private ConnexionService: ConnexionService,
+    private ucService: UtilisateurContextService
 
   ) {
     if (this.ConnexionService.userValue) {
@@ -67,10 +69,11 @@ this.form.controls['identifiant']
       .pipe(first())
       .subscribe({
         next: (log) => {
-          const newObj: any = log;
-          if (newObj.result != null) {
-            localStorage.setItem('token', newObj.result.token);
-            localStorage.setItem('id', newObj.result.id);
+          const AuthResponse: any = log;
+          if (AuthResponse.result != null) {
+            localStorage.setItem('token', AuthResponse.result.token);
+            localStorage.setItem('id', AuthResponse.result.id);
+            this.ucService.setUser(AuthResponse.result.commercial)
             this.router.navigate(['menu-principal']);
           }
         },

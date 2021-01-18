@@ -18,7 +18,7 @@ namespace Madera._Services
     {
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
         IEnumerable<Commercial> GetAll();
-        Task<Commercial> GetByIdAsync(int id);
+        Task<RechercheCommercial> GetByIdAsync(int id);
     }
 
 
@@ -36,9 +36,22 @@ namespace Madera._Services
 
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model)
         {
-            List<Commercial> commercials = await _context.Commercials.ToListAsync();
-            _commercials = commercials;
-            var commercial = _commercials.SingleOrDefault(x => x.EmailCommercial == model.Username && x.MdpCommercial == model.Password);
+
+            var commercial = await _context.Commercials.Select(c => new RechercheCommercial()
+                    {
+                        ID = c.ID,
+                        NomCommercial = c.NomCommercial,
+                        PrenomCommercial = c.PrenomCommercial,
+                        EmailCommercial = c.EmailCommercial,
+                        MdpCommercial = c.MdpCommercial,
+                        IdUtilisateurCreation = c.IdUtilisateurCreation,
+                        DateCreation = c.DateCreation,
+                        IdUtilisateurModification = c.IdUtilisateurModification,
+                        DateModification = c.DateModification,
+                        DateArchivage = c.DateArchivage
+                    }
+                ).Where(x => x.EmailCommercial == model.Username && x.MdpCommercial == model.Password).FirstOrDefaultAsync();
+
 
             // return null if user not found
             if (commercial == null) return null;
@@ -55,18 +68,29 @@ namespace Madera._Services
             return _commercials;
         }
 
-        public async Task<Commercial> GetByIdAsync(int id)
+        public async Task<RechercheCommercial> GetByIdAsync(int id)
         {
-            List<Commercial> commercials = await _context.Commercials.ToListAsync();
-            _commercials = commercials;
-            var commercial = _commercials.SingleOrDefault(x => x.ID == id);
+            var commercial = await _context.Commercials.Select(c => new RechercheCommercial() 
+            {
+                ID = c.ID,
+                NomCommercial = c.NomCommercial,
+                PrenomCommercial = c.PrenomCommercial,
+                EmailCommercial = c.EmailCommercial,
+                MdpCommercial = c.MdpCommercial,
+                IdUtilisateurCreation = c.IdUtilisateurCreation,
+                DateCreation = c.DateCreation,
+                IdUtilisateurModification = c.IdUtilisateurModification,
+                DateModification = c.DateModification,
+                DateArchivage = c.DateArchivage
+
+            }).Where(x => x.ID == id).FirstOrDefaultAsync();
 
             return commercial;
         }
 
         // helper methods
 
-        private string generateJwtToken(Commercial commercial)
+        private string generateJwtToken(RechercheCommercial commercial)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();

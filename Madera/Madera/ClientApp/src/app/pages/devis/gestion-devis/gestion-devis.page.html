@@ -11,7 +11,7 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label>Client : </ion-label>
+              <ion-label>Client : {{utilisateur.prenomCommercial}} {{utilisateur.nomCommercial}}</ion-label>
             </ion-item>
             <ion-item>
               <ion-label></ion-label>
@@ -28,7 +28,7 @@
               <ion-label>Date de modification : {{devis.dateModification | date: 'dd/MM/yyyy'}}</ion-label>
             </ion-item>
             <ion-item>
-              <ion-label>Commercial : </ion-label>
+              <ion-label>Commercial : {{utilisateur.prenomCommercial}} {{utilisateur.nomCommercial}}</ion-label>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -36,7 +36,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card *ngIf="extraDevis$ | async">
     <ion-card-content>
       <ion-grid>
         <ion-row>

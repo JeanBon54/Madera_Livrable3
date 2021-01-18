@@ -36,6 +36,7 @@ namespace Madera.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Plancher>> GetPlancher(int id)
         {
+            _context.ChangeTracker.LazyLoadingEnabled = false;
             var plancher = await _context.Planchers.FindAsync(id);
 
             if (plancher == null)

@@ -57,6 +57,7 @@ namespace Madera.Models
         public DateTime DateModification { get; set; }
         public int PlanID { get; set; }
         public int ProjetID { get; set; }
+
     }
 
     public class LignesDevis
@@ -67,7 +68,17 @@ namespace Madera.Models
         public decimal PrixModule { get; set; }
         public virtual Module Modules { get; set; }
 
-        public virtual List<ModuleComposant> ModuleComposant { get; set; }
+    }
 
+    public class ExtraDevis
+    {
+        public string libelleCoupePrincipal { get; set; }
+        public string libelleCouverture { get; set; }
+        public string libellePlancher { get; set; }
+        public decimal largeurCoupePrincipal { get; set; }
+        public decimal longueurCoupePrincipal { get; set; }
+        public decimal prixCouverture { get; set; }
+        public decimal prixPlancher { get; set; }
+        public int PlanID { get; set; }
     }
 }

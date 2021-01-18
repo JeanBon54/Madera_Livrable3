@@ -61,6 +61,7 @@ namespace Madera.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RechercheDevis>> GetDevis(int id)
         {
+           
             var devis =  _context.Devis.Select(p => new RechercheDevis()
             {
                 ID = p.ID,
@@ -87,13 +88,33 @@ namespace Madera.Controllers
                 LibelleModule = p.Module.LibelleModule,
                 PlanID = p.PlanID,
                 QuantiteModule = p.quantite,
-                ModuleComposant = p.Module.ModuleComposant,
                 PrixModule = p.Module.prixModule,
             }).AsQueryable();
 
             lignes.Where(x => x.PlanID == id);
 
             return await lignes.ToArrayAsync();
+        }
+
+        // GET: api/Devis/5
+        [HttpGet("extra/{id}")]
+        public async Task<ActionResult<ExtraDevis>> GetExtraDevis(int id)
+        {
+            var lignes = _context.Plans.Select(p => new ExtraDevis()
+            {
+               prixCouverture = p.couverture.PrixHtCouverture,
+               prixPlancher = p.plancher.PrixPlancher,
+               largeurCoupePrincipal = p.coupePrincipales.LargeurCoupePrincipale,
+               longueurCoupePrincipal = p.coupePrincipales.LongueurCoupePrincipale,
+               libelleCoupePrincipal = p.coupePrincipales.LibelleCoupePrincipale,
+               libelleCouverture = p.couverture.TypeCouverture,
+               libellePlancher = p.plancher.TypePlancher,
+               PlanID = p.ID
+            }).AsQueryable();
+
+            lignes.Where(x => x.PlanID == id);
+
+            return await lignes.FirstOrDefaultAsync();
         }
 
         // GET: api/Projets/5
