@@ -27,6 +27,7 @@ export class GestionPlanPage implements OnInit {
   
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
+    console.log(this.planId)
   }
 
   back() {

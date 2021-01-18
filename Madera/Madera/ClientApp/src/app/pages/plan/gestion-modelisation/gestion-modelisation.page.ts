@@ -69,6 +69,7 @@ export class GestionModelisationPage implements OnInit {
          ));
      }
     this.loadModule();
+    console.log(this.planId)
   }
 
   loadModule() {
