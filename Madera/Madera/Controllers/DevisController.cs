@@ -231,7 +231,7 @@ namespace Madera.Controllers
             // Render the bound HTML
             using (var re = new GcHtmlRenderer(boundTemplate))
             {
-                re.ApplyGcPdfLicenseKey("maxime.masetto@viacesi.fr,E571738649846194#A0cJfLiQTOxYDN8kDN6gzM7EzN5IiOiQWSisnOiQkIsISP3c6VSFXYxpVT7J5LyR7bMBzbh5WcxJWbqRzYNhFUXpEVxkVewpGM5djRRhmVtRkV4h5LnRjQzVDN0lzV0p6Qz3mYPJHNaZWR9YkVsplZYZXSMJlcBVXRiojITJCLxUDM5ETO7ADN0IicfJye#4Xfd5nIzMkQBJiOiMkIsIyM6BCdl9kLgYGZQBicvZGI49WZtV7YvREIDdkI0IiTis7W0ICZyBlIsIyM5ATNzADI6ETMxAjMwIjI0ICdyNkIsIiNxITMwIDMyIiOiAHeFJCLiInZuk6clNWYpZHQvRHdlNXYt9SZtlGeh5mI0ISYONkIsUWdyRnOMwId");
+                re.ApplyGcPdfLicenseKey("gabriel.giroud@viacesi.fr,E953538686138289#A0cJfLikDOygzMxYDO6gzM5MTN9IiOiQWSisnOiQkIsISP3EFSsFHVT5WN6hFcWF6Npdld8UUd6dDMXBzdrFTMElzYkBlV7onRQdFa586NxIDcBd4LVNXVaBTW9ZTSlx4Y8J6YSh5SK54R8R7Nux4ca3iMV94QhtmQiojITJCL6IjNxYTM9IDO0IicfJye#4Xfd5nIIN5VRJiOiMkIsICN6BCdl9kLgYGZQBicvZGI49WZtV7YvREIDdkI0IiTis7W0ICZyBlIsIiMxYTM4ADI9ETMwEjMwIjI0ICdyNkIsICOxIDMxIDMyIiOiAHeFJCLiInZuk6clNWYpZHQkV7byl6ZuwWZpJnYhdmI0ISYONkIsUWdyRnOMwId");
                 re.RenderToPdf(pdfPath);
             }
 

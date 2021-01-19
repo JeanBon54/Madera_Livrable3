@@ -21,5 +21,6 @@ namespace Madera.Models
 
 
         public int Quantite { get; set; }
+
     }
 }

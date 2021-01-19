@@ -13,10 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GrapeCity.Documents.Html" Version="3.2.0.558" />
-    <PackageReference Include="GrapeCity.Documents.Pdf" Version="3.2.0.558" />
-    <PackageReference Include="GrapeCity.Documents.Html.Mac.X64" Version="3.2.0.558" />
-    <PackageReference Include="GrapeCity.Documents.Html.Windows.X64" Version="3.2.0.558" />
+    <PackageReference Include="GrapeCity.Documents.Common" Version="4.0.0.623" />
+    <PackageReference Include="GrapeCity.Documents.Html" Version="4.0.0.623" />
+    <PackageReference Include="GrapeCity.Documents.Pdf" Version="4.0.0.623" />
+    <PackageReference Include="GrapeCity.Documents.Html.Mac.X64" Version="4.0.0.623" />
+    <PackageReference Include="GrapeCity.Documents.Html.Windows.X64" Version="4.0.0.623" />
     <PackageReference Include="Stubble.Core" Version="1.9.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
@@ -26,13 +27,13 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
