@@ -143,17 +143,27 @@ namespace Madera.Controllers
             return CreatedAtAction("GetPlan", new { id = @plan.ID }, @plan);
         }
 
+        //[HttpPost("save")]
+        //public async Task<ActionResult<planExtended>> PostNewPlan(planExtended plan)
+        //{
+        //    _context.Plans.Add(plan);
+        //    await _context.SaveChangesAsync();
+
+        //    _context.ProjetPlans.Add(new ProjetPlan()
+        //    {
+        //        ProjetID = plan.ProjetID,
+        //        PlanID = plan.ID
+        //    });
+        //    await _context.SaveChangesAsync();
+
+        //    return Ok();
+        //}
+
+
         [HttpPost("save")]
-        public async Task<ActionResult<planExtended>> PostNewPlan(planExtended plan)
+        public async Task<ActionResult<Plan>> PostNewPlan(Plan plan)
         {
             _context.Plans.Add(plan);
-            await _context.SaveChangesAsync();
-               
-            _context.ProjetPlans.Add(new ProjetPlan()
-            {
-                ProjetID = plan.ProjetID,
-                PlanID = plan.ID
-            });
             await _context.SaveChangesAsync();
 
             return Ok();
