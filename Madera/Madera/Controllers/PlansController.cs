@@ -148,7 +148,7 @@ namespace Madera.Controllers
         {
             _context.Plans.Add(plan);
             await _context.SaveChangesAsync();
-
+               
             _context.ProjetPlans.Add(new ProjetPlan()
             {
                 ProjetID = plan.ProjetID,
@@ -159,7 +159,7 @@ namespace Madera.Controllers
             return Ok();
         }
 
-            private async Task<SavePlan> SavePlan(SavePlan @plan)
+        private async Task<SavePlan> SavePlan(SavePlan @plan)
         {
             Plan newPlan = null;
             if (plan.ID == 0)

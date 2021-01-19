@@ -160,7 +160,8 @@ export class NouveauPlanPage implements OnInit {
         DateModification :new Date(),
         DateArchivage :new Date(),
         ListeIdModule: [],
-        ProjetID : this.projetId
+        idProjetPlan : this.projetId
+        // ProjetID : this.projetId
         // quantite:[]
       };
 
