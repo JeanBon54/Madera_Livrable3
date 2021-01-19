@@ -15,6 +15,7 @@ export class Plan {
     DateArchivage :Date;
     ListeIdModule: SelectedQuantite[];
     ProjetID?;
+    idProjetPlan?;
   }
 
   export class SelectedQuantite {
