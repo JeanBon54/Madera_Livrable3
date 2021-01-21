@@ -1,26 +1,27 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/PlansController.cs">
     <Files>
-      <File FileName="Madera/Controllers/PlansController.cs" Line="165" Column="1" />
+      <File FileName="Madera/Controllers/PlansController.cs" Line="132" Column="1" />
       <File FileName="Madera/Models/Plan.cs" />
       <File FileName="Madera/Controllers/ProjetPlansController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Madera" expanded="True">
+          <Node name="Madera" expanded="True" selected="True">
             <Node name="Madera" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="_Services" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="ProjetPlansController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -29,9 +30,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/commercialController.cs" relfile="Madera/Controllers/commercialController.cs" line="99" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/PlansController.cs" relfile="Madera/Controllers/PlansController.cs" line="132" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/PlansController.cs" relfile="Madera/Controllers/PlansController.cs" line="152" column="1" />
-      <Breakpoint file="/Users/gabrielgiroud/Documents/VisualStudio/Projet/Madera_Livrable3/Madera/Madera/Controllers/PlansController.cs" relfile="Madera/Controllers/PlansController.cs" line="164" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
