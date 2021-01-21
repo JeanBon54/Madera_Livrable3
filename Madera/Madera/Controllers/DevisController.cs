@@ -215,14 +215,17 @@ namespace Madera.Controllers
         public async Task<ActionResult<Devis>> Getpdf(int id)
         {
             var devis = await _context.Devis.FindAsync(id);
-            
+
+            var extraDevis = await GetExtraDevis(id);
+
+
             var pdf = new createpdf();
 
             string templatePath = pdf.getTemplate();
 
             // Bind the template to data:
             var builder = new Stubble.Core.Builders.StubbleBuilder();
-            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans });
+            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
 
 
           
