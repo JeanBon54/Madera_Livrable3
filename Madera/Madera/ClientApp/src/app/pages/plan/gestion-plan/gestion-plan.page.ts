@@ -15,6 +15,7 @@ export class GestionPlanPage implements OnInit {
   planId: number;
   plan$: Observable<Plan>;
   extraDevis$: Observable<Devis>;
+  devis$: Observable<Devis>;
 
   
   constructor(private pService: PlanService,
@@ -34,10 +35,15 @@ export class GestionPlanPage implements OnInit {
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
     console.log(this.planId)
+    this.loadDevis();
   }
 
   loadExtraDevis() {
     this.extraDevis$ = this.dService.getExtraDevis(this.planId);
+  }
+
+  loadDevis() {
+    this.devis$ = this.dService.getDevis(this.planId);
   }
 
   back() {

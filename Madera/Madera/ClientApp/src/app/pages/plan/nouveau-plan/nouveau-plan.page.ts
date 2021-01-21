@@ -70,7 +70,7 @@ export class NouveauPlanPage implements OnInit {
     this.form = this.formBuilder.group(
       {
         postId: 0,
-      //  libellePlan: ['', [Validators.required]],
+        libellePlan: ['', [Validators.required]],
         adresse: ['', [Validators.required]],
         ville: ['', [Validators.required]],
         cp:'',
@@ -89,7 +89,7 @@ export class NouveauPlanPage implements OnInit {
           this.plService.getPlan(this.postId)
           .subscribe(data => (
           this.existingPlanPost = data,
-         // this.form.controls[this.libellePlan].setValue(data.LibellePlan),
+          this.form.controls[this.libellePlan].setValue(data.LibellePlan),
           this.form.controls[this.adresse].setValue(data.AdressPlan),
           this.form.controls[this.ville].setValue(data.VillePlan),
           this.form.controls[this.cp].setValue(data.CpPlan),
@@ -150,7 +150,7 @@ export class NouveauPlanPage implements OnInit {
         PlancherID: this.form.value.plancherId,
         CouvertureID: this.form.value.couvertureId,
         ReferencePlan : 'test',
-        LibellePlan : 'test',
+        LibellePlan : this.form.value.libellePlan,
         AdressPlan: this.form.value.adresse,
         CpPlan: this.form.value.cp,
         VillePlan: this.form.value.ville,

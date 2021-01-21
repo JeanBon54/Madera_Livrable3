@@ -66,7 +66,7 @@
         </ion-card-content>
       </ion-card>
 
-      <ion-card>
+      <ion-card *ngIf="(devis$ | async) as devis">
         <ion-card-header>
           <h3>
             
@@ -82,8 +82,8 @@
             </div>
           </ion-row>
           <ion-row>
-            <div class="test-btn">
-              <!-- <ion-button [routerLink]="['/gestion-devis/', plan.id]" size="block">Génération Devis</ion-button> -->
+            <div style="display: none;" class="test-btn" *ngIf="devis.PlanID === plan.ID" >
+              <ion-button [routerLink]="['/gestion-devis/', plan.id]" size="block">Génération Devis</ion-button>
             </div>
           </ion-row>
     
