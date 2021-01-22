@@ -15,4 +15,14 @@ namespace Madera.Models
         public int quantite { get; set; }
 
     }
+
+    public class RechercheModulePlan
+    {
+        public int PlanID { get; set; }
+        public int ModuleID { get; set; }
+        public int quantite { get; set; }
+
+    }
+
+
 }
