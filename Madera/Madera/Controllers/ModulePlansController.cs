@@ -34,19 +34,16 @@ namespace Madera.Controllers
 
         // GET: api/ModulePlans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<RechercheModulePlan>> GetDevis(int id)
+        public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetPlanProjet(int id)
         {
-
-            var modulePlan = _context.ModulePlans.Select(p => new RechercheModulePlan()
+            return await _context.ModulePlans.Select(p => new RechercheModulePlan()
             {
                 PlanID = p.PlanID,
                 ModuleID = p.ModuleID,
                 quantite = p.quantite,
 
-            }).Where(p => p.PlanID == id);
+            }).Where(p => p.PlanID == id).ToListAsync(); ;
 
-            RechercheModulePlan modulePlans = await modulePlan.FirstOrDefaultAsync();
-            return modulePlans;
         }
 
         // PUT: api/ModulePlans/5
