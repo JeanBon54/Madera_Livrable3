@@ -22,55 +22,49 @@ namespace Madera.Controllers
 
         // GET: api/ModulePlans
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ModulePlan>>> GetModulePlans()
+        public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetCommandes()
         {
-            return await _context.ModulePlans.ToListAsync();
+            return await _context.ModulePlans.Select(p => new RechercheModulePlan()
+            {
+                PlanID = p.PlanID,
+                ModuleID = p.ModuleID,
+                quantite = p.quantite,
+            }).ToListAsync();
         }
 
         // GET: api/ModulePlans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ModulePlan>> GetModulePlan(int id)
+        public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetMP(int id)
         {
-            var modulePlan = await _context.ModulePlans.FindAsync(id);
-
-            if (modulePlan == null)
+            return await _context.ModulePlans.Select(p => new RechercheModulePlan()
             {
-                return NotFound();
-            }
+                PlanID = p.PlanID,
+                ModuleID = p.ModuleID,
+                quantite = p.quantite,
 
-            return modulePlan;
+            }).Where(p => p.PlanID == id).ToListAsync(); ;
+
         }
+
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetPlanProjet(int id)
+        //{
+        //    return await _context.ModulePlans.Select(p => new RechercheModulePlan()
+        //    {
+        //        PlanID = p.PlanID,
+        //        ModuleID = p.ModuleID,
+        //        quantite = p.quantite,
+
+        //    }).Where(p => p.PlanID == id).ToListAsync(); ;
+
+        //}
+
+
 
         // PUT: api/ModulePlans/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutModulePlan(int id, ModulePlan modulePlan)
-        {
-            if (id != modulePlan.ModuleID)
-            {
-                return BadRequest();
-            }
 
-            _context.Entry(modulePlan).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ModulePlanExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/ModulePlans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
