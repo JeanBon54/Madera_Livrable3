@@ -229,6 +229,61 @@
                      </tr>
                      {{/Lignes}}
                   </tbody>
+                  <tfoot>
+                      {{#ExtraDevis}}
+                      <tr>
+                          <td>
+                              <span class="text-inverse">{{Value.libelleCoupePrincipal}}</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse">Longueur:</span>
+                          </td>
+                          <td>
+                              <span class="text-inverse">{{Value.longueurCoupePrincipal}}</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse">Largeur :</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse">{{Value.largeurCoupePrincipal}}</span><br>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <span class="text-inverse">{{Value.libelleCouverture}}</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse">{{Value.prixCouverture}} €</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <span class="text-inverse">{{Value.libellePlancher}}</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse">{{Value.prixPlancher}} €</span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                          <td>
+                              <span class="text-inverse"></span><br>
+                          </td>
+                      </tr>
+                      {{/ExtraDevis}}
+                  </tfoot>
                </table>
             </div>
             <!-- end table-responsive -->

@@ -42,6 +42,22 @@ export class DevisService extends ApiService {
       );
   }
 
+  getCreateDevis(devisId: number): Observable<Devis[]> {
+    return this.getById<Devis[]>(this.devisUrl + 'create/', devisId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+  
+  getDevisPlan(devisId: number): Observable<Devis[]> {
+    return this.getById<Devis[]>(this.devisUrl + 'plan/', devisId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
   getLignesDevis(planId: number): Observable<Devis[]> {
     return this.getById<Devis[]>(this.devisUrl + 'lignes/', planId.toString() )
       .pipe(

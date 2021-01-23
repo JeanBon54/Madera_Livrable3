@@ -149,7 +149,7 @@ export class NouveauPlanPage implements OnInit {
         CoupePrincipaleID: this.form.value.cpId,
         PlancherID: this.form.value.plancherId,
         CouvertureID: this.form.value.couvertureId,
-        ReferencePlan : 'test',
+        ReferencePlan : this.form.value.libellePlan,
         LibellePlan : this.form.value.libellePlan,
         AdressPlan: this.form.value.adresse,
         CpPlan: this.form.value.cp,

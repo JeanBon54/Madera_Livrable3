@@ -48,13 +48,109 @@ namespace Madera.Controllers
                 PrixTotalTtcDevis = p.PrixTotalTtcDevis,
                 DateCreation = p.DateCreation,
                 DateModification = p.DateModification,
-                PlanID = p.PlanID
-            }).AsQueryable();
+                PlanID = p.PlanID,
+                ProjetID = p.ProjetID
+            }).Where(x => x.ProjetID == id);
 
-            devis.Where(x => x.ProjetID == id);
 
             return await devis.ToArrayAsync();
 
+        }
+
+        // GET: api/Devis
+        [HttpGet("create/{id}")]
+        public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevisCreate(int id)
+        {
+
+           
+            var plan = await _context.Plans.FindAsync(id);
+
+            var extraDevis = await GetExtraDevis(id);
+
+            var lignes = await _context.ModulePlans.Select(p => new LignesDevis()
+            {
+                LibelleModule = p.Module.LibelleModule,
+                PlanID = p.PlanID,
+                QuantiteModule = p.quantite,
+                PrixModule = p.Module.prixModule,
+            }).ToListAsync();
+
+            //var prixTotalHtModule = lignes.Sum(p => p.PrixModule);
+
+            //var quantiteModule = lignes.Sum(p => p.QuantiteModule);
+
+            decimal prixTotalHtQtModule = 0;
+
+            decimal prixTotalTtcQtModule = 0;
+
+            decimal tva = Convert.ToDecimal("1,2");
+
+            for (int i = 0; i < lignes.Count(); i++)
+            {
+                prixTotalHtQtModule += lignes[i].PrixModule * lignes[i].QuantiteModule;
+                prixTotalTtcQtModule += ( lignes[i].PrixModule * lignes[i].QuantiteModule ) * tva; 
+            }
+
+            
+            var prixTotalHt = extraDevis.Value.prixPlancher + extraDevis.Value.prixCouverture + prixTotalHtQtModule;
+
+           var prixTotalTtc = prixTotalTtcQtModule + ( extraDevis.Value.prixCouverture * tva ) + ( extraDevis.Value.prixPlancher * tva);
+
+            var newDevis = new Devis()
+            {
+                LibelleDevis = "",
+                EtatDevis = "Création",
+                PlanID = id,
+                ProjetID = plan.idProjetPlan,
+                DateDebutDevis = DateTime.Now,
+                DateCreation = DateTime.Now,
+                DateModification = DateTime.Now,
+                PrixTotalHtDevis = prixTotalHt,
+                PrixTotalTtcDevis= prixTotalTtc
+
+            };
+
+            var createDevis = _context.Devis.AddAsync(newDevis);
+
+            await _context.SaveChangesAsync();
+
+            var devis = _context.Devis.Select(p => new RechercheDevis()
+            {
+                ID = p.ID,
+                LibelleDevis = p.LibelleDevis,
+                EtatDevis = p.EtatDevis,
+                PrixTotalHtDevis = p.PrixTotalHtDevis,
+                PrixTotalTtcDevis = p.PrixTotalTtcDevis,
+                DateCreation = p.DateCreation,
+                DateModification = p.DateModification,
+                PlanID = p.PlanID,
+                ProjetID = plan.idProjetPlan
+            }).Where(x => x.ID == id);
+
+
+            return await devis.ToArrayAsync();
+
+        }
+
+        // GET: api/Devis
+        [HttpGet("plan/{id}")]
+        public async Task<ActionResult<IEnumerable<RechercheDevis>>> GetDevisPlan(int id)
+        {
+
+            var devis = _context.Devis.Select(p => new RechercheDevis()
+            {
+                ID = p.ID,
+                LibelleDevis = p.LibelleDevis,
+                EtatDevis = p.EtatDevis,
+                PrixTotalHtDevis = p.PrixTotalHtDevis,
+                PrixTotalTtcDevis = p.PrixTotalTtcDevis,
+                DateCreation = p.DateCreation,
+                DateModification = p.DateModification,
+                PlanID = p.PlanID,
+                ProjetID = p.ProjetID
+            }).Where(x => x.PlanID == id);
+
+            return await devis.ToArrayAsync();
         }
 
         // GET: api/Devis/5
@@ -71,12 +167,13 @@ namespace Madera.Controllers
                 PrixTotalTtcDevis = p.PrixTotalTtcDevis,
                 DateCreation = p.DateCreation,
                 DateModification = p.DateModification,
-                PlanID = p.PlanID
-            }).AsQueryable();
+                PlanID = p.PlanID,
+                ProjetID = p.ProjetID
+            }).Where(x => x.ID == id);
 
-            devis.Where(x => x.ProjetID == id);
+            var final = await devis.FirstOrDefaultAsync();
 
-            return await devis.FirstOrDefaultAsync();
+            return final;
         }
 
         // GET: api/Devis/5
@@ -89,9 +186,7 @@ namespace Madera.Controllers
                 PlanID = p.PlanID,
                 QuantiteModule = p.quantite,
                 PrixModule = p.Module.prixModule,
-            }).AsQueryable();
-
-            lignes.Where(x => x.PlanID == id);
+            }).Where(x => x.PlanID == id);
 
             return await lignes.ToArrayAsync();
         }
@@ -110,9 +205,7 @@ namespace Madera.Controllers
                libelleCouverture = p.couverture.TypeCouverture,
                libellePlancher = p.plancher.TypePlancher,
                PlanID = p.ID
-            }).AsQueryable();
-
-            lignes.Where(x => x.PlanID == id);
+            }).Where(x => x.PlanID == id);
 
             return await lignes.FirstOrDefaultAsync();
         }
@@ -216,8 +309,11 @@ namespace Madera.Controllers
         {
             var devis = await _context.Devis.FindAsync(id);
 
+            var Lignes = await _context.ModulePlans.Where(mp => mp.PlanID == devis.PlanID).ToListAsync();
+
             var extraDevis = await GetExtraDevis(id);
 
+            //TODO
 
             var pdf = new createpdf();
 
@@ -225,10 +321,11 @@ namespace Madera.Controllers
 
             // Bind the template to data:
             var builder = new Stubble.Core.Builders.StubbleBuilder();
-            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
+            //var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
+            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = Lignes, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
 
 
-          
+
             string pdfPath = devis.LibelleDevis + ".pdf";
 
             // Render the bound HTML
