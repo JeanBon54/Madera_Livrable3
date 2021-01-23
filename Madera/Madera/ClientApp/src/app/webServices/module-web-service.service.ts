@@ -5,6 +5,7 @@ import { retry, catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Module ,SearchingModule} from '../models/Module';
 import { ApiService } from 'src/Shared/api.service';
+import { ModulePlans } from '../models/ModulePlans';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { ApiService } from 'src/Shared/api.service';
 export class ModuleService extends ApiService {
 
   moduleComposantUrl = environment.appUrl + 'api/Modules/';
+  modulePlansUrl = environment.appUrl + 'api/ModulePlans/';
 
   constructor(private http: HttpClient) {
     super(http);
@@ -24,6 +26,14 @@ export class ModuleService extends ApiService {
       retry(1),
       catchError(this.errorHandler)
     );
+  }
+
+  getModulePlans(planId: number): Observable<ModulePlans[]> {
+    return this.getById<ModulePlans[]>(this.modulePlansUrl, planId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
   }
 
   getModule(ModuleId: number): Observable<SearchingModule> {

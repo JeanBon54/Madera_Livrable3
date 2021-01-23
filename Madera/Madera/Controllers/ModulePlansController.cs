@@ -34,7 +34,7 @@ namespace Madera.Controllers
 
         // GET: api/ModulePlans/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetPlanProjet(int id)
+        public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetMP(int id)
         {
             return await _context.ModulePlans.Select(p => new RechercheModulePlan()
             {
@@ -45,6 +45,21 @@ namespace Madera.Controllers
             }).Where(p => p.PlanID == id).ToListAsync(); ;
 
         }
+
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetPlanProjet(int id)
+        //{
+        //    return await _context.ModulePlans.Select(p => new RechercheModulePlan()
+        //    {
+        //        PlanID = p.PlanID,
+        //        ModuleID = p.ModuleID,
+        //        quantite = p.quantite,
+
+        //    }).Where(p => p.PlanID == id).ToListAsync(); ;
+
+        //}
+
+
 
         // PUT: api/ModulePlans/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
