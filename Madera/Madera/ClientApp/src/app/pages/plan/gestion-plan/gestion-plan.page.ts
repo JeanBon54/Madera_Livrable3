@@ -17,7 +17,7 @@ export class GestionPlanPage implements OnInit {
   planId: number;
   plan$: Observable<Plan>;
   extraDevis$: Observable<Devis>;
-  devis$: Observable<Devis>;
+  devis$: Observable<Devis[]>;
   modulePlan$ : Observable<ModulePlans[]>; 
 
   
