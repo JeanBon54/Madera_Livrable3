@@ -25,4 +25,16 @@ namespace Madera.Models
     }
 
 
+    public class LignesModule
+    {
+        public int PlanID { get; set; }
+        public string LibelleModule { get; set; }
+        public int QuantiteModule { get; set; }
+        public decimal PrixModule { get; set; }
+        public decimal SumModule { get; set; }
+        public virtual Module Modules { get; set; }
+
+    }
+
+
 }

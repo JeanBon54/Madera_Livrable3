@@ -19,6 +19,7 @@ export class GestionPlanPage implements OnInit {
   extraDevis$: Observable<Devis>;
   devis$: Observable<Devis[]>;
   modulePlan$ : Observable<ModulePlans[]>; 
+  ligneModulePlan$ : Observable<ModulePlans[]>; 
 
   
   constructor(private pService: PlanService,
@@ -35,6 +36,7 @@ export class GestionPlanPage implements OnInit {
     this.loadPlan();
     this.loadExtraDevis();
     this.loadModulePlns();
+    this.loadLigneModulePlns();
   }
   
   loadPlan() {
@@ -54,6 +56,10 @@ export class GestionPlanPage implements OnInit {
 
   loadModulePlns() {
     this.modulePlan$ = this.mpService.getModulePlans(this.planId);
+  }
+
+  loadLigneModulePlns() {
+    this.ligneModulePlan$ = this.mpService.getLignesModulePlans(this.planId);
   }
 
   createDevis() {

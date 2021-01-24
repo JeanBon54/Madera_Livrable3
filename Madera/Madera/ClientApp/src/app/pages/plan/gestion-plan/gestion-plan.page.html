@@ -78,18 +78,22 @@
           <ion-grid>
             <div class="col-text-titre"> 
             <ion-row>
-              <ion-col>Nom de module</ion-col>
-              <ion-col>Quantite</ion-col>
+              <ion-col size="4"><ion-label>Libelle</ion-label></ion-col>
+              <ion-col size="2"><ion-label>Quantité</ion-label></ion-col>
+              <ion-col size="2"><ion-label>Prix T.T.C</ion-label></ion-col>
             </ion-row>
             </div>
             <div class="col-text">
-            <ion-row *ngFor="let modulePlan of (modulePlan$ | async)">
-              <ion-col>
-                <ion-label center text-center>{{modulePlan.moduleID}}</ion-label>
-              </ion-col>
-              <ion-col>
-                <ion-label center text-center>{{modulePlan.quantite}}</ion-label>
-              </ion-col>
+              <ion-row *ngFor="let ligne of ligneModulePlan$ | async">
+                <ion-col size="4">
+                  <ion-label center text-center>{{ligne.libelleModule}}</ion-label>
+                </ion-col>
+                <ion-col size="2">           
+                  <ion-label center text-center>{{ligne.quantiteModule}}</ion-label>           
+                </ion-col>
+                <ion-col size="2">
+                  <ion-label center text-center>{{ligne.prixModule}}</ion-label>     
+                </ion-col>
             </ion-row>
           </div>
           </ion-grid>

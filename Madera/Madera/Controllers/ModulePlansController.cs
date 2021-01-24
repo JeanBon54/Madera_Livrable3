@@ -46,6 +46,20 @@ namespace Madera.Controllers
 
         }
 
+        [HttpGet("lignes/{id}")]
+        public async Task<ActionResult<IEnumerable<LignesModule>>> GetLignesModule(int id)
+        {
+            var lignes = _context.ModulePlans.Select(p => new LignesModule()
+            {
+                LibelleModule = p.Module.LibelleModule,
+                PlanID = p.PlanID,
+                QuantiteModule = p.quantite,
+                PrixModule = p.Module.prixModule,
+            }).Where(x => x.PlanID == id);
+
+            return await lignes.ToArrayAsync();
+        }
+
         //[HttpGet("{id}")]
         //public async Task<ActionResult<IEnumerable<RechercheModulePlan>>> GetPlanProjet(int id)
         //{

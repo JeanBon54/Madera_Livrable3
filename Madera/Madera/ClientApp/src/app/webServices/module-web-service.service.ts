@@ -28,6 +28,14 @@ export class ModuleService extends ApiService {
     );
   }
 
+  getLignesModulePlans(planId: number): Observable<ModulePlans[]> {
+    return this.getById<ModulePlans[]>(this.modulePlansUrl + 'lignes/', planId.toString() )
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
+  }
+
   getModulePlans(planId: number): Observable<ModulePlans[]> {
     return this.getById<ModulePlans[]>(this.modulePlansUrl, planId.toString() )
       .pipe(
