@@ -45,6 +45,16 @@ export class GestionDevisPage implements OnInit {
     }
 
   ngOnInit() {
+    // this.loadDevis();
+    
+    // if(this.ucService.user$.getValue() != null) {
+
+    //   this.ucService.user$.subscribe(value => this.utilisateur = value)
+    //   console.log(this.utilisateur)
+    // }
+  }
+
+  ionViewWillEnter() {
     this.loadDevis();
     
     if(this.ucService.user$.getValue() != null) {
@@ -52,7 +62,7 @@ export class GestionDevisPage implements OnInit {
       this.ucService.user$.subscribe(value => this.utilisateur = value)
       console.log(this.utilisateur)
     }
-  }
+}
 
   loadDevis() {
     this.devis$ = this.dService.getDevis(this.devisId).pipe(tap(x => {this.loadLignesDevis(x.planID); this.loadExtraDevis(x.planID)}));

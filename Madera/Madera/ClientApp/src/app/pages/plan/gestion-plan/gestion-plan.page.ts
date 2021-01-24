@@ -33,11 +33,18 @@ export class GestionPlanPage implements OnInit {
 }
 
   ngOnInit() {
+    // this.loadPlan();
+    // this.loadExtraDevis();
+    // this.loadModulePlns();
+    // this.loadLigneModulePlns();
+  }
+
+  ionViewWillEnter() {
     this.loadPlan();
     this.loadExtraDevis();
     this.loadModulePlns();
     this.loadLigneModulePlns();
-  }
+}
   
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
@@ -66,6 +73,7 @@ export class GestionPlanPage implements OnInit {
     this.dService.getCreateDevis(this.planId).subscribe(function(data) {
       console.log(data);
     });
+    this.loadPlan();
   }
 
   back() {

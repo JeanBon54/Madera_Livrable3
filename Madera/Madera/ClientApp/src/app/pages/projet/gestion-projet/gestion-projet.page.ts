@@ -46,10 +46,13 @@ export class GestionProjetPage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadProjetID();
-
+    // this.loadProjetID();
     
   }
+
+  ionViewWillEnter() {
+    this.loadProjetID();
+}
 
    loadProjetID() {
     var newObj: any;
