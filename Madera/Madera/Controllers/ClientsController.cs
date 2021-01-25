@@ -69,7 +69,8 @@ namespace Madera.Controllers
                 CpClient = p.CpClient,
                 Telephone = p.Telephone,
                 EmailClient = p.EmailClient,
-                IdUtilisateurCreation = p.IdUtilisateurCreation
+                IdUtilisateurCreation = p.IdUtilisateurCreation,
+                CreationClient = p.DateCreation
             }).Where(p => p.ID == id);
 
             if (clients == null)

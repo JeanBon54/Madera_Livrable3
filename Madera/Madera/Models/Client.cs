@@ -71,6 +71,7 @@ namespace Madera.Models
         public int Telephone { get; set; }  
         public string EmailClient { get; set; }
         public int IdUtilisateurCreation { get; set; }
+        public DateTime CreationClient { get; set; }
 
 
     }
