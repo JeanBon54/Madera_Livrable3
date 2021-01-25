@@ -146,10 +146,10 @@
             {{#Projets}}
             <div class="invoice-from">
                <address class="m-t-5 m-b-5">
-                  <strong class="text-inverse">{{Projet.client.PrenomClient}} {{Projet.client.NomClient}}</strong><br>
-                  {{Projet.client.AdresseClient}}<br>
-                  {{Projet.client.VilleClient}}, {{Projet.client.CpClient}}<br>
-                  {{Projet.client.Telephone}}<br>
+                  <strong class="text-inverse">{{client.PrenomClient}} {{client.NomClient}}</strong><br>
+                  {{client.AdresseClient}}<br>
+                  {{client.VilleClient}}, {{Projet.client.CpClient}}<br>
+                  {{client.Telephone}}<br>
                </address>
             </div>
            
@@ -168,7 +168,7 @@
                <div class="date text-inverse m-t-5">{{DateModification}}</div>
                <div class="invoice-detail">
                   <small>Projet</small><br>
-                  {{Projet.LibelleNom}}
+                  {{LibelleNom}}
                </div>
             </div>
          </div>
@@ -203,25 +203,25 @@
                           
                         </td>
                         <td class="text-right">
-                           <span class="text-inverse">----</span></br>
+                            <span class="text-inverse">{{quantite}}</span></br>
                            {{#Module.ModuleComposant}}
                            <small>{{Quantite}}</small> </br>
                             {{/Module.ModuleComposant}}
                         </td>
                         <td class="text-right">
-                           <span class="text-inverse">----</span></br>
+                            <span class="text-inverse">{{Module.prixModule}} €</span></br>
                            {{#Module.ModuleComposant}}
                            <small>{{PrixHt}} €</small> </br>
                             {{/Module.ModuleComposant}}
                         </td>
                         <td class="text-right">
-                           <span class="text-inverse">----</span></br>
+                            <span class="text-inverse">{{Module.prixModuleTtc}}</span></br>
                            {{#Module.ModuleComposant}}
                            <small>{{PrixTtc}} €</small> </br>
                             {{/Module.ModuleComposant}}
                         </td>
                         <td class="text-right">
-                           <span class="text-inverse">----</span></br>
+                            <span class="text-inverse">{{prixModuleQteTtc}}</span></br>
                            {{#Module.ModuleComposant}}
                            <small>{{PrixTotal}} €</small> </br>
                             {{/Module.ModuleComposant}}

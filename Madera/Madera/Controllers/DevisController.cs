@@ -73,7 +73,7 @@ namespace Madera.Controllers
                 PlanID = p.PlanID,
                 QuantiteModule = p.quantite,
                 PrixModule = p.Module.prixModule,
-            }).ToListAsync();
+            }).Where(x => x.PlanID == id).ToListAsync();
 
             //var prixTotalHtModule = lignes.Sum(p => p.PrixModule);
 
@@ -311,7 +311,22 @@ namespace Madera.Controllers
 
             var Lignes = await _context.ModulePlans.Where(mp => mp.PlanID == devis.PlanID).ToListAsync();
 
-            var extraDevis = await GetExtraDevis(id);
+            var Projets = await _context.Projets.Where(mp => mp.ID == devis.ProjetID).ToListAsync();
+
+
+            var extraDevis = _context.Plans.Select(p => new ExtraDevis()
+            {
+                prixCouverture = p.couverture.PrixHtCouverture,
+                prixPlancher = p.plancher.PrixPlancher,
+                largeurCoupePrincipal = p.coupePrincipales.LargeurCoupePrincipale,
+                longueurCoupePrincipal = p.coupePrincipales.LongueurCoupePrincipale,
+                libelleCoupePrincipal = p.coupePrincipales.LibelleCoupePrincipale,
+                libelleCouverture = p.couverture.TypeCouverture,
+                libellePlancher = p.plancher.TypePlancher,
+                PlanID = p.ID
+            }).Where(x => x.PlanID == id);
+
+            var extraDevisFinal = await extraDevis.FirstOrDefaultAsync();
 
             //TODO
 
@@ -322,7 +337,7 @@ namespace Madera.Controllers
             // Bind the template to data:
             var builder = new Stubble.Core.Builders.StubbleBuilder();
             //var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = devis.Plan.ModulePlan, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
-            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = Lignes, Projets = devis.Plan.ProjetPlans, ExtraDevis = extraDevis });
+            var boundTemplate = builder.Build().Render(templatePath, new { Query = devis, Lignes = Lignes, Projets = Projets, ExtraDevis = extraDevisFinal });
 
 
 

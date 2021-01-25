@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,17 @@ namespace Madera.Models
         public virtual Module Module { get; set; }
 
         public int quantite { get; set; }
+
+        [NotMapped]
+        public decimal prixModuleQteTtc
+        {
+
+            get
+            {
+                return Module.prixModuleTtc * quantite;
+            }
+            set { }
+        }
 
     }
 

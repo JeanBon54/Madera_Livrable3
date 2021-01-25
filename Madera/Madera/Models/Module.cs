@@ -45,6 +45,18 @@ namespace Madera.Models
             }
             set { }
         }
+
+        [NotMapped]
+        public decimal prixModuleTtc
+        {
+
+            get
+            {
+                decimal tva = Convert.ToDecimal("1,2");
+                return prixModule * tva;
+            }
+            set { }
+        }
     }
 
     public class SearchingModule : Module
