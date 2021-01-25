@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Plan } from '../../../models/Plan';
 import { PlanService } from './../../../WebServices/plan-webservice.service';
 import { Router, ActivatedRoute } from '@angular/router'; 
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { Devis } from '../../../models/Devis';
 import { DevisService } from '../../../WebServices/devis-webservice.service';
 import { ModuleService } from 'src/app/webServices/module-web-service.service';
 import { ModulePlans } from 'src/app/models/ModulePlans';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gestion-plan',
@@ -32,25 +33,25 @@ export class GestionPlanPage implements OnInit {
   }
 }
 
-  ngOnInit() {
-    // this.loadPlan();
-    // this.loadExtraDevis();
-    // this.loadModulePlns();
-    // this.loadLigneModulePlns();
-  }
+  // ngOnInit() {
+  //  this.loadPlan();
+  //  this.loadExtraDevis();
+  //  this.loadModulePlns();
+  //  this.loadLigneModulePlns();
+  // }
 
   ionViewWillEnter() {
     this.loadPlan();
     this.loadExtraDevis();
     this.loadModulePlns();
     this.loadLigneModulePlns();
+    this.loadDevis();
 }
   
   loadPlan() {
     this.plan$ = this.pService.getPlan(this.planId);
-    console.log(this.planId)
-    this.loadDevis();
-
+    console.log(this.planId);
+   // this.loadDevis();
   }
 
   loadExtraDevis() {
@@ -70,11 +71,19 @@ export class GestionPlanPage implements OnInit {
   }
 
   createDevis() {
-    this.dService.getCreateDevis(this.planId).subscribe(function(data) {
-      console.log(data);
-    });
-    this.loadPlan();
+    this.dService.getCreateDevis(this.planId).subscribe(pipe(x => this.loadDevis()));
   }
+
+  doRefresh(event) {  
+    setTimeout(() => {
+      this.loadPlan();
+      this.loadExtraDevis();
+      this.loadModulePlns();
+      this.loadLigneModulePlns();
+      this.loadDevis();
+      event.target.complete();
+    }, 1500); 
+  } 
 
   back() {
     window.history.go(-1);
