@@ -104,7 +104,7 @@
         <ion-card-header>       
           <ion-row class="ion-justify-content-between">
             <h5>Devis associés</h5>
-            <ion-button type="submit" size="small" (click)="createDevis()" class="ion-align-self-end" color="primary">Créer</ion-button>
+            <ion-button type="submit" size="small" (click)="createDevis()" [routerLink]="['/gestion-plan/', plan.id]" class="ion-align-self-end" color="primary">Créer</ion-button>
           </ion-row>
          
           <hr class="solid">

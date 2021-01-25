@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{90844590-235F-4328-A6FE-1AB9597D5C44}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Models/ModulePlan.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Madera/Controllers/ModulePlansController.cs">
     <Files>
       <File FileName="Madera/Controllers/PlansController.cs" Line="45" Column="1" />
-      <File FileName="Madera/Controllers/DevisController.cs" Line="181" Column="58" />
-      <File FileName="Madera/Controllers/ModulePlansController.cs" Line="50" Column="64" />
-      <File FileName="Madera/Models/ModulePlan.cs" Line="25" Column="6" />
-      <File FileName="Madera/Models/Devis.cs" Line="63" Column="1" />
+      <File FileName="Madera/Controllers/DevisController.cs" />
+      <File FileName="Madera/Controllers/ModulePlansController.cs" Line="51" Column="1" />
+      <File FileName="Madera/Models/ModulePlan.cs" />
+      <File FileName="Madera/Models/Devis.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,9 +18,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
