@@ -317,14 +317,16 @@ namespace Madera.Controllers
             var extraDevis = _context.Plans.Select(p => new ExtraDevis()
             {
                 prixCouverture = p.couverture.PrixHtCouverture,
+                prixCouvertureTtc = p.couverture.PrixHtCouvertureTtc,
                 prixPlancher = p.plancher.PrixPlancher,
+                prixPlancherTtc = p.plancher.PrixPlancherTtc,
                 largeurCoupePrincipal = p.coupePrincipales.LargeurCoupePrincipale,
                 longueurCoupePrincipal = p.coupePrincipales.LongueurCoupePrincipale,
                 libelleCoupePrincipal = p.coupePrincipales.LibelleCoupePrincipale,
                 libelleCouverture = p.couverture.TypeCouverture,
                 libellePlancher = p.plancher.TypePlancher,
                 PlanID = p.ID
-            }).Where(x => x.PlanID == id);
+            }).Where(x => x.PlanID == devis.PlanID);
 
             var extraDevisFinal = await extraDevis.FirstOrDefaultAsync();
 

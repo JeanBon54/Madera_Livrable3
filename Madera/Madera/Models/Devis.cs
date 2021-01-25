@@ -80,6 +80,9 @@ namespace Madera.Models
         public decimal longueurCoupePrincipal { get; set; }
         public decimal prixCouverture { get; set; }
         public decimal prixPlancher { get; set; }
+        public decimal prixCouvertureTtc { get; set; }
+        public decimal prixPlancherTtc { get; set; }
+
         public int PlanID { get; set; }
     }
 }

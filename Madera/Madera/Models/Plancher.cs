@@ -19,6 +19,18 @@ namespace Madera.Models
         //Propriétés de navigation
         [ForeignKey("ID")]
         public ICollection<Plan> plans;
+
+        [NotMapped]
+        public decimal PrixPlancherTtc
+        {
+
+            get
+            {
+                decimal tva = Convert.ToDecimal("1,2");
+                return PrixPlancher * tva;
+            }
+            set { }
+        }
     }
 
     public class RechercherPlancher

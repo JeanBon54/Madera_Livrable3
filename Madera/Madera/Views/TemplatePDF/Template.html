@@ -233,53 +233,53 @@
                       {{#ExtraDevis}}
                       <tr>
                           <td>
-                              <span class="text-inverse">{{Value.libelleCoupePrincipal}}</span><br>
+                              <span class="text-inverse">{{libelleCoupePrincipal}}</span><br>
                           </td>
-                          <td>
+                          <td class="text-inverse">
                               <span class="text-inverse">Longueur:</span>
                           </td>
-                          <td>
-                              <span class="text-inverse">{{Value.longueurCoupePrincipal}}</span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{longueurCoupePrincipal}} mètres</span><br>
                           </td>
-                          <td>
+                          <td class="text-right">
                               <span class="text-inverse">Largeur :</span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse">{{Value.largeurCoupePrincipal}}</span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{largeurCoupePrincipal}} mètres</span><br>
                           </td>
                       </tr>
                       <tr>
                           <td>
-                              <span class="text-inverse">{{Value.libelleCouverture}}</span><br>
+                              <span class="text-inverse">{{libelleCouverture}}</span><br>
                           </td>
                           <td>
                               <span class="text-inverse"></span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse">{{Value.prixCouverture}} €</span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixCouverture}} €</span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse"></span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixCouvertureTtc}} €</span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse"></span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixCouvertureTtc}} €</span><br>
                           </td>
                       </tr>
                       <tr>
                           <td>
-                              <span class="text-inverse">{{Value.libellePlancher}}</span><br>
+                              <span class="text-inverse">{{libellePlancher}}</span><br>
                           </td>
                           <td>
                               <span class="text-inverse"></span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse">{{Value.prixPlancher}} €</span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixPlancher}} €</span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse"></span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixPlancherTtc}} €</span><br>
                           </td>
-                          <td>
-                              <span class="text-inverse"></span><br>
+                          <td class="text-right">
+                              <span class="text-inverse">{{prixPlancherTtc}} €</span><br>
                           </td>
                       </tr>
                       {{/ExtraDevis}}
@@ -326,8 +326,8 @@
             </p>
             {{#Projets}}
             <p class="text-center">
-               <span class="m-r-10"><i class="fa fa-fw fa-lg fa-globe"></i>  {{Projet.commercial.PrenomCommercial}} {{Projet.commercial.NomCommercial}}</span>
-               <span class="m-r-10"><i class="fa fa-fw fa-lg fa-envelope"></i> {{Projet.commercial.EmailCommercial}}</span>
+               <span class="m-r-10"><i class="fa fa-fw fa-lg fa-globe"></i>  {{commercial.PrenomCommercial}} {{commercial.NomCommercial}}</span>
+               <span class="m-r-10"><i class="fa fa-fw fa-lg fa-envelope"></i> {{commercial.EmailCommercial}}</span>
             </p>
          </div>
          {{/Projets}} 

@@ -18,6 +18,18 @@ namespace Madera.Models
 
         [ForeignKey("CouvertureID")]
         public virtual ICollection<Plan> plans { get; set; }
+
+        [NotMapped]
+        public decimal PrixHtCouvertureTtc
+        {
+
+            get
+            {
+                decimal tva = Convert.ToDecimal("1,2");
+                return PrixHtCouverture * tva;
+            }
+            set { }
+        }
     }
 
 
