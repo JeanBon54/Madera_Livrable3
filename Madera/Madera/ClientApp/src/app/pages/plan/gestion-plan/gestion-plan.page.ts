@@ -14,7 +14,7 @@ import { tap } from 'rxjs/operators';
   templateUrl: './gestion-plan.page.html',
   styleUrls: ['./gestion-plan.page.scss', './../../../app.component.scss'],
 })
-export class GestionPlanPage implements OnInit {
+export class GestionPlanPage {
   planId: number;
   plan$: Observable<Plan>;
   extraDevis$: Observable<Devis>;

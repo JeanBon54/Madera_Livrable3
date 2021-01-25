@@ -70,7 +70,7 @@ namespace Madera.Controllers
                 Telephone = p.Telephone,
                 EmailClient = p.EmailClient,
                 IdUtilisateurCreation = p.IdUtilisateurCreation,
-                CreationClient = p.DateCreation
+                DateCreation = p.DateCreation
             }).Where(p => p.ID == id);
 
             if (clients == null)
