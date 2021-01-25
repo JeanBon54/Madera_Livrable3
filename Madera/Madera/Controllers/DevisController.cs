@@ -98,7 +98,7 @@ namespace Madera.Controllers
 
             var newDevis = new Devis()
             {
-                LibelleDevis = "",
+                LibelleDevis = "#" + id + DateTime.Now.ToString("ddMMyyyy"),
                 EtatDevis = "Création",
                 PlanID = id,
                 ProjetID = plan.idProjetPlan,
